@@ -28,5 +28,25 @@
       "review": null
     }
   },
-  "screenshots": []
+  "screenshots": [
+    {
+      "path": "assets/screenshots/2026-11-14-home.png",
+      "alt": "CardMon interface at 2026-11-14",
+      "caption": "CardMon interface captured from index.html",
+      "commit": "f6adaf53e97c5f31ddfe832e3743cfa0ca8ff98a",
+      "taken_at": "2026-11-14",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:antigravity:1",
+        "method": "vision",
+        "notes": "Baseline overview dashboard layout, navigation, and KPI widgets verified clean and responsive",
+        "score": 95,
+        "reviewed_at": "2026-11-14T23:17:05"
+      }
+    }
+  ]
 }

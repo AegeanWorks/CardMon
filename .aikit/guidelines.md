@@ -9,3 +9,5 @@ Persisted state carries a format version. A loader refuses a version it does not
 without modifying or quarantining that file; older versions migrate when a migration exists.
 
 ## Rules
+- **G-001** (user): Every UI change must be screenshotted before and after and analyzed.
+- **G-002** (user): All UI modifications must remain strictly AIKit-compatible (bounded by .aikit/ui.json surface, verified with ui verify and ui finish --reviewed, and passing check --strict).
