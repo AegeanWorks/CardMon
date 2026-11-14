@@ -1,0 +1,20 @@
+[
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [],
+    "no_visual_reason": "",
+    "baseline_commit": "78149065fc75f91564dddfc7bc59154b613cce6c",
+    "contract_hash": "59e2dc32ff89132c93c7ff1b1b3c2c78bb6d7d443840dcd3a4569edec7cde1a2",
+    "started_at": 1794686033.9731658,
+    "finished_at": 1794686109.2181287,
+    "strikes": 0,
+    "reviewer": "",
+    "allowed_removals": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "0a73f4bed02b6257045fbd3b8d8578226288bafb4234279f3257086ed6c21f19"
+  }
+]
