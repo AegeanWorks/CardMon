@@ -80,6 +80,25 @@
         "score": 98,
         "reviewed_at": "2026-11-14T23:30:58"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-14-home.png",
+      "alt": "CardMon interface at 2026-11-14",
+      "caption": "CardMon interface captured from index.html",
+      "commit": "e039712ca7f7c01a631f03f74860784c149ccc23",
+      "taken_at": "2026-11-14",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:antigravity:1",
+        "method": "vision",
+        "notes": "Vision review: Clean, minimalistic dark fintech UI with perfect typography, zero label truncation, unified view summary banners, and high visual contrast compliant with G-001 and G-003.",
+        "score": 98,
+        "reviewed_at": "2026-11-14T23:55:35"
+      }
     }
   ]
 }

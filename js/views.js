@@ -542,12 +542,12 @@ function renderCardsView() {
 
   container.innerHTML = `
     <!-- Top Overall Cards Total Summary Banner -->
-    <div style="grid-column: 1 / -1; background: linear-gradient(135deg, rgba(59,130,246,0.12) 0%, rgba(16,185,129,0.08) 100%); border: 1px solid rgba(59,130,246,0.25); border-radius: var(--radius-md); padding: 0.85rem 1.1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.25rem;">
-      <div style="display:flex; align-items:center; gap:0.5rem;">
-        <span style="font-size:1.1rem;">💳</span>
-        <span style="font-size:0.85rem; font-weight:800; color:#fff;">Kredi Kartları Portföy Toplamı (${state.cards.length} Kart)</span>
+    <div class="view-summary-banner cards-summary-banner">
+      <div class="banner-title-group">
+        <span class="banner-icon">💳</span>
+        <span class="banner-heading">Kredi Kartları Portföy Toplamı (${state.cards.length} Kart)</span>
       </div>
-      <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; font-size:0.82rem;">
+      <div class="banner-metrics-group">
         <span>Toplam Limit: <strong style="color:#38bdf8;">₺${formatMoney(totalCardsLimit)}</strong></span>
         <span>Toplam Borç: <strong style="color:#fb7185;">₺${formatMoney(totalCardsDebt)}</strong></span>
         <span>Kullanılabilir: <strong style="color:#34d399;">₺${formatMoney(totalCardsAvail)}</strong></span>
@@ -556,226 +556,6 @@ function renderCardsView() {
     </div>
     ${cardsHtml}
   `;
-}
-
-// 4. Statement & Due Dates Timeline View
-function renderTimelineView() {
-  const container = document.getElementById('timelineContainer');
-  if (!container) return;
-
-  const now = new Date();
-  const currentDay = now.getDate();
-  const currentMonth = now.toLocaleString(currentLang === 'tr' ? 'tr-TR' : 'en-US', { month: 'short' });
-
-  // Generate timeline events for all cards (both Cutoff and Payment Due)
-  const events = [];
-
-  state.cards.forEach(c => {
-    const bank = state.banks.find(b => b.id === c.bankId) || { name: 'Bank', color: '#3b82f6' };
-    const used = Number(c.usedBalance) || 0;
-    const isKatilim = c.isParticipationBank || Number(c.minPaymentRatio) === 100;
-    const minRatio = isKatilim ? 100 : (Number(c.minPaymentRatio) || 20);
-    const minAmount = isKatilim ? used : ((used * minRatio) / 100);
-    const insts = c.installments || [];
-    const monthlyInstSum = insts.reduce((sum, inst) => sum + (Number(inst.monthlyAmount) || (inst.totalAmount / (inst.installmentCount || 1))), 0);
-
-    // Cutoff Event
-    let cutoffDayNum = 15;
-    let isApproxCutoff = c.dateMethod === 'approx';
-    if (c.dateMethod === 'exact') {
-      cutoffDayNum = Number(c.cutoffDay) || 15;
-    } else {
-      cutoffDayNum = getApproxDay(c.approxCutoffWeek);
-    }
-    
-    const daysInMonth = getDaysInCurrentMonth();
-    let daysUntilCutoff = cutoffDayNum >= currentDay ? cutoffDayNum - currentDay : cutoffDayNum + daysInMonth - currentDay;
-    events.push({
-      cardId: c.id,
-      cardName: c.nickname,
-      bankName: bank.name,
-      bankColor: bank.color,
-      type: 'cutoff',
-      day: cutoffDayNum,
-      isApprox: isApproxCutoff,
-      approxKey: c.approxCutoffWeek,
-      daysLeft: daysUntilCutoff,
-      amount: used,
-      amountLabel: t('usedAmount'),
-      installmentsCount: insts.length,
-      monthlyInstSum
-    });
-
-    // Due Date Event (Only if debt > 0 or has card)
-    let dueDayNum = 25;
-    let isApproxDue = c.dateMethod === 'approx';
-    if (c.dateMethod === 'exact') {
-      dueDayNum = Number(c.dueDay) || 25;
-    } else {
-      dueDayNum = getApproxDay(c.approxDueWeek);
-    }
-
-    let daysUntilDue = dueDayNum >= currentDay ? dueDayNum - currentDay : dueDayNum + daysInMonth - currentDay;
-    events.push({
-      cardId: c.id,
-      cardName: c.nickname,
-      bankName: bank.name,
-      bankColor: bank.color,
-      type: 'due',
-      day: dueDayNum,
-      isApprox: isApproxDue,
-      approxKey: c.approxDueWeek,
-      daysLeft: daysUntilDue,
-      amount: minAmount,
-      totalDebt: used,
-      amountLabel: isKatilim ? '🕌 Asgari (%100 Katılım)' : t('minPaymentDue'),
-      installmentsCount: insts.length,
-      monthlyInstSum
-    });
-  });
-
-  // Loans Payment Due Events
-  (state.loans || []).forEach(loan => {
-    const totalInst = Number(loan.totalInstallments) || 1;
-    const paidInst = Number(loan.paidInstallments) || 0;
-    if (paidInst >= totalInst) return; // loan completed
-
-    const bank = state.banks.find(b => b.id === loan.bankId) || { name: 'Banka', color: '#10b981' };
-    const payDay = Math.min(31, Math.max(1, Number(loan.paymentDay) || 15));
-    const monthlyAmt = Number(loan.monthlyPayment) || 0;
-    const remainingInst = totalInst - paidInst;
-    const remainingTotal = remainingInst * monthlyAmt;
-    const daysInMonth = getDaysInCurrentMonth();
-    const daysLeft = payDay >= currentDay ? payDay - currentDay : payDay + daysInMonth - currentDay;
-
-    events.push({
-      loanId: loan.id,
-      cardName: loan.title,
-      bankName: bank.name,
-      bankColor: bank.color,
-      type: 'loan',
-      day: payDay,
-      isApprox: false,
-      approxKey: '',
-      daysLeft: daysLeft,
-      amount: monthlyAmt,
-      totalDebt: remainingTotal,
-      amountLabel: 'Aylık Taksit',
-      installmentsCount: remainingInst,
-      paidCount: paidInst,
-      totalCount: totalInst,
-      monthlyInstSum: monthlyAmt
-    });
-  });
-
-  // Sort timeline events by days remaining
-  events.sort((a, b) => a.daysLeft - b.daysLeft);
-
-  if (events.length === 0) {
-    container.innerHTML = `
-      <div class="empty-state">
-        <p>${t('noCardsYet')}</p>
-      </div>
-    `;
-    return;
-  }
-
-  container.innerHTML = events.map(ev => {
-    let urgencyClass = 'safe';
-    let pillClass = 'pill-safe';
-    if (ev.daysLeft <= 3) {
-      urgencyClass = 'urgent';
-      pillClass = 'pill-urgent';
-    } else if (ev.daysLeft <= 7) {
-      urgencyClass = 'soon';
-      pillClass = 'pill-soon';
-    }
-
-    let countdownText = '';
-    if (ev.daysLeft === 0) countdownText = t('today');
-    else if (ev.daysLeft === 1) countdownText = t('tomorrow');
-    else countdownText = `${ev.daysLeft} ${t('daysLeft')}`;
-
-    const isCutoff = ev.type === 'cutoff';
-    const isLoan = ev.type === 'loan';
-    const title = isLoan ? `🏦 Kredi Taksiti (${ev.paidCount + 1}/${ev.totalCount}. Ay)` : (isCutoff ? t('cutoffUpcoming') : t('paymentUpcoming'));
-    const badgeColor = isLoan ? 'var(--accent-emerald)' : (isCutoff ? 'var(--accent-cyan)' : 'var(--accent-amber)');
-
-    const eventDate = new Date(now.getFullYear(), now.getMonth(), currentDay + ev.daysLeft);
-    const evMonth = eventDate.toLocaleString(currentLang === 'tr' ? 'tr-TR' : 'en-US', { month: 'short' });
-
-    return `
-      <div class="timeline-card ${urgencyClass}">
-        <div class="timeline-left">
-          <div class="timeline-date-badge">
-            <span class="timeline-day">${ev.day}</span>
-            <span class="timeline-month">${evMonth}</span>
-          </div>
-          <div class="timeline-info">
-            <h3>
-              <span style="display:inline-block; width: 10px; height: 10px; border-radius: 50%; background:${badgeColor};"></span>
-              ${title}: ${escapeHtml(ev.cardName)}
-            </h3>
-            <p style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-              <span style="color:${ev.bankColor}; font-weight:700;">${escapeHtml(ev.bankName)}</span>
-              ${ev.isApprox ? `• <span style="color:var(--text-muted);">(${t(ev.approxKey)})</span>` : ''}
-              ${(!isLoan && ev.installmentsCount > 0) ? `• <span style="color:#38bdf8; font-size:0.75rem;">🛍️ ${ev.installmentsCount} Taksitli Harcama (${formatMoney(ev.monthlyInstSum)}/ay)</span>` : ''}
-              ${isLoan ? `• <span style="color:#34d399; font-size:0.75rem;">🏦 Kalan Vade: ${ev.installmentsCount} Ay</span>` : ''}
-            </p>
-          </div>
-        </div>
-
-        <div class="timeline-right" style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
-          <div>
-            ${isCutoff ? `
-              <div class="timeline-amount-label">${t('usedAmount')}</div>
-              <div class="timeline-amount" style="color:#fb7185;">${formatMoney(ev.amount)}</div>
-            ` : isLoan ? `
-              <div style="text-align:right;">
-                <div style="font-size:0.72rem; color:var(--text-muted);">Kalan Kredi Borcu: <strong style="color:#34d399; font-size:1.05rem;">${formatMoney(ev.totalDebt)}</strong></div>
-                <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:2px;">Aylık Taksit: <strong style="color:#38bdf8;">${formatMoney(ev.amount)}</strong></div>
-              </div>
-            ` : `
-              <div style="text-align:right;">
-                <div style="font-size:0.72rem; color:var(--text-muted);">${t('totalUsedBalance') || 'Toplam Borç'}: <strong style="color:#fb7185; font-size:1.05rem;">${formatMoney(ev.totalDebt)}</strong></div>
-                <div style="font-size:0.75rem; color:var(--text-secondary); margin-top:2px;">${ev.amountLabel}: <strong style="color:#fbbf24;">${formatMoney(ev.amount)}</strong></div>
-              </div>
-            `}
-          </div>
-          <span class="days-countdown-pill ${pillClass}">
-            ${countdownText}
-          </span>
-
-          <!-- Quick Pay Actions on Due Date / Loan Timeline Item -->
-          ${isLoan ? `
-            <div style="display:flex; gap:0.35rem; align-items:center;">
-              <button class="btn-timeline-pay btn-pay-inst" onclick="paySingleLoanInstallment('${ev.loanId}')" title="Bu Ayki Kredi Taksitini Öde">
-                ✓ Taksit Öde
-              </button>
-            </div>
-          ` : (!isCutoff && ev.totalDebt > 0) ? `
-            <div style="display:flex; gap:0.35rem; align-items:center;">
-              <button class="btn-timeline-pay btn-pay-full" onclick="payCardFullDebt('${ev.cardId}')" title="Dönem Borcunu Tamamen Kapat & Sıfırla">
-                ✅ Borcu Kapat
-              </button>
-              ${ev.installmentsCount > 0 ? `
-                <button class="btn-timeline-pay btn-pay-inst" onclick="payCardMonthlyInstallments('${ev.cardId}')" title="Bu Ayki Taksitleri Öde ve Borçtan Düş">
-                  💳 Taksiti Düş
-                </button>
-              ` : ''}
-            </div>
-          ` : ''}
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  // Check for upcoming urgent payments (today or tomorrow) and toggle badge dot
-  const hasUrgentEvent = events.some(ev => ev.daysLeft <= 1 && ev.totalDebt > 0);
-  const urgentDot = document.getElementById('timelineUrgentDot');
-  if (urgentDot) {
-    urgentDot.style.display = hasUrgentEvent ? 'inline-block' : 'none';
-  }
 }
 
 // Yardımcı: Banka borç kırılımı HTML'i (iç içe template literal sorunundan kaçınmak için)
@@ -938,12 +718,12 @@ function renderBanksView() {
 
   container.innerHTML = `
     <!-- Top Overall Banks Total Summary Banner -->
-    <div style="grid-column: 1 / -1; background: linear-gradient(135deg, rgba(16,185,129,0.12) 0%, rgba(59,130,246,0.08) 100%); border: 1px solid rgba(16,185,129,0.25); border-radius: var(--radius-md); padding: 0.85rem 1.1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.25rem;">
-      <div style="display:flex; align-items:center; gap:0.5rem;">
-        <span style="font-size:1.1rem;">🏦</span>
-        <span style="font-size:0.85rem; font-weight:800; color:#fff;">Banka Portföyü Toplamı (${state.banks.length} Banka)</span>
+    <div class="view-summary-banner banks-summary-banner">
+      <div class="banner-title-group">
+        <span class="banner-icon">🏦</span>
+        <span class="banner-heading">Banka Portföyü Toplamı (${state.banks.length} Banka)</span>
       </div>
-      <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap; font-size:0.82rem;">
+      <div class="banner-metrics-group">
         <span>Tanımlı Kart: <strong>${totalBanksCardsCount} Adet</strong></span>
         ${totalBanksSharedLimit > 0 ? `<span>Ortak Limit: <strong style="color:#38bdf8;">₺${formatMoney(totalBanksSharedLimit)}</strong></span>` : ''}
         <span>Toplam Ek Hesap (KMH): <strong style="color:#22d3ee;">₺${formatMoney(totalBanksEkHesap)}</strong></span>
@@ -1642,17 +1422,17 @@ function renderTimelineView() {
     </div>
 
     <!-- Timeline Summary Banner with Planned, Paid & Remaining Outflow -->
-    <div style="background: linear-gradient(135deg, rgba(147,51,234,0.12) 0%, rgba(59,130,246,0.08) 100%); border: 1px solid rgba(147,51,234,0.25); border-radius: var(--radius-md); padding: 0.85rem 1.1rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.75rem; margin-bottom:1rem;">
-      <div style="display:flex; align-items:center; gap:0.5rem;">
-        <span style="font-size:1.1rem;">📅</span>
-        <span style="font-size:0.85rem; font-weight:800; color:#fff;">Bu Ayki Toplam Nakit Çıkışı (${paymentEvents.length} Ödeme)</span>
+    <div class="view-summary-banner timeline-summary-banner">
+      <div class="banner-title-group">
+        <span class="banner-icon">📅</span>
+        <span class="banner-heading">Bu Ayki Toplam Nakit Çıkışı (${paymentEvents.length} Ödeme)</span>
       </div>
-      <div style="display:flex; align-items:center; gap:0.85rem; flex-wrap:wrap; font-size:0.82rem;">
+      <div class="banner-metrics-group">
         <span>💳 ${paymentEvents.filter(e => e.type === 'card_due').length} Kart</span>
         <span>🏦 ${paymentEvents.filter(e => e.type === 'loan').length} Kredi</span>
         <span>🏠/🍿 ${paymentEvents.filter(e => e.type === 'subscription').length} Kira & Gider</span>
-        <span>Toplam: <strong style="color:#c084fc; font-size:0.95rem;">₺${formatMoney(totalPlannedOutflow)}</strong></span>
-        ${totalPaidOutflow > 0 ? `<span style="background:rgba(16,185,129,0.2); color:#34d399; padding:0.15rem 0.5rem; border-radius:4px; font-weight:700;">✓ Ödenen: ₺${formatMoney(totalPaidOutflow)}</span>` : ''}
+        <span>Toplam: <strong style="color:#c084fc;">₺${formatMoney(totalPlannedOutflow)}</strong></span>
+        ${totalPaidOutflow > 0 ? `<span style="background:rgba(16,185,129,0.18); color:#34d399; padding:0.15rem 0.5rem; border-radius:4px; font-weight:700;">✓ Ödenen: ₺${formatMoney(totalPaidOutflow)}</span>` : ''}
         ${totalRemainingOutflow > 0 && totalPaidOutflow > 0 ? `<span style="color:#fb7185; font-weight:700;">Kalan: ₺${formatMoney(totalRemainingOutflow)}</span>` : ''}
       </div>
     </div>
@@ -1664,34 +1444,36 @@ function renderTimelineView() {
         <p>Kredi kartı, kredi veya düzenli kira/fatura gideri eklediğinizde ödeme günleriniz burada listelenir.</p>
       </div>
     ` : `
-      <div style="display:flex; flex-direction:column; gap:0.75rem; margin-top:0.5rem;">
+      <div class="timeline-container" style="margin-top:0.5rem;">
         ${timelineEvents.map(e => {
           const isToday = e.daysLeft === 0;
           const isUrgent = e.daysLeft <= 3 && e.amount > 0 && !e.isPaid;
+          const cardObj = e.cardId ? state.cards.find(c => c.id === e.cardId) : null;
+          const hasInst = cardObj && cardObj.installments && cardObj.installments.length > 0;
 
           return `
-            <div style="background: ${e.isPaid ? 'rgba(16,185,129,0.06)' : 'rgba(15, 23, 42, 0.6)'}; border: 1px solid ${e.isPaid ? 'rgba(16,185,129,0.3)' : isToday ? '#10b981' : isUrgent ? 'rgba(244,63,94,0.4)' : 'rgba(255,255,255,0.06)'}; border-left: 4px solid ${e.color}; border-radius: var(--radius-md); padding: 0.85rem 1.1rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap;">
-              <div style="display:flex; align-items:center; gap:0.85rem;">
-                <div style="width:38px; height:38px; border-radius:var(--radius-md); background:${e.isPaid ? 'rgba(16,185,129,0.15)' : 'rgba(255,255,255,0.05)'}; display:flex; align-items:center; justify-content:center; font-size:1.25rem;">
+            <div class="timeline-event-card ${e.isPaid ? 'is-paid' : ''} ${isUrgent ? 'is-urgent' : ''} ${isToday ? 'is-today' : ''}" style="border-left-color: ${e.color};">
+              <div class="timeline-event-left">
+                <div class="timeline-event-icon-box">
                   ${e.icon}
                 </div>
-                <div>
-                  <div style="display:flex; align-items:center; gap:0.45rem; flex-wrap:wrap;">
-                    <strong style="font-size:0.92rem; color:${e.isPaid ? '#34d399' : '#fff'};">${escapeHtml(e.title)}</strong>
+                <div class="timeline-event-info">
+                  <div class="timeline-event-title-row">
+                    <strong class="timeline-event-title">${escapeHtml(e.title)}</strong>
                     ${e.isPaid ? '<span style="font-size:0.65rem; background:rgba(16,185,129,0.25); color:#34d399; border:1px solid rgba(16,185,129,0.4); border-radius:4px; padding:1px 6px; font-weight:800;">✓ Ödendi</span>' : ''}
                     ${e.isEstimated ? '<span style="font-size:0.65rem; background:#fef3c7; color:#92400e; border:1px solid #fde68a; border-radius:4px; padding:1px 5px; font-weight:700;">📊 Tahmini</span>' : ''}
-                    <span style="font-size:0.72rem; color:var(--text-muted); background:rgba(255,255,255,0.05); padding:0.15rem 0.45rem; border-radius:4px;">${escapeHtml(e.sourceName)}</span>
+                    <span class="timeline-event-tag">${escapeHtml(e.sourceName)}</span>
                   </div>
-                  <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.2rem;">
+                  <div class="timeline-event-note">
                     ${escapeHtml(e.note)}
                   </div>
                 </div>
               </div>
 
-              <div style="display:flex; align-items:center; gap:0.85rem; flex-wrap:wrap;">
-                <div style="text-align:right;">
+              <div class="timeline-event-right">
+                <div class="timeline-event-amount-block">
                   ${e.amount > 0 ? `
-                    <div style="font-weight:800; font-size:1.05rem; color:${e.isPaid ? '#34d399' : e.type === 'card_due' ? '#f43f5e' : e.type === 'loan' ? '#38bdf8' : '#c084fc'};">
+                    <div class="timeline-event-amount" style="color:${e.isPaid ? '#34d399' : e.type === 'card_due' ? '#f43f5e' : e.type === 'loan' ? '#38bdf8' : '#c084fc'};">
                       ${e.isEstimated ? '~' : ''}₺${formatMoney(e.amount)}
                     </div>
                   ` : `
@@ -1699,20 +1481,27 @@ function renderTimelineView() {
                       Hesap Kesimi
                     </div>
                   `}
-                  <div style="font-size:0.72rem; color:${e.isPaid ? '#34d399' : isToday ? '#34d399' : isUrgent ? '#fb7185' : 'var(--text-muted)'}; font-weight:600; margin-top:0.15rem;">
+                  <div class="timeline-event-due-text" style="color:${e.isPaid ? '#34d399' : isToday ? '#34d399' : isUrgent ? '#fb7185' : 'var(--text-muted)'};">
                     📅 Ayın ${e.day}. Günü • ${e.isPaid ? '✅ Ödeme Tamamlandı' : isToday ? '🔥 BUGÜN!' : `${e.daysLeft} gün kaldı`}
                   </div>
                 </div>
 
-                ${e.type === 'card_due' && e.cardId ? `
-                  <button class="btn ${e.isPaid ? 'btn-secondary' : 'btn-emerald'} btn-sm" onclick="payCardFullDebt('${e.cardId}')" title="${e.isPaid ? 'Ödendi durumunu geri al ve borcu tekrar aç' : 'Dönem Borcunu Ödendi Olarak Kapat'}" style="padding:0.4rem 0.75rem; font-size:0.78rem; font-weight:700; border-radius:6px; display:inline-flex; align-items:center; gap:0.3rem;">
-                    ${e.isPaid ? '↩️ Ödendi (Kapatıldı)' : '✅ Borcu Kapat'}
-                  </button>
-                ` : e.type === 'loan' && e.loanId ? `
-                  <button class="btn btn-primary btn-sm" onclick="paySingleLoanInstallment('${e.loanId}')" title="Bu Ayki Kredi Taksitini Öde" style="padding:0.4rem 0.75rem; font-size:0.78rem; font-weight:700; border-radius:6px; display:inline-flex; align-items:center; gap:0.3rem;">
-                    ✓ Taksit Öde
-                  </button>
-                ` : ''}
+                <div class="timeline-event-actions" style="display:flex; align-items:center; gap:0.4rem;">
+                  ${e.type === 'card_due' && e.cardId ? `
+                    <button class="btn ${e.isPaid ? 'btn-secondary' : 'btn-emerald'} btn-sm" onclick="payCardFullDebt('${e.cardId}')" title="${e.isPaid ? 'Ödendi durumunu geri al ve borcu tekrar aç' : 'Dönem Borcunu Ödendi Olarak Kapat'}" style="padding:0.4rem 0.75rem; font-size:0.78rem; font-weight:700; border-radius:6px; display:inline-flex; align-items:center; gap:0.3rem;">
+                      ${e.isPaid ? '↩️ Ödendi (Kapatıldı)' : '✅ Borcu Kapat'}
+                    </button>
+                    ${(!e.isPaid && hasInst) ? `
+                      <button class="btn btn-secondary btn-sm" onclick="payCardMonthlyInstallments('${e.cardId}')" title="Bu Ayki Taksitleri Öde ve Borçtan Düş" style="padding:0.4rem 0.75rem; font-size:0.78rem; font-weight:700; border-radius:6px; display:inline-flex; align-items:center; gap:0.3rem;">
+                        💳 Taksiti Düş
+                      </button>
+                    ` : ''}
+                  ` : e.type === 'loan' && e.loanId ? `
+                    <button class="btn btn-primary btn-sm" onclick="paySingleLoanInstallment('${e.loanId}')" title="Bu Ayki Kredi Taksitini Öde" style="padding:0.4rem 0.75rem; font-size:0.78rem; font-weight:700; border-radius:6px; display:inline-flex; align-items:center; gap:0.3rem;">
+                      ✓ Taksit Öde
+                    </button>
+                  ` : ''}
+                </div>
               </div>
             </div>
           `;

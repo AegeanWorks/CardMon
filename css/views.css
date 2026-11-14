@@ -1,106 +1,202 @@
 /* ==========================================================================
+   UNIFIED VIEW SUMMARY HERO BANNER (REUSABLE ACROSS TABS)
+   ========================================================================== */
+.view-summary-banner {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(26, 34, 54, 0.75) 0%, rgba(15, 23, 42, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: border-color var(--transition-normal);
+}
+
+.view-summary-banner:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.view-summary-banner .banner-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.view-summary-banner .banner-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.view-summary-banner .banner-heading {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.view-summary-banner .banner-metrics-group {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.view-summary-banner .banner-metrics-group strong {
+  font-weight: 700;
+}
+
+.view-summary-banner.banks-summary-banner {
+  border-left: 3px solid #3b82f6;
+}
+
+.view-summary-banner.cards-summary-banner {
+  border-left: 3px solid #8b5cf6;
+}
+
+.view-summary-banner.timeline-summary-banner {
+  border-left: 3px solid #c084fc;
+}
+
+/* ==========================================================================
    TIMELINE / CALENDAR VIEW
    ========================================================================== */
 .timeline-container {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
-.timeline-card {
+.timeline-event-card {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #3b82f6;
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.15rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
   transition: all var(--transition-normal);
 }
 
-.timeline-card:hover {
-  transform: translateX(4px);
+.timeline-event-card:hover {
+  transform: translateX(3px);
   border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
-.timeline-card.urgent {
-  border-left: 4px solid var(--accent-rose);
+.timeline-event-card.is-paid {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(16, 185, 129, 0.25);
+  border-left-color: #10b981;
 }
 
-.timeline-card.soon {
-  border-left: 4px solid var(--accent-amber);
+.timeline-event-card.is-urgent {
+  border-color: rgba(244, 63, 94, 0.35);
+  border-left-color: #f43f5e;
 }
 
-.timeline-card.safe {
-  border-left: 4px solid var(--accent-emerald);
+.timeline-event-card.is-today {
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
 }
 
-.timeline-left {
+.timeline-event-left {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 0.85rem;
+  min-width: 0;
 }
 
-.timeline-date-badge {
-  min-width: 65px;
-  height: 65px;
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-color);
+.timeline-event-icon-box {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
   border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  font-size: 1.25rem;
+  transition: all var(--transition-normal);
 }
 
-.timeline-day {
-  font-size: 1.35rem;
-  font-weight: 800;
-  line-height: 1;
+.timeline-event-card.is-paid .timeline-event-icon-box {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.timeline-event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.timeline-event-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.timeline-event-title {
+  font-size: 0.92rem;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
-.timeline-month {
-  font-size: 0.68rem;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  font-weight: 600;
-  margin-top: 2px;
+.timeline-event-card.is-paid .timeline-event-title {
+  color: #34d399;
 }
 
-.timeline-info h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.timeline-event-tag {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
 }
 
-.timeline-info p {
-  font-size: 0.82rem;
+.timeline-event-note {
+  font-size: 0.76rem;
   color: var(--text-secondary);
 }
 
-.timeline-right {
+.timeline-event-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.timeline-event-amount-block {
   text-align: right;
 }
 
-.timeline-amount {
-  font-size: 1.15rem;
+.timeline-event-amount {
   font-weight: 800;
-  color: var(--text-primary);
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
 }
 
-.timeline-amount-label {
+.timeline-event-due-text {
   font-size: 0.72rem;
+  font-weight: 600;
+  margin-top: 0.15rem;
   color: var(--text-muted);
 }
 
@@ -128,102 +224,6 @@
   background: rgba(16, 185, 129, 0.15);
   color: #6ee7b7;
   border: 1px solid rgba(16, 185, 129, 0.3);
-}
-
-/* ==========================================================================
-   BANKS BREAKDOWN VIEW
-   ========================================================================== */
-.banks-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-
-.bank-item-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  transition: all var(--transition-normal);
-}
-
-.bank-item-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: var(--shadow-md);
-}
-
-.bank-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.bank-name-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.bank-icon-square {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.95rem;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.bank-title-text h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
-.has-card-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.15rem 0.5rem;
-  border-radius: 999px;
-}
-
-.has-card-pill.yes {
-  background: rgba(59, 130, 246, 0.15);
-  color: #93c5fd;
-  border: 1px solid rgba(59, 130, 246, 0.3);
-}
-
-.has-card-pill.no {
-  background: rgba(148, 163, 184, 0.15);
-  color: #cbd5e1;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-.bank-cards-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.mini-card-chip {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: 0.5rem 0.75rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.8rem;
 }
 
 
@@ -556,9 +556,11 @@
 }
 
 .ekhesap-hero-stat-val {
-  font-size: 1.45rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: #22d3ee;
+  font-family: var(--font-family-mono);
+  letter-spacing: -0.02em;
 }
 
 .ekhesap-grid {
@@ -582,9 +584,9 @@
 }
 
 .ekhesap-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(6, 182, 212, 0.12);
 }
 
 .ekhesap-card-header {
@@ -600,15 +602,16 @@
 }
 
 .ekhesap-bank-logo-badge {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
   color: #fff;
   font-weight: 800;
   font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow-sm);
 }
 
 .ekhesap-bank-name {
@@ -637,6 +640,8 @@
   font-size: 1.35rem;
   font-weight: 800;
   margin-top: 0.2rem;
+  font-family: var(--font-family-mono);
+  letter-spacing: -0.02em;
 }
 
 .ekhesap-info-notice {
@@ -879,153 +884,7 @@
 
 
 
-/* ==========================================================================
-   EK HESAPLAR (KMH / OVERDRAFTS) TAB STYLES
-   ========================================================================== */
-.ekhesap-tab-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
 
-.ekhesap-hero-card {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
-  border: 1px solid rgba(6, 182, 212, 0.3);
-  border-radius: var(--radius-xl);
-  padding: 1.75rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  box-shadow: 0 8px 32px rgba(6, 182, 212, 0.1);
-}
-
-.ekhesap-hero-title {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 0.4rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.ekhesap-hero-desc {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  max-width: 600px;
-  line-height: 1.5;
-}
-
-.ekhesap-hero-stat {
-  text-align: right;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(6, 182, 212, 0.2);
-}
-
-.ekhesap-hero-stat-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #22d3ee;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
-}
-
-.ekhesap-hero-stat-val {
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: #ffffff;
-  font-family: var(--font-family-mono);
-}
-
-.ekhesap-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1.25rem;
-}
-
-.ekhesap-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: all var(--transition-normal);
-}
-
-.ekhesap-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(6, 182, 212, 0.4);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(6, 182, 212, 0.15);
-}
-
-.ekhesap-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.ekhesap-bank-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-.ekhesap-bank-logo-badge {
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 0.8rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.ekhesap-bank-name {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.ekhesap-limit-box {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.ekhesap-limit-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.35rem;
-}
-
-.ekhesap-limit-val {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #22d3ee;
-  font-family: var(--font-family-mono);
-}
-
-.ekhesap-info-notice {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px dashed var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 0.75rem 1rem;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
 
 /* ==========================================================================
    SUBSCRIPTIONS & RECURRING PAYMENTS TAB STYLES
