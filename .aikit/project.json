@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "name": "cardmon",
+  "test_command": null,
+  "topics": [
+    "aikit",
+    "aikit-integrated",
+    "source-available",
+    "aegean-license",
+    "commercial-license",
+    "finance",
+    "credit-card",
+    "banking",
+    "portfolio-management",
+    "budgeting",
+    "expense-tracker",
+    "web-app",
+    "javascript",
+    "html5",
+    "css3",
+    "local-first",
+    "user-interface"
+  ],
+  "gates": {},
+  "ui_required": true,
+  "mechanics_required": false,
+  "created": "2026-11-14",
+  "has_ui": true,
+  "ui_kind": "web",
+  "ui_evidence": [
+    "index.html"
+  ],
+  "ui_checked_at": "2026-11-14",
+  "ui_source": "detected",
+  "topics_source": "manual",
+  "topics_reviewed_at": "2026-11-14"
+}

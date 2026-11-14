@@ -1,0 +1,14 @@
+{
+  "name": "cardmon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smart bank and credit card portfolio manager for limits, debt balances, installments, and payment schedules.",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test tests"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

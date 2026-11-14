@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CardMon | Banka & Kredi Kartı Portföy Yöneticisi</title>
+  
+  <!-- Fonts -->
+  <!-- hygiene: allow Google Fonts CDN for Plus Jakarta Sans typography preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- hygiene: allow Google Fonts CDN for Plus Jakarta Sans typography preconnect -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- hygiene: allow Google Fonts CDN for Plus Jakarta Sans typography stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- =======================================================================
+         LEFT NAVIGATION SIDEBAR
+         ======================================================================= -->
+    <aside class="app-sidebar" id="appSidebar">
+      <div class="sidebar-top">
+        <!-- Sidebar Brand / Logo -->
+        <div class="sidebar-brand" onclick="navigateToTab('dashboard')" style="cursor:pointer;" title="Ana Sayfaya Git (Genel Bakış)">
+          <div class="brand-logo-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="3"></rect>
+              <line x1="2" y1="10" x2="22" y2="10"></line>
+              <circle cx="7" cy="15" r="1"></circle>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <h1>CardMon</h1>
+            <p>Akıllı Kart & Limit Takibi</p>
+          </div>
+        </div>
+
+        <!-- Sidebar Navigation Menu -->
+        <nav class="sidebar-nav">
+          <div class="sidebar-section-label">YÖNETİM & ANALİZ</div>
+
+          <button class="sidebar-nav-btn tab-btn active" data-tab="dashboard" onclick="navigateToTab('dashboard')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+            <span data-i18n="tabDashboard">Genel Bakış & Analiz</span>
+          </button>
+
+          <button class="sidebar-nav-btn tab-btn" data-tab="banks" onclick="navigateToTab('banks')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            <span data-i18n="tabBanks">Banka Hesaplarım</span>
+            <span class="tab-badge" id="banksTabBadge">0</span>
+          </button>
+
+          <button class="sidebar-nav-btn tab-btn" data-tab="ekhesap" onclick="navigateToTab('ekhesap')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            <span data-i18n="tabEkHesap">Ek Hesaplar (KMH)</span>
+            <span class="tab-badge" id="ekHesapTabBadge">0</span>
+          </button>
+
+          <button class="sidebar-nav-btn tab-btn" data-tab="cards" onclick="navigateToTab('cards')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+            <span data-i18n="tabCards">Kredi Kartlarım</span>
+            <span class="tab-badge" id="cardsTabBadge">0</span>
+          </button>
+
+          <button class="sidebar-nav-btn tab-btn" data-tab="loans" onclick="navigateToTab('loans')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 6v12"></path></svg>
+            <span data-i18n="tabLoans">Kredilerim</span>
+            <span class="tab-badge" id="loansTabBadge">0</span>
+          </button>
+
+          <button class="sidebar-nav-btn tab-btn" data-tab="subscriptions" onclick="navigateToTab('subscriptions')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path></svg>
+            <span data-i18n="tabSubscriptions">Abonelikler</span>
+            <span class="tab-badge" id="subscriptionsTabBadge">0</span>
+          </button>
+
+          <button class="sidebar-nav-btn tab-btn" data-tab="timeline" onclick="navigateToTab('timeline')" id="timelineTabBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span data-i18n="tabTimeline">Ekstre & Takvim</span>
+            <span id="timelineUrgentDot" style="display:none;" class="timeline-urgent-dot"></span>
+          </button>
+
+          <button class="sidebar-nav-btn tab-btn" type="button" onclick="openProfileModal()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            <span data-i18n="profileSettings">Profil & Ayarlar</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer (Mini Portfolio Bar & User Profile) -->
+      <div class="sidebar-footer">
+        <div class="sidebar-portfolio-card">
+          <div class="sidebar-portfolio-header">
+            <span>Kullanılabilir Limit</span>
+            <strong id="sidebarAvailLimit">₺0</strong>
+          </div>
+          <div class="meter-bar" style="height:5px; margin:0.4rem 0;">
+            <div class="meter-fill" id="sidebarUtilFill" style="width: 0%; background: #34d399;"></div>
+          </div>
+          <div class="sidebar-portfolio-sub">
+            <span>Doluluk: <strong id="sidebarUtilPct">%0</strong></span>
+            <span>Borç: <strong id="sidebarDebt">₺0</strong></span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- =======================================================================
+         MAIN CONTENT LAYOUT AREA
+         ======================================================================= -->
+    <div class="app-main-layout">
+      <!-- Top App Bar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button class="sidebar-mobile-toggle" id="sidebarMobileToggle" onclick="toggleMobileSidebar()" title="Menüyü Aç/Kapat">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="search-input-wrapper header-search-wrapper">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" class="search-input header-search-input" id="cardSearchInput" placeholder="Kart, banka veya model ara..." data-i18n-placeholder="searchPlaceholder">
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Direct PDF Report Button -->
+          <button type="button" class="btn btn-secondary btn-sm" onclick="exportPdfReport()" title="Ağustos 2026 Detaylı Finansal PDF Raporunu İndir" style="display:flex; align-items:center; gap:0.4rem; border-color:rgba(236,72,153,0.4); background:rgba(236,72,153,0.12); color:#f472b6; font-weight:700;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="12" y1="11" x2="12" y2="17"></line></svg>
+            <span>PDF Raporu</span>
+          </button>
+
+          <!-- Autosave Indicator -->
+          <div class="save-status-badge" id="saveStatusBadge">
+            <span class="save-dot"></span>
+            <span class="save-text" data-i18n="autoSaved">Otomatik Kaydedildi</span>
+          </div>
+
+          <!-- User Profile & Settings/Backup Menu in Top-Right -->
+          <div class="topbar-user-wrapper" id="settingsDropdownWrapper">
+            <button type="button" class="topbar-user-btn" id="openProfileBtn" onclick="toggleSettingsDropdown(event)" title="Profil, Ayarlar & Yedekleme">
+              <div class="user-avatar-badge" id="headerUserAvatar">YE</div>
+              <div class="topbar-user-meta">
+                <span class="topbar-user-name" id="headerUserName">Yunus Emre</span>
+                <span class="topbar-user-title">Finansal Yönetici</span>
+              </div>
+              <svg class="gear-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </button>
+
+            <!-- Settings & Yedek Dropdown Menu (Opens downwards) -->
+            <div class="settings-dropdown-menu topbar-dropdown-menu" id="settingsDropdownMenu">
+              <div class="dropdown-header">
+                <strong id="dropdownUserName">Yunus Emre</strong>
+                <span id="dropdownUserTitle">Finansal Yönetici</span>
+              </div>
+              
+              <div class="dropdown-divider"></div>
+              
+              <button type="button" class="dropdown-item" onclick="openProfileModal(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span data-i18n="editProfile">Profili & Ayarları Düzenle</span>
+              </button>
+
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-section-title" data-i18n="backupRestore">Yedekleme & Dışa Aktar</div>
+
+              <button type="button" class="dropdown-item" onclick="openBackupVaultModal(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span>🗄️ Yedek Geçmişi & Kasa</span>
+              </button>
+
+              <button type="button" class="dropdown-item" onclick="exportJsonBackup(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span data-i18n="exportJson">Yedek İndir (JSON)</span>
+              </button>
+
+              <button type="button" class="dropdown-item" onclick="triggerImportJson(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <span data-i18n="importJson">Yedek Yükle (JSON)</span>
+              </button>
+
+              <button type="button" class="dropdown-item" onclick="exportCsvReport(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                <span data-i18n="exportCsv">CSV Raporu İndir</span>
+              </button>
+
+              <button type="button" class="dropdown-item" onclick="exportPdfReport(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="12" y1="11" x2="12" y2="17"></line></svg>
+                <span>PDF Raporu İndir</span>
+              </button>
+
+              <button type="button" class="dropdown-item" onclick="loadDemoData(true); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <span data-i18n="loadDemo">Örnek Veri Yükle</span>
+              </button>
+
+              <div class="dropdown-divider"></div>
+
+              <button type="button" class="dropdown-item text-danger" onclick="confirmClearAllData(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                <span data-i18n="clearAll">Tüm Verileri Temizle</span>
+              </button>
+            </div>
+
+            <input type="file" id="importFileInput" accept=".json" style="display:none;">
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main class="app-main">
+
+        <!-- =======================================================================
+             TAB 1: MAIN PAGE - DETAILED ANALYSIS & STATS DASHBOARD (DEFAULT ACTIVE)
+             ======================================================================= -->
+        <div class="tab-pane active" id="tabPane-dashboard">
+      
+      <!-- Welcome & Financial Health Banner -->
+      <section class="welcome-hero-card">
+        <div class="welcome-hero-content">
+          <div class="welcome-badge">
+            <span class="welcome-wave">👋</span>
+            <span data-i18n="welcomeBack">Hoş Geldiniz</span>, <strong id="welcomeUserName">Yunus Emre</strong>
+          </div>
+          <h2 class="welcome-title">Finansal Özet & Portföy Analizi</h2>
+          <p class="welcome-subtitle" id="welcomeSubtitle">Banka limitleriniz, ek hesap rezervleriniz ve kredi kartı ödeme projeksiyonlarınız aşağıda özetlenmiştir.</p>
+        </div>
+
+        <div class="health-score-widget">
+          <div class="health-score-header">
+            <span data-i18n="financialHealth">Finansal Sağlık Durumu</span>
+            <span class="health-score-pill health-excellent" id="healthScorePill">Mükemmel</span>
+          </div>
+          <div class="health-score-bar">
+            <div class="health-score-fill" id="healthScoreFill" style="width: 85%;"></div>
+          </div>
+          <div class="health-score-caption" id="healthScoreCaption">Limit doluluk oranınız güvenli aralıkta (%24.8).</div>
+        </div>
+      </section>
+
+      <!-- 🧠 Akıllı Kart Harcama Danışmanı Widget Konteyneri -->
+      <div id="smartAdvisorContainer"></div>
+
+      <!-- Aggregated Key Metrics (7 KPIs) -->
+      <section class="overview-grid">
+        <!-- 1. Total Limit -->
+        <div class="stat-card" style="--accent-color: #3b82f6;">
+          <div class="stat-header">
+            <span class="stat-label" data-i18n="totalCombinedLimit">Toplam Birleşik Limit</span>
+            <div class="stat-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+          </div>
+          <div class="stat-value" id="statTotalLimit">₺0</div>
+          <div class="stat-meta">
+            <span data-i18n="totalBanksCount">Kayıtlı Banka:</span> <strong id="statBankCount">0</strong>
+          </div>
+        </div>
+
+        <!-- 2. Total Debt / Used -->
+        <div class="stat-card" style="--accent-color: #f43f5e;">
+          <div class="stat-header">
+            <span class="stat-label" data-i18n="totalUsedBalance">Toplam Güncel Borç</span>
+            <div class="stat-icon" style="color: #f43f5e;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color: #fb7185;" id="statTotalUsed">₺0</div>
+          <div class="stat-meta">
+            <span>Kart borcu + kalan kredi borcu</span>
+          </div>
+        </div>
+
+        <!-- 3. Available Limit -->
+        <div class="stat-card" style="--accent-color: #10b981;">
+          <div class="stat-header">
+            <span class="stat-label" data-i18n="totalAvailableLimit">Kalan Kullanılabilir Limit</span>
+            <div class="stat-icon" style="color: #10b981;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color: #34d399;" id="statTotalAvailable">₺0</div>
+          <div class="stat-meta">
+            <span>Hemen kullanılabilir bakiye</span>
+          </div>
+        </div>
+
+        <!-- 4. Total Ek Hesap (Overdraft) Limit -->
+        <div class="stat-card" style="--accent-color: #06b6d4;">
+          <div class="stat-header">
+            <span class="stat-label" data-i18n="totalEkHesapLimit">Toplam Ek Hesap (KMH)</span>
+            <div class="stat-icon" style="color: #06b6d4;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color: #22d3ee;" id="statTotalEkHesap">₺0</div>
+          <div class="stat-meta">
+            <span>Acil nakit / avans limiti</span>
+          </div>
+        </div>
+
+        <!-- 5. Utilization Ratio Meter -->
+        <div class="stat-card" style="--accent-color: #8b5cf6;">
+          <div class="stat-header">
+            <span class="stat-label" data-i18n="overallUtilization">Genel Doluluk Oranı</span>
+            <div class="stat-icon" style="color: #8b5cf6;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+            </div>
+          </div>
+          <div class="stat-value" id="statUtilizationRatio">0%</div>
+          <div class="meter-bar">
+            <div class="meter-fill" id="statUtilizationFill" style="width: 0%; background-color: var(--accent-emerald);"></div>
+          </div>
+        </div>
+
+        <!-- 6. Total Minimum Payment Due This Month -->
+        <div class="stat-card" style="--accent-color: #f59e0b;">
+          <div class="stat-header">
+            <span class="stat-label" data-i18n="totalMinPaymentDue">Bu Ayki Asgari Ödeme</span>
+            <div class="stat-icon" style="color: #f59e0b;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color: #fbbf24;" id="statTotalMinDue">₺0</div>
+          <div class="stat-meta">
+            <span>Kart asgari + kredi taksiti</span>
+          </div>
+        </div>
+
+        <!-- 7. Nearest Upcoming Due Date -->
+        <div class="stat-card" style="--accent-color: #ec4899;">
+          <div class="stat-header">
+            <span class="stat-label" data-i18n="nearestDueDate">En Yakın Ödeme</span>
+            <div class="stat-icon" style="color: #ec4899;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="font-size: 1.12rem; color: #f472b6;" id="statNearestDue">-</div>
+          <div class="stat-meta" id="statNearestDueSub">
+            <span>Yaklaşan ödeme bekleniyor</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aylık Nakit Akışı Özeti Widget -->
+      <div id="cashflowWidgetContainer"></div>
+
+      <!-- Deep Analytics Charts & Intelligence Grid -->
+      <div class="analytics-sections-grid">
+        <!-- 1. Bank Limit & Debt Comparison -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title-group">
+              <h3 data-i18n="bankDebtAnalysis">Banka Bazlı Limit & Borç Analizi</h3>
+              <p>Her bankadaki toplam limit ve borç kullanım oranları</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper" id="bankChartCanvas"></div>
+        </div>
+
+        <!-- 2. Ek Hesap (KMH) Overdraft Reserve Pool -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title-group">
+              <h3 data-i18n="ekHesapAnalysis">Ek Hesap (KMH / Avans) Dağılımı</h3>
+              <p>Bankalardaki hazır nakit avans ve kredili mevduat limitleri</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper" id="ekHesapChartCanvas"></div>
+        </div>
+
+        <!-- 3. Network & Type Breakdown -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title-group">
+              <h3 data-i18n="networkAndTypeAnalysis">Kart Şebekesi & Tür Dağılımı</h3>
+              <p>Mastercard, Visa, Troy, Amex ve Kart Kategorileri</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper" id="networkChartCanvas"></div>
+        </div>
+
+        <!-- 4. Monthly Payment Timing & Cashflow Flow -->
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-title-group">
+              <h3 data-i18n="paymentFlowAnalysis">Aylık Ödeme & Nakit Akış Dağılımı</h3>
+              <p>Haftalık dönemlere göre yaklaşan ekstre ve ödeme yoğunluğu</p>
+            </div>
+          </div>
+          <div class="chart-canvas-wrapper" id="paymentFlowCanvas"></div>
+        </div>
+      </div>
+
+      <!-- Smart Insights & Advisory Card -->
+      <section class="insights-section" id="smartInsightsContainer">
+        <!-- Rendered dynamically by app.js -->
+      </section>
+
+      <!-- Executive Card Summary Table -->
+      <section class="executive-table-section">
+        <div class="section-header-row">
+          <h3 data-i18n="executiveTable">Tüm Kartların Yönetici Özeti</h3>
+          <button class="btn btn-secondary btn-sm" onclick="exportPdfReport()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="12" y1="11" x2="12" y2="17"></line></svg>
+            <span data-i18n="exportPdf">PDF İndir</span>
+          </button>
+        </div>
+        <div class="table-responsive" id="executiveTableContainer">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         TAB 2: BANKS & BANK ACCOUNTS VIEW
+         ======================================================================= -->
+    <div class="tab-pane" id="tabPane-banks">
+      <div class="tab-section-header">
+        <div>
+          <h2 class="tab-section-title">Banka Hesaplarım & Limit Dağılımı</h2>
+          <p class="tab-section-subtitle">Vadesiz hesaplarınız, banka kartlarınız ve tanımlı banka bilgileri</p>
+        </div>
+        <button class="btn btn-emerald" onclick="openAddBankModal()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          <span data-i18n="addBank">Yeni Banka Ekle</span>
+        </button>
+      </div>
+      <div class="banks-grid" id="banksContainer">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         TAB 3: EK HESAPLAR (KMH / OVERDRAFTS) VIEW
+         ======================================================================= -->
+    <div class="tab-pane" id="tabPane-ekhesap">
+      <div class="ekhesap-tab-wrapper" id="ekHesapContainer">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         TAB 4: CREDIT CARDS VIEW
+         ======================================================================= -->
+    <div class="tab-pane" id="tabPane-cards">
+      <div class="tab-section-header">
+        <div>
+          <h2 class="tab-section-title">Kredi Kartlarım & Limit Yönetimi</h2>
+          <p class="tab-section-subtitle">Tüm kredi kartlarınız, alışveriş kısıtlamaları, sanal kartlar ve taksitler</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.6rem; flex-wrap:wrap;">
+          <div class="card-quick-filter-pills">
+            <button type="button" class="quick-filter-pill active" data-filter="all" onclick="setCardTypeFilter('all')">Tüm Kartlar</button>
+            <button type="button" class="quick-filter-pill" data-filter="typePersonal" onclick="setCardTypeFilter('typePersonal')">Bireysel</button>
+            <button type="button" class="quick-filter-pill" data-filter="typeCommercial" onclick="setCardTypeFilter('typeCommercial')">Ticari</button>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="openAddCardModal()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            <span data-i18n="addCard">Yeni Kart Ekle</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="cards-grid" id="cardsContainer">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         TAB 5: LOANS & INSTALLMENT CREDITS VIEW (KREDİLERİM)
+         ======================================================================= -->
+    <div class="tab-pane" id="tabPane-loans">
+      <div class="loans-tab-wrapper" id="loansContainer">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         TAB 6: DEDICATED SUBSCRIPTIONS & RECURRING PAYMENTS VIEW
+         ======================================================================= -->
+    <div class="tab-pane" id="tabPane-subscriptions">
+      <div class="subscriptions-tab-wrapper" id="subscriptionsContainer">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         TAB 6: TIMELINE / STATEMENT CALENDAR VIEW
+         ======================================================================= -->
+    <div class="tab-pane" id="tabPane-timeline">
+      <div class="timeline-container" id="timelineContainer">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: ADD / EDIT CREDIT CARD
+       ======================================================================= -->
+  <div class="modal-overlay" id="cardModalOverlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="cardModalTitle" data-i18n="addCard">Yeni Kart Ekle</h2>
+        <button class="close-btn" onclick="closeCardModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="cardForm">
+        <div class="modal-body">
+          <!-- Bank Selection -->
+          <div class="form-group">
+            <label data-i18n="bankName">Banka</label>
+            <select class="form-control" id="cardBankSelect" required>
+              <option value="">-- Banka Seçin --</option>
+            </select>
+          </div>
+
+          <!-- Card Nickname and Last 4 Digits -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="cardNickname">Kart Adı / Modeli</label>
+              <input type="text" class="form-control" id="cardNickname" placeholder="Örn: Bonus Platinum, Maximum" data-i18n-placeholder="cardNicknamePlaceholder" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="cardNumberLast4">Son 4 Hane (İsteğe Bağlı)</label>
+              <input type="text" class="form-control" id="cardLast4" placeholder="4829" maxlength="4" pattern="\d{4}" data-i18n-placeholder="cardNumberLast4Placeholder">
+            </div>
+          </div>
+
+          <!-- Network and Card Type -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="cardNetwork">Kart Şebekesi</label>
+              <select class="form-control" id="cardNetwork">
+                <option value="Mastercard">Mastercard</option>
+                <option value="Visa">Visa</option>
+                <option value="Troy">Troy</option>
+                <option value="Amex">American Express</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label data-i18n="cardType">Kart Türü</label>
+              <select class="form-control" id="cardType">
+                <option value="typePersonal" data-i18n="typePersonal">Bireysel Kart</option>
+                <option value="typeCommercial" data-i18n="typeCommercial">Ticari / Şirket Kartı</option>
+                <option value="typeMiles" data-i18n="typeMiles">Mil / Seyahat Kartı</option>
+                <option value="typeCashback" data-i18n="typeCashback">Puan / Cashback Kartı</option>
+                <option value="typeStudent" data-i18n="typeStudent">Öğrenci / Genç Kartı</option>
+                <option value="typeVirtual" data-i18n="typeVirtual">Sanal Kart</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Card Limit and Used Balance -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="cardLimit">Kart Limiti</label>
+              <input type="number" class="form-control" id="cardLimitInput" placeholder="50000" min="0" step="any" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="usedAmount">Kullanılan Tutar (Güncel Borç)</label>
+              <input type="number" class="form-control" id="cardUsedInput" placeholder="0" min="0" step="any">
+            </div>
+          </div>
+
+          <!-- Min Payment Ratio & Katılım Bankası Rule -->
+          <div class="form-group">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+              <label data-i18n="minPaymentRatio" style="margin:0;">Asgari Ödeme Oranı (%)</label>
+              <label class="katilim-switch-label" style="font-size:0.75rem; color:#34d399; display:flex; align-items:center; gap:0.35rem; cursor:pointer; font-weight:600;">
+                <input type="checkbox" id="cardIsParticipation" onchange="toggleParticipationRule(this.checked)" style="accent-color:#10b981;">
+                <span>🕌 Katılım Bankası (%100 Tüm Borç)</span>
+              </label>
+            </div>
+            <select class="form-control" id="cardMinRatio" onchange="handleMinRatioSelectChange(this.value)">
+              <option value="20">%20 (25.000 TL altı limitler için standart)</option>
+              <option value="40">%40 (25.000 TL ve üstü limitler için standart)</option>
+              <option value="100">🟢 %100 - Katılım Bankacılığı / Faizsiz (Tüm Borç)</option>
+              <option value="10">%10 (Ticari / Kurumsal Kartlar)</option>
+            </select>
+            <div id="katilimBankNotice" style="display:none; font-size:0.75rem; color:#34d399; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.25); border-radius:var(--radius-sm); padding:0.4rem 0.65rem; margin-top:0.35rem;">
+              🕌 <strong>Katılım Bankacılığı Prensibi:</strong> Bu kartta borç devri ve faiz uygulanmaz; her ay dönem borcunun tamamı (%100) asgari ödeme tutarıdır.
+            </div>
+          </div>
+
+          <!-- Smart Hybrid Date Assistant (Cutoff Week, Exact Cutoff Day & Due Day) -->
+          <div class="form-group" style="background: rgba(0,0,0,0.18); padding: 0.9rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+              <label style="margin:0; color:#38bdf8; font-weight:700;">📅 Akıllı Ekstre & Ödeme Takvimi</label>
+              <span style="font-size:0.72rem; color:var(--text-muted);">Hafta ve gerçek gün entegre çalışır</span>
+            </div>
+
+            <!-- Cutoff Week Selection -->
+            <div class="form-group" style="margin-bottom:0.75rem;">
+              <label data-i18n="approxWeek">Ekstre Kesim Haftası / Genel Dönem</label>
+              <select class="form-control" id="cardApproxCutoff" onchange="handleCutoffWeekChange()">
+                <option value="week1" data-i18n="week1">1. Hafta (Ayın 1 - 7'si arası)</option>
+                <option value="week2" data-i18n="week2">2. Hafta (Ayın 8 - 14'ü arası)</option>
+                <option value="week3" selected data-i18n="week3">3. Hafta (Ayın 15 - 21'i arası)</option>
+                <option value="week4" data-i18n="week4">4. Hafta (Ayın 22 - 28'i arası)</option>
+                <option value="weekMonthEnd" data-i18n="weekMonthEnd">Ay Sonu (29-31 Son Günler)</option>
+              </select>
+            </div>
+
+            <!-- Exact Days Row -->
+            <div class="form-row" style="margin-bottom:0.5rem;">
+              <div class="form-group">
+                <label data-i18n="cutoffDay">Bu Ayki Gerçek Kesim Günü</label>
+                <input type="number" class="form-control" id="cardCutoffDay" min="1" max="31" value="15" placeholder="15" oninput="handleCutoffDayInput()">
+              </div>
+              <div class="form-group">
+                <label data-i18n="dueDay">Son Ödeme Günü</label>
+                <input type="number" class="form-control" id="cardDueDay" min="1" max="31" value="25" placeholder="25" oninput="updateCardDateLivePreview()">
+              </div>
+            </div>
+
+            <!-- Quick Auto-Calculation Helper Pills -->
+            <div style="display:flex; align-items:center; gap:0.4rem; flex-wrap:wrap; margin-bottom:0.65rem;">
+              <span style="font-size:0.7rem; color:var(--text-muted);">Hızlı Son Ödeme:</span>
+              <button type="button" class="btn-date-quick" onclick="applyDueOffset(10)">+10 Gün (Standart)</button>
+              <button type="button" class="btn-date-quick" onclick="applyDueOffset(14)">+14 Gün</button>
+              <button type="button" class="btn-date-quick" onclick="applyDueOffset(11)">+11 Gün (Hafta Sonu Kayması)</button>
+            </div>
+
+            <!-- Live Date Estimation Preview Box -->
+            <div class="date-live-preview-box" id="cardDateLivePreview">
+              <!-- Dynamically rendered live preview -->
+            </div>
+          </div>
+
+          <!-- Security & Purchase Permissions Group -->
+          <div class="form-group" style="background: rgba(0,0,0,0.18); padding: 0.85rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <label style="margin-bottom: 0.6rem; color: #22d3ee;" data-i18n="permissions">Alışveriş & Güvenlik İzinleri</label>
+            <div class="permissions-checkbox-grid">
+              <label class="checkbox-label">
+                <input type="checkbox" id="cardPermInternet" checked>
+                <span>🌐 İnternet / E-Ticaret</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="cardPermAbroad" checked>
+                <span>🌍 Yurt Dışı Alışverişi</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="cardPermContactless" checked>
+                <span>📡 Temassız Ödeme</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" id="cardPermCashAdvance" checked>
+                <span>🏧 Nakit Avans</span>
+              </label>
+              <label class="checkbox-label" style="grid-column: 1 / -1; color: #fb7185;">
+                <input type="checkbox" id="cardPermFrozen">
+                <span>❄️ Kartı Geçici Olarak Dondur / Kilitle</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Annual Card Fee & Refund Tracking -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="annualFee">Yıllık Kart Üyelik Ücreti (Banka Aidatı ₺)</label>
+              <input type="number" class="form-control" id="cardAnnualFeeInput" placeholder="0" min="0" step="any">
+            </div>
+            <div class="form-group">
+              <label data-i18n="annualFeeMonth">Kart Ücreti Kesim Ayı</label>
+              <select class="form-control" id="cardAnnualFeeMonthSelect">
+                <option value="none">-- Seçilmedi --</option>
+                <option value="1">Ocak (1. Ay)</option>
+                <option value="2">Şubat (2. Ay)</option>
+                <option value="3">Mart (3. Ay)</option>
+                <option value="4">Nisan (4. Ay)</option>
+                <option value="5">Mayıs (5. Ay)</option>
+                <option value="6">Haziran (6. Ay)</option>
+                <option value="7">Temmuz (7. Ay)</option>
+                <option value="8">Ağustos (8. Ay)</option>
+                <option value="9">Eylül (9. Ay)</option>
+                <option value="10">Ekim (10. Ay)</option>
+                <option value="11">Kasım (11. Ay)</option>
+                <option value="12">Aralık (12. Ay)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="annualFeeRefundStatus">Banka Kart Ücreti İade / İtiraz Durumu</label>
+            <select class="form-control" id="cardAnnualFeeStatusSelect">
+              <option value="none">Seçilmedi / Belirsiz</option>
+              <option value="paid" data-i18n="feePaid">Banka Kesti / Ödendi</option>
+              <option value="refundRequested" data-i18n="feeRefundRequested">Bankadan İade İstendi (Bekliyor)</option>
+              <option value="refunded" data-i18n="feeRefunded">Banka İade Etti / Bonus Yüklendi</option>
+              <option value="exempt" data-i18n="feeExempt">Aidatsız / Yıllık Ücretten Muaf Kart</option>
+            </select>
+            <span style="font-size:0.72rem; color:var(--text-muted); display:block; margin-top:0.25rem;">
+              💡 <em>Not: Bu alan bankanın kredi kartınız için kestiği yıllık kart ücretidir. Bankayı arayarak puan/nakit iadesi alınabilir (Bina/apartman aidatıyla ilgisi yoktur).</em>
+            </span>
+          </div>
+
+          <!-- Card Visual Color Swatch Theme Picker -->
+          <div class="form-group">
+            <label data-i18n="cardTheme">Kart Görsel Teması</label>
+            <div class="theme-picker-group">
+              <div class="theme-swatch theme-midnight active" data-theme="theme-midnight" title="Midnight Blue"></div>
+              <div class="theme-swatch theme-emerald" data-theme="theme-emerald" title="Emerald Green"></div>
+              <div class="theme-swatch theme-ruby" data-theme="theme-ruby" title="Ruby Red"></div>
+              <div class="theme-swatch theme-amethyst" data-theme="theme-amethyst" title="Amethyst Purple"></div>
+              <div class="theme-swatch theme-obsidian" data-theme="theme-obsidian" title="Obsidian Black"></div>
+              <div class="theme-swatch theme-silver" data-theme="theme-silver" title="Platinum Silver"></div>
+              <div class="theme-swatch theme-sunset" data-theme="theme-sunset" title="Sunset Orange"></div>
+              <div class="theme-swatch theme-ocean" data-theme="theme-ocean" title="Ocean Teal"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeCardModal()" data-i18n="cancel">İptal</button>
+          <button type="submit" class="btn btn-primary" data-i18n="save">Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: ADD / EDIT BANK
+       ======================================================================= -->
+  <div class="modal-overlay" id="bankModalOverlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="bankModalTitle" data-i18n="addBank">Yeni Banka Ekle</h2>
+        <button class="close-btn" onclick="closeBankModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="bankForm">
+        <div class="modal-body">
+          <!-- Preset Bank Picker -->
+          <div class="form-group">
+            <label>Hazır Banka Seçimi</label>
+            <select class="form-control" id="presetBankSelect">
+              <!-- Populated by JS -->
+            </select>
+          </div>
+
+          <!-- Bank Name & Color -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="bankName">Banka Adı</label>
+              <input type="text" class="form-control" id="bankNameInput" placeholder="Garanti BBVA" required>
+            </div>
+            <div class="form-group">
+              <label>Banka Rengi</label>
+              <input type="color" class="form-control" id="bankColorInput" value="#008836" style="height: 42px; padding: 2px 6px;">
+            </div>
+          </div>
+
+          <!-- Does Bank Have Credit Card -->
+          <div class="form-group">
+            <label data-i18n="bankHasCard">Bu Bankada Kredi Kartınız Var mı?</label>
+            <select class="form-control" id="bankHasCardSelect" onchange="toggleBankCardSection()">
+              <option value="yes" data-i18n="bankHasCardYes">Evet, Kredi Kartı Mevcut</option>
+              <option value="no" data-i18n="bankHasCardNo">Hayır, Sadece Vadesiz / Hesap Var</option>
+            </select>
+          </div>
+
+          <!-- Bank Shared Limit -->
+          <div class="form-group">
+            <label data-i18n="bankSharedLimit">Banka Toplam Ortak Limiti (Opsiyonel)</label>
+            <input type="number" class="form-control" id="bankSharedLimitInput" placeholder="150000" min="0" step="any">
+            <span class="form-help" data-i18n="bankSharedLimitHelp">Bazı bankalar birden fazla kart için ortak limit tanımlar</span>
+          </div>
+
+          <!-- Bank Ek Hesap Limit -->
+          <div class="form-group">
+            <label data-i18n="bankEkHesapLimit">Ek Hesap Limiti (Opsiyonel)</label>
+            <input type="number" class="form-control" id="bankEkHesapLimitInput" placeholder="10000" min="0" step="any">
+            <span class="form-help" data-i18n="bankEkHesapLimitHelp">Kredili mevduat hesabı / avans hesap limiti</span>
+          </div>
+
+          <!-- Bank Notes -->
+          <div class="form-group">
+            <label data-i18n="bankNotes">Banka Notları / Şube</label>
+            <input type="text" class="form-control" id="bankNotesInput" placeholder="Maaş bankası, yatırım hesabı vb." data-i18n-placeholder="bankNotesPlaceholder">
+          </div>
+
+          <!-- ── Inline Credit Card Section ────────────────────────────────────── -->
+          <div id="bankCardSection" style="margin-top:1rem; border:1px solid rgba(59,130,246,0.25); border-radius:var(--radius-md); padding:1rem; background:rgba(59,130,246,0.06);">
+            <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.85rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              <strong style="font-size:0.88rem; color:#60a5fa;">Kredi Kartı Bilgisi Ekle <span style="font-size:0.72rem; color:var(--text-muted); font-weight:400;">(Opsiyonel — banka ile birlikte kaydedilir)</span></strong>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Kart Adı / Modeli</label>
+                <input type="text" class="form-control" id="bankCardNickname" placeholder="Bonus Platinum, World Gold…">
+              </div>
+              <div class="form-group">
+                <label>Kart Limiti (₺)</label>
+                <input type="number" class="form-control" id="bankCardLimit" placeholder="80000" min="0" step="any">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Güncel Borç (₺)</label>
+                <input type="number" class="form-control" id="bankCardUsed" placeholder="0" min="0" step="any" value="0">
+              </div>
+              <div class="form-group">
+                <label>Son 4 Hane (Opsiyonel)</label>
+                <input type="text" class="form-control" id="bankCardLast4" placeholder="1234" maxlength="4">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Kart şebekesi</label>
+                <select class="form-control" id="bankCardNetwork">
+                  <option value="Mastercard">Mastercard</option>
+                  <option value="Visa">Visa</option>
+                  <option value="Troy">Troy</option>
+                  <option value="Amex">Amex</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Kart Türü</label>
+                <select class="form-control" id="bankCardType">
+                  <option value="typePersonal">Bireysel Kart</option>
+                  <option value="typeCashback">Puan / Cashback</option>
+                  <option value="typeMiles">Mil / Seyahat</option>
+                  <option value="typeCommercial">Ticari / şirket</option>
+                  <option value="typeStudent">Öğrenci / Genç</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">
+              💡 Kart adı ve limit girilirse banka ile birlikte yeni bir kart kaydı otomatik oluşturulur.
+            </div>
+          </div>
+          <!-- ───────────────────────────────────────────────────────── -->
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeBankModal()" data-i18n="cancel">İptal</button>
+          <button type="submit" class="btn btn-emerald" data-i18n="save">Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: USER PROFILE & APP SETTINGS
+       ======================================================================= -->
+  <div class="modal-overlay" id="profileModalOverlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 data-i18n="profileSettings">Profil & Ayarlar</h2>
+        <button class="close-btn" onclick="closeProfileModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="profileForm">
+        <div class="modal-body">
+          <!-- Profile Avatar Preview & Header -->
+          <div class="profile-hero-preview">
+            <div class="profile-avatar-large" id="modalAvatarPreview">YE</div>
+            <div class="profile-preview-meta">
+              <h3 id="modalUserNamePreview">Yunus Emre</h3>
+              <p id="modalUserTitlePreview">Finansal Yönetici</p>
+            </div>
+          </div>
+
+          <!-- Name & Surname -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="firstName">Ad</label>
+              <input type="text" class="form-control" id="profileFirstName" placeholder="Yunus" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="lastName">Soyad</label>
+              <input type="text" class="form-control" id="profileLastName" placeholder="Emre">
+            </div>
+          </div>
+
+          <!-- User Title / Note & Avatar Color -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="userTitle">Unvan / Meslek</label>
+              <input type="text" class="form-control" id="profileTitle" placeholder="Finansal Yönetici">
+            </div>
+            <div class="form-group">
+              <label>Avatar / Profil Rengi</label>
+              <input type="color" class="form-control" id="profileAvatarColor" value="#3b82f6" style="height: 42px; padding: 2px 6px;">
+            </div>
+          </div>
+
+          <!-- Monthly Net Income & Salary Day -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="monthlyIncome">Aylık Net Gelir (Opsiyonel)</label>
+              <input type="number" class="form-control" id="profileIncome" placeholder="75000" min="0" step="any">
+              <span class="form-help">Borç / Gelir oranını hesaplamak için kullanılır</span>
+            </div>
+            <div class="form-group">
+              <label data-i18n="salaryDay">Maaş / Gelir Günü (1-31)</label>
+              <input type="number" class="form-control" id="profileSalaryDay" min="1" max="31" value="1" placeholder="1">
+            </div>
+          </div>
+
+          <!-- Currency & Language -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="currency">Varsayılan Para Birimi</label>
+              <select class="form-control" id="profileCurrencySelect">
+                <option value="TRY">₺ Türk Lirası (TRY)</option>
+                <option value="USD">$ Amerikan Doları (USD)</option>
+                <option value="EUR">€ Euro (EUR)</option>
+                <option value="GBP">£ İngiliz Sterlini (GBP)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Uygulama Dili</label>
+              <select class="form-control" id="profileLangSelect">
+                <option value="tr">🇹🇷 Türkçe</option>
+                <option value="en">🇬🇧 English</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Data Management Controls Group -->
+          <div class="settings-data-section">
+            <h4 data-i18n="dataManagement">Veri Yönetimi & Yedekleme</h4>
+            <div class="settings-action-buttons">
+              <button type="button" class="btn btn-emerald btn-sm" onclick="openBackupVaultModal(); closeProfileModal();">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span>🗄️ Yedek Kasası & Geçmiş Noktalar</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="exportJsonBackup()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span data-i18n="exportJson">Yedek İndir (JSON)</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="triggerImportJson()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                <span data-i18n="importJson">Yedek Yükle</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="exportCsvReport()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                <span data-i18n="exportCsv">CSV Raporu</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="exportPdfReport(); closeProfileModal();">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="12" y1="11" x2="12" y2="17"></line></svg>
+                <span>PDF Raporu</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="loadDemoData(true)">
+                <span data-i18n="loadDemo">Örnek Veri Yükle</span>
+              </button>
+              <button type="button" class="btn btn-danger-outline btn-sm" onclick="confirmClearAllData()">
+                <span data-i18n="clearAll">Tümünü Temizle</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeProfileModal()" data-i18n="cancel">İptal</button>
+          <button type="submit" class="btn btn-primary" data-i18n="save">Değişiklikleri Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: QUICK TRANSACTION (BORÇ ÖDE / HARCAMA & TAKSİT EKLE)
+       ======================================================================= -->
+  <div class="modal-overlay" id="quickTxModalOverlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="quickTxModalTitle">Hızlı İşlem & Taksit</h2>
+        <button class="close-btn" onclick="closeQuickTxModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="quickTxForm">
+        <input type="hidden" id="quickTxCardId">
+        <div class="modal-body">
+          <div class="quick-tx-card-preview" id="quickTxCardPreview">
+            <!-- Populated by JS -->
+          </div>
+
+          <!-- Transaction Type Toggle -->
+          <div class="tx-type-selector">
+            <label class="tx-type-btn" id="txTypeExpenseLabel">
+              <input type="radio" name="quickTxType" id="txTypeExpense" value="expense" checked onchange="updateQuickTxFormMode()">
+              <span>🛍️ Harcama / Taksit Ekle</span>
+            </label>
+            <label class="tx-type-btn" id="txTypePaymentLabel">
+              <input type="radio" name="quickTxType" id="txTypePayment" value="payment" onchange="updateQuickTxFormMode()">
+              <span>💳 Borç Ödeme Yap</span>
+            </label>
+          </div>
+
+          <!-- Quick Payment Presets (Visible only in payment mode) -->
+          <div id="quickTxPaymentPresetsGroup" style="display:none; margin-bottom:0.75rem;">
+            <label style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">Hızlı Ödeme Seçenekleri:</label>
+            <div id="quickTxPaymentPresetsList" style="display:flex; gap:0.4rem; flex-wrap:wrap;">
+              <!-- Populated dynamically by JS -->
+            </div>
+          </div>
+
+          <!-- Amount -->
+          <div class="form-group">
+            <label data-i18n="txAmount">İşlem Tutarı (₺)</label>
+            <input type="number" class="form-control form-control-lg" id="quickTxAmountInput" placeholder="1500" min="1" step="1" required>
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label>Açıklama / Harcama Kalemi</label>
+            <input type="text" class="form-control" id="quickTxDescInput" placeholder="Örn: Teknosa Alışverişi, Aylık Borç Kapatma">
+          </div>
+
+          <!-- Installments (Only visible for expense mode) -->
+          <div id="quickTxInstallmentGroup">
+            <div class="form-group">
+              <label data-i18n="installmentsCount">Taksit Sayısı</label>
+              <select class="form-control" id="quickTxInstallmentSelect" onchange="updateQuickTxInstallmentPreview()">
+                <option value="1">Tek Çekim (1 Taksit)</option>
+                <option value="2">2 Taksit</option>
+                <option value="3">3 Taksit</option>
+                <option value="4">4 Taksit</option>
+                <option value="6">6 Taksit</option>
+                <option value="9">9 Taksit</option>
+                <option value="12">12 Taksit</option>
+                <option value="18">18 Taksit</option>
+                <option value="24">24 Taksit</option>
+              </select>
+            </div>
+
+            <!-- Start Cycle Toggle -->
+            <div class="form-group" style="margin-top:0.35rem;">
+              <label style="font-size:0.8rem; color:var(--text-muted); margin-bottom:0.35rem; display:block;">Harcama Hangi Ekstreye Yansısın?</label>
+              <div style="display:flex; gap:0.5rem;">
+                <label id="startCycleCurrentLabel" style="flex:1; display:flex; align-items:center; gap:0.5rem; padding:0.45rem 0.65rem; border-radius:var(--radius-md); border:1px solid rgba(16,185,129,0.35); background:rgba(16,185,129,0.08); cursor:pointer; font-size:0.8rem; font-weight:600; color:#34d399; transition:all 0.15s;">
+                  <input type="radio" name="startCycle" id="startCycleCurrent" value="current" checked onchange="updateQuickTxInstallmentPreview()" style="accent-color:#10b981;">
+                  ✅ Bu Ayki Ekstre
+                </label>
+                <label id="startCycleNextLabel" style="flex:1; display:flex; align-items:center; gap:0.5rem; padding:0.45rem 0.65rem; border-radius:var(--radius-md); border:1px solid rgba(245,158,11,0.35); background:rgba(245,158,11,0.06); cursor:pointer; font-size:0.8rem; font-weight:600; color:#fbbf24; transition:all 0.15s;">
+                  <input type="radio" name="startCycle" id="startCycleNext" value="next" onchange="updateQuickTxInstallmentPreview()" style="accent-color:#f59e0b;">
+                  ⏳ Sonraki Ekstre
+                </label>
+              </div>
+              <div id="startCycleNextWarning" style="display:none; margin-top:0.4rem; font-size:0.75rem; color:#fbbf24; background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.2); border-radius:6px; padding:0.4rem 0.6rem;">
+                ⚠️ Sonraki ekstre seçildi — harcama <strong>bu ayki borç bakiyenizi etkilemez</strong>, sonraki ekstre keşiminden itibaren taksitler başlar. Kartınızdaki “Planlanan” bölümünde görünecektir.
+              </div>
+            </div>
+
+            <!-- Dynamic Installment & Statement Rule Notice Box -->
+            <div class="installment-schedule-box" id="quickTxInstallmentNotice">
+              <!-- Dynamically populated with statement cut-off rules -->
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeQuickTxModal()" data-i18n="cancel">İptal</button>
+          <button type="submit" class="btn btn-primary" id="quickTxSubmitBtn">İşlemi Uygula</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: ADD / EDIT VIRTUAL CARD (SANAL KART)
+       ======================================================================= -->
+  <div class="modal-overlay" id="virtualCardModalOverlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="virtualCardModalTitle">Sanal Kart Ekle</h2>
+        <button class="close-btn" onclick="closeVirtualCardModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="virtualCardForm">
+        <input type="hidden" id="vcParentCardId">
+        <input type="hidden" id="vcEditingId">
+
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Bağlı Ana Kredi Kartı</label>
+            <input type="text" class="form-control" id="vcParentCardName" readonly style="opacity:0.8; background:rgba(0,0,0,0.3);">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="virtualCardName">Sanal Kart Adı / Kullanım Amacı</label>
+              <input type="text" class="form-control" id="vcNicknameInput" placeholder="Örn: Netflix & Abonelikler, Trendyol" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="virtualCardLast4">Son 4 Hane</label>
+              <input type="text" class="form-control" id="vcLast4Input" placeholder="9182" maxlength="4" pattern="\d{4}">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="virtualCardLimit">Sanal Kart Limiti (₺)</label>
+            <input type="number" class="form-control" id="vcLimitInput" placeholder="5000" min="0" step="any" required>
+            <span class="form-help">Bu limit ana kartınızın kullanılabilir limitinden harcar.</span>
+          </div>
+
+          <div class="form-group" style="margin-top:0.75rem;">
+            <label class="checkbox-label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+              <input type="checkbox" id="vcPermInternet" checked>
+              <span style="font-weight:600; color:var(--text-primary);">🌐 İnternet Alışverişine Açık</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeVirtualCardModal()" data-i18n="cancel">İptal</button>
+          <button type="submit" class="btn btn-primary" data-i18n="save">Sanal Kartı Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: ADD / EDIT SUBSCRIPTION (ABONELİK & YİNELENEN ÖDEME)
+       ======================================================================= -->
+  <div class="modal-overlay" id="subscriptionModalOverlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="subscriptionModalTitle">Abonelik Ekle</h2>
+        <button class="close-btn" onclick="closeSubscriptionModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="subscriptionForm">
+        <input type="hidden" id="subParentCardId">
+        <input type="hidden" id="subEditingId">
+
+        <div class="modal-body">
+          <!-- Quick Preset Buttons -->
+          <div class="form-group">
+            <label style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">Hızlı Popüler Seçimler:</label>
+            <div class="preset-pills-row" style="display:flex; gap:0.35rem; flex-wrap:wrap;">
+              <button type="button" class="btn-preset-pill" onclick="applySubPreset('Ev Kirası', 25000, 'Rent', 'monthly', 'TRY', 'cash', false)">🏠 Ev Kirası (₺25.000 / Nakit)</button>
+              <button type="button" class="btn-preset-pill" onclick="applySubPreset('Bina Aidatı', 1500, 'Maintenance', 'monthly', 'TRY', 'cash', false)">🏢 Bina Aidatı (₺1.500 / Nakit)</button>
+              <button type="button" class="btn-preset-pill" onclick="applySubPreset('Elektrik / Su / Gaz', 2000, 'Bills', 'monthly', 'TRY', 'bank_transfer', true)">⚡ Faturalar (~₺2.000 / Tahmini)</button>
+              <button type="button" class="btn-preset-pill" onclick="applySubPreset('Netflix', 229, 'Streaming', 'monthly', 'TRY')">🎬 Netflix (₺229)</button>
+              <button type="button" class="btn-preset-pill" onclick="applySubPreset('Spotify', 99, 'Music', 'monthly', 'TRY')">🎵 Spotify (₺99)</button>
+              <button type="button" class="btn-preset-pill" onclick="applySubPreset('ChatGPT Plus', 20, 'Software', 'monthly', 'USD')">🤖 ChatGPT ($20)</button>
+              <button type="button" class="btn-preset-pill" onclick="applySubPreset('iCloud 2TB', 129, 'Cloud', 'monthly', 'TRY')">☁️ iCloud (₺129)</button>
+            </div>
+          </div>
+
+          <!-- Payment Method / Source Selection -->
+          <div class="form-group">
+            <label style="color:#38bdf8; font-weight:700;">💳 / 💵 Ödeme Yöntemi & Kaynağı</label>
+            <select class="form-control" id="subCardSelect" required>
+              <!-- Populated dynamically by app.js (Cards + Cash + Bank Transfer) -->
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex: 2;">
+              <label data-i18n="subscriptionName">Gider / Abonelik / Kira Adı</label>
+              <input type="text" class="form-control" id="subNameInput" placeholder="Örn: Ev Kirası, Bina Aidatı, Netflix" required>
+            </div>
+            <div class="form-group" style="flex: 1.2;">
+              <label data-i18n="subscriptionAmount">Tutar</label>
+              <input type="number" class="form-control" id="subAmountInput" placeholder="229" min="0" step="any" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label>Para Birimi</label>
+              <select class="form-control" id="subCurrencySelect">
+                <option value="TRY">₺ TRY</option>
+                <option value="USD">$ USD</option>
+                <option value="EUR">€ EUR</option>
+                <option value="GBP">£ GBP</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Estimated / Variable Checkbox -->
+          <div class="form-group" style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: var(--radius-md); padding: 0.6rem 0.85rem; margin-top: 0.25rem;">
+            <label class="checkbox-label" style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; margin:0;">
+              <input type="checkbox" id="subIsEstimated" style="accent-color:#38bdf8; width:16px; height:16px;">
+              <span style="font-size:0.82rem; font-weight:700; color:#38bdf8;">📊 Değişken / Tahmini Tutar (Aydan aya değişen fatura, aidat vb.)</span>
+            </label>
+            <div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.2rem; padding-left:1.5rem;">
+              İşaretlendiğinde tutar listelerde ve takvimde yaklaşık değer (~₺...) olarak gösterilir.
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Kategori</label>
+              <select class="form-control" id="subCategorySelect">
+                <option value="Rent">🏠 Kira & Konut Gideri</option>
+                <option value="Maintenance">🏢 Bina / Site Aidatı</option>
+                <option value="Bills">⚡ Faturalar (Elektrik, Su, Doğalgaz, GSM)</option>
+                <option value="Streaming">🎬 Dizi, Film & Müzik (Streaming)</option>
+                <option value="Software">🤖 Yazılım, SaaS & Yapay Zeka</option>
+                <option value="Cloud">☁️ Bulut Depolama & Hosting</option>
+                <option value="Lifestyle">🏋️ Spor, Sağlık & Yaşam</option>
+                <option value="Education">🎓 Eğitim & Kurslar</option>
+                <option value="Other">📦 Diğer Düzenli Giderler</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Ödeme Sıklığı</label>
+              <select class="form-control" id="subCycleSelect">
+                <option value="monthly">Aylık (Her Ay)</option>
+                <option value="yearly">Yıllık (Yılda 1 Kez)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Aylık Ödeme / Çekim Günü (1-31)</label>
+            <input type="number" class="form-control" id="subBillingDayInput" min="1" max="31" value="1" placeholder="15">
+            <span class="form-help">Ödeme takviminizde ve yaklaşan ödemeler tablonuzda bu gün baz alınır.</span>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeSubscriptionModal()" data-i18n="cancel">İptal</button>
+          <button type="submit" class="btn btn-primary" data-i18n="save">Aboneliği Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: ADD / EDIT LOAN (KREDİ EKLE / DÜZENLE)
+       ======================================================================= -->
+  <div class="modal-overlay" id="loanModalOverlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h2 id="loanModalTitle" data-i18n="addLoan">Yeni Kredi Ekle</h2>
+        <button class="close-btn" onclick="closeLoanModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <form id="loanForm">
+        <input type="hidden" id="loanEditingId">
+
+        <div class="modal-body">
+          <!-- Bank Selection -->
+          <div class="form-group">
+            <label data-i18n="bankName">Banka</label>
+            <select class="form-control" id="loanBankSelect" required>
+              <!-- Populated dynamically by app.js -->
+            </select>
+          </div>
+
+          <!-- Loan Title & Type -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="loanName">Kredi Adı / Amacı</label>
+              <input type="text" class="form-control" id="loanTitleInput" placeholder="Örn: Garanti İhtiyaç Kredisi, Konut Kredisi" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="loanType">Kredi Türü</label>
+              <select class="form-control" id="loanTypeSelect">
+                <option value="personal">İhtiyaç Kredisi</option>
+                <option value="housing">Konut Kredisi</option>
+                <option value="vehicle">Taşıt Kredisi</option>
+                <option value="commercial">Ticari / KOBİ Kredisi</option>
+                <option value="other">Diğer Kredi</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Total Repayment Amount & Term (Months) -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="totalLoanAmount">Toplam Geri Ödeme Tutarı (₺)</label>
+              <input type="number" class="form-control" id="loanTotalAmountInput" placeholder="120000" min="1" step="any" oninput="autoCalculateMonthlyLoanPayment()" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="totalInstallmentMonths">Toplam Vade (Ay / Taksit)</label>
+              <input type="number" class="form-control" id="loanTotalMonthsInput" placeholder="24" min="1" max="360" oninput="autoCalculateMonthlyLoanPayment()" required>
+            </div>
+          </div>
+
+          <!-- Monthly Payment & Paid Installments -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="monthlyInstallmentAmount">Aylık Taksit Tutarı (₺)</label>
+              <input type="number" class="form-control" id="loanMonthlyPaymentInput" placeholder="5000" min="1" step="any" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="paidInstallmentMonths">Şimdiye Kadar Ödenen Taksit</label>
+              <input type="number" class="form-control" id="loanPaidMonthsInput" placeholder="0" min="0" value="0">
+            </div>
+          </div>
+
+          <!-- Payment Day & Interest Rate -->
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="loanPaymentDay">Aylık Ödeme Günü (1-31)</label>
+              <input type="number" class="form-control" id="loanPaymentDayInput" min="1" max="31" value="15" placeholder="15" required>
+            </div>
+            <div class="form-group">
+              <label data-i18n="loanInterestRate">Aylık Faiz Oranı (% Opsiyonel)</label>
+              <input type="number" class="form-control" id="loanInterestRateInput" placeholder="3.50" step="0.01" min="0">
+            </div>
+          </div>
+
+          <!-- Start Cycle Selection -->
+          <div class="form-group">
+            <label>İlk Taksit Başlangıç Dönemi</label>
+            <select class="form-control" id="loanStartCycleSelect">
+              <option value="next" selected>Gelecek Ay (Eylül'de Başlayacak)</option>
+              <option value="current">Cari Ay (Ağustos'ta Ödenecek)</option>
+            </select>
+          </div>
+
+          <!-- Notes -->
+          <div class="form-group">
+            <label>Kredi Notları / Açıklama (Opsiyonel)</label>
+            <input type="text" class="form-control" id="loanNotesInput" placeholder="Ev tadilatı için çekildi, otomatik ödemede vb.">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeLoanModal()" data-i18n="cancel">İptal</button>
+          <button type="submit" class="btn btn-emerald" data-i18n="save">Krediyi Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: SMART CARD ADVISOR RANKING (TÜM KARTLARIN VADE AVANTAJI SIRALAMASI)
+       ======================================================================= -->
+  <div class="modal-overlay" id="smartAdvisorModalOverlay">
+    <div class="modal-container" style="max-width: 620px;">
+      <div class="modal-header">
+        <h2>🧠 Akıllı Kart Harcama & Vade Sıralaması</h2>
+        <button class="close-btn" onclick="closeSmartAdvisorModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="12" x2="18" y2="12"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+          Bugün yapacağınız bir harcamanın ödemesini en uzun süreye erteleyen kartlar yukarıdan aşağıya sıralanmıştır. Ekstresi yeni kesilmiş kartları tercih ederek <strong>40 güne kadar sıfır faizli nakit finansmanı</strong> elde edersiniz.
+        </p>
+        <div id="smartAdvisorRankingList" style="display:flex; flex-direction:column; gap:0.65rem;">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeSmartAdvisorModal()">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: BACKUP VAULT & SNAPSHOT HISTORY (YEDEK GEÇMİŞİ & KASA)
+       ======================================================================= -->
+  <div class="modal-overlay" id="backupVaultModalOverlay">
+    <div class="modal-container" style="max-width: 680px;">
+      <div class="modal-header">
+        <h2>🗄️ Güvenli Yedek Kasası & Geçmiş Versiyonlar</h2>
+        <button class="close-btn" onclick="closeBackupVaultModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="12" x2="18" y2="12"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Action Bar -->
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.6rem; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-radius:var(--radius-md); padding:0.85rem 1rem; margin-bottom:1rem;">
+          <div>
+            <div style="font-weight:700; font-size:0.9rem; color:#34d399;">🛡️ Otomatik Haftalık Yedekleme Aktif</div>
+            <div style="font-size:0.75rem; color:var(--text-muted); margin-top:0.15rem;">Her hafta ve önemli değişikliklerde tarayıcı içinde güvenli anlık görüntü saklanır.</div>
+          </div>
+          <button type="button" class="btn btn-emerald btn-sm" onclick="createManualBackupSnapshot()" style="display:inline-flex; align-items:center; gap:0.35rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+            <span>+ Şimdi Yedek Al</span>
+          </button>
+        </div>
+
+        <h4 style="font-size:0.85rem; font-weight:700; color:var(--text-secondary); margin-bottom:0.6rem;">Kayıtlı Yedek Noktaları</h4>
+        <div id="backupVaultList" style="display:flex; flex-direction:column; gap:0.5rem; max-height:360px; overflow-y:auto; padding-right:0.25rem;">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeBackupVaultModal()">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: HOMEOWNERSHIP VS RENT SAVINGS SIMULATOR (EV SAHİBİ OLMA & KİRA KÂR SİMÜLATÖRÜ)
+       ======================================================================= -->
+  <div class="modal-overlay" id="rentSimulatorModalOverlay">
+    <div class="modal-container" style="max-width: 680px;">
+      <div class="modal-header">
+        <h2>🏠 Ev Sahibi Olma & Kira Kâr / Tasarruf Analizi</h2>
+        <button class="close-btn" onclick="closeRentSimulatorModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="12" x2="18" y2="12"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+          Eviniz olsaydı kira ödemeyerek cebinizde kalacak toplam tutarı, yıllık bileşik kira artış projeksiyonunu ve bu tasarrufun yatırım değerini aşağıdan simüle edebilirsiniz.
+        </p>
+
+        <!-- Dynamic Controls -->
+        <div style="background:rgba(15,23,42,0.6); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-md); padding:1rem; margin-bottom:1rem;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Aylık Ödenen Kira Tutarı (₺)</label>
+              <input type="number" class="form-control" id="simRentMonthlyInput" value="25000" min="0" step="500" oninput="calculateRentSavingsSimulation()">
+            </div>
+            <div class="form-group">
+              <label>Yıllık Ortalama Kira Artışı (%)</label>
+              <input type="number" class="form-control" id="simRentInflationInput" value="35" min="0" max="200" step="1" oninput="calculateRentSavingsSimulation()">
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Tasarrufun Yıllık Yatırım Getirisi (% Fon / Altın / Faiz)</label>
+            <input type="number" class="form-control" id="simRentReturnInput" value="40" min="0" max="200" step="1" oninput="calculateRentSavingsSimulation()">
+          </div>
+        </div>
+
+        <!-- Simulation Results Content Area -->
+        <div id="simRentResultsContainer">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeRentSimulatorModal()">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Detailed Printable PDF Report Container -->
+  <div id="pdfReportContainer" class="pdf-report-container"></div>
+
+  <!-- Scripts -->
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
