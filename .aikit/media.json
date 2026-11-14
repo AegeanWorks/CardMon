@@ -15,17 +15,31 @@
   "assets": {
     "logo": {
       "path": "assets/logo.svg",
-      "status": "pending_review",
+      "status": "approved",
       "commit": "",
       "generated_at": "2026-11-14T22:43:44",
-      "review": null
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:antigravity:1",
+        "method": "structural",
+        "notes": "AegeanWorks cube motif branding for CardMon approved",
+        "score": 95,
+        "reviewed_at": "2026-11-14T23:41:18"
+      }
     },
     "social_preview": {
       "path": "assets/social-preview.svg",
-      "status": "pending_review",
+      "status": "approved",
       "commit": "",
       "generated_at": "2026-11-14T22:43:44",
-      "review": null
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:antigravity:1",
+        "method": "structural",
+        "notes": "Social preview card banner approved",
+        "score": 95,
+        "reviewed_at": "2026-11-14T23:41:26"
+      }
     }
   },
   "screenshots": [

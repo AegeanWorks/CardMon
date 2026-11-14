@@ -1,6 +1,10 @@
 # CardMon
 
-[![Built with AIKit](https://img.shields.io/badge/built%20with-AIKit-6f42c1)](https://github.com/AegeanWorks/AIKit)
+<!-- aegean:media:start -->
+<p align="center"><img src="assets/social-preview.svg" alt="CardMon social preview" width="100%"></p>
+<p align="center"><a href="LICENSE"><img src="https://img.shields.io/badge/license-AL--1.1-2f9e44" alt="License"></a> <a href="https://github.com/AegeanWorks/AIKit"><img src="https://img.shields.io/badge/AIKit-integrated-6f42c1" alt="AIKit Integrated"></a></p>
+<!-- aegean:media:end -->
+
 
 Smart bank and credit card portfolio manager for tracking limits, debt balances, installments, payment schedules, and native file system storage (.cardmon).
 
@@ -41,8 +45,26 @@ CardMon/
 └── tests/                    <- unit and integration test suite
 ```
 
+<!-- aegean:brand-assets:start -->
+## 🎨 Brand Assets
+
+> **AI-Generated Brand Artwork.** The banner and logo are **AI-generated brand assets**. They are illustrative and may not literally depict every feature or the full project scope.
+<!-- aegean:brand-assets:end -->
+
 ## 📜 License
 
 <!-- aegean:license:start -->
 Free for personal use under the Aegean License 1.1 (AL-1.1); see [LICENSE](LICENSE). Any commercial use needs the Aegean Commercial License 1.0 (ACL-1.0); see [COMMERCIAL.md](COMMERCIAL.md).
 <!-- aegean:license:end -->
+
+<!-- aegean:screenshots:start -->
+## Screenshots
+
+<a href="https://github.com/AegeanWorks/CardMon/commit/f6adaf53e97c5f31ddfe832e3743cfa0ca8ff98a"><img src="assets/screenshots/2026-11-14-home.png" alt="CardMon interface at 2026-11-14"></a>
+
+*commit `f6adaf53e97c5f31ddfe832e3743cfa0ca8ff98a` · 2026-11-14*
+
+<a href="https://github.com/AegeanWorks/CardMon/commit/03d327703d978b4283123e2b18d0c71cb18c99a1"><img src="assets/screenshots/2026-11-14-home.png" alt="CardMon interface at 2026-11-14"></a>
+
+*commit `03d327703d978b4283123e2b18d0c71cb18c99a1` · 2026-11-14*
+<!-- aegean:screenshots:end -->
