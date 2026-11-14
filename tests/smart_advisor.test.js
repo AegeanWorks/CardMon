@@ -74,3 +74,38 @@ test('calculateCardDeferralDays falls back to approximate week days when dateMet
   assert.ok(result.dueDay > 0);
   assert.strictEqual(result.availableLimit, 20000);
 });
+
+test('renderSmartCardAdvisor renders banner with best card or clears when empty', () => {
+  const h = createHarness();
+  const container = h.sandbox.document.getElementById('smartAdvisorContainer');
+
+  // Empty cards
+  h.getState().cards = [];
+  h.renderSmartCardAdvisor();
+  assert.strictEqual(container.innerHTML, '');
+
+  // With demo data
+  h.loadDemoData(false);
+  h.renderSmartCardAdvisor();
+  assert.match(container.innerHTML, /smart-advisor-banner/);
+  assert.match(container.innerHTML, /Akıllı Harcama Danışmanı/);
+  assert.match(container.innerHTML, /Gün Sonra Ödeme/);
+});
+
+test('openSmartAdvisorModal and closeSmartAdvisorModal toggle active modal overlay', () => {
+  const h = createHarness();
+  h.loadDemoData(false);
+
+  const overlay = h.sandbox.document.getElementById('smartAdvisorModalOverlay');
+  const listEl = h.sandbox.document.getElementById('smartAdvisorRankingList');
+
+  assert.strictEqual(overlay.classList.contains('active'), false);
+
+  h.openSmartAdvisorModal();
+  assert.strictEqual(overlay.classList.contains('active'), true);
+  assert.ok(listEl.innerHTML.length > 0);
+  assert.match(listEl.innerHTML, /Gün Vade/);
+
+  h.closeSmartAdvisorModal();
+  assert.strictEqual(overlay.classList.contains('active'), false);
+});

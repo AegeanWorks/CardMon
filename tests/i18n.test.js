@@ -56,3 +56,50 @@ test('setLanguage updates documentElement and localStorage', () => {
   assert.equal(h.storage.getItem('bank_app_lang'), 'tr');
   assert.equal(h.sandbox.document.documentElement.lang, 'tr');
 });
+
+test('setCurrency updates currentCurrency and persists to storage', () => {
+  const h = createHarness();
+  h.setCurrency('USD');
+  assert.equal(h.getCurrentCurrency(), 'USD');
+  assert.equal(h.storage.getItem('bank_app_currency'), 'USD');
+
+  h.setCurrency('EUR');
+  assert.equal(h.getCurrentCurrency(), 'EUR');
+  assert.equal(h.storage.getItem('bank_app_currency'), 'EUR');
+});
+
+test('updatePageTranslations applies translations to data-i18n elements and placeholders', () => {
+  const h = createHarness();
+  const elText = {
+    getAttribute: (k) => k === 'data-i18n' ? 'save' : null,
+    textContent: ''
+  };
+  const elInput = {
+    getAttribute: (k) => k === 'data-i18n-placeholder' ? 'cancel' : null,
+    placeholder: ''
+  };
+  const elTitle = {
+    getAttribute: (k) => k === 'data-i18n-title' ? 'editCard' : null,
+    title: ''
+  };
+
+  h.sandbox.document.querySelectorAll = (selector) => {
+    if (selector === '[data-i18n]') return [elText];
+    if (selector === '[data-i18n-placeholder]') return [elInput];
+    if (selector === '[data-i18n-title]') return [elTitle];
+    return [];
+  };
+
+  h.setLanguage('tr');
+  h.updatePageTranslations();
+  assert.equal(elText.textContent, 'Kaydet');
+  assert.equal(elInput.placeholder, 'İptal');
+  assert.equal(elTitle.title, 'Kartı Düzenle');
+
+  h.setLanguage('en');
+  h.updatePageTranslations();
+  assert.equal(elText.textContent, 'Save');
+  assert.equal(elInput.placeholder, 'Cancel');
+  assert.equal(elTitle.title, 'Edit Card');
+});
+

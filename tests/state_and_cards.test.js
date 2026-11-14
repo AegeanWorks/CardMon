@@ -82,3 +82,23 @@ test('payCardFullDebt sets usedBalance to 0 and clears installments', () => {
   const updatedCard = h.getState().cards.find(c => c.id === cardId);
   assert.equal(updatedCard.usedBalance, 0, 'Card balance should be paid to zero');
 });
+
+test('checkAndAutoSettlePastDue preserves balances safely without mutation', () => {
+  const h = createHarness();
+  h.loadDemoData(false);
+  const balancesBefore = h.getState().cards.map(c => c.usedBalance);
+  h.checkAndAutoSettlePastDue();
+  const balancesAfter = h.getState().cards.map(c => c.usedBalance);
+  assert.deepEqual(balancesAfter, balancesBefore);
+});
+
+test('showSaveIndicator updates badge opacity and text', () => {
+  const h = createHarness();
+  const badge = h.sandbox.document.getElementById('saveStatusBadge');
+  const textEl = { textContent: '' };
+  badge.querySelector = (sel) => sel === '.save-text' ? textEl : null;
+
+  h.showSaveIndicator();
+  assert.equal(badge.style.opacity, '1');
+  assert.equal(textEl.textContent, h.t('autoSaved'));
+});

@@ -126,3 +126,121 @@ test('applyPortfolioData updates runtime state and calls saveToStorage', () => {
   assert.strictEqual(state.loans.length, 1);
   assert.strictEqual(state.profile.firstName, 'Ali');
 });
+
+test('updateFileStatusIndicator updates badge visibility, filename and dirty status', () => {
+  const h = createHarness();
+  const badge = h.sandbox.document.getElementById('fileStatusBadge');
+  const fsState = h.fileSystemState;
+
+  // Initially activeFileName is empty -> display none
+  fsState.activeFileName = '';
+  h.updateFileStatusIndicator();
+  assert.strictEqual(badge.style.display, 'none');
+
+  // When activeFileName set and clean
+  fsState.activeFileName = 'portfolio.cardmon';
+  fsState.isDirty = false;
+  h.updateFileStatusIndicator();
+  assert.strictEqual(badge.style.display, 'inline-flex');
+  assert.match(badge.innerHTML, /portfolio\.cardmon/);
+  assert.match(badge.innerHTML, /synced/);
+
+  // When dirty
+  fsState.isDirty = true;
+  h.updateFileStatusIndicator();
+  assert.match(badge.innerHTML, /dirty/);
+});
+
+test('saveToActiveFile writes serialized state when activeHandle is set', async () => {
+  const h = createHarness();
+  let writtenData = '';
+  const mockHandle = {
+    name: 'active.cardmon',
+    queryPermission: async () => 'granted',
+    createWritable: async () => ({
+      write: async (data) => { writtenData = data; },
+      close: async () => {}
+    })
+  };
+
+  h.fileSystemState.activeHandle = mockHandle;
+  h.fileSystemState.activeFileName = 'active.cardmon';
+  h.fileSystemState.isDirty = true;
+
+  const result = await h.saveToActiveFile();
+  assert.strictEqual(result, true);
+  assert.strictEqual(h.fileSystemState.isDirty, false);
+  assert.ok(writtenData.includes('cardmon_portfolio'));
+});
+
+test('saveFileAs uses showSaveFilePicker when available', async () => {
+  const h = createHarness();
+  let writtenData = '';
+  const mockHandle = {
+    name: 'saved_as.cardmon',
+    createWritable: async () => ({
+      write: async (data) => { writtenData = data; },
+      close: async () => {}
+    })
+  };
+
+  h.sandbox.window.showSaveFilePicker = async () => mockHandle;
+
+  const result = await h.saveFileAs();
+  assert.strictEqual(result, true);
+  assert.strictEqual(h.fileSystemState.activeFileName, 'saved_as.cardmon');
+  assert.strictEqual(h.fileSystemState.isDirty, false);
+  assert.ok(writtenData.includes('cardmon_portfolio'));
+});
+
+test('openPortfolioFile loads and validates portfolio file via showOpenFilePicker', async () => {
+  const h = createHarness();
+  const fileContent = JSON.stringify({
+    fileType: 'cardmon_portfolio',
+    version: '3.0',
+    data: {
+      banks: [{ id: 'b_opened', name: 'Open Bank' }],
+      cards: [{ id: 'c_opened', name: 'Open Card', limit: 10000 }]
+    }
+  });
+
+  const mockFile = {
+    text: async () => fileContent
+  };
+  const mockHandle = {
+    name: 'loaded.cardmon',
+    getFile: async () => mockFile
+  };
+
+  h.sandbox.window.showSaveFilePicker = async () => {};
+  h.sandbox.window.showOpenFilePicker = async () => [mockHandle];
+
+  const result = await h.openPortfolioFile();
+  assert.strictEqual(result, true);
+  assert.strictEqual(h.fileSystemState.activeFileName, 'loaded.cardmon');
+  assert.strictEqual(h.getState().banks[0].name, 'Open Bank');
+});
+
+test('setupFileSystemShortcuts binds ctrl+s or meta+s to saveToActiveFile', () => {
+  const h = createHarness();
+  let registeredListener = null;
+  h.sandbox.window.addEventListener = (evt, handler) => {
+    if (evt === 'keydown') registeredListener = handler;
+  };
+
+  h.setupFileSystemShortcuts();
+  assert.ok(typeof registeredListener === 'function');
+
+  let savedCalled = false;
+  h.sandbox.saveToActiveFile = () => { savedCalled = true; };
+
+  let prevented = false;
+  registeredListener({
+    ctrlKey: true,
+    key: 's',
+    preventDefault: () => { prevented = true; }
+  });
+
+  assert.strictEqual(prevented, true);
+  assert.strictEqual(savedCalled, true);
+});

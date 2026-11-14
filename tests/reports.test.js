@@ -90,3 +90,77 @@ test('exportJsonBackup generates valid JSON export structure', () => {
   assert.strictEqual(parsed.banks[0].name, 'İş Bankası');
   assert.strictEqual(parsed.profile.firstName, 'Yunus');
 });
+
+test('triggerImportJson clicks importFileInput element', () => {
+  const h = createHarness();
+  let clicked = false;
+  const inputEl = h.sandbox.document.getElementById('importFileInput');
+  inputEl.click = () => { clicked = true; };
+
+  h.triggerImportJson();
+  assert.strictEqual(clicked, true);
+});
+
+test('handleImportFile parses valid json file and updates state', () => {
+  const h = createHarness();
+  h.sandbox.FileReader = class {
+    readAsText(file) {
+      this.onload({
+        target: {
+          result: JSON.stringify({
+            banks: [{ id: 'b-imp', name: 'Import Bank' }],
+            cards: [{ id: 'c-imp', nickname: 'Import Card', limit: 40000 }],
+            loans: [],
+            cashSubscriptions: [],
+            profile: { firstName: 'Can' }
+          })
+        }
+      });
+    }
+  };
+
+  const fakeEvt = {
+    target: {
+      files: [{ name: 'portfolio.json' }],
+      value: 'portfolio.json'
+    }
+  };
+
+  h.handleImportFile(fakeEvt);
+  assert.strictEqual(h.getState().banks[0].name, 'Import Bank');
+  assert.strictEqual(h.getState().cards[0].nickname, 'Import Card');
+  assert.strictEqual(h.getState().profile.firstName, 'Can');
+  assert.strictEqual(fakeEvt.target.value, '');
+});
+
+test('exportPdfReport populates pdfReportContainer and calls window.print', () => {
+  const h = createHarness();
+  h.loadDemoData(false);
+
+  let printCalled = false;
+  h.sandbox.window.print = () => { printCalled = true; };
+
+  h.exportPdfReport();
+
+  const container = h.sandbox.document.getElementById('pdfReportContainer');
+  assert.ok(container.innerHTML.length > 0);
+  assert.match(container.innerHTML, /CardMon Finansal Analiz &amp; Denetim Raporu|CardMon Finansal Analiz & Denetim Raporu/);
+});
+
+test('confirmClearAllData clears banks, cards, loans when confirmed', () => {
+  const h = createHarness();
+  h.loadDemoData(false);
+  assert.ok(h.getState().banks.length > 0);
+
+  // When not confirmed
+  h.sandbox.confirm = () => false;
+  h.confirmClearAllData();
+  assert.ok(h.getState().banks.length > 0);
+
+  // When confirmed
+  h.sandbox.confirm = () => true;
+  h.confirmClearAllData();
+  assert.strictEqual(h.getState().banks.length, 0);
+  assert.strictEqual(h.getState().cards.length, 0);
+  assert.strictEqual(h.getState().loans.length, 0);
+});

@@ -31,16 +31,18 @@ function createHarness(options = {}) {
   const makeElement = (tag = 'div', id = '') => {
     const attrs = new Map();
     const children = [];
+    const classSet = new Set();
     const el = {
       tagName: tag.toUpperCase(),
       id,
       style: {},
       parentNode: null,
+      children,
       classList: {
-        add() {},
-        remove() {},
-        toggle() {},
-        contains: () => false
+        add(...cls) { cls.forEach(c => classSet.add(c)); },
+        remove(...cls) { cls.forEach(c => classSet.delete(c)); },
+        toggle(c) { if (classSet.has(c)) { classSet.delete(c); return false; } else { classSet.add(c); return true; } },
+        contains: (c) => classSet.has(c)
       },
       attributes: attrs,
       getAttribute: (k) => attrs.get(k) || null,
@@ -66,10 +68,29 @@ function createHarness(options = {}) {
       },
       querySelectorAll: () => [],
       querySelector: () => null,
+      getContext: () => ({
+        fillRect() {},
+        clearRect() {},
+        beginPath() {},
+        arc() {},
+        fill() {},
+        stroke() {},
+        fillText() {},
+        measureText: () => ({ width: 50 })
+      }),
+      focus() {},
+      blur() {},
+      click() {},
+      reset() {},
+      submit() {},
       innerHTML: '',
       textContent: '',
       value: '',
-      hidden: false
+      checked: false,
+      disabled: false,
+      hidden: false,
+      options: [],
+      selectedIndex: 0
     };
     return el;
   };
@@ -98,7 +119,16 @@ function createHarness(options = {}) {
         }
         return elementsById.get(id);
       },
-      querySelector: (selector) => makeElement('div', selector),
+      querySelector: (selector) => {
+        if (typeof selector === 'string' && selector.startsWith('#')) {
+          const id = selector.slice(1);
+          if (!elementsById.has(id)) {
+            elementsById.set(id, makeElement('div', id));
+          }
+          return elementsById.get(id);
+        }
+        return makeElement('div', selector);
+      },
       querySelectorAll: () => [],
       createElement: (tag) => makeElement(tag),
       addEventListener() {},
@@ -109,6 +139,8 @@ function createHarness(options = {}) {
       location: { href: 'http://localhost/', search: '' },
       addEventListener() {},
       removeEventListener() {},
+      scrollTo() {},
+      print() {},
       setTimeout: mockSetTimeout,
       clearTimeout: mockClearTimeout,
       setInterval: () => 0,
@@ -152,31 +184,45 @@ function createHarness(options = {}) {
 
   const evalInContext = (expr) => vm.runInContext(expr, sandbox);
 
-  return {
+  const baseHarness = {
     sandbox,
     storage,
     evalInContext,
     I18N: evalInContext('I18N'),
     getCurrentLang: () => evalInContext('currentLang'),
     getCurrentCurrency: () => evalInContext('currentCurrency'),
-    setLanguage: evalInContext('setLanguage'),
-    t: evalInContext('t'),
-    setCurrency: evalInContext('setCurrency'),
-    formatMoney: evalInContext('formatMoney'),
-    updatePageTranslations: evalInContext('updatePageTranslations'),
-    PRESET_BANKS: evalInContext('PRESET_BANKS'),
-    exchangeRates: evalInContext('exchangeRates'),
-    convertToTry: evalInContext('convertToTry'),
     getState: () => evalInContext('state'),
-    STORAGE_KEY: evalInContext('STORAGE_KEY'),
-    saveToStorage: evalInContext('saveToStorage'),
-    loadFromStorage: evalInContext('loadFromStorage'),
-    loadDemoData: evalInContext('loadDemoData'),
-    calculateCardDeferralDays: evalInContext('calculateCardDeferralDays'),
-    checkAndAutoSettlePastDue: evalInContext('checkAndAutoSettlePastDue'),
-    payCardFullDebt: evalInContext('payCardFullDebt'),
-    activateNextCycleInstallment: evalInContext('activateNextCycleInstallment')
+    STORAGE_KEY: evalInContext('STORAGE_KEY')
   };
+
+  const IDENT_RE = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/;
+
+  return new Proxy(baseHarness, {
+    get(target, prop, receiver) {
+      if (prop in target) {
+        return target[prop];
+      }
+      if (typeof prop === 'string' && IDENT_RE.test(prop)) {
+        try {
+          return evalInContext(prop);
+        } catch {
+          return undefined;
+        }
+      }
+      return Reflect.get(target, prop, receiver);
+    },
+    has(target, prop) {
+      if (prop in target) return true;
+      if (typeof prop === 'string' && IDENT_RE.test(prop)) {
+        try {
+          return evalInContext(`typeof ${prop}`) !== 'undefined';
+        } catch {
+          return false;
+        }
+      }
+      return false;
+    }
+  });
 }
 
 module.exports = { createHarness };
