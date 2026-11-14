@@ -3,7 +3,11 @@
   "surfaces": {
     "app": {
       "paths": [
-        "index.html"
+        "index.html",
+        "styles.css",
+        "css/**",
+        "js/**",
+        "i18n.js"
       ]
     }
   },
@@ -18,7 +22,7 @@
     "theme_paths": []
   },
   "limits": {
-    "max_files": 12,
-    "max_lines": 300
+    "max_files": 25,
+    "max_lines": 2500
   }
 }
