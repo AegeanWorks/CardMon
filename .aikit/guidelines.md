@@ -11,3 +11,4 @@ without modifying or quarantining that file; older versions migrate when a migra
 ## Rules
 - **G-001** (user): Every UI change must be screenshotted before and after and analyzed.
 - **G-002** (user): All UI modifications must remain strictly AIKit-compatible (bounded by .aikit/ui.json surface, verified with ui verify and ui finish --reviewed, and passing check --strict).
+- **G-003** (user): UI must be Minimalistic, Functional, and Aesthetic (clean information hierarchy, zero visual clutter, polished typography, and high usability).
