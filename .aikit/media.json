@@ -47,6 +47,25 @@
         "score": 95,
         "reviewed_at": "2026-11-14T23:17:05"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-14-home.png",
+      "alt": "CardMon interface at 2026-11-14",
+      "caption": "CardMon interface captured from index.html",
+      "commit": "03d327703d978b4283123e2b18d0c71cb18c99a1",
+      "taken_at": "2026-11-14",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:antigravity:1",
+        "method": "vision",
+        "notes": "Aesthetic, functional, and minimalist refinement: PDF button harmonized, no KPI label truncation, clean executive cashflow metric cards, zero visual clutter",
+        "score": 98,
+        "reviewed_at": "2026-11-14T23:30:58"
+      }
     }
   ]
 }

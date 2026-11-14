@@ -1824,49 +1824,59 @@ function renderDashboardView() {
 
     cashflowEl.innerHTML = `
       <div class="cashflow-widget">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+        <div class="cashflow-widget-header">
           <div class="cashflow-widget-title">
-            <span>💸</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
             <span>Aylık Nakit Çıkışı & Zorunlu Ödemeler Özeti</span>
           </div>
           ${monthlyIncome > 0 ? `
-            <span style="font-size:0.75rem; font-weight:700; color:${burdenColor}; background:rgba(0,0,0,0.25); border:1px solid ${burdenColor}40; padding:0.2rem 0.55rem; border-radius:20px;">
-              ● ${burdenStatusText} (Gelirin %${incomeBurdenRatio.toFixed(1)}'i)
+            <span class="cashflow-burden-pill" style="color:${burdenColor}; border-color:${burdenColor}40;">
+              <span class="burden-dot" style="background-color:${burdenColor};"></span>
+              ${burdenStatusText} (Gelirin %${incomeBurdenRatio.toFixed(1)}'i)
             </span>
           ` : ''}
         </div>
 
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:0.75rem; margin-top:0.25rem;">
-          <div class="cashflow-row">
-            <span>💳 Kart Asgari Ödemeleri:</span>
-            <strong style="color:#fbbf24;">${formatMoney(totalCardMinDue)}</strong>
+        <div class="cashflow-grid">
+          <div class="cashflow-metric-card">
+            <div class="cashflow-metric-header">
+              <span class="cashflow-metric-dot" style="background:#f59e0b;"></span>
+              <span class="cashflow-metric-label">Kart Asgari Ödemeleri</span>
+            </div>
+            <strong class="cashflow-metric-value" style="color:#fbbf24;">${formatMoney(totalCardMinDue)}</strong>
           </div>
-          <div class="cashflow-row">
-            <span>🏦 Kredi Aylık Taksitleri:</span>
-            <strong style="color:#38bdf8;">${formatMoney(totalMonthlyLoanPayment)}</strong>
+          <div class="cashflow-metric-card">
+            <div class="cashflow-metric-header">
+              <span class="cashflow-metric-dot" style="background:#0284c7;"></span>
+              <span class="cashflow-metric-label">Kredi Aylık Taksitleri</span>
+            </div>
+            <strong class="cashflow-metric-value" style="color:#38bdf8;">${formatMoney(totalMonthlyLoanPayment)}</strong>
           </div>
-          <div class="cashflow-row">
-            <span>🔁 Abonelikler & Faturalar:</span>
-            <strong style="color:#c084fc;">${formatMoney(totalMonthlySubs)}</strong>
+          <div class="cashflow-metric-card">
+            <div class="cashflow-metric-header">
+              <span class="cashflow-metric-dot" style="background:#9333ea;"></span>
+              <span class="cashflow-metric-label">Abonelikler & Faturalar</span>
+            </div>
+            <strong class="cashflow-metric-value" style="color:#c084fc;">${formatMoney(totalMonthlySubs)}</strong>
           </div>
         </div>
 
         <div class="cashflow-total-row">
-          <div>
-            <span style="font-size:0.82rem; color:var(--text-secondary);">Bu Ay Çıkacak Toplam Zorunlu Tutar:</span>
-            <div style="font-size:1.15rem; color:#f43f5e; font-weight:800;">${formatMoney(totalMonthlyMandatory)}</div>
+          <div class="cashflow-total-block">
+            <span class="cashflow-total-label">Bu Ay Çıkacak Toplam Zorunlu Tutar</span>
+            <div class="cashflow-total-val" style="color:#f43f5e;">${formatMoney(totalMonthlyMandatory)}</div>
           </div>
           ${monthlyIncome > 0 ? `
-            <div style="text-align:right;">
-              <span style="font-size:0.78rem; color:var(--text-secondary);">Kalan Net Serbest Nakit:</span>
-              <div style="font-size:1.15rem; color:#34d399; font-weight:800;">${formatMoney(remainingFreeCash)}</div>
+            <div class="cashflow-total-block align-right">
+              <span class="cashflow-total-label">Kalan Net Serbest Nakit</span>
+              <div class="cashflow-total-val" style="color:#34d399;">${formatMoney(remainingFreeCash)}</div>
             </div>
           ` : ''}
         </div>
 
         ${monthlyIncome > 0 ? `
           <div>
-            <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted);">
+            <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">
               <span>Aylık Gelir: ${formatMoney(monthlyIncome)}</span>
               <span>Zorunlu Gider Yükü: %${incomeBurdenRatio.toFixed(1)}</span>
             </div>
