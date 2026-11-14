@@ -5,8 +5,18 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 const ROOT_DIR = path.join(__dirname, '..');
-const I18N_PATH = path.join(ROOT_DIR, 'i18n.js');
-const APP_PATH = path.join(ROOT_DIR, 'app.js');
+const SCRIPT_FILES = [
+  path.join(ROOT_DIR, 'i18n.js'),
+  path.join(ROOT_DIR, 'js', 'constants.js'),
+  path.join(ROOT_DIR, 'js', 'utils.js'),
+  path.join(ROOT_DIR, 'js', 'state.js'),
+  path.join(ROOT_DIR, 'js', 'smart-advisor.js'),
+  path.join(ROOT_DIR, 'js', 'backup-vault.js'),
+  path.join(ROOT_DIR, 'js', 'views.js'),
+  path.join(ROOT_DIR, 'js', 'modals.js'),
+  path.join(ROOT_DIR, 'js', 'reports.js'),
+  path.join(ROOT_DIR, 'js', 'main.js')
+];
 
 function createHarness(options = {}) {
   const storeMap = new Map();
@@ -134,11 +144,10 @@ function createHarness(options = {}) {
 
   vm.createContext(sandbox);
 
-  const i18nCode = fs.readFileSync(I18N_PATH, 'utf8');
-  vm.runInContext(i18nCode, sandbox);
-
-  const appCode = fs.readFileSync(APP_PATH, 'utf8');
-  vm.runInContext(appCode, sandbox);
+  for (const file of SCRIPT_FILES) {
+    const code = fs.readFileSync(file, 'utf8');
+    vm.runInContext(code, sandbox);
+  }
 
   const evalInContext = (expr) => vm.runInContext(expr, sandbox);
 

@@ -31,12 +31,13 @@ CardMon/
 ├── LICENSES/                 <- reuse license specifications
 ├── README.md                 <- cold-start reference and documentation
 ├── REUSE.toml                <- license metadata
-├── app.js                    <- core application logic and state management
 ├── assets/                   <- branding and visual assets
+├── css/                      <- modular stylesheet design system
 ├── i18n.js                   <- internationalization and currency formatting
 ├── index.html                <- application interface and layout
+├── js/                       <- modular application logic and domain handlers
 ├── package.json              <- npm package manifest and test scripts
-├── styles.css                <- responsive UI styling and design system
+├── styles.css                <- stylesheet aggregator entrypoint
 └── tests/                    <- unit and integration test suite
 ```
 
