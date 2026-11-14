@@ -2,7 +2,7 @@
 
 [![Built with AIKit](https://img.shields.io/badge/built%20with-AIKit-6f42c1)](https://github.com/AegeanWorks/AIKit)
 
-Smart bank and credit card portfolio manager for tracking limits, debt balances, installments, and payment schedules.
+Smart bank and credit card portfolio manager for tracking limits, debt balances, installments, payment schedules, and native file system storage (.cardmon).
 
 ## ⚡ 30-Second Cold-Start Quick Reference
 

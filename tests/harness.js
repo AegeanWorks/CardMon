@@ -9,6 +9,7 @@ const SCRIPT_FILES = [
   path.join(ROOT_DIR, 'i18n.js'),
   path.join(ROOT_DIR, 'js', 'constants.js'),
   path.join(ROOT_DIR, 'js', 'utils.js'),
+  path.join(ROOT_DIR, 'js', 'file-system.js'),
   path.join(ROOT_DIR, 'js', 'state.js'),
   path.join(ROOT_DIR, 'js', 'smart-advisor.js'),
   path.join(ROOT_DIR, 'js', 'backup-vault.js'),

@@ -127,6 +127,10 @@ function initEventListeners() {
     importFileInput.addEventListener('change', handleImportFile);
   }
 
+  // Keyboard Shortcuts (Ctrl+S / Cmd+S for Native File Save)
+  if (typeof setupFileSystemShortcuts === 'function') {
+    setupFileSystemShortcuts();
+  }
 }
 
 
@@ -234,7 +238,9 @@ window.renderTimelineView = renderTimelineView;
 window.openRentSimulatorModal = openRentSimulatorModal;
 window.closeRentSimulatorModal = closeRentSimulatorModal;
 window.calculateRentSavingsSimulation = calculateRentSavingsSimulation;
-window.openProfileModal = openProfileModal;
-window.closeProfileModal = closeProfileModal;
-window.payCardFullDebt = payCardFullDebt;
+
+// Native File System Persistence Exports
+window.saveToActiveFile = typeof saveToActiveFile !== 'undefined' ? saveToActiveFile : undefined;
+window.saveFileAs = typeof saveFileAs !== 'undefined' ? saveFileAs : undefined;
+window.openPortfolioFile = typeof openPortfolioFile !== 'undefined' ? openPortfolioFile : undefined;
 

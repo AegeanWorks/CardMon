@@ -15,6 +15,9 @@ function saveToStorage() {
     });
     localStorage.setItem(STORAGE_KEY, serialized);
     showSaveIndicator();
+    if (typeof markFileSystemDirty === 'function') {
+      markFileSystemDirty();
+    }
   } catch (e) {
     console.error('Storage save error:', e);
   }

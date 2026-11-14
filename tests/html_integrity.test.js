@@ -21,19 +21,22 @@ test('index.html structure has valid doctype, meta tags, and script tags', () =>
   assert.ok(html.includes('styles.css'), 'Must link stylesheet');
   assert.ok(html.includes('src="i18n.js"'), 'Must load i18n.js');
   assert.ok(html.includes('src="js/constants.js"'), 'Must load js/constants.js');
+  assert.ok(html.includes('src="js/file-system.js"'), 'Must load js/file-system.js');
   assert.ok(html.includes('src="js/main.js"'), 'Must load js/main.js');
 
   const i18nPos = html.indexOf('src="i18n.js"');
   const constPos = html.indexOf('src="js/constants.js"');
+  const fsPos = html.indexOf('src="js/file-system.js"');
   const mainPos = html.indexOf('src="js/main.js"');
   assert.ok(i18nPos < constPos, 'i18n.js must be loaded before js/constants.js');
-  assert.ok(constPos < mainPos, 'js/constants.js must be loaded before js/main.js');
+  assert.ok(fsPos < mainPos, 'js/file-system.js must be loaded before js/main.js');
 });
 
 test('index.html includes required layout sections and navigation tabs', () => {
   const html = fs.readFileSync(HTML_PATH, 'utf8');
 
   assert.ok(html.includes('id="appSidebar"'), 'Sidebar layout container must exist');
+  assert.ok(html.includes('id="fileStatusBadge"'), 'File status badge element must exist');
   assert.ok(html.includes('data-tab="dashboard"'), 'Dashboard tab must exist');
   assert.ok(html.includes('data-tab="banks"'), 'Banks tab must exist');
   assert.ok(html.includes('data-tab="cards"'), 'Cards tab must exist');
@@ -57,7 +60,7 @@ test('styles.css and modular css files exist and are populated', () => {
 
 test('modular javascript files exist and are populated in js/', () => {
   const modules = [
-    'constants.js', 'utils.js', 'state.js', 'smart-advisor.js',
+    'constants.js', 'utils.js', 'file-system.js', 'state.js', 'smart-advisor.js',
     'backup-vault.js', 'views.js', 'modals.js', 'reports.js', 'main.js'
   ];
   for (const mod of modules) {

@@ -130,6 +130,13 @@
             <span>PDF Raporu</span>
           </button>
 
+          <!-- Active File Status Indicator -->
+          <div class="file-status-badge" id="fileStatusBadge" style="display:none;" onclick="saveToActiveFile()" title="Aktif Dosya (Kaydetmek için tıklayın)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+            <span class="file-name"></span>
+            <span class="file-status-dot synced"></span>
+          </div>
+
           <!-- Autosave Indicator -->
           <div class="save-status-badge" id="saveStatusBadge">
             <span class="save-dot"></span>
@@ -163,6 +170,21 @@
 
               <div class="dropdown-divider"></div>
               <div class="dropdown-section-title" data-i18n="backupRestore">Yedekleme & Dışa Aktar</div>
+
+              <button type="button" class="dropdown-item" onclick="saveToActiveFile(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span data-i18n="saveToFile">Dosyaya Kaydet (Ctrl+S)</span>
+              </button>
+
+              <button type="button" class="dropdown-item" onclick="saveFileAs(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                <span data-i18n="saveFileAs">Farklı Kaydet...</span>
+              </button>
+
+              <button type="button" class="dropdown-item" onclick="openPortfolioFile(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                <span data-i18n="openFromFile">Dosyadan Aç...</span>
+              </button>
 
               <button type="button" class="dropdown-item" onclick="openBackupVaultModal(); closeSettingsDropdown();">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
@@ -938,6 +960,18 @@
           <div class="settings-data-section">
             <h4 data-i18n="dataManagement">Veri Yönetimi & Yedekleme</h4>
             <div class="settings-action-buttons">
+              <button type="button" class="btn btn-primary btn-sm" onclick="saveToActiveFile(); closeProfileModal();">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                <span data-i18n="saveToFile">Dosyaya Kaydet</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="saveFileAs(); closeProfileModal();">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
+                <span data-i18n="saveFileAs">Farklı Kaydet</span>
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="openPortfolioFile(); closeProfileModal();">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                <span data-i18n="openFromFile">Dosyadan Aç</span>
+              </button>
               <button type="button" class="btn btn-emerald btn-sm" onclick="openBackupVaultModal(); closeProfileModal();">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
                 <span>🗄️ Yedek Kasası & Geçmiş Noktalar</span>
@@ -1458,6 +1492,7 @@
   <script src="i18n.js"></script>
   <script src="js/constants.js"></script>
   <script src="js/utils.js"></script>
+  <script src="js/file-system.js"></script>
   <script src="js/state.js"></script>
   <script src="js/smart-advisor.js"></script>
   <script src="js/backup-vault.js"></script>
