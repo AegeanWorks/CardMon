@@ -1,11 +1,11 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-universal-test-coverage",
+    "task_id": "cardmon-audit-fixes-and-shortcuts",
     "last_phase": "phase 4",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1794691416.358143,
+    "updated_at": 1794692347.5962424,
     "owner": "unidentified",
     "started_by": "unidentified",
     "continuations": [],
@@ -15,91 +15,10 @@
         "path": "projects/CardMon"
       }
     ],
-    "completed_at": 1794691463.1328628,
-    "completed_head": "9847ebc2ebc90ad804f4b4a1f6df67c0074d7521"
+    "completed_at": 1794692370.8103087,
+    "completed_head": "b48150229a7fb2a6f1abe663183a5079c8c0f5cb"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-ui-aesthetic-refinement",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/4] Planning UI refinement for Minimalistic, Functional, Aesthetic guidelines",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1794687880.7030866,
-      "timestamp_str": "2026-11-14 23:24:40",
-      "agent": "antigravity:1",
-      "impact_assessment": {
-        "why": "Refine CardMon interface to align with G-003 (Minimalistic, Functional, Aesthetic) and G-002 (AIKit compatible)",
-        "benefits": "Eliminates visual clutter, awkward text truncations, and garish inline styles while delivering a modern, executive-grade fintech interface",
-        "risks": "contract: preserve all existing HTML IDs, onclick triggers, and DOM structure; dependency: zero external libraries; concurrency: none; state: preserve reactive state rendering",
-        "mitigation": "Follow AIKit UI contract workflow, verify fast proof with 21/21 tests passing, capture before/after screenshots and conduct vision analysis"
-      },
-      "plan_digest": "8265b7a40dbd46d775464e6e90e1945663fc43e58c727ebe0e4fc200dbc53aff",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-ui-aesthetic-refinement",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "Implement minimalist topbar, zero-truncation KPI grid, and sleek cashflow metric cards",
-      "files_affected": [
-        ".aikit/media.json",
-        ".aikit/task_ledger.json",
-        ".aikit/ui_history.json",
-        "assets/screenshots/2026-11-14-home.png",
-        "css/layout.css",
-        "css/modals.css",
-        "css/views.css",
-        "index.html",
-        "js/views.js",
-        ".aikit/task_ledger_archive.jsonl"
-      ],
-      "status": "in_progress",
-      "timestamp": 1794688273.1614523,
-      "timestamp_str": "2026-11-14 23:31:13",
-      "agent": "antigravity:1",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-ui-aesthetic-refinement",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "Validate all 21 unit tests, UI contract review, and post-change screenshot analysis",
-      "files_affected": [
-        ".aikit/media.json",
-        ".aikit/task_ledger.json",
-        ".aikit/ui_history.json",
-        "assets/screenshots/2026-11-14-home.png",
-        "css/layout.css",
-        "css/modals.css",
-        "css/views.css",
-        "index.html",
-        "js/views.js",
-        ".aikit/task_ledger_archive.jsonl"
-      ],
-      "status": "in_progress",
-      "timestamp": 1794688279.8959455,
-      "timestamp_str": "2026-11-14 23:31:19",
-      "agent": "antigravity:1",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-ui-aesthetic-refinement",
       "phase": "completed",
@@ -417,6 +336,81 @@
       "status": "completed",
       "timestamp": 1794691463.2351282,
       "timestamp_str": "2026-11-15 00:24:23",
+      "agent": "unidentified",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
+    },
+    {
+      "task_id": "cardmon-audit-fixes-and-shortcuts",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/4] Audit changes, deduplicate functions, fix double currency formatting and add keyboard navigation",
+      "files_affected": [
+        "js/modals.js",
+        "js/views.js",
+        ".aikit/ui_task.json"
+      ],
+      "status": "in_progress",
+      "timestamp": 1794691954.6872804,
+      "timestamp_str": "2026-11-15 00:32:34",
+      "agent": "unidentified",
+      "impact_assessment": {
+        "why": "Deduplicate payCardFullDebt and profile modals, resolve 80 double currency symbol bugs, and add keyboard shortcuts for power-user accessibility",
+        "benefits": "Clean maintainable codebase, correct multi-currency displays across reports and views, smooth keyboard modal and tab navigation",
+        "risks": "Modal dismissal or keydown collision",
+        "mitigation": "Thorough unit tests in tests/main.test.js and 100% test suite validation"
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-audit-fixes-and-shortcuts",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "Fix double currency formatting across 5 modules, add keyboard shortcuts and demo cash subs, verified with 107 tests",
+      "files_affected": [
+        ".aikit/task_ledger.json",
+        ".aikit/task_ledger_archive.jsonl",
+        ".aikit/ui_history.json",
+        "css/modals.css",
+        "index.html",
+        "js/backup-vault.js",
+        "js/main.js",
+        "js/modals.js",
+        "js/reports.js",
+        "js/smart-advisor.js",
+        "js/state.js",
+        "js/views.js",
+        "tests/main.test.js"
+      ],
+      "status": "in_progress",
+      "timestamp": 1794692347.5962424,
+      "timestamp_str": "2026-11-15 00:39:07",
+      "agent": "unidentified",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-audit-fixes-and-shortcuts",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-audit-fixes-and-shortcuts' completed successfully.",
+      "status": "completed",
+      "timestamp": 1794692370.8417492,
+      "timestamp_str": "2026-11-15 00:39:30",
       "agent": "unidentified",
       "delivery": {
         "roots": [
