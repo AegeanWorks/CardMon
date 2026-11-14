@@ -143,6 +143,12 @@
             <span class="save-text" data-i18n="autoSaved">Otomatik Kaydedildi</span>
           </div>
 
+          <!-- Keyboard Shortcuts Quick Trigger -->
+          <button type="button" class="btn btn-secondary header-icon-btn" id="headerShortcutsBtn" onclick="openShortcutsModal()" title="Klavye Kısayolları (?)" style="padding: 0.35rem 0.65rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.35rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); color: var(--text-secondary); cursor: pointer;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6" y2="8"></line><line x1="10" y1="8" x2="10" y2="8"></line><line x1="14" y1="8" x2="14" y2="8"></line><line x1="18" y1="8" x2="18" y2="8"></line><line x1="10" y1="16" x2="14" y2="16"></line></svg>
+            <span style="font-weight: 600;">Kısayollar</span>
+          </button>
+
           <!-- User Profile & Settings/Backup Menu in Top-Right -->
           <div class="topbar-user-wrapper" id="settingsDropdownWrapper">
             <button type="button" class="topbar-user-btn" id="openProfileBtn" onclick="toggleSettingsDropdown(event)" title="Profil, Ayarlar & Yedekleme">
@@ -214,6 +220,11 @@
               <button type="button" class="dropdown-item" onclick="loadDemoData(true); closeSettingsDropdown();">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
                 <span data-i18n="loadDemo">Örnek Veri Yükle</span>
+              </button>
+
+              <button type="button" class="dropdown-item" onclick="openShortcutsModal(); closeSettingsDropdown();">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6" y2="8"></line><line x1="10" y1="8" x2="10" y2="8"></line><line x1="14" y1="8" x2="14" y2="8"></line><line x1="18" y1="8" x2="18" y2="8"></line><line x1="10" y1="16" x2="14" y2="16"></line></svg>
+                <span>Klavye Kısayolları (?)</span>
               </button>
 
               <div class="dropdown-divider"></div>
@@ -1478,6 +1489,63 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" onclick="closeRentSimulatorModal()">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       MODAL: KEYBOARD SHORTCUTS HELP (KLAVYE KISAYOLLARI)
+       ======================================================================= -->
+  <div class="modal-overlay" id="shortcutsModalOverlay">
+    <div class="modal-container" style="max-width: 520px;">
+      <div class="modal-header">
+        <h2>⌨️ Klavye Kısayolları</h2>
+        <button class="close-btn" onclick="closeShortcutsModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="12" x2="18" y2="12"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: 1.25rem;">
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.25rem; line-height:1.5;">
+          CardMon içerisinde hızlı gezinmek ve aksiyon almak için aşağıdaki klavye kısayollarını kullanabilirsiniz:
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:0.65rem;">
+          <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-weight:700;">Gezinme & Sekmeler</div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.45rem 0.65rem; background:rgba(255,255,255,0.03); border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,0.05);">
+            <span style="font-size:0.85rem;">Sekme Değiştir (Genel Bakış ... Takvim)</span>
+            <div style="display:flex; gap:0.25rem; align-items:center;">
+              <kbd class="shortcut-key">1</kbd>
+              <span style="color:var(--text-muted); font-size:0.75rem;">–</span>
+              <kbd class="shortcut-key">6</kbd>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.45rem 0.65rem; background:rgba(255,255,255,0.03); border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,0.05);">
+            <span style="font-size:0.85rem;">Kart & Banka Arama Odaklanma</span>
+            <kbd class="shortcut-key">/</kbd>
+          </div>
+
+          <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-muted); font-weight:700; margin-top:0.4rem;">Dosya & Pencereler</div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.45rem 0.65rem; background:rgba(255,255,255,0.03); border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,0.05);">
+            <span style="font-size:0.85rem;">Portföyü Diske Kaydet</span>
+            <div style="display:flex; gap:0.25rem; align-items:center;">
+              <kbd class="shortcut-key">Ctrl</kbd>
+              <span style="color:var(--text-muted); font-size:0.75rem;">+</span>
+              <kbd class="shortcut-key">S</kbd>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.45rem 0.65rem; background:rgba(255,255,255,0.03); border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,0.05);">
+            <span style="font-size:0.85rem;">Açık Pencereyi / Modalı Kapat</span>
+            <kbd class="shortcut-key">Esc</kbd>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:0.45rem 0.65rem; background:rgba(255,255,255,0.03); border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,0.05);">
+            <span style="font-size:0.85rem;">Kısayol Rehberini Aç / Kapat</span>
+            <kbd class="shortcut-key">?</kbd>
+          </div>
+        </div>
+
+        <div style="margin-top:1.25rem; display:flex; justify-content:flex-end;">
+          <button type="button" class="btn btn-secondary" onclick="closeShortcutsModal()" style="padding:0.4rem 1rem;">Kapat</button>
+        </div>
       </div>
     </div>
   </div>

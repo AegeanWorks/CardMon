@@ -88,5 +88,33 @@
     "final_snapshot_digest": "",
     "final_snapshot_entries": 0,
     "surface_digest": "43a4631993acb63751d9b2757424df9b0d4142a603cba13964a0d4ca0673cd0c"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "css/modals.css",
+      "index.html",
+      "js/backup-vault.js",
+      "js/main.js",
+      "js/modals.js",
+      "js/reports.js",
+      "js/smart-advisor.js",
+      "js/state.js",
+      "js/views.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "b8ed1938cc6ce58d97b78501fcc0c9ffe881d5b8",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1794691939.2781749,
+    "finished_at": 1794692312.3325717,
+    "strikes": 1,
+    "reviewer": "",
+    "allowed_removals": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "e88f45c9c054850733227d6f261d0ba96ddd6e23ebd736e589369320f967e46b"
   }
 ]

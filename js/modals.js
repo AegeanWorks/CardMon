@@ -644,7 +644,7 @@ function updateQuickTxInstallmentPreview() {
       <div style="display:flex; flex-direction:column; gap:0.35rem;">
         <div style="display:flex; justify-content:space-between; font-weight:700; color:var(--text-primary);">
           <span>Aylık Taksit Tutarı:</span>
-          <span style="color:#22d3ee;">${amount > 0 ? formatMoney(monthlyInstallment) : '₺0'} × ${installments} Ay</span>
+          <span style="color:#22d3ee;">${amount > 0 ? formatMoney(monthlyInstallment) : formatMoney(0)} × ${installments} Ay</span>
         </div>
         <div style="font-size:0.78rem; color:#fbbf24;">
           ⏳ <strong>Başlangıç:</strong> Sonraki ekstre keşiminden itibaren — bu ayki borç bakiyeniz <strong>değişmez</strong>.
@@ -659,7 +659,7 @@ function updateQuickTxInstallmentPreview() {
       <div style="display:flex; flex-direction:column; gap:0.35rem;">
         <div style="display:flex; justify-content:space-between; font-weight:700; color:var(--text-primary);">
           <span>Aylık Taksit Tutarı:</span>
-          <span style="color:#22d3ee;">${amount > 0 ? formatMoney(monthlyInstallment) : '₺0'} × ${installments} Ay</span>
+          <span style="color:#22d3ee;">${amount > 0 ? formatMoney(monthlyInstallment) : formatMoney(0)} × ${installments} Ay</span>
         </div>
         <div style="font-size:0.78rem; color:${isCutoffPassed ? '#f59e0b' : '#34d399'};">
           📅 <strong>Ekstre Kesim Günü:</strong> Ayın ${cutoffDay}'i (Bugün: ${today}. gün)
@@ -749,18 +749,33 @@ function payCardFullDebt(cardId) {
   const card = state.cards.find(c => c.id === cardId);
   if (!card) return;
 
+  if (card.isPaidThisMonth) {
+    const restoreDebt = Number(card.paidThisMonthAmount) || 0;
+    if (confirm(`"${card.nickname}" kartının bu ayki ödenmiş durumunu geri almak ve ${formatMoney(restoreDebt)} tutarındaki dönem borcunu tekrar aktif etmek istiyor musunuz?`)) {
+      card.usedBalance = restoreDebt;
+      card.isPaidThisMonth = false;
+      card.paidThisMonthAmount = 0;
+      saveToStorage();
+      renderAll();
+      showToast(`↩️ "${card.nickname}" kartı ödenmemiş durumuna geri alındı.`);
+    }
+    return;
+  }
+
   const currentDebt = Number(card.usedBalance) || 0;
   if (currentDebt <= 0) {
     showToast(`${card.nickname} kartında ödenecek borç bulunmuyor.`);
     return;
   }
 
-  if (confirm(`"${card.nickname}" kartının ${formatMoney(currentDebt)} tutarındaki tüm dönem borcunu ödeyip sıfırlamak istiyor musunuz?`)) {
+  if (confirm(`"${card.nickname}" kartının güncel ${formatMoney(currentDebt)} tutarındaki dönem borcunu ödendi olarak kapatmak istiyor musunuz?\n\n(Bu ayki takvim toplam nakit çıkışınız silinmez, korunan tutar ile "✓ Ödendi" olarak işaretlenir).`)) {
+    card.paidThisMonthAmount = currentDebt;
+    card.isPaidThisMonth = true;
     card.usedBalance = 0;
-    card.installments = []; // Clears all installments because full debt is settled
+    card.installments = [];
     saveToStorage();
     renderAll();
-    showToast(`✅ ${card.nickname}: Tüm dönem borcu kapatıldı ve bakiye sıfırlandı.`);
+    showToast(`✅ "${card.nickname}" kartının ${formatMoney(currentDebt)} tutarındaki dönem borcu ödendi olarak kapatıldı.`);
   }
 }
 
@@ -1179,7 +1194,7 @@ function handleSubscriptionFormSubmit(e) {
   saveToStorage();
   closeSubscriptionModal();
   renderAll();
-  showToast(`${name} (${isEstimated ? 'Tahmini ' : ''}₺${formatMoney(amount)}) kaydedildi.`);
+  showToast(`${name} (${isEstimated ? 'Tahmini ' : ''}${formatMoney(amount)}) kaydedildi.`);
 }
 
 function confirmDeleteSubscription(parentSourceId, subId) {
@@ -1272,25 +1287,25 @@ function calculateRentSavingsSimulation() {
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:0.65rem; margin-bottom:1rem;">
       <div style="background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); border-radius:var(--radius-md); padding:0.75rem 0.85rem;">
         <div style="font-size:0.7rem; color:#34d399; font-weight:700; text-transform:uppercase;">1 Yıllık Tasarruf</div>
-        <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:0.15rem;">₺${formatMoney(y1.yearTotal)}</div>
-        <div style="font-size:0.65rem; color:var(--text-muted); margin-top:0.1rem;">Aylık ₺${formatMoney(monthlyRent)}</div>
+        <div style="font-size:1.15rem; font-weight:800; color:#fff; margin-top:0.15rem;">${formatMoney(y1.yearTotal)}</div>
+        <div style="font-size:0.65rem; color:var(--text-muted); margin-top:0.1rem;">Aylık ${formatMoney(monthlyRent)}</div>
       </div>
 
       <div style="background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.3); border-radius:var(--radius-md); padding:0.75rem 0.85rem;">
         <div style="font-size:0.7rem; color:#fbbf24; font-weight:700; text-transform:uppercase;">5 Yılda Ödenen Kira</div>
-        <div style="font-size:1.15rem; font-weight:800; color:#fbbf24; margin-top:0.15rem;">₺${formatMoney(y5.cumulativeRent)}</div>
+        <div style="font-size:1.15rem; font-weight:800; color:#fbbf24; margin-top:0.15rem;">${formatMoney(y5.cumulativeRent)}</div>
         <div style="font-size:0.65rem; color:var(--text-muted); margin-top:0.1rem;">%${annualInflation} yıllık artışla</div>
       </div>
 
       <div style="background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); border-radius:var(--radius-md); padding:0.75rem 0.85rem;">
         <div style="font-size:0.7rem; color:#38bdf8; font-weight:700; text-transform:uppercase;">5 Yıllık Yatırım Değeri</div>
-        <div style="font-size:1.15rem; font-weight:800; color:#38bdf8; margin-top:0.15rem;">₺${formatMoney(y5.cumulativeInvestment)}</div>
+        <div style="font-size:1.15rem; font-weight:800; color:#38bdf8; margin-top:0.15rem;">${formatMoney(y5.cumulativeInvestment)}</div>
         <div style="font-size:0.65rem; color:var(--text-muted); margin-top:0.1rem;">%${investmentReturn} bileşik getiriyle</div>
       </div>
 
       <div style="background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.3); border-radius:var(--radius-md); padding:0.75rem 0.85rem;">
         <div style="font-size:0.7rem; color:#c084fc; font-weight:700; text-transform:uppercase;">10 Yılda Ödenen Kira</div>
-        <div style="font-size:1.15rem; font-weight:800; color:#c084fc; margin-top:0.15rem;">₺${formatMoney(y10.cumulativeRent)}</div>
+        <div style="font-size:1.15rem; font-weight:800; color:#c084fc; margin-top:0.15rem;">${formatMoney(y10.cumulativeRent)}</div>
         <div style="font-size:0.65rem; color:var(--text-muted); margin-top:0.1rem;">10 yıllık kümülatif yük</div>
       </div>
     </div>
@@ -1299,9 +1314,9 @@ function calculateRentSavingsSimulation() {
     <div style="background:rgba(15,23,42,0.7); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-md); padding:0.85rem 1rem; margin-bottom:1rem;">
       <h4 style="font-size:0.88rem; font-weight:700; color:#fff; margin-bottom:0.4rem;">💡 Finansal Karşılaştırma: Ev Sahibi Olmak vs Kirada Kalmak</h4>
       <div style="font-size:0.8rem; line-height:1.45; color:var(--text-secondary); display:flex; flex-direction:column; gap:0.35rem;">
-        <div>🏠 <strong>1. Kendi Evinizin Olması Durumunda:</strong> 5 yılda toplam <strong>₺${formatMoney(y5.cumulativeRent)}</strong> tutarındaki kira giderinden tamamen muaf kalırsınız. Bu tutar cebinizde birikim olarak kalır.</div>
+        <div>🏠 <strong>1. Kendi Evinizin Olması Durumunda:</strong> 5 yılda toplam <strong>${formatMoney(y5.cumulativeRent)}</strong> tutarındaki kira giderinden tamamen muaf kalırsınız. Bu tutar cebinizde birikim olarak kalır.</div>
         <div>📈 <strong>2. Gayrimenkul Değer Artışı:</strong> Ev fiyatları enflasyona karşı değer kazanırken, kira ödemek yerine ev sahibi olduğunuzda çift yönlü servet artışı sağlarsınız.</div>
-        <div>🏦 <strong>3. Kredi Alternatifi:</strong> Aylık ₺${formatMoney(monthlyRent)} kira ödemesi, 120 ay vadeli bir konut kredisi taksitine dönüştürüldüğünde kira öder gibi kendi mülkünüzün sahibi olursunuz.</div>
+        <div>🏦 <strong>3. Kredi Alternatifi:</strong> Aylık ${formatMoney(monthlyRent)} kira ödemesi, 120 ay vadeli bir konut kredisi taksitine dönüştürüldüğünde kira öder gibi kendi mülkünüzün sahibi olursunuz.</div>
       </div>
     </div>
 
@@ -1322,10 +1337,10 @@ function calculateRentSavingsSimulation() {
           ${yearlyBreakdown.map(b => `
             <tr>
               <td><strong>${b.year}. Yıl</strong></td>
-              <td>₺${formatMoney(b.monthlyRent)}</td>
-              <td>₺${formatMoney(b.yearTotal)}</td>
-              <td style="color:#fbbf24; font-weight:700;">₺${formatMoney(b.cumulativeRent)}</td>
-              <td style="color:#34d399; font-weight:700;">₺${formatMoney(b.cumulativeInvestment)}</td>
+              <td>${formatMoney(b.monthlyRent)}</td>
+              <td>${formatMoney(b.yearTotal)}</td>
+              <td style="color:#fbbf24; font-weight:700;">${formatMoney(b.cumulativeRent)}</td>
+              <td style="color:#34d399; font-weight:700;">${formatMoney(b.cumulativeInvestment)}</td>
             </tr>
           `).join('')}
         </tbody>
@@ -1677,62 +1692,22 @@ function confirmDeleteLoan(loanId) {
 }
 
 // --------------------------------------------------------------------------
-// User Profile & Settings Modal Logic
+// Keyboard Shortcuts Modal Logic
 // --------------------------------------------------------------------------
-function openProfileModal() {
-  const p = state.profile || {};
-  const firstNameInput = document.getElementById('profileFirstName');
-  const lastNameInput = document.getElementById('profileLastName');
-  const titleInput = document.getElementById('profileTitle');
-  const avatarColorInput = document.getElementById('profileAvatarColor');
-  const incomeInput = document.getElementById('profileIncome');
-  const salaryDayInput = document.getElementById('profileSalaryDay');
-  const currSelect = document.getElementById('profileCurrencySelect');
-  const langSelect = document.getElementById('profileLangSelect');
-
-  if (firstNameInput) firstNameInput.value = p.firstName || 'Yunus';
-  if (lastNameInput) lastNameInput.value = p.lastName || 'Emre';
-  if (titleInput) titleInput.value = p.title || 'Finansal Yönetici';
-  if (avatarColorInput) avatarColorInput.value = p.avatarColor || '#3b82f6';
-  if (incomeInput) incomeInput.value = p.monthlyIncome || '';
-  if (salaryDayInput) salaryDayInput.value = p.salaryDay || 15;
-  if (currSelect) currSelect.value = state.currency || 'TRY';
-  if (langSelect) langSelect.value = state.lang || 'tr';
-
-  document.getElementById('profileModalOverlay')?.classList.add('active');
+function openShortcutsModal() {
+  document.getElementById('shortcutsModalOverlay')?.classList.add('active');
 }
 
-function closeProfileModal() {
-  document.getElementById('profileModalOverlay')?.classList.remove('active');
+function closeShortcutsModal() {
+  document.getElementById('shortcutsModalOverlay')?.classList.remove('active');
 }
 
-function handleProfileFormSubmit(e) {
-  e.preventDefault();
-  const firstName = document.getElementById('profileFirstName')?.value.trim() || 'Yunus';
-  const lastName = document.getElementById('profileLastName')?.value.trim() || 'Emre';
-  const title = document.getElementById('profileTitle')?.value.trim() || 'Finansal Yönetici';
-  const avatarColor = document.getElementById('profileAvatarColor')?.value || '#3b82f6';
-  const monthlyIncome = parseFloat(document.getElementById('profileIncome')?.value) || 0;
-  const salaryDay = parseInt(document.getElementById('profileSalaryDay')?.value, 10) || 15;
-  const currency = document.getElementById('profileCurrencySelect')?.value || 'TRY';
-  const lang = document.getElementById('profileLangSelect')?.value || 'tr';
-
-  state.profile = {
-    ...state.profile,
-    firstName,
-    lastName,
-    title,
-    avatarColor,
-    monthlyIncome,
-    salaryDay
-  };
-
-  if (currency !== state.currency) setCurrency(currency);
-  if (lang !== state.lang) setLanguage(lang);
-
-  saveToStorage();
-  closeProfileModal();
-  renderAll();
-  showToast('✅ Profil ve maaş günü başarıyla kaydedildi.');
+function toggleShortcutsModal() {
+  const overlay = document.getElementById('shortcutsModalOverlay');
+  if (overlay) {
+    overlay.classList.toggle('active');
+  }
 }
+
+
 

@@ -280,6 +280,11 @@ function loadDemoData(notify = true) {
     }
   ];
 
+  state.cashSubscriptions = [
+    { id: 'sub-rent-demo', name: 'Daire Kirası', amount: 15000, category: 'Rent', cycle: 'monthly', billingDay: 1, isCash: true, isEstimated: false, currency: 'TRY' },
+    { id: 'sub-aidat-demo', name: 'Site Aidatı & Ortak Gider', amount: 1250, category: 'Maintenance', cycle: 'monthly', billingDay: 5, isCash: true, isEstimated: false, currency: 'TRY' }
+  ];
+
   saveToStorage();
   renderAll();
   if (notify) showToast(t('demoLoaded'));

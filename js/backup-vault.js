@@ -111,7 +111,7 @@ function renderBackupVaultList() {
             <span>🏦 ${s.bankCount || 0} Banka</span>
             <span>💳 ${s.cardCount || 0} Kart</span>
             <span>📋 ${s.loanCount || 0} Kredi</span>
-            <span>💸 Toplam Borç: <strong>₺${formatMoney(s.totalDebt || 0)}</strong></span>
+            <span>💸 Toplam Borç: <strong>${formatMoney(s.totalDebt || 0)}</strong></span>
           </div>
         </div>
 
@@ -508,7 +508,7 @@ function renderPaymentFlowChart() {
                 ${isSalaryWeek ? `<span style="font-size:0.68rem; color:#34d399; background:rgba(16,185,129,0.15); padding:0.1rem 0.4rem; border-radius:4px; font-weight:700;">Maaş Girişi (${salaryDay}'i)</span>` : ''}
                 <span style="color:var(--text-muted); font-size:0.72rem;">• ${subItemsStr}</span>
               </span>
-              <span><strong style="color:#fff;">₺${formatMoney(data.totalDebt)}</strong> <span style="color:var(--text-secondary); font-size:0.75rem;">(%${pct})</span></span>
+              <span><strong style="color:#fff;">${formatMoney(data.totalDebt)}</strong> <span style="color:var(--text-secondary); font-size:0.75rem;">(%${pct})</span></span>
             </div>
             <div class="meter-bar" style="height:6px;">
               <div class="meter-fill" style="width: ${pct}%; background-color: ${data.color};"></div>

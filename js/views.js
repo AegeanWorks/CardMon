@@ -492,7 +492,7 @@ function renderCardsView() {
             <div class="virtual-cards-header">
               <span style="display:flex; align-items:center; gap:0.3rem;">
                 <span>🔁 ${t('subscriptions')} (${subscriptions.length})</span>
-                ${cardSubsTotalTry > 0 ? `<span class="sub-total-badge">₺${formatMoney(cardSubsTotalTry)}/ay</span>` : ''}
+                ${cardSubsTotalTry > 0 ? `<span class="sub-total-badge">${formatMoney(cardSubsTotalTry)}/ay</span>` : ''}
               </span>
               <button class="btn btn-secondary btn-sm" style="padding: 0.15rem 0.5rem; font-size: 0.7rem;" onclick="openAddSubscriptionModal('${c.id}')">
                 + Abonelik
@@ -548,10 +548,10 @@ function renderCardsView() {
         <span class="banner-heading">Kredi Kartları Portföy Toplamı (${state.cards.length} Kart)</span>
       </div>
       <div class="banner-metrics-group">
-        <span>Toplam Limit: <strong style="color:#38bdf8;">₺${formatMoney(totalCardsLimit)}</strong></span>
-        <span>Toplam Borç: <strong style="color:#fb7185;">₺${formatMoney(totalCardsDebt)}</strong></span>
-        <span>Kullanılabilir: <strong style="color:#34d399;">₺${formatMoney(totalCardsAvail)}</strong></span>
-        <span>Asgari Yükü: <strong style="color:#fbbf24;">₺${formatMoney(totalCardsMinDue)}</strong></span>
+        <span>Toplam Limit: <strong style="color:#38bdf8;">${formatMoney(totalCardsLimit)}</strong></span>
+        <span>Toplam Borç: <strong style="color:#fb7185;">${formatMoney(totalCardsDebt)}</strong></span>
+        <span>Kullanılabilir: <strong style="color:#34d399;">${formatMoney(totalCardsAvail)}</strong></span>
+        <span>Asgari Yükü: <strong style="color:#fbbf24;">${formatMoney(totalCardsMinDue)}</strong></span>
       </div>
     </div>
     ${cardsHtml}
@@ -671,7 +671,7 @@ function renderBanksView() {
           <div style="margin-top:-0.3rem;">
             <div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--text-muted); margin-bottom:0.25rem;">
               <span>Doluluk: <strong style="color:${getUtilizationColor((totalBankDebt / totalBankLimit) * 100)};">%${((totalBankDebt / totalBankLimit) * 100).toFixed(1)}</strong></span>
-              <span>Kullanılabilir: <strong style="color:#34d399;">₺${formatMoney(Math.max(0, totalBankLimit - totalBankDebt))}</strong></span>
+              <span>Kullanılabilir: <strong style="color:#34d399;">${formatMoney(Math.max(0, totalBankLimit - totalBankDebt))}</strong></span>
             </div>
             <div class="meter-bar" style="height:6px;">
               <div class="meter-fill" style="width:${Math.min(100, (totalBankDebt / totalBankLimit) * 100)}%; background-color:${getUtilizationColor((totalBankDebt / totalBankLimit) * 100)};"></div>
@@ -725,8 +725,8 @@ function renderBanksView() {
       </div>
       <div class="banner-metrics-group">
         <span>Tanımlı Kart: <strong>${totalBanksCardsCount} Adet</strong></span>
-        ${totalBanksSharedLimit > 0 ? `<span>Ortak Limit: <strong style="color:#38bdf8;">₺${formatMoney(totalBanksSharedLimit)}</strong></span>` : ''}
-        <span>Toplam Ek Hesap (KMH): <strong style="color:#22d3ee;">₺${formatMoney(totalBanksEkHesap)}</strong></span>
+        ${totalBanksSharedLimit > 0 ? `<span>Ortak Limit: <strong style="color:#38bdf8;">${formatMoney(totalBanksSharedLimit)}</strong></span>` : ''}
+        <span>Toplam Ek Hesap (KMH): <strong style="color:#22d3ee;">${formatMoney(totalBanksEkHesap)}</strong></span>
       </div>
     </div>
     ${banksHtml}
@@ -1099,24 +1099,24 @@ function renderSubscriptionsView() {
           </div>
 
           <p style="font-size:0.8rem; color:var(--text-muted); margin:0 0 0.5rem 0;">
-            ${rentSub ? `Kayıtlı <strong>₺${formatMoney(detectedMonthlyRent)}/ay</strong> kiranız baz alınarak hesaplanmıştır.` : `Aylık tahmini <strong>₺${formatMoney(detectedMonthlyRent)}/ay</strong> kira baz alınmıştır.`}
+            ${rentSub ? `Kayıtlı <strong>${formatMoney(detectedMonthlyRent)}/ay</strong> kiranız baz alınarak hesaplanmıştır.` : `Aylık tahmini <strong>${formatMoney(detectedMonthlyRent)}/ay</strong> kira baz alınmıştır.`}
             Kira ödemek yerine ev sahibi olunduğunda cebinizde kalacak net tutarlar:
           </p>
 
           <div class="rent-sim-grid">
             <div class="rent-sim-stat">
               <span class="rent-sim-stat-label">1 Yılda Cebinde Kalacak</span>
-              <span class="rent-sim-stat-val" style="color:#34d399;">₺${formatMoney(detectedMonthlyRent * 12)}</span>
+              <span class="rent-sim-stat-val" style="color:#34d399;">${formatMoney(detectedMonthlyRent * 12)}</span>
               <span style="font-size:0.7rem; color:var(--text-muted);">Yıllık net kira tasarrufu</span>
             </div>
             <div class="rent-sim-stat">
               <span class="rent-sim-stat-label">5 Yılda Kümülatif Tasarruf</span>
-              <span class="rent-sim-stat-val" style="color:#fbbf24;">₺${formatMoney(fiveYearRentTotal)}</span>
+              <span class="rent-sim-stat-val" style="color:#fbbf24;">${formatMoney(fiveYearRentTotal)}</span>
               <span style="font-size:0.7rem; color:var(--text-muted);">%35 yıllık kira artışı dahil</span>
             </div>
             <div class="rent-sim-stat">
               <span class="rent-sim-stat-label">5 Yıllık Yatırım Değeri</span>
-              <span class="rent-sim-stat-val" style="color:#38bdf8;">₺${formatMoney(fiveYearInvestmentTotal)}</span>
+              <span class="rent-sim-stat-val" style="color:#38bdf8;">${formatMoney(fiveYearInvestmentTotal)}</span>
               <span style="font-size:0.7rem; color:var(--text-muted);">Tasarruf fon/altında değerlendirilirse</span>
             </div>
           </div>
@@ -1306,8 +1306,8 @@ function renderTimelineView() {
         minDue: minDue,
         isKatilim: isKat,
         note: isPaid 
-          ? `🎉 ₺${formatMoney(paidAmount)} tutarındaki bu ayki dönem borcu ödendi ve kapatıldı.`
-          : `Asgari: ₺${formatMoney(minDue)} ${isKat ? '(%100 Katılım)' : ''}`
+          ? `🎉 ${formatMoney(paidAmount)} tutarındaki bu ayki dönem borcu ödendi ve kapatıldı.`
+          : `Asgari: ${formatMoney(minDue)} ${isKat ? '(%100 Katılım)' : ''}`
       });
     }
   });
@@ -1381,7 +1381,7 @@ function renderTimelineView() {
       type: 'salary',
       category: 'income',
       title: '💵 Aylık Maaş & Gelir Girişi',
-      sourceName: monthlyIncome > 0 ? `+₺${formatMoney(monthlyIncome)}` : 'Nakit Gelir',
+      sourceName: monthlyIncome > 0 ? `+${formatMoney(monthlyIncome)}` : 'Nakit Gelir',
       color: '#10b981',
       icon: '💰',
       day: salaryDay,
@@ -1431,9 +1431,9 @@ function renderTimelineView() {
         <span>💳 ${paymentEvents.filter(e => e.type === 'card_due').length} Kart</span>
         <span>🏦 ${paymentEvents.filter(e => e.type === 'loan').length} Kredi</span>
         <span>🏠/🍿 ${paymentEvents.filter(e => e.type === 'subscription').length} Kira & Gider</span>
-        <span>Toplam: <strong style="color:#c084fc;">₺${formatMoney(totalPlannedOutflow)}</strong></span>
-        ${totalPaidOutflow > 0 ? `<span style="background:rgba(16,185,129,0.18); color:#34d399; padding:0.15rem 0.5rem; border-radius:4px; font-weight:700;">✓ Ödenen: ₺${formatMoney(totalPaidOutflow)}</span>` : ''}
-        ${totalRemainingOutflow > 0 && totalPaidOutflow > 0 ? `<span style="color:#fb7185; font-weight:700;">Kalan: ₺${formatMoney(totalRemainingOutflow)}</span>` : ''}
+        <span>Toplam: <strong style="color:#c084fc;">${formatMoney(totalPlannedOutflow)}</strong></span>
+        ${totalPaidOutflow > 0 ? `<span style="background:rgba(16,185,129,0.18); color:#34d399; padding:0.15rem 0.5rem; border-radius:4px; font-weight:700;">✓ Ödenen: ${formatMoney(totalPaidOutflow)}</span>` : ''}
+        ${totalRemainingOutflow > 0 && totalPaidOutflow > 0 ? `<span style="color:#fb7185; font-weight:700;">Kalan: ${formatMoney(totalRemainingOutflow)}</span>` : ''}
       </div>
     </div>
 
@@ -1474,7 +1474,7 @@ function renderTimelineView() {
                 <div class="timeline-event-amount-block">
                   ${e.amount > 0 ? `
                     <div class="timeline-event-amount" style="color:${e.isPaid ? '#34d399' : e.type === 'card_due' ? '#f43f5e' : e.type === 'loan' ? '#38bdf8' : '#c084fc'};">
-                      ${e.isEstimated ? '~' : ''}₺${formatMoney(e.amount)}
+                      ${e.isEstimated ? '~' : ''}${formatMoney(e.amount)}
                     </div>
                   ` : `
                     <div style="font-size:0.8rem; font-weight:700; color:#38bdf8;">
@@ -1509,39 +1509,6 @@ function renderTimelineView() {
       </div>
     `}
   `;
-}
-
-function payCardFullDebt(cardId) {
-  const card = state.cards.find(c => c.id === cardId);
-  if (!card) return;
-
-  if (card.isPaidThisMonth) {
-    const restoreDebt = Number(card.paidThisMonthAmount) || 0;
-    if (confirm(`"${card.nickname}" kartının bu ayki ödenmiş durumunu geri almak ve ${formatMoney(restoreDebt)} tutarındaki dönem borcunu tekrar aktif etmek istiyor musunuz?`)) {
-      card.usedBalance = restoreDebt;
-      card.isPaidThisMonth = false;
-      card.paidThisMonthAmount = 0;
-      saveToStorage();
-      renderAll();
-      showToast(`↩️ "${card.nickname}" kartı ödenmemiş durumuna geri alındı.`);
-    }
-    return;
-  }
-
-  const debt = Number(card.usedBalance) || 0;
-  if (debt <= 0) {
-    showToast('Bu kartın güncel borcu bulunmamaktadır.');
-    return;
-  }
-
-  if (confirm(`"${card.nickname}" kartının güncel ${formatMoney(debt)} tutarındaki dönem borcunu ödendi olarak kapatmak istiyor musunuz?\n\n(Bu ayki takvim toplam nakit çıkışınız silinmez, korunan tutar ile "✓ Ödendi" olarak işaretlenir).`)) {
-    card.paidThisMonthAmount = debt;
-    card.isPaidThisMonth = true;
-    card.usedBalance = 0;
-    saveToStorage();
-    renderAll();
-    showToast(`✅ "${card.nickname}" kartının ${formatMoney(debt)} tutarındaki dönem borcu ödendi olarak kapatıldı.`);
-  }
 }
 
 // 6. Comprehensive Main Dashboard & Detailed Analytics View
@@ -1793,7 +1760,7 @@ function renderDashboardView() {
       <span style="color:#38bdf8; font-weight:700;">Aylık Taksit: ${formatMoney(nearest.amount)}</span> • <span style="color:#34d399; font-weight:600;">Kalan: ${formatMoney(nearest.totalDebt)} (${nearest.remainingInst} ay)</span>`;
     } else if (nearest.type === 'sub') {
       nearestDueSubText = `${nearest.icon || '🔁'} <strong>${escapeHtml(nearest.title)}</strong> (${escapeHtml(nearest.bankName)})<br>
-      <span style="color:#c084fc; font-weight:700;">Tutar: ${nearest.isEstimated ? '~' : ''}₺${formatMoney(nearest.amount)}</span> • <span style="color:#94a3b8; font-weight:600;">${escapeHtml(nearest.bankName)}</span>`;
+      <span style="color:#c084fc; font-weight:700;">Tutar: ${nearest.isEstimated ? '~' : ''}${formatMoney(nearest.amount)}</span> • <span style="color:#94a3b8; font-weight:600;">${escapeHtml(nearest.bankName)}</span>`;
     }
   } else if (state.cards.length === 0 && (!state.loans || state.loans.length === 0) && getAllSubscriptions().length === 0) {
     nearestDueSubText = t('noCardsYet');

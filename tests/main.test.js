@@ -99,3 +99,84 @@ test('initEventListeners wires up tab navigation, search input, switches and for
   assert.ok(typeof listenersMap.get('subscriptionForm:submit') === 'function');
   assert.ok(typeof listenersMap.get('loanForm:submit') === 'function');
 });
+
+test('keyboard shortcuts modal lifecycle: open, toggle, close', () => {
+  const h = createHarness();
+  const overlay = h.sandbox.document.getElementById('shortcutsModalOverlay');
+
+  assert.strictEqual(overlay.classList.contains('active'), false);
+  h.sandbox.window.openShortcutsModal();
+  assert.strictEqual(overlay.classList.contains('active'), true);
+
+  h.sandbox.window.toggleShortcutsModal();
+  assert.strictEqual(overlay.classList.contains('active'), false);
+
+  h.sandbox.window.toggleShortcutsModal();
+  assert.strictEqual(overlay.classList.contains('active'), true);
+
+  h.sandbox.window.closeShortcutsModal();
+  assert.strictEqual(overlay.classList.contains('active'), false);
+});
+
+test('global keyboard shortcuts: escape closes modal, numbers switch tabs, question mark toggles shortcuts', () => {
+  const h = createHarness();
+  let keydownHandler = null;
+  h.sandbox.window.addEventListener = (evt, fn) => {
+    if (evt === 'keydown') keydownHandler = fn;
+  };
+
+  const overlay1 = h.sandbox.document.getElementById('cardModalOverlay');
+  overlay1.classList.add('modal-overlay');
+  const overlay2 = h.sandbox.document.getElementById('shortcutsModalOverlay');
+  overlay2.classList.add('modal-overlay');
+
+  h.initEventListeners();
+  assert.ok(typeof keydownHandler === 'function', 'window keydown handler must be bound');
+
+  // Test 1: Escape closes active overlays
+  h.sandbox.document.querySelectorAll = (sel) => {
+    if (sel === '.modal-overlay.active') return [overlay1, overlay2];
+    return [];
+  };
+  overlay1.classList.add('active');
+  overlay2.classList.add('active');
+  keydownHandler({ key: 'Escape' });
+  assert.strictEqual(overlay1.classList.contains('active'), false);
+  assert.strictEqual(overlay2.classList.contains('active'), false);
+
+  // Test 2: Number keys 1-6 switch active tabs
+  keydownHandler({ key: '3', preventDefault: () => {} });
+  assert.strictEqual(h.getState().activeTab, 'banks');
+
+  keydownHandler({ key: '5', preventDefault: () => {} });
+  assert.strictEqual(h.getState().activeTab, 'subscriptions');
+
+  // Test 3: '?' toggles shortcuts modal
+  assert.strictEqual(overlay2.classList.contains('active'), false);
+  keydownHandler({ key: '?', preventDefault: () => {} });
+  assert.strictEqual(overlay2.classList.contains('active'), true);
+  keydownHandler({ key: '?', preventDefault: () => {} });
+  assert.strictEqual(overlay2.classList.contains('active'), false);
+
+  // Test 4: Modal overlay backdrop click closes overlay
+  let overlayClickHandler = null;
+  const testOverlay = {
+    classList: {
+      _classes: new Set(['active']),
+      remove(c) { this._classes.delete(c); },
+      contains(c) { return this._classes.has(c); }
+    },
+    addEventListener: (evt, fn) => {
+      if (evt === 'click') overlayClickHandler = fn;
+    }
+  };
+  h.sandbox.document.querySelectorAll = (sel) => {
+    if (sel === '.modal-overlay') return [testOverlay];
+    return [];
+  };
+  h.initEventListeners();
+  assert.ok(typeof overlayClickHandler === 'function');
+  overlayClickHandler({ target: testOverlay });
+  assert.strictEqual(testOverlay.classList.contains('active'), false);
+});
+

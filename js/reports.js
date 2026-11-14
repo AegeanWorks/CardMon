@@ -439,7 +439,7 @@ function exportPdfReport() {
                     </div>
                   </td>
                   <td>${data.count} ödeme</td>
-                  <td style="font-weight:700; color:${data.total > 0 ? '#0284c7' : '#64748b'};">₺${formatMoney(data.total)}</td>
+                  <td style="font-weight:700; color:${data.total > 0 ? '#0284c7' : '#64748b'};">${formatMoney(data.total)}</td>
                   <td>
                     <div style="display:flex; justify-content:space-between; align-items:center; gap:6px;">
                       <span class="pdf-badge ${Number(pct) > 40 ? 'pdf-badge-danger' : Number(pct) > 20 ? 'pdf-badge-warning' : 'pdf-badge-neutral'}">%${pct}</span>
@@ -457,7 +457,7 @@ function exportPdfReport() {
               <td>Toplam</td>
               <td>Aylık Konsolide Nakit Çıkışı</td>
               <td>${Object.values(periods).reduce((s, p) => s + p.count, 0)} Ödeme</td>
-              <td style="color:#0284c7;">₺${formatMoney(totalWeeklyOutflow)}</td>
+              <td style="color:#0284c7;">${formatMoney(totalWeeklyOutflow)}</td>
               <td>%100.0</td>
             </tr>
           </tfoot>
@@ -518,12 +518,12 @@ function exportPdfReport() {
           <tfoot>
             <tr style="background:#f8fafc; font-weight:800; border-top:1.5px solid #0f172a;">
               <td colspan="3">Toplam Portföy (${state.cards.length} Kart)</td>
-              <td>₺${formatMoney(totalCardLimit)}</td>
-              <td style="color:#dc2626;">₺${formatMoney(totalCardDebt)}</td>
-              <td style="color:#16a34a;">₺${formatMoney(totalAvailable)}</td>
+              <td>${formatMoney(totalCardLimit)}</td>
+              <td style="color:#dc2626;">${formatMoney(totalCardDebt)}</td>
+              <td style="color:#16a34a;">${formatMoney(totalAvailable)}</td>
               <td style="color:#2563eb;">%${cardUtilRatio.toFixed(1)}</td>
               <td>—</td>
-              <td style="color:#d97706;">₺${formatMoney(totalCardMinDue)}</td>
+              <td style="color:#d97706;">${formatMoney(totalCardMinDue)}</td>
               <td>Konsolide</td>
             </tr>
           </tfoot>
@@ -563,10 +563,10 @@ function exportPdfReport() {
           <tfoot>
             <tr style="background:#f8fafc; font-weight:800; border-top:1.5px solid #0f172a;">
               <td colspan="2">Toplam Taksitli Harcamalar (${allInstallments.length} Plan)</td>
-              <td>₺${formatMoney(allInstallments.reduce((s, i) => s + (Number(i.totalAmount) || 0), 0))}</td>
+              <td>${formatMoney(allInstallments.reduce((s, i) => s + (Number(i.totalAmount) || 0), 0))}</td>
               <td>—</td>
-              <td style="color:#0284c7;">₺${formatMoney(allInstallments.reduce((s, i) => s + (Number(i.monthlyAmount) || 0), 0))}/ay</td>
-              <td style="color:#dc2626;">₺${formatMoney(allInstallments.reduce((s, i) => s + (Number(i.remainingTotal) || 0), 0))}</td>
+              <td style="color:#0284c7;">${formatMoney(allInstallments.reduce((s, i) => s + (Number(i.monthlyAmount) || 0), 0))}/ay</td>
+              <td style="color:#dc2626;">${formatMoney(allInstallments.reduce((s, i) => s + (Number(i.remainingTotal) || 0), 0))}</td>
               <td>—</td>
             </tr>
           </tfoot>
@@ -609,10 +609,10 @@ function exportPdfReport() {
                     ${l.startCycle === 'next' ? '<span class="pdf-badge pdf-badge-warning" style="margin-left:3px; font-size:6.8pt;">İlk Taksit: Gelecek Ay (Eylül)</span>' : ''}
                   </td>
                   <td>${typeStr} ${l.interestRate ? `(%${l.interestRate})` : ''}</td>
-                  <td>₺${formatMoney(Number(l.totalAmount) || 0)}</td>
+                  <td>${formatMoney(Number(l.totalAmount) || 0)}</td>
                   <td>${paidInst} / ${totalInst} Ay (${remInst} ay kaldı)</td>
-                  <td style="font-weight:700; color:#0284c7;">₺${formatMoney(monthlyAmt)}/ay</td>
-                  <td style="font-weight:700; color:#ea580c;">₺${formatMoney(remDebt)}</td>
+                  <td style="font-weight:700; color:#0284c7;">${formatMoney(monthlyAmt)}/ay</td>
+                  <td style="font-weight:700; color:#ea580c;">${formatMoney(remDebt)}</td>
                   <td>${l.startCycle === 'next' ? `Eylül (Her ayın ${l.paymentDay || 15}'i)` : `Her ayın ${l.paymentDay || 15}'i`}</td>
                 </tr>
               `;
@@ -621,10 +621,10 @@ function exportPdfReport() {
           <tfoot>
             <tr style="background:#f8fafc; font-weight:800; border-top:1.5px solid #0f172a;">
               <td colspan="3">Toplam Krediler (${state.loans.length} Adet)</td>
-              <td>₺${formatMoney(state.loans.reduce((s, l) => s + (Number(l.totalAmount) || 0), 0))}</td>
+              <td>${formatMoney(state.loans.reduce((s, l) => s + (Number(l.totalAmount) || 0), 0))}</td>
               <td>—</td>
-              <td style="color:#0284c7;">₺${formatMoney(state.loans.reduce((s, l) => s + (Number(l.monthlyPayment) || 0), 0))}/ay</td>
-              <td style="color:#ea580c;">₺${formatMoney(state.loans.reduce((s, l) => s + (Math.max(0, (Number(l.totalInstallments) || 0) - (Number(l.paidInstallments) || 0)) * (Number(l.monthlyPayment) || 0)), 0))}</td>
+              <td style="color:#0284c7;">${formatMoney(state.loans.reduce((s, l) => s + (Number(l.monthlyPayment) || 0), 0))}/ay</td>
+              <td style="color:#ea580c;">${formatMoney(state.loans.reduce((s, l) => s + (Math.max(0, (Number(l.totalInstallments) || 0) - (Number(l.paidInstallments) || 0)) * (Number(l.monthlyPayment) || 0)), 0))}</td>
               <td>—</td>
             </tr>
           </tfoot>
@@ -677,9 +677,9 @@ function exportPdfReport() {
                   <td><span class="pdf-badge pdf-badge-neutral">${escapeHtml(catName)}</span></td>
                   <td>${escapeHtml(s.cardNickname)}</td>
                   <td>${s.cycle === 'yearly' ? 'Yıllık (Her yıl)' : `Aylık (Her ayın ${s.billingDay || 15}'i)`}</td>
-                  <td style="font-weight:600;">${s.isEstimated ? '~' : ''}${symbol}${formatMoney(origAmt)} ${curr !== 'TRY' ? `(${curr})` : ''}</td>
-                  <td style="font-weight:700; color:#7c3aed;">${s.isEstimated ? '~' : ''}₺${formatMoney(tryAmtMonthly)}/ay</td>
-                  <td style="font-weight:700; color:#0f172a;">${s.isEstimated ? '~' : ''}₺${formatMoney(tryAmtAnnual)}/yıl</td>
+                  <td style="font-weight:600;">${s.isEstimated ? '~' : ''}${formatMoney(origAmt, curr)} ${curr !== 'TRY' ? `(${curr})` : ''}</td>
+                  <td style="font-weight:700; color:#7c3aed;">${s.isEstimated ? '~' : ''}${formatMoney(tryAmtMonthly)}/ay</td>
+                  <td style="font-weight:700; color:#0f172a;">${s.isEstimated ? '~' : ''}${formatMoney(tryAmtAnnual)}/yıl</td>
                 </tr>
               `;
             }).join('')}
@@ -687,8 +687,8 @@ function exportPdfReport() {
           <tfoot>
             <tr style="background:#f8fafc; font-weight:800; border-top:1.5px solid #0f172a;">
               <td colspan="5">Toplam Düzenli Giderler (${allSubs.length} Kalem)</td>
-              <td style="color:#7c3aed;">₺${formatMoney(totalSubsMonthlyTry)}/ay</td>
-              <td style="color:#0f172a;">₺${formatMoney(totalSubsMonthlyTry * 12)}/yıl</td>
+              <td style="color:#7c3aed;">${formatMoney(totalSubsMonthlyTry)}/ay</td>
+              <td style="color:#0f172a;">${formatMoney(totalSubsMonthlyTry * 12)}/yıl</td>
             </tr>
           </tfoot>
         </table>
@@ -736,32 +736,32 @@ function exportPdfReport() {
             <div class="pdf-section-title">8. Ev Sahibi Olma & Kira Kâr / Tasarruf Analizi</div>
             
             <div style="font-size:8.5pt; color:#475569; margin-bottom:8px; line-height:1.4;">
-              Mevcut aylık <strong>₺${formatMoney(monthlyRent)}</strong> kiranız baz alınarak; ev sahibi olmanız durumunda cebinizde kalacak birikim, yıllık <strong>%${annualInflation}</strong> ortalama kira artış projeksiyonu ve <strong>%${investmentReturn}</strong> yıllık bileşik yatırım getirisiyle aşağıdaki gibi simüle edilmiştir.
+              Mevcut aylık <strong>${formatMoney(monthlyRent)}</strong> kiranız baz alınarak; ev sahibi olmanız durumunda cebinizde kalacak birikim, yıllık <strong>%${annualInflation}</strong> ortalama kira artış projeksiyonu ve <strong>%${investmentReturn}</strong> yıllık bileşik yatırım getirisiyle aşağıdaki gibi simüle edilmiştir.
             </div>
 
             <!-- Top Highlights Grid -->
             <div class="pdf-kpi-grid" style="margin-bottom:10px;">
               <div class="pdf-kpi-item" style="border-left:3px solid #10b981;">
                 <div class="pdf-kpi-label">1 Yıllık Tasarruf</div>
-                <div class="pdf-kpi-val" style="color:#10b981;">₺${formatMoney(y1.yearTotal)}</div>
-                <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">Aylık ₺${formatMoney(monthlyRent)}</div>
+                <div class="pdf-kpi-val" style="color:#10b981;">${formatMoney(y1.yearTotal)}</div>
+                <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">Aylık ${formatMoney(monthlyRent)}</div>
               </div>
 
               <div class="pdf-kpi-item" style="border-left:3px solid #f59e0b;">
                 <div class="pdf-kpi-label">5 Yılda Ödenen Kira</div>
-                <div class="pdf-kpi-val" style="color:#d97706;">₺${formatMoney(y5.cumulativeRent)}</div>
+                <div class="pdf-kpi-val" style="color:#d97706;">${formatMoney(y5.cumulativeRent)}</div>
                 <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">%${annualInflation} yıllık artışla</div>
               </div>
 
               <div class="pdf-kpi-item" style="border-left:3px solid #0284c7;">
                 <div class="pdf-kpi-label">5 Yıllık Yatırım Değeri</div>
-                <div class="pdf-kpi-val" style="color:#0284c7;">₺${formatMoney(y5.cumulativeInvestment)}</div>
+                <div class="pdf-kpi-val" style="color:#0284c7;">${formatMoney(y5.cumulativeInvestment)}</div>
                 <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">%${investmentReturn} bileşik getiriyle</div>
               </div>
 
               <div class="pdf-kpi-item" style="border-left:3px solid #8b5cf6;">
                 <div class="pdf-kpi-label">10 Yılda Ödenen Kira</div>
-                <div class="pdf-kpi-val" style="color:#7c3aed;">₺${formatMoney(y10.cumulativeRent)}</div>
+                <div class="pdf-kpi-val" style="color:#7c3aed;">${formatMoney(y10.cumulativeRent)}</div>
                 <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">10 yıllık kümülatif yük</div>
               </div>
             </div>
@@ -770,9 +770,9 @@ function exportPdfReport() {
             <div class="pdf-sim-box" style="background:#f8fafc; border-color:#cbd5e1; border-left-color:#3b82f6; margin-bottom:10px;">
               <strong style="color:#1e293b; font-size:9pt; display:block; margin-bottom:4px;">Finansal Karşılaştırma: Ev Sahibi Olmak vs Kirada Kalmak</strong>
               <div style="font-size:8pt; line-height:1.45; color:#334155; display:flex; flex-direction:column; gap:3px;">
-                <div><strong>1. Kendi Evinizin Olması Durumunda:</strong> 5 yılda toplam <strong>₺${formatMoney(y5.cumulativeRent)}</strong> tutarındaki kira giderinden tamamen muaf kalırsınız. Bu tutar cebinizde birikim olarak kalır.</div>
+                <div><strong>1. Kendi Evinizin Olması Durumunda:</strong> 5 yılda toplam <strong>${formatMoney(y5.cumulativeRent)}</strong> tutarındaki kira giderinden tamamen muaf kalırsınız. Bu tutar cebinizde birikim olarak kalır.</div>
                 <div><strong>2. Gayrimenkul Değer Artışı:</strong> Ev fiyatları enflasyona karşı değer kazanırken, kira ödemek yerine ev sahibi olduğunuzda çift yönlü servet artışı sağlarsınız.</div>
-                <div><strong>3. Kredi Alternatifi:</strong> Aylık ₺${formatMoney(monthlyRent)} kira ödemesi, 120 ay vadeli bir konut kredisi taksitine dönüştürüldüğünde kira öder gibi kendi mülkünüzün sahibi olursunuz.</div>
+                <div><strong>3. Kredi Alternatifi:</strong> Aylık ${formatMoney(monthlyRent)} kira ödemesi, 120 ay vadeli bir konut kredisi taksitine dönüştürüldüğünde kira öder gibi kendi mülkünüzün sahibi olursunuz.</div>
               </div>
             </div>
 
@@ -792,10 +792,10 @@ function exportPdfReport() {
                 ${yearlyBreakdown.map(b => `
                   <tr>
                     <td><strong>${b.year}. Yıl</strong></td>
-                    <td>₺${formatMoney(b.monthlyRent)}</td>
-                    <td>₺${formatMoney(b.yearTotal)}</td>
-                    <td style="color:#d97706; font-weight:700;">₺${formatMoney(b.cumulativeRent)}</td>
-                    <td style="color:#16a34a; font-weight:700;">₺${formatMoney(b.cumulativeInvestment)}</td>
+                    <td>${formatMoney(b.monthlyRent)}</td>
+                    <td>${formatMoney(b.yearTotal)}</td>
+                    <td style="color:#d97706; font-weight:700;">${formatMoney(b.cumulativeRent)}</td>
+                    <td style="color:#16a34a; font-weight:700;">${formatMoney(b.cumulativeInvestment)}</td>
                   </tr>
                 `).join('')}
               </tbody>
@@ -834,7 +834,7 @@ function exportPdfReport() {
               return `
                 <tr>
                   <td><strong>${escapeHtml(b ? b.name : 'Banka')}</strong> - ${escapeHtml(c.nickname)}</td>
-                  <td style="font-weight:700; color:#ea580c;">₺${formatMoney(fee)}</td>
+                  <td style="font-weight:700; color:#ea580c;">${formatMoney(fee)}</td>
                   <td>${c.annualFeeMonth ? `${c.annualFeeMonth}. Ay` : 'Belirtilmedi'}</td>
                   <td><span class="pdf-badge ${c.annualFeeStatus === 'refunded' || c.annualFeeStatus === 'exempt' ? 'pdf-badge-success' : 'pdf-badge-warning'}">${statusStr}</span></td>
                   <td style="font-size:8pt; color:#64748b;">Ekstreye yansıdığında müşteri hizmetlerinden puan/iade talebinde bulunulabilir.</td>
@@ -845,7 +845,7 @@ function exportPdfReport() {
           <tfoot>
             <tr style="background:#f8fafc; font-weight:800; border-top:1.5px solid #0f172a;">
               <td>Toplam Kart Aidatları (${annualFeeCards.length} Kart)</td>
-              <td style="color:#dc2626;">₺${formatMoney(annualFeeCards.reduce((s, c) => s + (Number(c.annualFeeAmount) || 0), 0))}</td>
+              <td style="color:#dc2626;">${formatMoney(annualFeeCards.reduce((s, c) => s + (Number(c.annualFeeAmount) || 0), 0))}</td>
               <td colspan="3" style="font-weight:normal; color:#64748b; font-size:7.5pt;">Konsolide yıllık kart üyelik maliyeti</td>
             </tr>
           </tfoot>
@@ -874,7 +874,7 @@ function exportPdfReport() {
             <div class="pdf-kpi-grid">
               <div class="pdf-kpi-item">
                 <div class="pdf-kpi-label">Yıllık Dijital Abonelik Yükü</div>
-                <div class="pdf-kpi-val" style="color:#7c3aed;">₺${formatMoney(digitalSubsAnnualTry)}</div>
+                <div class="pdf-kpi-val" style="color:#7c3aed;">${formatMoney(digitalSubsAnnualTry)}</div>
                 <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">${digitalSubs.length} adet dijital servis (kira/fatura hariç)</div>
               </div>
               <div class="pdf-kpi-item">
@@ -884,12 +884,12 @@ function exportPdfReport() {
               </div>
               <div class="pdf-kpi-item">
                 <div class="pdf-kpi-label">Tahmini Yıllık Tasarruf Potansiyeli</div>
-                <div class="pdf-kpi-val" style="color:#16a34a;">₺${formatMoney(digitalSavingsAnnual)}</div>
+                <div class="pdf-kpi-val" style="color:#16a34a;">${formatMoney(digitalSavingsAnnual)}</div>
                 <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">İsteğe bağlı dijital servis optimizasyonu</div>
               </div>
               <div class="pdf-kpi-item">
                 <div class="pdf-kpi-label">Aylık Serbest Nakit Katkısı</div>
-                <div class="pdf-kpi-val" style="color:#10b981;">₺${formatMoney(digitalSavingsAnnual / 12)}/ay</div>
+                <div class="pdf-kpi-val" style="color:#10b981;">${formatMoney(digitalSavingsAnnual / 12)}/ay</div>
                 <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">Doğrudan tasarrufa aktarılabilir tutar</div>
               </div>
             </div>
@@ -916,7 +916,7 @@ function exportPdfReport() {
               <p style="margin:0; font-size:8.5pt; color:#334155; line-height:1.45;">
                 Rapor tarihi (<strong>${fullDateStr}</strong>) itibarıyla yapacağınız bir harcamada ödemeyi en uzun süreye erteleyen kartınız <strong>${escapeHtml(bestSmartCard.card.nickname)}</strong>'dir. 
                 ${bestSmartCard.isNextMonthCutoff ? 'Ekstresi yeni kesildiği için bugün yapılacak harcama bir sonraki ayın ekstresine kalır ve <strong>' + bestSmartCard.daysUntilPayment + ' gün boyunca sıfır maliyetli nakit finansmanı</strong> sağlar.' : 'Ekstre kesimine ' + (bestSmartCard.cutoffDay - bestSmartCard.today) + ' gün bulunmaktadır.'}
-                Kullanılabilir Serbest Limit: <strong>₺${formatMoney(bestSmartCard.availableLimit)}</strong>.
+                Kullanılabilir Serbest Limit: <strong>${formatMoney(bestSmartCard.availableLimit)}</strong>.
               </p>
             </div>
 
@@ -949,7 +949,7 @@ function exportPdfReport() {
                         ${r.daysUntilPayment} Gün Vade
                       </td>
                       <td><span class="pdf-badge ${r.isNextMonthCutoff ? 'pdf-badge-success' : 'pdf-badge-neutral'}">${r.isNextMonthCutoff ? 'Gelecek Ekstreye Kalır' : 'Bu Ayki Ekstreye Yansır'}</span></td>
-                      <td style="color:#16a34a; font-weight:700;">₺${formatMoney(r.availableLimit)}</td>
+                      <td style="color:#16a34a; font-weight:700;">${formatMoney(r.availableLimit)}</td>
                     </tr>
                   `;
                 }).join('')}
@@ -965,7 +965,7 @@ function exportPdfReport() {
         <div class="pdf-sim-box">
           <strong>Sadece Asgari Ödeme Durumu ve Bileşik Faiz Riski:</strong>
           <p style="margin-top:4px; color:#451a03;">
-            Kredi kartı borcunun sadece asgari tutarını (<strong>₺${formatMoney(totalCardMinDue)}</strong>) ödediğinizde, geriye kalan <strong>₺${formatMoney(Math.max(0, totalCardDebt - totalCardMinDue))}</strong> tutarındaki borca her ay TCMB akdi faizi ve üzerine %30 vergi (KKDF + BSMV) eklenir. Borcunuza faiz işletildikçe anapara erimez ve borç sarmalına dönüşür.
+            Kredi kartı borcunun sadece asgari tutarını (<strong>${formatMoney(totalCardMinDue)}</strong>) ödediğinizde, geriye kalan <strong>${formatMoney(Math.max(0, totalCardDebt - totalCardMinDue))}</strong> tutarındaki borca her ay TCMB akdi faizi ve üzerine %30 vergi (KKDF + BSMV) eklenir. Borcunuza faiz işletildikçe anapara erimez ve borç sarmalına dönüşür.
             Ayrıca <strong>Katılım bankalarında</strong> borç devri ve faiz işletimi olmadığı için borcun %100'ünün ödenmesi yasal zorunluluktur; aksi halde kart kullanıma kapanır ve yasal takip riski doğar.
           </p>
         </div>
@@ -1021,7 +1021,7 @@ function exportPdfReport() {
           <div>
             <strong>Aşama 2 (Kısa Vade - 1. Ay): Katılım Bankası Borçları ve Düzenli Gider Optimizasyonu</strong>
             <div style="color:#475569; font-size:8.5pt; margin-top:2px;">
-              Katılım bankacılığı prensibinde borç devredilemez; asgari ödeme tutarı borcun %100'üdür. Gecikme cezası ve sicil bozulmaması için maaş gününde ilk kapatılması gereken kalemdir. Ayrıca kayıtlı ${allSubs.length} adet abonelikten (aylık ₺${formatMoney(totalSubsMonthlyTry)}) kullanılmayanlar iptal edilmelidir.
+              Katılım bankacılığı prensibinde borç devredilemez; asgari ödeme tutarı borcun %100'üdür. Gecikme cezası ve sicil bozulmaması için maaş gününde ilk kapatılması gereken kalemdir. Ayrıca kayıtlı ${allSubs.length} adet abonelikten (aylık ${formatMoney(totalSubsMonthlyTry)}) kullanılmayanlar iptal edilmelidir.
             </div>
           </div>
         </div>
@@ -1031,7 +1031,7 @@ function exportPdfReport() {
           <div>
             <strong>Aşama 3 (Orta Vade - 3-6 Ay): Taksitli Alışverişlerin Tasfiyesi & Findeks Skorunu 1600+ Seviyesine Çıkarma</strong>
             <div style="color:#475569; font-size:8.5pt; margin-top:2px;">
-              Mevcut ${allInstallments.length} adet taksitli planın (toplam ₺${formatMoney(allInstallments.reduce((s, i) => s + i.remainingTotal, 0))}) vadeleri tamamlandıkça yeni taksitli harcama yapmayarak serbest nakit akışınızı artırın. Toplam limit doluluğu %30 altına indiğinde kredi notunuz en üst banda çıkacaktır.
+              Mevcut ${allInstallments.length} adet taksitli planın (toplam ${formatMoney(allInstallments.reduce((s, i) => s + i.remainingTotal, 0))}) vadeleri tamamlandıkça yeni taksitli harcama yapmayarak serbest nakit akışınızı artırın. Toplam limit doluluğu %30 altına indiğinde kredi notunuz en üst banda çıkacaktır.
             </div>
           </div>
         </div>
@@ -1041,7 +1041,7 @@ function exportPdfReport() {
           <div>
             <strong>Aşama 4 (Uzun Vade - 12 Ay): Pozitif Serbest Nakit Akışı & Acil Durum Fonu İnşası</strong>
             <div style="color:#475569; font-size:8.5pt; margin-top:2px;">
-              Aylık zorunlu gider yükünüzü net gelirinizin %40'ının altında tutarak, KMH rezervlerine bağımlı kalmadan en az 3 aylık zorunlu gider tutarı kadar (₺${formatMoney(totalMandatoryOutflow * 3)}) serbest likit acil durum fonu oluşturun.
+              Aylık zorunlu gider yükünüzü net gelirinizin %40'ının altında tutarak, KMH rezervlerine bağımlı kalmadan en az 3 aylık zorunlu gider tutarı kadar (${formatMoney(totalMandatoryOutflow * 3)}) serbest likit acil durum fonu oluşturun.
             </div>
           </div>
         </div>

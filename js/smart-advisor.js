@@ -82,7 +82,7 @@ function renderSmartCardAdvisor() {
             </div>
             <div style="font-size:0.8rem; color:#38bdf8; margin-top:0.2rem;">
               ${best.isNextMonthCutoff ? '✨ Ekstresi yeni kesildi! Harcamanız 1 ay sonraki ekstreye kalır.' : `Ekstre kesimine ${best.cutoffDay - best.today} gün var.`}
-              Kullanılabilir Limit: <strong>₺${formatMoney(best.availableLimit)}</strong>
+              Kullanılabilir Limit: <strong>${formatMoney(best.availableLimit)}</strong>
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ function openSmartAdvisorModal() {
               <span style="font-size:0.75rem; font-weight:normal; color:var(--text-muted);">(${escapeHtml(b.name)})</span>
             </div>
             <div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.15rem;">
-              Kesim Günü: ${item.cutoffDay}. Gün • Son Ödeme: ${item.dueDay}. Gün • Kalan Limit: ₺${formatMoney(item.availableLimit)}
+              Kesim Günü: ${item.cutoffDay}. Gün • Son Ödeme: ${item.dueDay}. Gün • Kalan Limit: ${formatMoney(item.availableLimit)}
             </div>
           </div>
         </div>

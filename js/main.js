@@ -131,6 +131,76 @@ function initEventListeners() {
   if (typeof setupFileSystemShortcuts === 'function') {
     setupFileSystemShortcuts();
   }
+
+  // Dismiss modal overlays when clicking outside the modal dialog container
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+      }
+    });
+  });
+
+  // Global Keyboard Shortcuts
+  window.addEventListener('keydown', (e) => {
+    // Escape key closes any active modal or dropdown
+    if (e.key === 'Escape') {
+      const activeOverlays = document.querySelectorAll('.modal-overlay.active');
+      if (activeOverlays.length > 0) {
+        activeOverlays.forEach(m => m.classList.remove('active'));
+        return;
+      }
+      if (typeof closeSettingsDropdown === 'function') {
+        closeSettingsDropdown();
+      }
+      return;
+    }
+
+    // Do not intercept hotkeys if focused inside form inputs
+    const activeEl = document.activeElement;
+    const tag = activeEl && activeEl.tagName ? activeEl.tagName.toLowerCase() : '';
+    if (tag === 'input' || tag === 'textarea' || tag === 'select' || (activeEl && activeEl.isContentEditable)) {
+      return;
+    }
+
+    // Skip if modifiers (Ctrl/Meta/Alt) are pressed
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+    // Quick Tab Switching: '1' -> dashboard, '2' -> cards, '3' -> banks, '4' -> loans, '5' -> subscriptions, '6' -> timeline
+    const tabMap = {
+      '1': 'dashboard',
+      '2': 'cards',
+      '3': 'banks',
+      '4': 'loans',
+      '5': 'subscriptions',
+      '6': 'timeline'
+    };
+    if (tabMap[e.key]) {
+      e.preventDefault();
+      navigateToTab(tabMap[e.key]);
+      return;
+    }
+
+    // Search focus: '/'
+    if (e.key === '/') {
+      e.preventDefault();
+      const searchInput = document.getElementById('cardSearchInput');
+      if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
+      }
+      return;
+    }
+
+    // Shortcuts help dialog: '?'
+    if (e.key === '?') {
+      e.preventDefault();
+      if (typeof toggleShortcutsModal === 'function') {
+        toggleShortcutsModal();
+      }
+      return;
+    }
+  });
 }
 
 
@@ -243,4 +313,10 @@ window.calculateRentSavingsSimulation = calculateRentSavingsSimulation;
 window.saveToActiveFile = typeof saveToActiveFile !== 'undefined' ? saveToActiveFile : undefined;
 window.saveFileAs = typeof saveFileAs !== 'undefined' ? saveFileAs : undefined;
 window.openPortfolioFile = typeof openPortfolioFile !== 'undefined' ? openPortfolioFile : undefined;
+
+// Keyboard Shortcuts Modal Exports
+window.openShortcutsModal = openShortcutsModal;
+window.closeShortcutsModal = closeShortcutsModal;
+window.toggleShortcutsModal = toggleShortcutsModal;
+
 
