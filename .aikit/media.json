@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-cashflow-calm-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/cashflow-calm-after.html",
-      "commit": "66f97bf2c9a1179cf35708ad0d4f88e9ee187e33",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 66f97bf: cashflow metric dots/values are visibly subdued and the empty burden track is removed; the widget is slightly shorter so the 'Analizler veriyle gelir' guidance card is now fully visible at the bottom. The meaningful 75.000\u20ba free-cash figure and green safety badge are preserved. No clipping, truncation or contrast regressions; typography and card geometry unchanged.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T01:14:12"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-zero-alerts-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/zero-alerts-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/rhythm-before.html",
       "commit": "3bbab7a6fd9dd4b3fec9d1c4b3d6d288c86042d2",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-rhythm-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/rhythm-after.html",
+      "commit": "a966cb03ad97dd9514f5f95c01b585dea7a1d045",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
