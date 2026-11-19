@@ -379,6 +379,25 @@
   color: var(--text-muted);
 }
 
+/* Empty portfolio: let the onboarding actions lead instead of a rainbow of
+   zero-value accents and a meaningless empty progress track. */
+.app-main:has(.health-score-pill.health-empty) .overview-grid .stat-card::before {
+  opacity: 0.35;
+}
+
+.app-main:has(.health-score-pill.health-empty) .overview-grid .stat-icon {
+  opacity: 0.6;
+}
+
+.app-main:has(.health-score-pill.health-empty) .health-score-bar {
+  display: none;
+}
+
+.app-main:has(.health-score-pill.health-empty) .health-score-caption {
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
 /* ==========================================================================
    BANKS & BANK ACCOUNTS VIEW (TAB 2)
    ========================================================================== */
