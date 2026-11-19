@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at 033af3e: two empty progress tracks remain - a grey meter under the 0.0% utilization KPI and a thin green bar in the sidebar portfolio card. Both convey no information when there is no data and clash with the already-calmed empty state. Layout otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T02:28:12"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-empty-tracks-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at 65b610b: both meaningless empty tracks are gone; the utilization card shows a clean label/value layout and the sidebar footer shows just its three numbers. No layout shift elsewhere, no clipping or contrast regression; populated states keep their meters via the body:has() scope.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T02:28:33"
+      }
     }
   ]
 }
