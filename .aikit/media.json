@@ -225,6 +225,18 @@
       "height": 900,
       "status": "pending_review",
       "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-empty-state-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/empty-state-after.html",
+      "commit": "432f4c69ad1118b0f173498b5c6cc94cd786285c",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
