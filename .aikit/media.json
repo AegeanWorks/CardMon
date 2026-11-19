@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-19-home-before.png",
-      "alt": "CardMon interface at 2026-11-19",
-      "caption": "CardMon interface before color unification",
-      "commit": "09a1fc51ea93b4253511703ded05e82ec4fb74d2",
-      "taken_at": "2026-11-19",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE baseline at 09a1fc5: clean dark fintech dashboard, 1440x900. Sidebar, topbar, welcome hero, seven KPI widgets and cashflow widget all aligned with no clipping or label truncation. Color mismatch visible: Available-limit value bright emerald-400, Ek Hesap value bright cyan-400, Nearest-due pink-400, while their card accents use deeper token shades; cashflow total also bright emerald-400.",
-        "score": 95,
-        "reviewed_at": "2026-11-19T23:52:22"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-19-home.png",
       "alt": "CardMon interface at 2026-11-19",
       "caption": "CardMon interface captured from index.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T00:35:08"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-strip-center-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/strip-center-before.html",
+      "commit": "3fb8bb922ff47c10e4b3d2092694f9e30ffa91ed",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
