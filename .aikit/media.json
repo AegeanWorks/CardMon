@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-badge-clean-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/badge-clean-after.html",
-      "commit": "3300b67f3edcfc17c63cef2153c8a40a326209e2",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 3300b67: zero-count badges are hidden, so the sidebar labels align cleanly with consistent spacing and the active 'Genel Bak\u0131\u015f & Analiz' item still reads clearly. Counts reappear automatically once data exists via setTabBadge. No layout shift elsewhere, no clipping or contrast regressions; cleaner, more minimal navigation.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T01:37:39"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-card-reorder-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-reorder-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/empty-tracks-before.html",
       "commit": "033af3ea8e4db0461122b73c780ead1288463cc5",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-empty-tracks-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/empty-tracks-after.html",
+      "commit": "65b610b88792f76ad761e25c5de0d1707420a4e3",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
