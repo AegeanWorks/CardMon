@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-guidance-svg-icon",
+    "task_id": "cardmon-empty-state-rhythm",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795128814.4252717,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795129351.7390268,
     "owner": "agent",
-    "lease_until": 1795136014.4252717,
+    "lease_until": 1795136551.7390268,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795128855.4864862,
-    "completed_head": "e823e6a32de557aebebc3feaf4241ecb9a9ed38a",
-    "completed_tree": "75566314b81041b3a325528fad303e1fe69d0be3"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-empty-analytics-card",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (94/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795125876.3826258,
-      "timestamp_str": "2026-11-20 01:04:36",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-empty-analytics-card",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-empty-analytics-card' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795125951.950649,
-      "timestamp_str": "2026-11-20 01:05:51",
-      "agent": "agent",
-      "head": "6a2ba6ff7f67ed530572000aee610778162a8e3a",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-cashflow-empty-calm",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-empty-state-rhythm",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Tighten empty-state vertical rhythm",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795129350.561935,
+      "timestamp_str": "2026-11-20 02:02:30",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision pass showed the cashflow income summary fell below the first viewport after the guidance card reorder, reducing scannability (G-003 usable/functional).",
+        "benefits": "Scoped margin reduction to 1.1rem across hero, KPI grid, guidance card and cashflow widget; income summary now visible without scrolling; before/after vision reviews approved (96 -> 97).",
+        "risks": "CSS-only, scoped to the empty state via :has(); populated state spacing unchanged; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-empty-state-rhythm",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795129351.7390268,
+      "timestamp_str": "2026-11-20 02:02:31",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
