@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-calm-empty-state",
+    "task_id": "cardmon-kpi-strip-balance",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795124138.0088,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795124540.699835,
     "owner": "agent",
-    "lease_until": 1795131338.0088,
+    "lease_until": 1795131740.699835,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795124187.988598,
-    "completed_head": "6b74d31e51767c53ab5149d11cff18ecf36eb49a",
-    "completed_tree": "fb5f9c8ff9f0db5072bf34c1125c606b19c5d4f3"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-ui-color-token-unification",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[4/4] Verify color unification: npm test 107/107; ui verify + ui finish --reviewed pass; before/after screenshots captured (2026-11-19-home-before.png at 09a1fc5, 2026-11-19-home.png at 61c42db) and analyzed via DOM diff",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795120182.7535405,
-      "timestamp_str": "2026-11-19 23:29:42",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-ui-color-token-unification",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-ui-color-token-unification' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795120242.9711134,
-      "timestamp_str": "2026-11-19 23:30:42",
-      "agent": "agent",
-      "head": "8da03368caf6069467774cf926057443f7282cfe",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-screenshot-vision-analysis",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-kpi-strip-balance",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Center the value in the full-width KPI strip",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795124538.5610194,
+      "timestamp_str": "2026-11-20 00:42:18",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review found the full-width 'En Yak\u0131n \u00d6deme' strip was visually lopsided: value sat with the left label/icon while the meta was far right, leaving the middle empty.",
+        "benefits": "One-line CSS change yields a balanced label-value-meta status bar; before/after vision reviews approved (96 -> 97); no other visual changes.",
+        "risks": "Desktop-only rule inside the existing min-width:1350px media query; no DOM, data or behavior change; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-kpi-strip-balance",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795124540.699835,
+      "timestamp_str": "2026-11-20 00:42:20",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
