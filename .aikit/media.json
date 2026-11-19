@@ -213,6 +213,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T00:09:09"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-empty-state-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/empty-state-before.html",
+      "commit": "78fd98e646670339d8de96e9bbb2c722d8618f68",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

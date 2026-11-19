@@ -194,11 +194,14 @@ function renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalE
   const caption = document.getElementById('healthScoreCaption');
   if (!pill || !fill || !caption) return;
 
+  const actions = document.getElementById('welcomeEmptyActions');
+  if (actions) actions.hidden = totalLimit !== 0;
+
   if (totalLimit === 0) {
-    pill.className = 'health-score-pill health-good';
-    pill.textContent = t('healthGood');
-    fill.style.width = '70%';
-    caption.textContent = t('noCardsSub');
+    pill.className = 'health-score-pill health-empty';
+    pill.textContent = t('healthNoData');
+    fill.style.width = '0%';
+    caption.textContent = t('healthEmptyHint');
     return;
   }
 

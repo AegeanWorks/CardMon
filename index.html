@@ -257,6 +257,16 @@
           </div>
           <h2 class="welcome-title">Finansal Özet & Portföy Analizi</h2>
           <p class="welcome-subtitle" id="welcomeSubtitle">Banka limitleriniz, ek hesap rezervleriniz ve kredi kartı ödeme projeksiyonlarınız aşağıda özetlenmiştir.</p>
+          <div class="welcome-actions" id="welcomeEmptyActions" hidden>
+            <button type="button" class="btn btn-primary btn-sm" onclick="loadDemoData(true)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span data-i18n="loadDemo">Örnek Veri Yükle</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="navigateToTab('cards'); openAddCardModal();">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              <span data-i18n="addCard">Yeni Kart Ekle</span>
+            </button>
+          </div>
         </div>
 
         <div class="health-score-widget">

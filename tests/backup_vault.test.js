@@ -209,9 +209,10 @@ test('renderHealthScoreWidget renders correct status pill and progress for vario
   const fill = h.sandbox.document.getElementById('healthScoreFill');
   const caption = h.sandbox.document.getElementById('healthScoreCaption');
 
-  // Zero limit
+  // Zero limit: honest empty state, no misleading "good" score
   h.renderHealthScoreWidget(0, 0, 0, 0);
-  assert.match(pill.className, /health-good/);
+  assert.match(pill.className, /health-empty/);
+  assert.strictEqual(fill.style.width, '0%');
 
   // Zero utilization
   h.renderHealthScoreWidget(0, 0, 100000, 0);

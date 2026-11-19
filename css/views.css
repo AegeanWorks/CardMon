@@ -288,6 +288,18 @@
   line-height: 1.45;
 }
 
+.welcome-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.welcome-actions[hidden] {
+  display: none;
+}
+
 /* Health Score Widget */
 .health-score-widget {
   background: rgba(15, 23, 42, 0.6);
@@ -327,6 +339,12 @@
   background: rgba(59, 130, 246, 0.2);
   color: #60a5fa;
   border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.health-score-pill.health-empty {
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--text-secondary);
+  border: 1px solid rgba(148, 163, 184, 0.28);
 }
 
 .health-score-pill.health-warning {
