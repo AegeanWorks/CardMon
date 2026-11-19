@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-nearest-none-label",
+    "task_id": "cardmon-sidebar-badge-cleanup",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795127419.6371398,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795127890.7545745,
     "owner": "agent",
-    "lease_until": 1795134619.6371398,
+    "lease_until": 1795135090.7545745,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795127458.5855083,
-    "completed_head": "3313f23685a554322eaaf96c7935460662714855",
-    "completed_tree": "e712cf2a9a733487d8de70d94147a7472bc92de8"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-calm-empty-state",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795124138.0088,
-      "timestamp_str": "2026-11-20 00:35:38",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-calm-empty-state",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-calm-empty-state' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795124188.706759,
-      "timestamp_str": "2026-11-20 00:36:28",
-      "agent": "agent",
-      "head": "6b74d31e51767c53ab5149d11cff18ecf36eb49a",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-kpi-strip-balance",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-sidebar-badge-cleanup",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Hide zero-count sidebar badges in the empty portfolio",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795127889.7253644,
+      "timestamp_str": "2026-11-20 01:38:09",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision pass found five repeated '0' badges in the sidebar adding noise to an otherwise minimal empty state (G-003 simplistic/aesthetic).",
+        "benefits": "setTabBadge helper hides zero counts and restores them when data exists; sidebar labels align cleanly; before/after vision reviews approved (96 -> 97).",
+        "risks": "Small JS refactor across five badge sites plus one CSS rule; no data/behavior change; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-sidebar-badge-cleanup",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795127890.7545745,
+      "timestamp_str": "2026-11-20 01:38:10",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
