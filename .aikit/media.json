@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-empty-state-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/empty-state-before.html",
-      "commit": "78fd98e646670339d8de96e9bbb2c722d8618f68",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 78fd98e: empty portfolio (0 cards/limits) but the health widget shows a blue '\u0130Y\u0130 / DENGEL\u0130' pill with a 70% colored bar, and its caption tells the user to click 'Yeni Kart Ekle' / '\u00d6rnek Veri Y\u00fckle' buttons that are not visible on this screen. No next action is offered in the hero, leaving the empty state misleading and passive. Layout and typography otherwise clean.",
-        "score": 91,
-        "reviewed_at": "2026-11-20T00:18:09"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-empty-state-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/empty-state-after.html",
@@ -242,8 +223,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "rejected",
+      "review": {
+        "status": "rejected",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "Stale capture: headless browser rendered the static pre-HTML-state (M\u00dcKEMMEL pill, default subtitle, no CTA row) before app JS painted. Replaced by 2026-11-20-analytics-before2.png captured from the pre-change files; do not use as a baseline.",
+        "score": null,
+        "reviewed_at": "2026-11-20T01:02:45"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-analytics-empty-after.png",
@@ -254,8 +242,34 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at e3001b3: the empty analytics grid, insights and executive table are replaced by one compact dashed guidance card ('Analizler veriyle gelir') that explains what appears once data exists; no empty chart bodies below. The visible dashboard above (hero, CTAs, KPI strip, cashflow widget) is unchanged with no clipping or truncation. Populated states keep all analytics via the :has() empty-state scope; copy is translated in TR/EN.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T01:03:29"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-analytics-before2.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/analytics-before2.html",
+      "commit": "dc6b73472465cbfb8537ebff5ae40746eb096eea",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE baseline (re-captured from pre-change files at parent 1e5fbaa): rendered empty dashboard with VER\u0130 YOK pill, CTA row and contextual subtitle; four empty analytics chart placeholders begin immediately below the cashflow widget with large blank bodies and more empty cards below the fold. Layout otherwise clean.",
+        "score": 94,
+        "reviewed_at": "2026-11-20T01:03:09"
+      }
     }
   ]
 }
