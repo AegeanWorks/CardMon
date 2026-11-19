@@ -28,7 +28,6 @@
   "has_ui": true,
   "ui_kind": "web",
   "ui_evidence": [
-    "dashboard.html",
     "index.html"
   ],
   "ui_checked_at": "2026-11-19",
