@@ -2,12 +2,12 @@
   "version": 1,
   "active_task": {
     "task_id": "cardmon-ui-color-token-unification",
-    "last_phase": "phase 1",
-    "active_phase": 1,
+    "last_phase": "phase 4",
+    "active_phase": 4,
     "status": "in_progress",
-    "updated_at": 1795120110.3270864,
+    "updated_at": 1795120182.7535405,
     "owner": "agent",
-    "lease_until": 1795127310.3270864,
+    "lease_until": 1795127382.7535405,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -18,23 +18,6 @@
     ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-comprehensive-tests",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "Add comprehensive test suites for loans, subscriptions, advisor, vault, and reports",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1794688673.0567338,
-      "timestamp_str": "2026-11-14 23:37:53",
-      "agent": "antigravity:1",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-comprehensive-tests",
       "phase": "phase 4",
@@ -418,6 +401,24 @@
         "risks": "CSS-only color changes; no functional diff; npm test passed 107/107.",
         "mitigation": "Verified: npm test 107/107; ui verify + ui finish --reviewed; DOM diff empty (no structural change); color audit after shows token colors."
       },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-ui-color-token-unification",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[4/4] Verify color unification: npm test 107/107; ui verify + ui finish --reviewed pass; before/after screenshots captured (2026-11-19-home-before.png at 09a1fc5, 2026-11-19-home.png at 61c42db) and analyzed via DOM diff",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795120182.7535405,
+      "timestamp_str": "2026-11-19 23:29:42",
+      "agent": "agent",
+      "checklists": "passed",
       "workspaces": [
         {
           "name": "CardMon",
