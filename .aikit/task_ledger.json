@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-onboarding-cta-size",
+    "task_id": "cardmon-empty-pdf-gate",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795129888.000069,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795130429.6636662,
     "owner": "agent",
-    "lease_until": 1795137088.000069,
+    "lease_until": 1795137629.6636662,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795129926.178661,
-    "completed_head": "5736829933cadb269bdad17be6f380784b3fa0c8",
-    "completed_tree": "6f1b306cd6562c0ff3a1c322fb791b6f2b62164a"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-zero-alert-calm",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795127010.8585646,
-      "timestamp_str": "2026-11-20 01:23:30",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-zero-alert-calm",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-zero-alert-calm' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795127048.8128326,
-      "timestamp_str": "2026-11-20 01:24:08",
-      "agent": "agent",
-      "head": "392bca7f8eabebc554973e41bfef81512497fcc3",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-nearest-none-label",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-empty-pdf-gate",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Disable PDF export when the portfolio is empty",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795130428.8837671,
+      "timestamp_str": "2026-11-20 02:20:28",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision pass showed an enabled PDF export inviting an all-zero report in the empty state, which is not a useful action (G-003 functional/usable).",
+        "benefits": "PDF button disabled with a translated explanatory tooltip and re-enabled automatically with data; primary onboarding CTA remains the focus; before/after vision reviews approved (96 -> 97).",
+        "risks": "Small id + state toggle across index.html, js/backup-vault.js, i18n.js and CSS; export function itself untouched; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-empty-pdf-gate",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795130429.6636662,
+      "timestamp_str": "2026-11-20 02:20:29",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
