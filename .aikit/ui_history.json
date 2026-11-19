@@ -566,5 +566,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "d0d6d8985de42cbaa99e9b99e9012d525a763138400301a47ed0fabc008adc19",
     "baseline_digest": "d0d6d8985de42cbaa99e9b99e9012d525a763138400301a47ed0fabc008adc19"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-svg-icon-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "fe47225bacb8ef91873617d5c0bf4212c2299ca9",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795128616.831396,
+    "finished_at": 1795128699.1963003,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "b30cba4b9d7823c5ba45af8f584ed66788c682e33a69f17ece5ae20795643830",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795128699.1963031,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-svg-icon-after.png"
+      ],
+      "scoped_digest": "19f04f6a3aaa3ac06dbcb4a0e02a18c1553884870de10bbdb969818538cb3061"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "b30cba4b9d7823c5ba45af8f584ed66788c682e33a69f17ece5ae20795643830",
+    "baseline_digest": "b30cba4b9d7823c5ba45af8f584ed66788c682e33a69f17ece5ae20795643830"
   }
 ]

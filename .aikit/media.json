@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-analytics-before2.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/analytics-before2.html",
-      "commit": "dc6b73472465cbfb8537ebff5ae40746eb096eea",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE baseline (re-captured from pre-change files at parent 1e5fbaa): rendered empty dashboard with VER\u0130 YOK pill, CTA row and contextual subtitle; four empty analytics chart placeholders begin immediately below the cashflow widget with large blank bodies and more empty cards below the fold. Layout otherwise clean.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T01:03:09"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-cashflow-calm-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cashflow-calm-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/svg-icon-before.html",
       "commit": "a28226d816e12322e3255f0e8150ab2dd5e77a44",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-svg-icon-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/svg-icon-after.html",
+      "commit": "fe47225bacb8ef91873617d5c0bf4212c2299ca9",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
