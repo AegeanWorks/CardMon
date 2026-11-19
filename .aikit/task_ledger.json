@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-onboarding-cta-size",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795129888.000069,
     "owner": "agent",
     "lease_until": 1795137088.000069,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795129926.178661,
+    "completed_head": "5736829933cadb269bdad17be6f380784b3fa0c8",
+    "completed_tree": "6f1b306cd6562c0ff3a1c322fb791b6f2b62164a"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-zero-alert-calm",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Mute false-alarm zero values in the empty portfolio",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795127008.9597907,
-      "timestamp_str": "2026-11-20 01:23:28",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision pass found four zero-value figures still colored red/amber, implying debt and payment alarms when no data exists, which conflicts with the sleek, minimal empty state (G-003).",
-        "benefits": "Alert colors moved to classes and muted only in the empty state via :has(); positive figures keep their emphasis; before/after vision reviews approved (95 -> 97).",
-        "risks": "Small HTML/JS class refactor plus scoped CSS; no behavior or data changes; populated states keep rose/amber emphasis; 107/107 tests pass.",
-        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-zero-alert-calm",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-onboarding-cta-size",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-onboarding-cta-size' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795129926.4096005,
+      "timestamp_str": "2026-11-20 02:12:06",
+      "agent": "agent",
+      "head": "5736829933cadb269bdad17be6f380784b3fa0c8",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
