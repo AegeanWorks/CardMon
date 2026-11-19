@@ -1620,7 +1620,7 @@ function renderDashboardView() {
         <div class="cashflow-total-row">
           <div class="cashflow-total-block">
             <span class="cashflow-total-label">Bu Ay Çıkacak Toplam Zorunlu Tutar</span>
-            <div class="cashflow-total-val" style="color:var(--accent-rose);">${formatMoney(totalMonthlyMandatory)}</div>
+            <div class="cashflow-total-val alert-rose">${formatMoney(totalMonthlyMandatory)}</div>
           </div>
           ${monthlyIncome > 0 ? `
             <div class="cashflow-total-block align-right">

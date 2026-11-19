@@ -423,6 +423,22 @@
   display: none;
 }
 
+/* Alert-colored values use classes so the empty state can mute false alarms. */
+.stat-value.alert-rose,
+.cashflow-total-val.alert-rose {
+  color: var(--accent-rose);
+}
+
+.stat-value.alert-amber {
+  color: var(--accent-amber);
+}
+
+.app-main:has(.health-score-pill.health-empty) .stat-value.alert-rose,
+.app-main:has(.health-score-pill.health-empty) .stat-value.alert-amber,
+.app-main:has(.health-score-pill.health-empty) .cashflow-total-val.alert-rose {
+  color: var(--text-secondary);
+}
+
 /* ==========================================================================
    BANKS & BANK ACCOUNTS VIEW (TAB 2)
    ========================================================================== */

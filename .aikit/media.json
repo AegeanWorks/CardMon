@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-bank-cta-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/bank-cta-after.html",
-      "commit": "59f9f76df3b9bb993b2764250db88d64401d497a",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 59f9f76: the secondary CTA is now 'Yeni Banka Ekle' with a bank icon, opening the banks tab and bank modal - a valid first step; the health caption mentions banks first in both TR and EN. Visual rhythm of the hero is unchanged: no clipping, truncation or contrast regressions, badge/title/subtitle/CTA alignment intact. The empty-state guidance is now functionally correct and internally consistent with the app's bank-then-card onboarding flow.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T00:27:26"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-calm-empty-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/calm-empty-before.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T01:14:12"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-zero-alerts-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/zero-alerts-before.html",
+      "commit": "bcfdd51c799861cec09702c072b412ee3113a9c6",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
