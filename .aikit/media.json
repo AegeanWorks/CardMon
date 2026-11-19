@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-19-home.png",
-      "alt": "CardMon interface at 2026-11-19",
-      "caption": "CardMon interface captured from index.html",
-      "commit": "61c42dbd9809da01cfd768a0b26f50e050bc3f3f",
-      "taken_at": "2026-11-19",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 61c42db: pixel-comparison with the before capture shows identical layout, spacing, typography, badges and KPI geometry - no clipping, truncation or contrast regressions. Intended changes visible: Available-limit value now deeper token emerald matching its card border; Ek Hesap value deeper cyan; Nearest-due icon and value now consistent rose instead of two pink shades; sidebar available-limit green matches the KPI. Health pill stays blue (demo state 'good', so the excellent-style change is not visible). Minor residual: cashflow 'Kalan Net Serbest Nakit' total is still bright emerald-400 from a dynamic inline style in js/views.js, so two close greens coexist on the dashboard; recommend unifying it to var(--accent-emerald) in a future pass. Overall cleaner internal color cohesion, G-001/G-003 satisfied.",
-        "score": 96,
-        "reviewed_at": "2026-11-19T23:52:38"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-19-dashboard.png",
       "alt": "CardMon interface at 2026-11-19",
       "caption": "CardMon interface captured from projects/CardMon/dashboard.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/strip-center-before.html",
       "commit": "3fb8bb922ff47c10e4b3d2092694f9e30ffa91ed",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-strip-center-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/strip-center-after.html",
+      "commit": "e36754e943cbfbef28da875a3c8d2cc946136bd0",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
