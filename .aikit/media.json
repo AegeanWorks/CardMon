@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at 8c03756: the empty-state hero offers '\u00d6rnek Veri Y\u00fckle' and 'Yeni Kart Ekle'. The latter opens the card form, but its bank dropdown is populated only from state.banks (renderBankDropdowns), so with zero banks it is a dead-end first step; the health caption also tells the user to add a card first. Layout, spacing and typography are otherwise clean with no clipping.",
+        "score": 94,
+        "reviewed_at": "2026-11-20T00:27:08"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-bank-cta-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at 59f9f76: the secondary CTA is now 'Yeni Banka Ekle' with a bank icon, opening the banks tab and bank modal - a valid first step; the health caption mentions banks first in both TR and EN. Visual rhythm of the hero is unchanged: no clipping, truncation or contrast regressions, badge/title/subtitle/CTA alignment intact. The empty-state guidance is now functionally correct and internally consistent with the app's bank-then-card onboarding flow.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T00:27:26"
+      }
     }
   ]
 }
