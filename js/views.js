@@ -59,6 +59,14 @@ function renderUserProfileHeader() {
   if (previewTitle) previewTitle.textContent = p.title || t('userProfile');
 }
 
+// Sidebar count badge: hide zero counts so empty navigation stays clean.
+function setTabBadge(id, count) {
+  const badge = document.getElementById(id);
+  if (!badge) return;
+  badge.textContent = count;
+  badge.hidden = !count;
+}
+
 // 2. Populate Bank Select Dropdowns (In Modals & Filters)
 function renderBankDropdowns() {
   const bankFilterSelect = document.getElementById('bankFilterSelect');
@@ -732,8 +740,7 @@ function renderBanksView() {
     ${banksHtml}
   `;
 
-  const bankBadge = document.getElementById('banksTabBadge');
-  if (bankBadge) bankBadge.textContent = state.banks.length;
+  setTabBadge('banksTabBadge', state.banks.length);
 }
 
 // 5.1. Dedicated Ek Hesaplar (KMH / Overdrafts) View
@@ -744,8 +751,7 @@ function renderEkHesapView() {
   const totalEkHesap = state.banks.reduce((sum, b) => sum + (Number(b.ekHesapLimit) || 0), 0);
   const banksWithEkHesap = state.banks.filter(b => Number(b.ekHesapLimit) > 0);
 
-  const ekBadge = document.getElementById('ekHesapTabBadge');
-  if (ekBadge) ekBadge.textContent = banksWithEkHesap.length;
+  setTabBadge('ekHesapTabBadge', banksWithEkHesap.length);
 
   container.innerHTML = `
     <!-- Ek Hesap Hero Summary Banner -->
@@ -852,8 +858,7 @@ function renderLoansView() {
 
   const totalMonthlyLoanPayment = activeLoans.reduce((sum, l) => sum + (Number(l.monthlyPayment) || 0), 0);
 
-  const loansBadge = document.getElementById('loansTabBadge');
-  if (loansBadge) loansBadge.textContent = activeLoans.length;
+  setTabBadge('loansTabBadge', activeLoans.length);
 
   const today = new Date().getDate();
 
@@ -1025,8 +1030,7 @@ function renderSubscriptionsView() {
   const totalYearly = totalMonthly * 12;
 
   // Update Badge
-  const subBadge = document.getElementById('subscriptionsTabBadge');
-  if (subBadge) subBadge.textContent = allSubs.length;
+  setTabBadge('subscriptionsTabBadge', allSubs.length);
 
   const today = new Date().getDate();
 
@@ -1812,8 +1816,7 @@ function renderDashboardView() {
   const elCardCount = document.getElementById('statCardCount');
   if (elCardCount) elCardCount.textContent = activeCards;
 
-  const cardBadge = document.getElementById('cardsTabBadge');
-  if (cardBadge) cardBadge.textContent = activeCards;
+  setTabBadge('cardsTabBadge', activeCards);
 
   // Sidebar Mini Portfolio Widget Sync
   const sideAvail = document.getElementById('sidebarAvailLimit');

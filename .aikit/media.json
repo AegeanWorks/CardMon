@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-strip-center-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/strip-center-after.html",
-      "commit": "e36754e943cbfbef28da875a3c8d2cc946136bd0",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at e36754e: the strip value is centered between the label/icon group on the left and the meta on the right, yielding a balanced three-part status bar. Confirmed the dash moved from the left cluster to the row center; no clipping, truncation or contrast regressions and no other visual changes. Cleaner information hierarchy for the full-width KPI strip.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T00:41:54"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-subtitle-empty-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subtitle-empty-before.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T01:29:48"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-badge-clean-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/badge-clean-before.html",
+      "commit": "c9efcdab2705135c8ef683b14c84d5982ec45c52",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

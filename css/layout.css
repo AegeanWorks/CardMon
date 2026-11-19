@@ -933,6 +933,10 @@
   font-weight: 700;
 }
 
+.tab-badge[hidden] {
+  display: none;
+}
+
 .search-filter-group {
   display: flex;
   align-items: center;
