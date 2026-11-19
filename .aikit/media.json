@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-dashboard-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/dashboard-after.html",
-      "commit": "1d1183106b9144abced595612438d5ca0d92c2a8",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 1d11831: side-by-side with the 2026-11-19 baseline, the cashflow total 75.000\u20ba now uses token emerald matching the Available-limit KPI and sidebar green; widget title, metric values and dots all share the same token shades (cyan, purple, amber, rose), removing the earlier shade mismatch. Layout, spacing, typography, badges and KPI geometry unchanged; no clipping, truncation or contrast regressions. Residual issue from the earlier vision review is resolved; G-001/G-003 satisfied.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T00:01:49"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-home.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from index.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subtitle-empty-before.html",
       "commit": "b6a9913b7ba624d2b10e5864e6169618f2255a92",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-subtitle-empty-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/subtitle-empty-after.html",
+      "commit": "01b1d672adf76e406350b3f725bae378294df948",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
