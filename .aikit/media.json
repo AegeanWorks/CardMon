@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-19-dashboard.png",
-      "alt": "CardMon interface at 2026-11-19",
-      "caption": "CardMon interface captured from projects/CardMon/dashboard.html",
-      "commit": "08800b460636a4bcd3c110b63bc1170107e5ef60",
-      "taken_at": "2026-11-19",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 08800b4: cashflow widget total 'Kalan Net Serbest Nakit' 75.000\u20ba uses bright emerald-400 (#34d399), visibly lighter than the token-emerald KPI values and sidebar footer; metric values/dots use mismatched Tailwind shades (amber-400 value vs amber-500 dot, cyan-400 vs cyan-700, purple-300 vs purple-600), and the widget title is cyan-400. Layout, spacing, typography clean; no truncation or clipping. This is the residual issue flagged in the previous vision review.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T00:01:37"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-dashboard-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/dashboard-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T00:41:54"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-subtitle-empty-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/subtitle-empty-before.html",
+      "commit": "b6a9913b7ba624d2b10e5864e6169618f2255a92",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
