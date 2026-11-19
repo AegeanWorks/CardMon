@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-sidebar-badge-cleanup",
+    "task_id": "cardmon-guidance-card-placement",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795127890.7545745,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795128315.2863,
     "owner": "agent",
-    "lease_until": 1795135090.7545745,
+    "lease_until": 1795135515.2863,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795127923.7113075,
-    "completed_head": "1fbeec412a11c8525e03c7e919cbe4946e0a2dd3",
-    "completed_tree": "e17b0d59f461ba0e3e375c1d8c51583dc71bb7fe"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-kpi-strip-balance",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795124540.699835,
-      "timestamp_str": "2026-11-20 00:42:20",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-kpi-strip-balance",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-kpi-strip-balance' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795124579.4949691,
-      "timestamp_str": "2026-11-20 00:42:59",
-      "agent": "agent",
-      "head": "c742738298572627d0d266f0ae86a715656b29f2",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-contextual-empty-subtitle",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-guidance-card-placement",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Surface empty-state guidance above the cashflow widget",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795128314.1304674,
+      "timestamp_str": "2026-11-20 01:45:14",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision pass showed the guidance card below the cashflow widget was only half visible at 1440x900, so its explanation required scrolling and was effectively missed (G-003 usable).",
+        "benefits": "Card moved directly after the KPI strip; icon, heading and description fully visible without scrolling; before/after vision reviews approved (95 -> 97).",
+        "risks": "Pure HTML reorder; no CSS, JS or data changes; no clipping within components; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-guidance-card-placement",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795128315.2863,
+      "timestamp_str": "2026-11-20 01:45:15",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
