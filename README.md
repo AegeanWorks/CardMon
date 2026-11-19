@@ -29,6 +29,7 @@ Smart bank and credit card portfolio manager for tracking limits, debt balances,
 ```text
 CardMon/
 ├── .aikit/                   <- this project's memory: record, ledger, decisions
+├── .gitattributes            <- LF-on-checkout, ledger merge drivers, binary assets
 ├── .gitignore                <- transient AIKit state excluded
 ├── COMMERCIAL.md             <- commercial license terms
 ├── LICENSE                   <- project license (AL-1.1)
