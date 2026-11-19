@@ -278,5 +278,37 @@
     "final_snapshot_entries": 0,
     "surface_digest": "c07f26f1335b6d11a360e3c413f9cf28f60d41f3d917cffdcc35eb4d0e8a751c",
     "baseline_digest": "c07f26f1335b6d11a360e3c413f9cf28f60d41f3d917cffdcc35eb4d0e8a751c"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-calm-empty-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "e44d5347ffd3e8e85182f6fee7fdd0f69b7e7116",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795123969.3390605,
+    "finished_at": 1795124032.8762345,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "c0fc3e58d326dfb0ad5f365772069668d0d9275ea004c193d3ab6942ac1b4145",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795124032.8762379
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "c0fc3e58d326dfb0ad5f365772069668d0d9275ea004c193d3ab6942ac1b4145",
+    "baseline_digest": "c0fc3e58d326dfb0ad5f365772069668d0d9275ea004c193d3ab6942ac1b4145"
   }
 ]

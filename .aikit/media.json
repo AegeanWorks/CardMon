@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-14-home.png",
-      "alt": "CardMon interface at 2026-11-14",
-      "caption": "CardMon interface captured from index.html",
-      "commit": "e039712ca7f7c01a631f03f74860784c149ccc23",
-      "taken_at": "2026-11-14",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:antigravity:1",
-        "method": "vision",
-        "notes": "Vision review: Clean, minimalistic dark fintech UI with perfect typography, zero label truncation, unified view summary banners, and high visual contrast compliant with G-001 and G-003.",
-        "score": 98,
-        "reviewed_at": "2026-11-14T23:55:35"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-19-home-before.png",
       "alt": "CardMon interface at 2026-11-19",
       "caption": "CardMon interface before color unification",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/calm-empty-before.html",
       "commit": "4e87eb3c1f623fe386ff7a56770be69f6e38e29b",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-calm-empty-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/calm-empty-after.html",
+      "commit": "e44d5347ffd3e8e85182f6fee7fdd0f69b7e7116",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
