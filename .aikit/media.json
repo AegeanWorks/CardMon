@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at bcfdd51: with zero portfolio data, four zero-value figures still use alarm colors - red Toplam G\u00fcncel Bor\u00e7 0\u20ba, amber Bu Ayki Asgari \u00d6deme 0\u20ba, rose nearest-due dash, and red cashflow mandatory total 0\u20ba - implying problems where none exist. This contradicts the otherwise calm, minimal empty state; layout and typography are clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T01:22:43"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-zero-alerts-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at 8906ba1: all four zero-value alerts are muted to neutral secondary grey, so the empty state no longer signals false debt/payment alarms. Positive figures (available limit, Ek Hesap, 75.000\u20ba free cash) remain vivid and the safety badge is intact. No layout, typography or clipping changes; base alert classes keep the original rose/amber emphasis whenever real data exists.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T01:22:58"
+      }
     }
   ]
 }
