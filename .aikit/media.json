@@ -185,8 +185,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at be1c6ca: the 7 KPI cards in an auto-fit 6-column grid leave a 6+1 layout; the seventh 'En Yak\u0131n \u00d6deme' card occupies only ~175px of a ~1120px row, leaving a large empty void. This pushes the cashflow widget down and keeps the analytics chart cards below the fold. Text, spacing and contrast are otherwise clean; this dead space is the targeted issue.",
+        "score": 93,
+        "reviewed_at": "2026-11-20T00:08:58"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-dashboard-wide.png",
@@ -197,8 +204,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at e3e5721: the seventh KPI is now a full-width horizontal strip (label+icon left, value center, meta right, rose accent line across) with no dead space. Cashflow widget shifts up and both analytics chart cards now appear in the 1440x900 viewport - better information density and scannability. No clipping, truncation or contrast regressions; typography and card geometry intact. Desktop-only media query leaves the <=1300px and 2-column mobile grids unchanged.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T00:09:09"
+      }
     }
   ]
 }
