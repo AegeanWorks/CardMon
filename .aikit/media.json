@@ -175,6 +175,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T00:01:49"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-home.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from index.html",
+      "commit": "be1c6ca2c605ff6eaca13eee7876221b0f615646",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

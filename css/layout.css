@@ -720,6 +720,38 @@
   }
 }
 
+/* Desktop: the seventh KPI becomes a full-width horizontal strip instead of
+   leaving a near-empty second row next to a single narrow card. */
+@media (min-width: 1350px) {
+  .overview-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .overview-grid > .stat-card:last-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.1rem;
+  }
+
+  .overview-grid > .stat-card:last-child .stat-header {
+    margin-bottom: 0;
+    min-width: 200px;
+  }
+
+  .overview-grid > .stat-card:last-child .stat-value {
+    flex: 1;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+  }
+
+  .overview-grid > .stat-card:last-child .stat-meta {
+    flex: 0 0 auto;
+    justify-content: flex-end;
+  }
+}
+
 .stat-card {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
