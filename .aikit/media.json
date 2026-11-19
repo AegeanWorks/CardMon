@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-subtitle-empty-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/subtitle-empty-before.html",
-      "commit": "b6a9913b7ba624d2b10e5864e6169618f2255a92",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at b6a9913: the hero subtitle says limits, reserves and payment projections 'are summarized below' although the portfolio has zero banks/cards and every metric is empty. It also wraps to two lines, making the hero taller than needed. Layout, typography and CTA styling are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T00:50:32"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-subtitle-empty-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subtitle-empty-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/badge-clean-before.html",
       "commit": "c9efcdab2705135c8ef683b14c84d5982ec45c52",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-badge-clean-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/badge-clean-after.html",
+      "commit": "3300b67f3edcfc17c63cef2153c8a40a326209e2",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
