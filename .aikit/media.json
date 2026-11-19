@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-calm-empty-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/calm-empty-after.html",
-      "commit": "e44d5347ffd3e8e85182f6fee7fdd0f69b7e7116",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at e44d534: zero-value KPI accent lines and icons are visibly subdued and the empty health bar is removed, so the blue onboarding CTA and the cashflow figures lead the eye; health caption is slightly larger and more legible. No clipping, truncation or contrast regressions; typography, card geometry and alignment unchanged. A calm, minimalist empty state that keeps all information available - G-001/G-003 satisfied.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T00:35:08"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-strip-center-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/strip-center-before.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T01:22:58"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-nearest-none-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/nearest-none-before.html",
+      "commit": "cff06efb91978dcae4cd4c77dc63e2f880dcaea7",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

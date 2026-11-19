@@ -1646,7 +1646,7 @@ function renderDashboardView() {
   }
 
   // 3. Nearest Due Date Detection (Borcu olan kartlar ve aktif krediler)
-  let nearestDueText = '-';
+  let nearestDueText = t('nearestDueNone');
   let nearestDueSubText = t('noCardsYet');
   
   const now = new Date();
