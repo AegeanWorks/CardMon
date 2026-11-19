@@ -447,6 +447,12 @@
   margin-bottom: 1.1rem;
 }
 
+/* No limits means no meaningful progress to show in these two meters. */
+body:has(.health-score-pill.health-empty) .overview-grid .meter-bar,
+body:has(.health-score-pill.health-empty) .sidebar-portfolio-card .meter-bar {
+  display: none;
+}
+
 /* ==========================================================================
    BANKS & BANK ACCOUNTS VIEW (TAB 2)
    ========================================================================== */

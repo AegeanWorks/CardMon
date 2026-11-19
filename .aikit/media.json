@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-badge-clean-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/badge-clean-before.html",
-      "commit": "c9efcdab2705135c8ef683b14c84d5982ec45c52",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at c9efcda: the sidebar shows five '0' count badges (Banka Hesaplar\u0131m, Ek Hesaplar, Kredi Kartlar\u0131m, Kredilerim, Abonelikler) even though there is no data; the repeated zeros add noise to an otherwise minimal empty navigation. Layout and typography otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T01:37:26"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-badge-clean-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/badge-clean-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T02:19:46"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-empty-tracks-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/empty-tracks-before.html",
+      "commit": "033af3ea8e4db0461122b73c780ead1288463cc5",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
