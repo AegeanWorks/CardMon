@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-subtitle-empty-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/subtitle-empty-after.html",
-      "commit": "01b1d672adf76e406350b3f725bae378294df948",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 01b1d67: the empty-state subtitle now reads 'Banka veya kart ekledik\u00e7e limit, bor\u00e7 ve \u00f6deme \u00f6zetleri burada g\u00f6r\u00fcn\u00fcr' - accurate and one line. The hero compacts, the health widget widens enough for its caption to fit one line, and the KPI/cashflow sections shift up slightly with more content visible. Populated states keep the original subtitle via :has() and new i18n keys exist in TR/EN. No clipping, truncation or contrast regressions.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T00:50:53"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-analytics-empty-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/analytics-empty-before.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T01:37:39"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-card-reorder-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/card-reorder-before.html",
+      "commit": "5ed5fdec6c762e7c8e7b07b0a9ea1859e1209827",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
