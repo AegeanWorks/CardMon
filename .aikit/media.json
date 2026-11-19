@@ -223,8 +223,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at 78fd98e: empty portfolio (0 cards/limits) but the health widget shows a blue '\u0130Y\u0130 / DENGEL\u0130' pill with a 70% colored bar, and its caption tells the user to click 'Yeni Kart Ekle' / '\u00d6rnek Veri Y\u00fckle' buttons that are not visible on this screen. No next action is offered in the hero, leaving the empty state misleading and passive. Layout and typography otherwise clean.",
+        "score": 91,
+        "reviewed_at": "2026-11-20T00:18:09"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-empty-state-after.png",
@@ -235,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at 432f4c6: the hero now offers two compact, clearly styled CTAs - '\u00d6rnek Veri Y\u00fckle' (primary) and 'Yeni Kart Ekle' (secondary) - that are visible and actionable; the health widget shows an honest neutral 'VER\u0130 YOK' pill, an empty progress track, and accurate guidance. Hero grows slightly and KPIs shift down but nothing clips or truncates; typography, card geometry and contrast remain clean. Empty state is now functional and self-explanatory; buttons hide automatically once data exists (guarded in renderHealthScoreWidget).",
+        "score": 96,
+        "reviewed_at": "2026-11-20T00:18:19"
+      }
     }
   ]
 }
