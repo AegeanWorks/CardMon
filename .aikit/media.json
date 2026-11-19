@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at 62cbe7c: the topbar 'PDF Raporu' button appears fully enabled while the portfolio is empty, inviting an export of an all-zero report with no useful content. The rest of the topbar and hero are clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T02:19:29"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-pdf-disable-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at cc3cdc8: the PDF button is visibly dimmed with a not-allowed cursor and a translated tooltip explaining that a bank or card is needed; it re-enables automatically with data. The blue onboarding CTA remains the clear primary action. No layout shift, clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T02:19:46"
+      }
     }
   ]
 }
