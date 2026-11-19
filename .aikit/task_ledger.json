@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-zero-alert-calm",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795127010.8585646,
     "owner": "agent",
     "lease_until": 1795134210.8585646,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795127048.5045516,
+    "completed_head": "392bca7f8eabebc554973e41bfef81512497fcc3",
+    "completed_tree": "a361aec1523774d9f51a1863e08f23782771d775"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-bank-first-cta",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Fix empty-state CTA to add a bank before a card",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795123681.201819,
-      "timestamp_str": "2026-11-20 00:28:01",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision led code inspection showed the 'Yeni Kart Ekle' CTA opened a card form whose bank dropdown is empty until a bank exists; the empty-state guidance was functionally a dead end.",
-        "benefits": "Secondary CTA now opens the banks tab + bank modal with a bank icon and correct label; health caption mentions banks first in TR/EN; before/after vision reviews approved (94 -> 97).",
-        "risks": "Small copy/icon change in index.html and i18n.js only; no layout shift beyond the hero CTA label; 107/107 tests pass.",
-        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-bank-first-cta",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-zero-alert-calm",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-zero-alert-calm' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795127048.8128326,
+      "timestamp_str": "2026-11-20 01:24:08",
+      "agent": "agent",
+      "head": "392bca7f8eabebc554973e41bfef81512497fcc3",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
