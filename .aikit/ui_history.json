@@ -148,5 +148,38 @@
     "final_snapshot_entries": 0,
     "surface_digest": "39c0b051b6b187c3587a0a73d7c826e1eb3224867ba72d0789a60ed6bc4141d0",
     "baseline_digest": "39c0b051b6b187c3587a0a73d7c826e1eb3224867ba72d0789a60ed6bc4141d0"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      ".aikit/project.json",
+      "assets/screenshots/2026-11-20-dashboard-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "708aa103676cbbb071cbac7af8438dbd8a869a11",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795121946.3136,
+    "finished_at": 1795122064.3927112,
+    "strikes": 1,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "b0e85d191b78855920541602aa10e5297813388658b7a6b0acda22d3ffe43da1",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795122064.3927145
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "b0e85d191b78855920541602aa10e5297813388658b7a6b0acda22d3ffe43da1",
+    "baseline_digest": "b0e85d191b78855920541602aa10e5297813388658b7a6b0acda22d3ffe43da1"
   }
 ]
