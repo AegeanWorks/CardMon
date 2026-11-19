@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at cff06ef: the 'En Yak\u0131n \u00d6deme' strip shows a bare '-' as its value, which reads as an unfinished placeholder rather than a clear empty result even though the meta text says no cards are registered. Layout, typography and the rest of the empty state are clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T01:29:35"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-nearest-none-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at 5e9b676: the strip value now reads 'Yok' (localized to 'None' in English via a new i18n key), centered in the same muted style as before. No layout shift, clipping, truncation or contrast regression; the empty result is now explicit and self-explanatory.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T01:29:48"
+      }
     }
   ]
 }
