@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-strip-center-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/strip-center-before.html",
-      "commit": "3fb8bb922ff47c10e4b3d2092694f9e30ffa91ed",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 3fb8bb9: the full-width 'En Yak\u0131n \u00d6deme' strip places its value immediately after the icon on the left, leaving the wide middle empty while the meta sits at the far right - the row reads as lopsided despite the earlier full-width fix. All other layout, typography and spacing clean; no clipping.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T00:41:43"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-strip-center-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/strip-center-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/nearest-none-before.html",
       "commit": "cff06efb91978dcae4cd4c77dc63e2f880dcaea7",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-nearest-none-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/nearest-none-after.html",
+      "commit": "5e9b676f704ee83798efcc443a8c53714661c471",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
