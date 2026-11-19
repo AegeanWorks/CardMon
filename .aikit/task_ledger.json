@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-guidance-svg-icon",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795128814.4252717,
     "owner": "agent",
     "lease_until": 1795136014.4252717,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795128855.4864862,
+    "completed_head": "e823e6a32de557aebebc3feaf4241ecb9a9ed38a",
+    "completed_tree": "75566314b81041b3a325528fad303e1fe69d0be3"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-empty-analytics-card",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Replace empty analytics placeholders with one guidance card",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795125872.0368838,
-      "timestamp_str": "2026-11-20 01:04:32",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision pass showed four empty analytics chart bodies plus insights/table placeholders below the fold when the portfolio has no data, adding clutter without information (G-003 sleek/simplistic).",
-        "benefits": "Single compact translated guidance card replaces empty placeholders; populated states unchanged via :has() scope; before/after vision reviews approved (94 -> 97); stale pre-JS baseline was rejected and re-captured.",
-        "risks": "CSS visibility + one new static card and i18n keys; no data/behavior change; renderAll still populates hidden containers; 107/107 tests pass.",
-        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-empty-analytics-card",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-guidance-svg-icon",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-guidance-svg-icon' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795128855.9841914,
+      "timestamp_str": "2026-11-20 01:54:15",
+      "agent": "agent",
+      "head": "e823e6a32de557aebebc3feaf4241ecb9a9ed38a",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
