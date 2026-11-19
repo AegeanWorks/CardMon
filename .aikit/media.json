@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at 5ed5fde: the empty-state analytics guidance card sits after the cashflow widget, so only its header peeks into the 1440x900 viewport and the explanation of what appears with data requires scrolling. Layout, typography and spacing otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T01:44:28"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-card-reorder-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at a7df442: the guidance card now sits directly below the KPI strip with its icon, heading and full description visible without scrolling, giving the empty state a clear next-step explanation before the cashflow widget. Cashflow title, metric cards and total row remain visible; no component clipping, truncation or contrast regressions.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T01:44:43"
+      }
     }
   ]
 }
