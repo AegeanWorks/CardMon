@@ -438,5 +438,37 @@
     "final_snapshot_entries": 0,
     "surface_digest": "98c7fd14d525370d1437d63081c1818c970ad512d65bbb5587080a17058d3939",
     "baseline_digest": "98c7fd14d525370d1437d63081c1818c970ad512d65bbb5587080a17058d3939"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-zero-alerts-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "8906ba180f1541568fa460f2796fc885b8e345df",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795126827.813874,
+    "finished_at": 1795126895.1371963,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "7b3528a8cec2590337979ddfe89d5a0b8032106a4420297ad726ecf265bdd0ea",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795126895.1372004
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "7b3528a8cec2590337979ddfe89d5a0b8032106a4420297ad726ecf265bdd0ea",
+    "baseline_digest": "7b3528a8cec2590337979ddfe89d5a0b8032106a4420297ad726ecf265bdd0ea"
   }
 ]
