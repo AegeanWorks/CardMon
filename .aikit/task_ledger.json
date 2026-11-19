@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-bank-first-cta",
+    "task_id": "cardmon-calm-empty-state",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795123683.809188,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795124138.0088,
     "owner": "agent",
-    "lease_until": 1795130883.809188,
+    "lease_until": 1795131338.0088,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,60 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795123722.1170774,
-    "completed_head": "e999cff4437c75b9a922924d3ef86e0d6bbbfd4e",
-    "completed_tree": "3f90350c23700f5ad30cf58135563a543f2ee29d"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-audit-fixes-and-shortcuts",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "Fix double currency formatting across 5 modules, add keyboard shortcuts and demo cash subs, verified with 107 tests",
-      "files_affected": [
-        ".aikit/task_ledger.json",
-        ".aikit/task_ledger_archive.jsonl",
-        ".aikit/ui_history.json",
-        "css/modals.css",
-        "index.html",
-        "js/backup-vault.js",
-        "js/main.js",
-        "js/modals.js",
-        "js/reports.js",
-        "js/smart-advisor.js",
-        "js/state.js",
-        "js/views.js",
-        "tests/main.test.js"
-      ],
-      "status": "in_progress",
-      "timestamp": 1794692347.5962424,
-      "timestamp_str": "2026-11-15 00:39:07",
-      "agent": "unidentified",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-audit-fixes-and-shortcuts",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-audit-fixes-and-shortcuts' completed successfully.",
-      "status": "completed",
-      "timestamp": 1794692370.8417492,
-      "timestamp_str": "2026-11-15 00:39:30",
-      "agent": "unidentified",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-ui-color-token-unification",
       "phase": "phase 1",
@@ -416,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-calm-empty-state",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Calm zero-value KPI accents and empty health bar",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795124134.4053113,
+      "timestamp_str": "2026-11-20 00:35:34",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision pass showed the empty portfolio's vivid zero-value accents and empty progress track competed with the onboarding CTAs, weakening the intended visual hierarchy (G-003 sleek/simplistic).",
+        "benefits": "CSS-only :has() rules dim KPI accents/icons, hide the empty bar and improve caption legibility when no data; CTA remains the visual lead; before/after vision reviews approved (95 -> 97).",
+        "risks": "Pure CSS scoped to the empty state via the existing health-empty pill class; no DOM, behavior or i18n changes; active populated states unaffected; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-calm-empty-state",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795124138.0088,
+      "timestamp_str": "2026-11-20 00:35:38",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
