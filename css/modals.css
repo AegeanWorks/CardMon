@@ -605,7 +605,7 @@
 .backup-vault-tag-manual {
   background: rgba(168, 85, 247, 0.15);
   border: 1px solid rgba(168, 85, 247, 0.3);
-  color: #c084fc;
+  color: var(--accent-purple);
   font-size: 0.7rem;
   font-weight: 700;
   padding: 0.15rem 0.45rem;

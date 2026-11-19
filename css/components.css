@@ -406,7 +406,7 @@
 }
 
 .virtual-card-chip .vc-limit {
-  color: #22d3ee;
+  color: var(--accent-cyan);
   font-weight: 700;
   font-family: var(--font-family-mono);
 }

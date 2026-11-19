@@ -156,7 +156,7 @@
 }
 
 .sidebar-portfolio-header strong {
-  color: #34d399;
+  color: var(--accent-emerald);
 }
 
 .sidebar-portfolio-sub {
@@ -569,7 +569,7 @@
 }
 
 .btn-emerald:hover {
-  background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, #10b981 100%);
   transform: translateY(-1px);
 }
 
@@ -625,7 +625,7 @@
   border: 1px solid rgba(16, 185, 129, 0.25);
   border-radius: 999px;
   font-size: 0.75rem;
-  color: #34d399;
+  color: var(--accent-emerald);
   font-weight: 500;
 }
 
