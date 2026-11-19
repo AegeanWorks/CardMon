@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at b6a9913: the hero subtitle says limits, reserves and payment projections 'are summarized below' although the portfolio has zero banks/cards and every metric is empty. It also wraps to two lines, making the hero taller than needed. Layout, typography and CTA styling are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T00:50:32"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-subtitle-empty-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at 01b1d67: the empty-state subtitle now reads 'Banka veya kart ekledik\u00e7e limit, bor\u00e7 ve \u00f6deme \u00f6zetleri burada g\u00f6r\u00fcn\u00fcr' - accurate and one line. The hero compacts, the health widget widens enough for its caption to fit one line, and the KPI/cashflow sections shift up slightly with more content visible. Populated states keep the original subtitle via :has() and new i18n keys exist in TR/EN. No clipping, truncation or contrast regressions.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T00:50:53"
+      }
     }
   ]
 }
