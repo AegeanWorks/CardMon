@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at 3bbab7a: section spacing (hero 1.5rem, KPI 1.75rem, guidance card 2rem) pushes the cashflow widget's income summary below the 1440x900 viewport, so users must scroll to see the last summary line. Content and typography otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T02:01:39"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-rhythm-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at a966cb0: empty-state margins unified to 1.1rem; sections shift up about 30px and the cashflow income labels ('Ayl\u0131k Gelir' / 'Zorunlu Gider Y\u00fck\u00fc') are now visible at the bottom of the viewport. Spacing still feels airy, no overlap or clipping within components; populated states unaffected by the :has() scope.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T02:01:56"
+      }
     }
   ]
 }
