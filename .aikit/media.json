@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-zero-alerts-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/zero-alerts-before.html",
-      "commit": "bcfdd51c799861cec09702c072b412ee3113a9c6",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at bcfdd51: with zero portfolio data, four zero-value figures still use alarm colors - red Toplam G\u00fcncel Bor\u00e7 0\u20ba, amber Bu Ayki Asgari \u00d6deme 0\u20ba, rose nearest-due dash, and red cashflow mandatory total 0\u20ba - implying problems where none exist. This contradicts the otherwise calm, minimal empty state; layout and typography are clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T01:22:43"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-zero-alerts-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/zero-alerts-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T02:01:56"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-cta-size-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/cta-size-before.html",
+      "commit": "6ac72fe0b0178d5fa679be825cc6fec7cb0395a0",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
