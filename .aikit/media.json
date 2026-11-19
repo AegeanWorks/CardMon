@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at c9efcda: the sidebar shows five '0' count badges (Banka Hesaplar\u0131m, Ek Hesaplar, Kredi Kartlar\u0131m, Kredilerim, Abonelikler) even though there is no data; the repeated zeros add noise to an otherwise minimal empty navigation. Layout and typography otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T01:37:26"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-badge-clean-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at 3300b67: zero-count badges are hidden, so the sidebar labels align cleanly with consistent spacing and the active 'Genel Bak\u0131\u015f & Analiz' item still reads clearly. Counts reappear automatically once data exists via setTabBadge. No layout shift elsewhere, no clipping or contrast regressions; cleaner, more minimal navigation.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T01:37:39"
+      }
     }
   ]
 }
