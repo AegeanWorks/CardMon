@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-home.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from index.html",
-      "commit": "be1c6ca2c605ff6eaca13eee7876221b0f615646",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at be1c6ca: the 7 KPI cards in an auto-fit 6-column grid leave a 6+1 layout; the seventh 'En Yak\u0131n \u00d6deme' card occupies only ~175px of a ~1120px row, leaving a large empty void. This pushes the cashflow widget down and keeps the analytics chart cards below the fold. Text, spacing and contrast are otherwise clean; this dead space is the targeted issue.",
-        "score": 93,
-        "reviewed_at": "2026-11-20T00:08:58"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-dashboard-wide.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/dashboard-wide.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T00:50:53"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-analytics-empty-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/analytics-empty-before.html",
+      "commit": "1e5fbaaadc7a9993687962bde51819902b20ebdb",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

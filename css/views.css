@@ -713,6 +713,48 @@
   margin-bottom: 2rem;
 }
 
+.empty-analytics-card {
+  display: none;
+}
+
+.app-main:has(.health-score-pill.health-empty) .empty-analytics-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-analytics-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  opacity: 0.8;
+}
+
+.empty-analytics-copy h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.empty-analytics-copy p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.app-main:has(.health-score-pill.health-empty) .analytics-sections-grid,
+.app-main:has(.health-score-pill.health-empty) .insights-section,
+.app-main:has(.health-score-pill.health-empty) .executive-table-section {
+  display: none;
+}
+
 .chart-card {
   background: var(--bg-card);
   backdrop-filter: blur(16px);
