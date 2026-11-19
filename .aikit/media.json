@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-cashflow-calm-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/cashflow-calm-before.html",
-      "commit": "8be5f3695be50614ea96bba32e41dad1869d9859",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 8be5f36: the cashflow widget still shows vivid zero-value metric dots/values and an empty grey burden track at its bottom, so the last section of the dashboard remains visually noisy compared with the already calmed KPI grid; the new analytics guidance card is only partly visible. Layout, typography and spacing otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T01:13:57"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-cashflow-calm-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cashflow-calm-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T01:52:57"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-rhythm-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/rhythm-before.html",
+      "commit": "3bbab7a6fd9dd4b3fec9d1c4b3d6d288c86042d2",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

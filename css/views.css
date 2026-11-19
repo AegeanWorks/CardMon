@@ -439,6 +439,14 @@
   color: var(--text-secondary);
 }
 
+/* Tighter empty-state rhythm keeps the cashflow summary inside the first viewport. */
+.app-main:has(.health-score-pill.health-empty) .welcome-hero-card,
+.app-main:has(.health-score-pill.health-empty) .overview-grid,
+.app-main:has(.health-score-pill.health-empty) .empty-analytics-card,
+.app-main:has(.health-score-pill.health-empty) .cashflow-widget {
+  margin-bottom: 1.1rem;
+}
+
 /* ==========================================================================
    BANKS & BANK ACCOUNTS VIEW (TAB 2)
    ========================================================================== */
