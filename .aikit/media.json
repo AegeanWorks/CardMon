@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-analytics-empty-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/analytics-empty-after.html",
-      "commit": "e3001b302312bf52e1fc00c1eddbca3a8ec4cf5c",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at e3001b3: the empty analytics grid, insights and executive table are replaced by one compact dashed guidance card ('Analizler veriyle gelir') that explains what appears once data exists; no empty chart bodies below. The visible dashboard above (hero, CTAs, KPI strip, cashflow widget) is unchanged with no clipping or truncation. Populated states keep all analytics via the :has() empty-state scope; copy is translated in TR/EN.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T01:03:29"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-analytics-before2.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/analytics-before2.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T01:44:43"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-svg-icon-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/svg-icon-before.html",
+      "commit": "a28226d816e12322e3255f0e8150ab2dd5e77a44",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
