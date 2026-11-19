@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-contextual-empty-subtitle",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795125105.56993,
     "owner": "agent",
     "lease_until": 1795132305.56993,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795125163.7295678,
+    "completed_head": "f5291f2d0147c4d7670883fad99c399061b5e710",
+    "completed_tree": "8c0ff0a6dbd0e9be4db024dc06a7e3c903a69c39"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-cashflow-token-polish",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Unify cashflow widget inline colors with design tokens",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795122131.2308812,
-      "timestamp_str": "2026-11-20 00:02:11",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the previous change flagged the cashflow total still using bright emerald-400 while the rest of the dashboard uses tokens; G-001 requires a new before/after analysis for this UI change.",
-        "benefits": "Cashflow total, title, metric values and dots now share token shades; residual visual inconsistency resolved; before/after screenshots captured and vision-reviewed (94 -> 97).",
-        "risks": "Visual-only inline color change in js/views.js and modals.css; no DOM structure or behavior change; tests passed 107/107.",
-        "mitigation": "Verified with npm test 107/107, ui verify + ui finish --reviewed, vision reviews, and check --strict."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-cashflow-token-polish",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-contextual-empty-subtitle",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-contextual-empty-subtitle' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795125164.539428,
+      "timestamp_str": "2026-11-20 00:52:44",
+      "agent": "agent",
+      "head": "f5291f2d0147c4d7670883fad99c399061b5e710",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
