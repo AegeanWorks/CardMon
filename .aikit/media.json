@@ -109,8 +109,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE baseline at 09a1fc5: clean dark fintech dashboard, 1440x900. Sidebar, topbar, welcome hero, seven KPI widgets and cashflow widget all aligned with no clipping or label truncation. Color mismatch visible: Available-limit value bright emerald-400, Ek Hesap value bright cyan-400, Nearest-due pink-400, while their card accents use deeper token shades; cashflow total also bright emerald-400.",
+        "score": 95,
+        "reviewed_at": "2026-11-19T23:52:22"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-19-home.png",
@@ -121,8 +128,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at 61c42db: pixel-comparison with the before capture shows identical layout, spacing, typography, badges and KPI geometry - no clipping, truncation or contrast regressions. Intended changes visible: Available-limit value now deeper token emerald matching its card border; Ek Hesap value deeper cyan; Nearest-due icon and value now consistent rose instead of two pink shades; sidebar available-limit green matches the KPI. Health pill stays blue (demo state 'good', so the excellent-style change is not visible). Minor residual: cashflow 'Kalan Net Serbest Nakit' total is still bright emerald-400 from a dynamic inline style in js/views.js, so two close greens coexist on the dashboard; recommend unifying it to var(--accent-emerald) in a future pass. Overall cleaner internal color cohesion, G-001/G-003 satisfied.",
+        "score": 96,
+        "reviewed_at": "2026-11-19T23:52:38"
+      }
     }
   ]
 }
