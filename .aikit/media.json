@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at 4e87eb3: empty portfolio is functional, but all seven zero-value KPI cards carry vivid top accent lines and bright icons, and the health widget shows a meaningless empty grey progress track. These compete with the two onboarding CTAs for attention; caption is small muted grey. Layout, spacing and typography otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T00:34:55"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-calm-empty-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at e44d534: zero-value KPI accent lines and icons are visibly subdued and the empty health bar is removed, so the blue onboarding CTA and the cashflow figures lead the eye; health caption is slightly larger and more legible. No clipping, truncation or contrast regressions; typography, card geometry and alignment unchanged. A calm, minimalist empty state that keeps all information available - G-001/G-003 satisfied.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T00:35:08"
+      }
     }
   ]
 }
