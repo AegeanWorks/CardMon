@@ -640,5 +640,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "889370905d38406f9047ba42a2dc06c762e5fabbf030eb6117f5b6326ccdcf19",
     "baseline_digest": "889370905d38406f9047ba42a2dc06c762e5fabbf030eb6117f5b6326ccdcf19"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-cta-size-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "815d2eaf2012b79a8d2fa614e6d59d8cbbf2966a",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795129677.1237307,
+    "finished_at": 1795129758.5931897,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "c1cc650b6de827459b8efa1b708c4f691c6d702dbb6ecea94161bbedab527028",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795129758.5931933,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-cta-size-after.png"
+      ],
+      "scoped_digest": "e0ac2ac805629622d8759fa820feb16c8c490eb3cac5f5d59feb5efe6cb87d01"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "c1cc650b6de827459b8efa1b708c4f691c6d702dbb6ecea94161bbedab527028",
+    "baseline_digest": "c1cc650b6de827459b8efa1b708c4f691c6d702dbb6ecea94161bbedab527028"
   }
 ]

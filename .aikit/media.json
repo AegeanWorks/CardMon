@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-zero-alerts-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/zero-alerts-after.html",
-      "commit": "8906ba180f1541568fa460f2796fc885b8e345df",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 8906ba1: all four zero-value alerts are muted to neutral secondary grey, so the empty state no longer signals false debt/payment alarms. Positive figures (available limit, Ek Hesap, 75.000\u20ba free cash) remain vivid and the safety badge is intact. No layout, typography or clipping changes; base alert classes keep the original rose/amber emphasis whenever real data exists.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T01:22:58"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-nearest-none-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/nearest-none-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cta-size-before.html",
       "commit": "6ac72fe0b0178d5fa679be825cc6fec7cb0395a0",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-cta-size-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/cta-size-after.html",
+      "commit": "815d2eaf2012b79a8d2fa614e6d59d8cbbf2966a",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
