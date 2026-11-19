@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-bank-cta-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/bank-cta-before.html",
-      "commit": "8c03756cd975c74d3bf61e64ad8546b7b861c36b",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 8c03756: the empty-state hero offers '\u00d6rnek Veri Y\u00fckle' and 'Yeni Kart Ekle'. The latter opens the card form, but its bank dropdown is populated only from state.banks (renderBankDropdowns), so with zero banks it is a dead-end first step; the health caption also tells the user to add a card first. Layout, spacing and typography are otherwise clean with no clipping.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T00:27:08"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-bank-cta-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/bank-cta-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cashflow-calm-before.html",
       "commit": "8be5f3695be50614ea96bba32e41dad1869d9859",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-cashflow-calm-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/cashflow-calm-after.html",
+      "commit": "66f97bf2c9a1179cf35708ad0d4f88e9ee187e33",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
