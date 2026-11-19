@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-contextual-empty-subtitle",
+    "task_id": "cardmon-empty-analytics-card",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795125105.56993,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795125876.3826258,
     "owner": "agent",
-    "lease_until": 1795132305.56993,
+    "lease_until": 1795133076.3826258,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795125163.7295678,
-    "completed_head": "f5291f2d0147c4d7670883fad99c399061b5e710",
-    "completed_tree": "8c0ff0a6dbd0e9be4db024dc06a7e3c903a69c39"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-cashflow-token-polish",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (94/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795122133.109606,
-      "timestamp_str": "2026-11-20 00:02:13",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-cashflow-token-polish",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-cashflow-token-polish' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795122162.7612221,
-      "timestamp_str": "2026-11-20 00:02:42",
-      "agent": "agent",
-      "head": "f65d371d35c1ae01b7f037cf05f9c0c0a7c652cf",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-kpi-grid-strip",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-empty-analytics-card",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Replace empty analytics placeholders with one guidance card",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795125872.0368838,
+      "timestamp_str": "2026-11-20 01:04:32",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision pass showed four empty analytics chart bodies plus insights/table placeholders below the fold when the portfolio has no data, adding clutter without information (G-003 sleek/simplistic).",
+        "benefits": "Single compact translated guidance card replaces empty placeholders; populated states unchanged via :has() scope; before/after vision reviews approved (94 -> 97); stale pre-JS baseline was rejected and re-captured.",
+        "risks": "CSS visibility + one new static card and i18n keys; no data/behavior change; renderAll still populates hidden containers; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-empty-analytics-card",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (94/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795125876.3826258,
+      "timestamp_str": "2026-11-20 01:04:36",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
