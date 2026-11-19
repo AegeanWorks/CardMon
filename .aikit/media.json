@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-dashboard-wide.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/dashboard-wide.html",
-      "commit": "e3e57214dec51a10ede5d42291f0fac7dd7e9ba3",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at e3e5721: the seventh KPI is now a full-width horizontal strip (label+icon left, value center, meta right, rose accent line across) with no dead space. Cashflow widget shifts up and both analytics chart cards now appear in the 1440x900 viewport - better information density and scannability. No clipping, truncation or contrast regressions; typography and card geometry intact. Desktop-only media query leaves the <=1300px and 2-column mobile grids unchanged.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T00:09:09"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-empty-state-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/empty-state-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/analytics-empty-before.html",
       "commit": "1e5fbaaadc7a9993687962bde51819902b20ebdb",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-analytics-empty-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/analytics-empty-after.html",
+      "commit": "e3001b302312bf52e1fc00c1eddbca3a8ec4cf5c",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
