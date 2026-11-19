@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-cashflow-empty-calm",
+    "task_id": "cardmon-zero-alert-calm",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795126511.9719732,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795127010.8585646,
     "owner": "agent",
-    "lease_until": 1795133711.9719732,
+    "lease_until": 1795134210.8585646,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795126585.6453805,
-    "completed_head": "4ca3850c0965e57337329ef62de1e11ace0ccbd6",
-    "completed_tree": "97ff0f9ec1af32cd5a47665bd12b1f31baab58a9"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-empty-state-onboarding",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (91/96), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795123124.016553,
-      "timestamp_str": "2026-11-20 00:18:44",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-empty-state-onboarding",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-empty-state-onboarding' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795123174.232582,
-      "timestamp_str": "2026-11-20 00:19:34",
-      "agent": "agent",
-      "head": "9cc352c037b87b9ab4ea3a631683334d7b32b310",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-bank-first-cta",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-zero-alert-calm",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Mute false-alarm zero values in the empty portfolio",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795127008.9597907,
+      "timestamp_str": "2026-11-20 01:23:28",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision pass found four zero-value figures still colored red/amber, implying debt and payment alarms when no data exists, which conflicts with the sleek, minimal empty state (G-003).",
+        "benefits": "Alert colors moved to classes and muted only in the empty state via :has(); positive figures keep their emphasis; before/after vision reviews approved (95 -> 97).",
+        "risks": "Small HTML/JS class refactor plus scoped CSS; no behavior or data changes; populated states keep rose/amber emphasis; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-zero-alert-calm",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795127010.8585646,
+      "timestamp_str": "2026-11-20 01:23:30",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
