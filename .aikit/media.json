@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-nearest-none-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/nearest-none-after.html",
-      "commit": "5e9b676f704ee83798efcc443a8c53714661c471",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 5e9b676: the strip value now reads 'Yok' (localized to 'None' in English via a new i18n key), centered in the same muted style as before. No layout shift, clipping, truncation or contrast regression; the empty result is now explicit and self-explanatory.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T01:29:48"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-badge-clean-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/badge-clean-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/pdf-disable-before.html",
       "commit": "62cbe7cc048b7db893fed5fe882ba1456606d8ea",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-pdf-disable-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/pdf-disable-after.html",
+      "commit": "cc3cdc847765f5c938cd13445d0944070ca7163d",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,

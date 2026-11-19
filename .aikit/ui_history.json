@@ -677,5 +677,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "c1cc650b6de827459b8efa1b708c4f691c6d702dbb6ecea94161bbedab527028",
     "baseline_digest": "c1cc650b6de827459b8efa1b708c4f691c6d702dbb6ecea94161bbedab527028"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-pdf-disable-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "cc3cdc847765f5c938cd13445d0944070ca7163d",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795130209.4501884,
+    "finished_at": 1795130289.856725,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "94aa9a7a2a5e0af04f35f4f7f60c92c091d0ed0ebabf54b30fc967489cc2f794",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795130289.8567286,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-pdf-disable-after.png"
+      ],
+      "scoped_digest": "267975fc4bc08a0111a2caf3dd47f8534062423804a4537e1fda8f402b56d68e"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "94aa9a7a2a5e0af04f35f4f7f60c92c091d0ed0ebabf54b30fc967489cc2f794",
+    "baseline_digest": "94aa9a7a2a5e0af04f35f4f7f60c92c091d0ed0ebabf54b30fc967489cc2f794"
   }
 ]
