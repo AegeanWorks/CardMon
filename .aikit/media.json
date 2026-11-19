@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE at a28226d: the guidance card uses a colorful chart emoji, visually inconsistent with the line-art SVG iconography used everywhere else in CardMon; it reads as a small multicolor glyph on an otherwise monochrome cyan-accented card. Layout and typography are clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T01:52:42"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-svg-icon-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER at fe47225: the icon is now a crisp cyan bar-chart SVG inside a tinted rounded square, matching the app's other icon boxes and line-art style. Card geometry, heading and description are unchanged; no layout shift, clipping or contrast regression. Visual consistency improved.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T01:52:57"
+      }
     }
   ]
 }
