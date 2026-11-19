@@ -187,6 +187,18 @@
       "height": 900,
       "status": "pending_review",
       "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-dashboard-wide.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/dashboard-wide.html",
+      "commit": "e3e57214dec51a10ede5d42291f0fac7dd7e9ba3",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
