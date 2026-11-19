@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-empty-state-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/empty-state-after.html",
-      "commit": "432f4c69ad1118b0f173498b5c6cc94cd786285c",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 432f4c6: the hero now offers two compact, clearly styled CTAs - '\u00d6rnek Veri Y\u00fckle' (primary) and 'Yeni Kart Ekle' (secondary) - that are visible and actionable; the health widget shows an honest neutral 'VER\u0130 YOK' pill, an empty progress track, and accurate guidance. Hero grows slightly and KPIs shift down but nothing clips or truncates; typography, card geometry and contrast remain clean. Empty state is now functional and self-explanatory; buttons hide automatically once data exists (guarded in renderHealthScoreWidget).",
-        "score": 96,
-        "reviewed_at": "2026-11-20T00:18:19"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-bank-cta-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/bank-cta-before.html",
@@ -270,6 +251,18 @@
         "score": 94,
         "reviewed_at": "2026-11-20T01:03:09"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-cashflow-calm-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/cashflow-calm-before.html",
+      "commit": "8be5f3695be50614ea96bba32e41dad1869d9859",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

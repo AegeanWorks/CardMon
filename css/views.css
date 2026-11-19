@@ -410,6 +410,19 @@
   font-size: 0.78rem;
 }
 
+/* Same calm treatment for the cashflow widget's zero-value metrics. */
+.app-main:has(.health-score-pill.health-empty) .cashflow-metric-dot {
+  opacity: 0.5;
+}
+
+.app-main:has(.health-score-pill.health-empty) .cashflow-metric-value {
+  opacity: 0.75;
+}
+
+.app-main:has(.health-score-pill.health-empty) .cashflow-income-bar {
+  display: none;
+}
+
 /* ==========================================================================
    BANKS & BANK ACCOUNTS VIEW (TAB 2)
    ========================================================================== */
