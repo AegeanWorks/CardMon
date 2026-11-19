@@ -251,6 +251,18 @@
         "score": 96,
         "reviewed_at": "2026-11-20T00:18:19"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-bank-cta-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/bank-cta-before.html",
+      "commit": "8c03756cd975c74d3bf61e64ad8546b7b861c36b",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
