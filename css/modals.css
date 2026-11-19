@@ -338,7 +338,7 @@
 .cashflow-widget-title {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #38bdf8;
+  color: var(--accent-cyan);
   letter-spacing: 0.02em;
   display: flex;
   align-items: center;
