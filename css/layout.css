@@ -371,6 +371,18 @@
   transform: translateY(-1px);
 }
 
+.topbar-action-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.topbar-action-btn:disabled:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-primary);
+  transform: none;
+}
+
 .topbar-user-wrapper {
   position: relative;
 }

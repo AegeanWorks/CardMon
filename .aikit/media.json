@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-nearest-none-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/nearest-none-before.html",
-      "commit": "cff06efb91978dcae4cd4c77dc63e2f880dcaea7",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at cff06ef: the 'En Yak\u0131n \u00d6deme' strip shows a bare '-' as its value, which reads as an unfinished placeholder rather than a clear empty result even though the meta text says no cards are registered. Layout, typography and the rest of the empty state are clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T01:29:35"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-nearest-none-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/nearest-none-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T02:10:46"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-pdf-disable-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/pdf-disable-before.html",
+      "commit": "62cbe7cc048b7db893fed5fe882ba1456606d8ea",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

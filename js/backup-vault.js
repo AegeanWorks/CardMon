@@ -197,6 +197,12 @@ function renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalE
   const actions = document.getElementById('welcomeEmptyActions');
   if (actions) actions.hidden = totalLimit !== 0;
 
+  const pdfBtn = document.getElementById('topbarPdfBtn');
+  if (pdfBtn) {
+    pdfBtn.disabled = totalLimit === 0;
+    pdfBtn.title = totalLimit === 0 ? t('pdfEmptyHint') : t('pdfReportHint');
+  }
+
   if (totalLimit === 0) {
     pill.className = 'health-score-pill health-empty';
     pill.textContent = t('healthNoData');
