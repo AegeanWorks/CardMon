@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-sidebar-badge-cleanup",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795127890.7545745,
     "owner": "agent",
     "lease_until": 1795135090.7545745,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795127923.7113075,
+    "completed_head": "1fbeec412a11c8525e03c7e919cbe4946e0a2dd3",
+    "completed_tree": "e17b0d59f461ba0e3e375c1d8c51583dc71bb7fe"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-kpi-strip-balance",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Center the value in the full-width KPI strip",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795124538.5610194,
-      "timestamp_str": "2026-11-20 00:42:18",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review found the full-width 'En Yak\u0131n \u00d6deme' strip was visually lopsided: value sat with the left label/icon while the meta was far right, leaving the middle empty.",
-        "benefits": "One-line CSS change yields a balanced label-value-meta status bar; before/after vision reviews approved (96 -> 97); no other visual changes.",
-        "risks": "Desktop-only rule inside the existing min-width:1350px media query; no DOM, data or behavior change; 107/107 tests pass.",
-        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-kpi-strip-balance",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-sidebar-badge-cleanup",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-sidebar-badge-cleanup' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795127923.8404787,
+      "timestamp_str": "2026-11-20 01:38:43",
+      "agent": "agent",
+      "head": "1fbeec412a11c8525e03c7e919cbe4946e0a2dd3",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
