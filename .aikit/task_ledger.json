@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-kpi-strip-balance",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795124540.699835,
     "owner": "agent",
     "lease_until": 1795131740.699835,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795124579.056303,
+    "completed_head": "c742738298572627d0d266f0ae86a715656b29f2",
+    "completed_tree": "15786cb8898c0e7990391e7b83bb7dd681af60e7"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-screenshot-vision-analysis",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Record vision analysis of before/after CardMon screenshots",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795121604.832672,
-      "timestamp_str": "2026-11-19 23:53:24",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "CardMon G-001 requires UI changes to be screenshotted before and after AND analyzed; the vision reviews are committed in .aikit/media.json and the ledger must stay fresh after that commit.",
-        "benefits": "Both screenshots approved with method=vision; analysis notes cover layout parity, the visible token-shade changes, and one residual finding; strict gates green.",
-        "risks": "Documentation-only; no UI or runtime files changed.",
-        "mitigation": "Re-run check --strict and confirm 4/4 gates after the ledger is committed."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-screenshot-vision-analysis",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-kpi-strip-balance",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-kpi-strip-balance' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795124579.4949691,
+      "timestamp_str": "2026-11-20 00:42:59",
+      "agent": "agent",
+      "head": "c742738298572627d0d266f0ae86a715656b29f2",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
