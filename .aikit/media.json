@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Nearest-payment strip, dashboard, demo data) at 0441668: the next-due detail uses a colorful card emoji before the card name while the rest of the strip uses monochrome text and line-art icons, breaking icon consistency. Layout and amounts are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T21:44:35"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-nearest-due-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Nearest-payment strip, dashboard, demo data) at cd2ae31: the next-due detail now uses a line-art card SVG matching the app icon set (loan, subscription and no-debt branches converted too). Card name, amounts and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T21:44:56"
+      }
     }
   ]
 }
