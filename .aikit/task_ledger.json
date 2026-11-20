@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-findings-batch5",
+    "task_id": "cardmon-findings-complete",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795213807.6021044,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795214384.9194355,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795221007.6021044,
+    "lease_until": 1795221584.9194355,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -15,56 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795213808.7750707,
-    "completed_head": "7fba80c921f84c79f86ee09ccf59c84d91735a36",
-    "completed_tree": "d3ad67fc3880a2c433b4e6ee0815d0d102a01157"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-dynamic-month-labels",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/3] Replace hardcoded month names in loan start-cycle options with timeless labels",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795211348.8439393,
-      "timestamp_str": "2026-11-21 00:49:08",
-      "agent": "opencode:hy4-flash-free",
-      "impact_assessment": {
-        "why": "The options promise specific months (Eyl\u00fcl/A\u011fustos) that are wrong for every month except one, misleading users when adding a loan.",
-        "benefits": "Correct, timezone/date-independent labels; no stale copy.",
-        "risks": "contract: option values next/current unchanged; dependency: none; concurrency: none; state: none",
-        "mitigation": "Change only the visible option text, keep values, add a failing-first HTML regression test and vision-reviewed before/after proof"
-      },
-      "plan_digest": "92a26147641a36e5c36a8b502d4724de49e7b3453e1c051bb3e2e7e51fbcd3d7",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-dynamic-month-labels",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[2/3] Replaced hardcoded Eyl\u00fcl/A\u011fustos labels with timeless Gelecek Ay / Cari Ay; added failing-first HTML test and vision-reviewed before/after proof",
-      "files_affected": [
-        "index.html",
-        "tests/full_read_regressions.test.js"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795211590.4924083,
-      "timestamp_str": "2026-11-21 00:53:10",
-      "agent": "opencode:hy4-flash-free",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-dynamic-month-labels",
       "phase": "phase 4",
@@ -420,6 +373,48 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-findings-complete",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Close remaining findings: permission state text and nine test-coverage gaps",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795214384.2155242,
+      "timestamp_str": "2026-11-21 01:39:44",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "Every surfaced finding should be either fixed or closed with evidence; the remaining quality findings had no regression proof.",
+        "benefits": "Accessible state labels and assertions for previously untested branches.",
+        "risks": "contract: none; dependency: none; concurrency: none; state: none",
+        "mitigation": "Add one consolidated failing-first coverage suite, keep all existing assertions, vision proof"
+      },
+      "plan_digest": "ef2f72e218eb67b65b43efb57fc7a6b4885667b60ab1b49b3ff4c1b42cce2773",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-findings-complete",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "Phase 4 passed: npm test 149/149, check --strict 4/4, UI finished with vision proof",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795214384.9194355,
+      "timestamp_str": "2026-11-21 01:39:44",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }

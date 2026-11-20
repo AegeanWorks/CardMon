@@ -44,44 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-21-demo-mono-before.png",
-      "alt": "CardMon interface at 2026-11-21",
-      "caption": "CardMon interface captured from projects/CardMon/demo-mono-before.html",
-      "commit": "de45c35527327c5e2a7041a79b0b31344266c80e",
-      "taken_at": "2026-11-21",
-      "viewport": "900x300",
-      "width": 900,
-      "height": 300,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:opencode",
-        "method": "vision",
-        "notes": "BEFORE proof at de45c35: with --font-family-mono undefined, the card-digit and stat-value samples fall back to the inherited sans-serif face; digits are proportionally spaced and visually inconsistent with the intended monospace treatment. Layout and contrast are otherwise clean.",
-        "score": 90,
-        "reviewed_at": "2026-11-21T00:43:40"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-21-demo-mono-after.png",
-      "alt": "CardMon interface at 2026-11-21",
-      "caption": "CardMon interface captured from projects/CardMon/demo-mono-after.html",
-      "commit": "de45c35527327c5e2a7041a79b0b31344266c80e",
-      "taken_at": "2026-11-21",
-      "viewport": "900x300",
-      "width": 900,
-      "height": 300,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:opencode",
-        "method": "vision",
-        "notes": "AFTER proof: --font-family-mono is defined in css/base.css, and the same card-digit and stat-value samples now render in fixed-width monospace with consistent digit spacing. The change is confined to the token definition; no layout, contrast or hierarchy regression is visible.",
-        "score": 96,
-        "reviewed_at": "2026-11-21T00:43:48"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-21-demo-month-before.png",
       "alt": "CardMon interface at 2026-11-21",
       "caption": "CardMon interface captured from projects/CardMon/demo-month-before.html",
@@ -269,6 +231,44 @@
         "notes": "AFTER proof: paid events keep loan/subscription/rent glyphs with paid styling handled separately; unpaid events unchanged.",
         "score": 96,
         "reviewed_at": "2026-11-21T01:27:57"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-pill-before.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-pill-before.html",
+      "commit": "650f8b7ff1488177e523c4e58feed92844bac503",
+      "taken_at": "2026-11-21",
+      "viewport": "900x260",
+      "width": 900,
+      "height": 260,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "BEFORE: Temass\u0131z and Avans pills label only the feature, leaving on/off state to dot colour, unlike \u0130nternet/Yurtd\u0131\u015f\u0131 which include A\u00e7\u0131k/Bloke text.",
+        "score": 90,
+        "reviewed_at": "2026-11-21T01:38:55"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-pill-after.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-pill-after.html",
+      "commit": "650f8b7ff1488177e523c4e58feed92844bac503",
+      "taken_at": "2026-11-21",
+      "viewport": "900x260",
+      "width": 900,
+      "height": 260,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "AFTER: all four permission pills carry explicit A\u00e7\u0131k/Bloke text; state is no longer colour-only. No visual regression.",
+        "score": 96,
+        "reviewed_at": "2026-11-21T01:38:56"
       }
     }
   ]

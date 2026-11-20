@@ -314,10 +314,10 @@ function renderCardsView() {
                 <span class="perm-status-dot"></span> Yurtdışı: ${perms.abroad ? 'Açık' : 'Bloke'}
               </div>
               <div class="perm-pill ${perms.contactless ? 'active' : 'blocked'}" onclick="toggleCardPermission('${c.id}', 'contactless')" title="Temassız Ödemeyi Aç/Kapat">
-                <span class="perm-status-dot"></span> Temassız
+                <span class="perm-status-dot"></span> Temassız: ${perms.contactless ? 'Açık' : 'Bloke'}
               </div>
               <div class="perm-pill ${perms.cashAdvance ? 'active' : 'blocked'}" onclick="toggleCardPermission('${c.id}', 'cashAdvance')" title="Nakit Avansı Aç/Kapat">
-                <span class="perm-status-dot"></span> Avans
+                <span class="perm-status-dot"></span> Avans: ${perms.cashAdvance ? 'Açık' : 'Bloke'}
               </div>
               <div class="perm-pill active" onclick="toggleCardPermission('${c.id}', 'isFrozen')" title="Kartı Geçici Dondur" style="color:#94a3b8; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
                 Dondur
