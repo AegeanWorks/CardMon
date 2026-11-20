@@ -2157,5 +2157,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "d35098160a5671bc08b86c90fb61eae15520195267e892336a39681a1d89e8fd",
     "baseline_digest": "d35098160a5671bc08b86c90fb61eae15520195267e892336a39681a1d89e8fd"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-loan-status-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "f31d68392c02a6cf5be48781ac486d48ce5c2ed9",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795201616.1520302,
+    "finished_at": 1795201735.8627264,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "914317f5f2a76398272cf25d14296d1ec055f5162bfac6cbef982a51672e5972",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795201735.8627293,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-loan-status-after.png"
+      ],
+      "scoped_digest": "7d2837dcb7129d27fe2dea968f177e934b27aae187433c83c3483527cbf2ff5b"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "914317f5f2a76398272cf25d14296d1ec055f5162bfac6cbef982a51672e5972",
+    "baseline_digest": "914317f5f2a76398272cf25d14296d1ec055f5162bfac6cbef982a51672e5972"
   }
 ]

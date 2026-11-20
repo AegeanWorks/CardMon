@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-insights-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/insights-after.html",
-      "commit": "b94e76fcbf79269da9513612b6908ee098719359",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x2800",
-      "width": 1440,
-      "height": 2800,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Smart Insights section, dashboard, demo data) at b94e76f: all five insight icons are line-art SVGs (warning, bulb, shield, refresh, tag) matching the app icon set; the success variant uses a check SVG too. Titles, text, colors and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T20:56:37"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-exec-table-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/exec-table-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/loan-status-before.html",
       "commit": "71962c9a44da1116a0f4df0877bfb3b9ed8e3856",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1200",
+      "width": 1440,
+      "height": 1200,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-loan-status-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/loan-status-after.html",
+      "commit": "f31d68392c02a6cf5be48781ac486d48ce5c2ed9",
       "taken_at": "2026-11-20",
       "viewport": "1440x1200",
       "width": 1440,
