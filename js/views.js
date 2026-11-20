@@ -657,7 +657,7 @@ function renderBanksView() {
 
         ${bank.notes ? `
         <div style="font-size:0.8rem; color:var(--text-muted); background:rgba(0,0,0,0.15); padding:0.4rem 0.6rem; border-radius:6px;">
-          📝 ${escapeHtml(bank.notes)}
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> ${escapeHtml(bank.notes)}
         </div>
         ` : ''}
 
@@ -711,7 +711,7 @@ function renderBanksView() {
           </span>
           ${bankCards.length > 0 ? bankCards.map(c => `
             <div class="mini-card-chip">
-              <span>💳 <strong>${escapeHtml(c.nickname)}</strong> (${c.network})</span>
+              <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:middle;"><rect x="2" y="5" width="20" height="14" rx="3"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg> <strong>${escapeHtml(c.nickname)}</strong> (${c.network})</span>
               <span style="color: var(--accent-emerald); font-weight:700;">${formatMoney(c.limit)}</span>
             </div>
           `).join('') : `
@@ -824,7 +824,7 @@ function renderEkHesapView() {
 
             ${bank.notes ? `
               <div style="font-size:0.8rem; color:var(--text-muted); background:rgba(0,0,0,0.15); padding:0.4rem 0.6rem; border-radius:6px;">
-                📝 ${escapeHtml(bank.notes)}
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> ${escapeHtml(bank.notes)}
               </div>
             ` : ''}
 
