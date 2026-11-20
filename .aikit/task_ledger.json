@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-vault-snapshot-icons",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795198894.996252,
     "owner": "agent",
     "lease_until": 1795206094.996252,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795198919.560809,
+    "completed_head": "57123b05d0d1365a5c925638b1cf18c145094179",
+    "completed_tree": "425df4389b4b7d78d842105af8cc140ffacf1167"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-timeline-due-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons in timeline event due rows",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795194751.5124664,
-      "timestamp_str": "2026-11-20 20:12:31",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the Timeline view found colorful calendar and flame emojis on event due rows clashing with the app's monochrome line-art icons (G-003 aesthetic cohesion).",
-        "benefits": "Due rows now use line-art calendar/flame SVGs (and a check SVG for paid state); before/after vision reviews approved (95 -> 97).",
-        "risks": "One render-only change in js/views.js; day numbers and status text preserved so tests pass; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both timeline screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-timeline-due-icons",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-vault-snapshot-icons",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-vault-snapshot-icons' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795198919.6715446,
+      "timestamp_str": "2026-11-20 21:21:59",
+      "agent": "agent",
+      "head": "57123b05d0d1365a5c925638b1cf18c145094179",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
