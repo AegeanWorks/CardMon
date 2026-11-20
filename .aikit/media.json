@@ -44,44 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-settings-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-settings-review.html",
-      "commit": "d34772c6007390e3c96c1ef00867f9d2b1a71b11",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Profile and Settings modal, demo data) at d34772c: the Backup Vault action uses a colorful archive emoji while the surrounding data-management buttons use monochrome line icons, breaking visual consistency. Form layout and spacing are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T18:41:56"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-modal-settings-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-settings-icons-after.html",
-      "commit": "e8a413ce99a458f611a5436fbcec1c2389b8e7f9",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Profile and Settings modal, demo data) at e8a413c: the Backup Vault action now uses a line-art archive SVG consistent with the other data-management buttons (three vault labels updated app-wide). Form fields, layout and spacing unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T18:42:30"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-vault-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-vault-review.html",
@@ -270,6 +232,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T19:36:58"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-virtualcard-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-virtualcard-review.html",
+      "commit": "0d15d88ef9e770578f6ad72d071a094a60311334",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
