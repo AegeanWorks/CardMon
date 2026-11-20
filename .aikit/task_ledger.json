@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-findings-batch3",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795212873.616337,
     "owner": "opencode:hy4-flash-free",
     "lease_until": 1795220073.616337,
@@ -15,25 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795212991.3193383,
+    "completed_head": "6bf9c9b75b92b91131621c0d35e4b2f6687f25b5",
+    "completed_tree": "6083517da869b004d79d0e3125269e1ca887c939"
   },
   "checkpoints": [
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 9",
-      "phase_num": 3,
-      "description": "Reforge stage 9: window 426, 26 commit(s), 50 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 3 binary not analysed",
-      "files_affected": [
-        "assets/screenshots/2026-11-14-home.png",
-        "assets/screenshots/2026-11-19-home-before.png",
-        "assets/screenshots/2026-11-19-home.png"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795208649.4881675,
-      "timestamp_str": "2026-11-21 00:04:09",
-      "agent": "opencode",
-      "operator_task": "cardmon-pay-method-labels"
-    },
     {
       "task_id": "reforge:run-1",
       "phase": "reforge stage 9",
@@ -413,6 +400,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-findings-batch3",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-findings-batch3' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795212991.4144735,
+      "timestamp_str": "2026-11-21 01:16:31",
+      "agent": "opencode",
+      "head": "6bf9c9b75b92b91131621c0d35e4b2f6687f25b5",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
