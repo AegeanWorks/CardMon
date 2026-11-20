@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Smart Advisor modal, demo data) at 2a0f30e: the close button SVG has malformed line coordinates and renders as a tiny diagonal arrow instead of an X, a usability defect; the title uses a brain emoji unlike the app SVG icons. Ranking rows and layout are otherwise clean.",
+        "score": 94,
+        "reviewed_at": "2026-11-20T16:50:00"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-modal-advisor-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Smart Advisor modal, demo data) at f4700d6: the close button now renders a clear X in four modals, and the advisor title uses a line-art sparkle SVG. Ranking rows, amounts and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T16:50:31"
+      }
     }
   ]
 }
