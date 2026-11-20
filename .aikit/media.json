@@ -44,63 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-rent-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-rent-review.html",
-      "commit": "3fc0891e19d43b34b80c06a148614d737fdf2477",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Rent Simulator modal, demo data) at 1295ef7: the title, insight header and three comparison bullets use colorful emojis (home, bulb, chart, bank) that clash with the app's monochrome line-art icon language. Stat cards, inputs and projection table are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T19:15:35"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-modal-rent-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-rent-icons-after.html",
-      "commit": "0d9f696cd289e056b9ca2cbe8d0ae3635c0e8dca",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Rent Simulator modal, demo data) at 0d9f696: the five emojis are replaced by line-art SVGs (home, bulb, home, trending-up, bank) matching the app icon set. Inputs, stat cards, amounts and projection table unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T19:15:56"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-modal-subscription-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-subscription-review.html",
-      "commit": "900c2f139ce9d6a9d9e1d91a58e1922232e4fde1",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Add Subscription modal, demo data) at cbc8c36: seven preset pills and two section labels use colorful emojis (home, building, bolt, clapper, note, robot, cloud, card, chart) that clash with the monochrome line-art icon language used elsewhere in the app. Form layout and fields are otherwise clean.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T19:26:32"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-subscription-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-subscription-icons-after.html",
@@ -270,6 +213,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T19:57:50"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-timeline-emoji-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/timeline-emoji-review.html",
+      "commit": "a81640a957927122b03b49e40d59ded2610e15b9",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
