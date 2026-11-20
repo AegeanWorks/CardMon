@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-subscription-card-icons",
+    "task_id": "cardmon-turkish-day-suffix",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795166682.0053809,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795169718.1452498,
     "owner": "agent",
-    "lease_until": 1795173882.0053809,
+    "lease_until": 1795176918.1452498,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795166764.9674737,
-    "completed_head": "f519effde6e415f6d5e0085ac1033f7fc3efd351",
-    "completed_tree": "cfcdc98e93a754fc4d7dfb5ab3b5a8d7da208ba4"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-bank-detail-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 108/108, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795161196.6425412,
-      "timestamp_str": "2026-11-20 10:53:16",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-bank-detail-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-bank-detail-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795161265.9887612,
-      "timestamp_str": "2026-11-20 10:54:25",
-      "agent": "agent",
-      "head": "66ab42ea368286b675691319f3a537161f21c816",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-bank-used-stat",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-turkish-day-suffix",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Correct Turkish day suffixes in due-date labels",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795169717.026348,
+      "timestamp_str": "2026-11-20 13:15:17",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review found user-facing 'Ay\u0131n 14'i / 20'i / 12'i' labels with wrong Turkish suffixes, a visible polish/functional flaw (G-003 functional).",
+        "benefits": "Added turkishDaySuffix helper and applied it in subscriptions, smart advisor, bank modal and PDF report; failing-first test added; vision reviews approved (96 -> 97).",
+        "risks": "Copy-only change across four render sites; fallback keeps prior suffix for out-of-range values; 110/110 tests pass.",
+        "mitigation": "Failing-first test confirmed 1 failure before fix, then 110/110 pass; ui verify + ui finish --reviewed; vision analysis; check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-turkish-day-suffix",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 110/110, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795169718.1452498,
+      "timestamp_str": "2026-11-20 13:15:18",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
