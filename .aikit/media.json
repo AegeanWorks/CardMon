@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-cards-permissions-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/cards-permissions-after.html",
-      "commit": "fc890fe1ab7aa8dca6683514433b0abae9a6b762",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Cards view, demo data) at 8cbf79d: the two card quick-action buttons and the portfolio summary banner still use colorful emojis (credit card, shopping bags) that clash with the line-art SVG iconography used elsewhere in CardMon. Button geometry and labels are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T10:25:53"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-card-action-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-action-icons-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T11:52:13"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-timeline-event-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/timeline-event-icons-after.html",
+      "commit": "d628f5fa950e2d4f2055db9fb87249109b3a37a8",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

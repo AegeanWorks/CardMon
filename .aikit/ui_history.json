@@ -1195,5 +1195,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "298793f8c9011a44d7507db5396a702e1ec3b85265455f133b8a641fb632e1de",
     "baseline_digest": "298793f8c9011a44d7507db5396a702e1ec3b85265455f133b8a641fb632e1de"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-timeline-event-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "d628f5fa950e2d4f2055db9fb87249109b3a37a8",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795165390.1317298,
+    "finished_at": 1795165528.530116,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "a6f1aa76561e1c9b5cead90ed79c7744988af477df0c6353fc253bb94fe02364",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795165528.5301182,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-timeline-event-icons-after.png"
+      ],
+      "scoped_digest": "3021989e4dd3c229bb8117d31a2330490810f6b91fc4d525ad5d41caf0a53e78"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "a6f1aa76561e1c9b5cead90ed79c7744988af477df0c6353fc253bb94fe02364",
+    "baseline_digest": "a6f1aa76561e1c9b5cead90ed79c7744988af477df0c6353fc253bb94fe02364"
   }
 ]
