@@ -242,8 +242,15 @@
       "viewport": "1440x2800",
       "width": 1440,
       "height": 2800,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Smart Insights section, dashboard, demo data) at 6e4a1a: the five insight cards use colorful emojis (warning triangle, bulb, shield, refresh, tag) on colored tiles, clashing with the app's monochrome line-art icon language. Card layout, titles and text are otherwise clean.",
+        "score": 94,
+        "reviewed_at": "2026-11-20T20:56:09"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-insights-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x2800",
       "width": 1440,
       "height": 2800,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Smart Insights section, dashboard, demo data) at b94e76f: all five insight icons are line-art SVGs (warning, bulb, shield, refresh, tag) matching the app icon set; the success variant uses a check SVG too. Titles, text, colors and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T20:56:37"
+      }
     }
   ]
 }
