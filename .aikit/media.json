@@ -244,6 +244,18 @@
       "height": 900,
       "status": "pending_review",
       "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-virtualcard-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-virtualcard-icons-after.html",
+      "commit": "de9d2214434d1e49ac25eab11931c87d5a3eb6f3",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
