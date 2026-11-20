@@ -391,7 +391,7 @@ function renderCardsView() {
               html += `
               <div class="installments-section">
                 <div class="virtual-cards-header">
-                  <span>🛍️ Aktif Taksitler (${activeInsts.length})</span>
+                  <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> Aktif Taksitler (${activeInsts.length})</span>
                   <button class="btn btn-secondary btn-sm" style="padding: 0.15rem 0.5rem; font-size: 0.7rem;" onclick="openQuickTxModal('${c.id}', 'expense')">
                     + Taksit Ekle
                   </button>
@@ -429,7 +429,7 @@ function renderCardsView() {
               html += `
               <div class="installments-section" style="border:1px solid rgba(245,158,11,0.25); border-radius:var(--radius-md); padding:0.65rem 0.75rem; background:rgba(245,158,11,0.05); margin-top:0.5rem;">
                 <div class="virtual-cards-header" style="margin-bottom:0.5rem;">
-                  <span style="color:#fbbf24;">⏳ Planlanan Taksitler (${plannedInsts.length})</span>
+                  <span style="color:#fbbf24;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Planlanan Taksitler (${plannedInsts.length})</span>
                   <button class="btn btn-secondary btn-sm" style="padding: 0.15rem 0.5rem; font-size: 0.7rem;" onclick="openQuickTxModal('${c.id}', 'expense')">
                     + Ekle
                   </button>
@@ -450,7 +450,7 @@ function renderCardsView() {
                         </div>
                         <div class="installment-actions-col" style="gap:0.25rem;">
                           <button class="btn-pay-installment-mini" style="background:rgba(245,158,11,0.15); border-color:rgba(245,158,11,0.4); color:#fbbf24;" onclick="activateNextCycleInstallment('${c.id}', '${inst.id}')" title="Aktif Hale Getir — Bu Ayki Borca Ekle">
-                            ✅ Aktive Al
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> Aktive Al
                           </button>
                           <button style="background:none; border:none; color:var(--text-muted); cursor:pointer; font-size:0.8rem;" onclick="deleteInstallmentPlan('${c.id}', '${inst.id}')" title="Planı İptal Et">×</button>
                         </div>
@@ -468,7 +468,7 @@ function renderCardsView() {
           <!-- Sanal Kartlar (Virtual Cards) Sub-Section -->
           <div class="virtual-cards-section">
             <div class="virtual-cards-header">
-              <span>💳 ${t('virtualCards')} (${virtualCards.length})</span>
+              <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> ${t('virtualCards')} (${virtualCards.length})</span>
               <button class="btn btn-secondary btn-sm" style="padding: 0.15rem 0.5rem; font-size: 0.7rem;" onclick="openAddVirtualCardModal('${c.id}')">
                 + Sanal Kart
               </button>
@@ -572,13 +572,13 @@ function renderBankDebtBreakdown(cardDebt, loanDebt, loans) {
   let html = '<div style="font-size:0.78rem; display:flex; flex-direction:column; gap:0.2rem; background:rgba(251,113,133,0.06); border:1px solid rgba(251,113,133,0.12); border-radius:6px; padding:0.45rem 0.65rem;">';
   if (cardDebt > 0) {
     html += '<div style="display:flex; justify-content:space-between; color:var(--text-secondary);">'
-          + '<span>💳 Kart Borcu:</span>'
+          + '<span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> Kart Borcu:</span>'
           + '<strong style="color:#fb7185;">' + formatMoney(cardDebt) + '</strong>'
           + '</div>';
   }
   if (loanDebt > 0) {
     html += '<div style="display:flex; justify-content:space-between; color:var(--text-secondary);">'
-          + '<span>🏦 Kredi Borcu (Kalan):</span>'
+          + '<span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M5 10l7-7 7 7"></path><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><line x1="9" y1="21" x2="9" y2="14"></line><line x1="15" y1="21" x2="15" y2="14"></line></svg> Kredi Borcu (Kalan):</span>'
           + '<strong style="color:#f97316;">' + formatMoney(loanDebt) + '</strong>'
           + '</div>';
     const activeLoans = loans.filter(l => (Number(l.paidInstallments)||0) < (Number(l.totalInstallments)||1));
