@@ -1565,5 +1565,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "ecf5e226160db5de3ceecf8d9345af25191a1f785e3dd11b39e85fb69131fc9c",
     "baseline_digest": "ecf5e226160db5de3ceecf8d9345af25191a1f785e3dd11b39e85fb69131fc9c"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-modal-rent-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "0d9f696cd289e056b9ca2cbe8d0ae3635c0e8dca",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795191255.5215719,
+    "finished_at": 1795191309.67984,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "61fa2769522bc4ac1c70abf8da13aa295d0f2c8dd6178c6d11c5de546ac22050",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795191309.679844,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-modal-rent-icons-after.png"
+      ],
+      "scoped_digest": "c188c46236bc04800e736e9a82cce505526b873638e20b5138e6cfbb88f973d7"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "61fa2769522bc4ac1c70abf8da13aa295d0f2c8dd6178c6d11c5de546ac22050",
+    "baseline_digest": "61fa2769522bc4ac1c70abf8da13aa295d0f2c8dd6178c6d11c5de546ac22050"
   }
 ]
