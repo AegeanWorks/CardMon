@@ -1245,6 +1245,27 @@ function getSubIcon(name = '', category = '') {
   return '⚡';
 }
 
+// Timeline event icons: one line-art glyph per event kind, no emoji mix.
+const TIMELINE_EVENT_SVG = {
+  paid: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12l3 3 5-6"></path></svg>',
+  cutoff: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>',
+  due: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>',
+  loan: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V10l7-5 7 5v11"></path></svg>',
+  sub: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 12H5L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>',
+  rent: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>'
+};
+
+function timelineEventSvg(e) {
+  if (e.isPaid) return TIMELINE_EVENT_SVG.paid;
+  if (e.type === 'card_cutoff') return TIMELINE_EVENT_SVG.cutoff;
+  if (e.type === 'loan') return TIMELINE_EVENT_SVG.loan;
+  if (e.type === 'subscription') {
+    return (e.category === 'Rent' || /kira/i.test(e.title || ''))
+      ? TIMELINE_EVENT_SVG.rent : TIMELINE_EVENT_SVG.sub;
+  }
+  return TIMELINE_EVENT_SVG.due;
+}
+
 // 5.4. Dedicated Statement & Payment Timeline View (Ekstre & Ödeme Takvimi)
 function renderTimelineView() {
   const container = document.getElementById('timelineContainer');
@@ -1459,7 +1480,7 @@ function renderTimelineView() {
             <div class="timeline-event-card ${e.isPaid ? 'is-paid' : ''} ${isUrgent ? 'is-urgent' : ''} ${isToday ? 'is-today' : ''}" style="border-left-color: ${e.color};">
               <div class="timeline-event-left">
                 <div class="timeline-event-icon-box">
-                  ${e.icon}
+                  ${timelineEventSvg(e)}
                 </div>
                 <div class="timeline-event-info">
                   <div class="timeline-event-title-row">
