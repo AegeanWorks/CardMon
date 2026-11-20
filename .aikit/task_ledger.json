@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-vault-snapshot-icons",
+    "task_id": "cardmon-kmh-chart-icon",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795198894.996252,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795199712.6682835,
     "owner": "agent",
-    "lease_until": 1795206094.996252,
+    "lease_until": 1795206912.6682835,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795198919.560809,
-    "completed_head": "57123b05d0d1365a5c925638b1cf18c145094179",
-    "completed_tree": "425df4389b4b7d78d842105af8cc140ffacf1167"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-timeline-due-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795194752.2653816,
-      "timestamp_str": "2026-11-20 20:12:32",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-timeline-due-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-timeline-due-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795194772.2016797,
-      "timestamp_str": "2026-11-20 20:12:52",
-      "agent": "agent",
-      "head": "bb7660f7f8cf62cf8cb0b036760e0f66204f8aef",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-fee-status-icons",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-kmh-chart-icon",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Use line-art icon in KMH reserve chart strip",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795199710.50541,
+      "timestamp_str": "2026-11-20 21:35:10",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the dashboard KMH reserve chart found a colorful shield emoji in the reserve strip among monochrome labels and amounts (G-003 aesthetic cohesion).",
+        "benefits": "Reserve strip and empty-state bank icon now use line-art SVGs; before/after vision reviews approved (96 -> 97).",
+        "risks": "Two render-only changes in js/backup-vault.js; figures and labels preserved so tests pass; 111/111 tests pass.",
+        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both KMH-chart screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-kmh-chart-icon",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795199712.6682835,
+      "timestamp_str": "2026-11-20 21:35:12",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
