@@ -44,44 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-card-status-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/card-status-icons-after.html",
-      "commit": "5bebf40b7bf0d20c112c52d17bd430ee81a8ee06",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1500",
-      "width": 1440,
-      "height": 1500,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Cards view, status rows, demo data) at 5bebf40: the G\u00fcncel Bor\u00e7 and Ba\u011fl\u0131 Abonelikler rows now use line-art card/refresh SVGs matching the app icon set (high-utilization and Kat\u0131l\u0131m states converted too). Amounts, counts and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T20:40:25"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-insights-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/insights-before.html",
-      "commit": "4db06536a9dea23d0cfb9ea78468890bd5c88f67",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x2800",
-      "width": 1440,
-      "height": 2800,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Smart Insights section, dashboard, demo data) at 6e4a1a: the five insight cards use colorful emojis (warning triangle, bulb, shield, refresh, tag) on colored tiles, clashing with the app's monochrome line-art icon language. Card layout, titles and text are otherwise clean.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T20:56:09"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-insights-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/insights-after.html",
@@ -257,6 +219,30 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/sub-card-icons-before.html",
       "commit": "fd7068e7e5d9acf361da293a98a13159e0db4dfe",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1500",
+      "width": 1440,
+      "height": 1500,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-sub-card-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/sub-card-icons-after.html",
+      "commit": "e1d8bd9bd9b81e88237e93fed856db67a355cd34",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1500",
+      "width": 1440,
+      "height": 1500,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-sub-card-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/sub-card-icons-after.html",
+      "commit": "e1d8bd9bd9b81e88237e93fed856db67a355cd34",
       "taken_at": "2026-11-20",
       "viewport": "1440x1500",
       "width": 1440,
