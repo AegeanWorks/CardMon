@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-card-fee-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/card-fee-after.html",
-      "commit": "221964536dc07a0a4bdc4590876372ebb9c19181",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1500",
-      "width": 1440,
-      "height": 1500,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Cards view, fee status row, demo data) at 2219645: the Aidat banner and fee statuses now use line-art tag/clock/card/shield SVGs matching the app icon set. Amounts, months, installments and card layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T20:24:24"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-card-detail-headers-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-detail-headers-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/kmh-chart-before.html",
       "commit": "6216d48c76e9ad4d6421a13a515e6ca9984576f9",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x3000",
+      "width": 1440,
+      "height": 3000,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-kmh-chart-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/kmh-chart-after.html",
+      "commit": "4c45bfa9b3b5e6b58938ff366eae725cba20d288",
       "taken_at": "2026-11-20",
       "viewport": "1440x3000",
       "width": 1440,

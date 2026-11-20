@@ -2046,5 +2046,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "0c7167bb9b5ed33232c4672f2318dc3363fe4a5d3ddc47470086d7a4e58c7ce1",
     "baseline_digest": "0c7167bb9b5ed33232c4672f2318dc3363fe4a5d3ddc47470086d7a4e58c7ce1"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-kmh-chart-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "4c45bfa9b3b5e6b58938ff366eae725cba20d288",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795199436.8175333,
+    "finished_at": 1795199587.0445259,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "5f8c15fb7ac602b0f5c5dc7eb4ab5330b1d2dad119820ad68fbed4694829344c",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795199587.044529,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-kmh-chart-after.png"
+      ],
+      "scoped_digest": "a5d661bf986cbfbd6dcf2032ca3ac479dc1f6be46c7a8190657b0dfbb2715c06"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "5f8c15fb7ac602b0f5c5dc7eb4ab5330b1d2dad119820ad68fbed4694829344c",
+    "baseline_digest": "5f8c15fb7ac602b0f5c5dc7eb4ab5330b1d2dad119820ad68fbed4694829344c"
   }
 ]
