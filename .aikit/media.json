@@ -223,8 +223,15 @@
       "viewport": "1440x1500",
       "width": 1440,
       "height": 1500,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Subscriptions view, card labels, demo data) at 5a39cbd: the billing-day pill uses a colorful calendar emoji while surrounding labels and category icons are monochrome line-art, breaking icon consistency. Card layout, amounts and category icons are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T21:57:44"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-sub-card-icons-after.png",
@@ -235,8 +242,15 @@
       "viewport": "1440x1500",
       "width": 1440,
       "height": 1500,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Subscriptions view, card labels, demo data) at e1d8bd9: the billing-day pill now uses a line-art calendar SVG matching the app icon set (estimated and frozen-warning badges converted too). Amounts, days, chips and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T21:58:08"
+      }
     }
   ]
 }
