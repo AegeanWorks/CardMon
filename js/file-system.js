@@ -171,6 +171,9 @@ async function saveFileAs() {
 }
 
 async function openPortfolioFile() {
+  if (fileSystemState.isDirty && !confirm(t('confirmDiscardUnsaved'))) {
+    return false;
+  }
   if (isFileSystemAccessSupported()) {
     try {
       const options = {

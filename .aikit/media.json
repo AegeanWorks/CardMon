@@ -44,44 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-loan-status-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/loan-status-before.html",
-      "commit": "71962c9a44da1116a0f4df0877bfb3b9ed8e3856",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1200",
-      "width": 1440,
-      "height": 1200,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Loans view, status badges, demo data) at fa46b72: the next-installment tag, completed marker and debt-closed badge use colorful emojis (sparkle, party, check) that clash with the app's monochrome line-art icons. Card layout and amounts are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T22:10:07"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-loan-status-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/loan-status-after.html",
-      "commit": "f31d68392c02a6cf5be48781ac486d48ce5c2ed9",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1200",
-      "width": 1440,
-      "height": 1200,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Loans view, status badges, demo data) at f31d683: the three emojis are replaced by line-art sparkle/check SVGs matching the app icon set. Installment counts, amounts, progress bars and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T22:10:29"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-timeline-actions-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/timeline-actions-before.html",
@@ -269,6 +231,44 @@
         "notes": "AFTER behavior proof: CSV quotes are RFC-doubled, the network payload is shown as escaped text, the #1 row matches the recommended usable card, malformed v3 fields are rejected, and the stale file handle is cleared. Clean hierarchy and no visual regression.",
         "score": 96,
         "reviewed_at": "2026-11-21T01:04:04"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-state-before.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-state-before.html",
+      "commit": "0bd7e595ecef165a3a39414182180a01915804fd",
+      "taken_at": "2026-11-21",
+      "viewport": "1000x360",
+      "width": 1000,
+      "height": 360,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "BEFORE state-handling proof: next-cycle installment plans deleted on full payment, paid early on monthly payment, loan progress uncapped, paid amounts shown as future outflow, cash subscriptions missing from insights, and unsaved changes discarded without confirmation.",
+        "score": 91,
+        "reviewed_at": "2026-11-21T01:13:34"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-state-after.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-state-after.html",
+      "commit": "0bd7e595ecef165a3a39414182180a01915804fd",
+      "taken_at": "2026-11-21",
+      "viewport": "1000x360",
+      "width": 1000,
+      "height": 360,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "AFTER state-handling proof: next-cycle plans preserved and skipped until active, loan progress capped, paid amounts excluded from outflow forecasts, cash subscriptions included in insights, and a confirmation guards unsaved changes.",
+        "score": 96,
+        "reviewed_at": "2026-11-21T01:13:35"
       }
     }
   ]

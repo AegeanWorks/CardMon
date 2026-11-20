@@ -185,7 +185,7 @@ function exportPdfReport() {
     };
 
     state.cards.forEach(c => {
-      const debt = Number(c.usedBalance) || Number(c.paidThisMonthAmount) || 0;
+      const debt = Number(c.usedBalance) || 0;
       if (debt <= 0) return;
       let due = c.dateMethod === 'exact' ? Number(c.dueDay) : getApproxDay(c.approxDueWeek);
       if (!due || isNaN(due)) due = 15;

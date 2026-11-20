@@ -463,7 +463,7 @@ function renderPaymentFlowChart() {
   state.cards.forEach(c => {
     let due = c.dateMethod === 'exact' ? Number(c.dueDay) : getApproxDay(c.approxDueWeek);
     if (!due || isNaN(due)) due = 15;
-    const debt = Number(c.usedBalance) || Number(c.paidThisMonthAmount) || 0;
+    const debt = Number(c.usedBalance) || 0;
     if (debt <= 0) return;
 
     let periodKey = '3. Hafta (15-21)';
@@ -636,7 +636,7 @@ function renderSmartInsights(utilizationRatio, totalUsed, totalLimit, totalEkHes
   }
 
   // Insight 4: Subscriptions & Recurring Charges
-  const allSubs = state.cards.flatMap(c => c.subscriptions || []);
+  const allSubs = getAllSubscriptions();
   const totalSubAmount = allSubs.reduce((sum, s) => sum + (Number(s.amount) || 0), 0);
   if (allSubs.length > 0) {
     insights.push({

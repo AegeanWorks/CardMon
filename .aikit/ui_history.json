@@ -2432,5 +2432,63 @@
     "final_snapshot_entries": 0,
     "surface_digest": "6a17b139ec4af1ad88bec505ad2880ad6c5ce2205f1ee0b11923eff2b066ba1a",
     "baseline_digest": "64478e1811a3db9538ebdae61e5a9831bae2fb1baf76ae98787c7f9aabf569eb"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      ".aikit/project.json",
+      "i18n.js",
+      "js/backup-vault.js",
+      "js/file-system.js",
+      "js/modals.js",
+      "js/reports.js",
+      "assets/screenshots/2026-11-21-demo-state-after.png",
+      "assets/screenshots/2026-11-21-demo-state-before.png",
+      "tests/full_read_fixes3.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "0bd7e59",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795212703.8693783,
+    "finished_at": 1795212843.0063417,
+    "strikes": 0,
+    "reviewer": "agent:opencode",
+    "review": {
+      "reviewer": "agent:opencode",
+      "surface": "app",
+      "surface_digest": "7ab11db73844f2b52562d8d295e9a18bb88449f2182aa3c23c19b651444a2183",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795212843.0063453,
+      "scoped_paths": [
+        ".aikit/media.json",
+        ".aikit/project.json",
+        "i18n.js",
+        "js/backup-vault.js",
+        "js/file-system.js",
+        "js/modals.js",
+        "js/reports.js",
+        "assets/screenshots/2026-11-21-demo-state-after.png",
+        "assets/screenshots/2026-11-21-demo-state-before.png",
+        "tests/full_read_fixes3.test.js"
+      ],
+      "scoped_digest": "bc2908da35c22a59630059a453072b70878f1ed81501a54f0a609092fdfdaa92"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/full_read_fixes3.test.js",
+        "reason": "Failing-first state-handling regressions"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "7ab11db73844f2b52562d8d295e9a18bb88449f2182aa3c23c19b651444a2183",
+    "baseline_digest": "6a17b139ec4af1ad88bec505ad2880ad6c5ce2205f1ee0b11923eff2b066ba1a"
   }
 ]

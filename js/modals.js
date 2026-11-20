@@ -772,7 +772,8 @@ function payCardFullDebt(cardId) {
     card.paidThisMonthAmount = currentDebt;
     card.isPaidThisMonth = true;
     card.usedBalance = 0;
-    card.installments = [];
+    // Next-cycle plans are not part of the current balance and must survive.
+    card.installments = (card.installments || []).filter(inst => inst.startCycle === 'next');
     saveToStorage();
     renderAll();
     showToast(`✅ "${card.nickname}" kartının ${formatMoney(currentDebt)} tutarındaki dönem borcu ödendi olarak kapatıldı.`);
@@ -794,6 +795,7 @@ function payCardMonthlyInstallments(cardId) {
   const completedPlans = [];
 
   insts.forEach(inst => {
+    if (inst.startCycle === 'next') return; // not yet active — not in the current balance
     const monthlyAmt = Number(inst.monthlyAmount) || (inst.totalAmount / (inst.installmentCount || 1));
     totalMonthlyPaid += monthlyAmt;
     inst.paidCount = (inst.paidCount || 0) + 1;
@@ -1669,6 +1671,10 @@ function paySingleLoanInstallment(loanId) {
   if (!loan) return;
 
   const totalInst = Number(loan.totalInstallments) || 1;
+  if ((Number(loan.paidInstallments) || 0) >= totalInst) {
+    showToast(`"${loan.title}" kredisinin tüm taksitleri zaten ödendi.`);
+    return;
+  }
   loan.paidInstallments = (Number(loan.paidInstallments) || 0) + 1;
   const paidInst = loan.paidInstallments;
 
