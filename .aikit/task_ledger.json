@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-kmh-note-dedup",
+    "task_id": "cardmon-modal-card-icons",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795177153.131386,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795179900.4655564,
     "owner": "agent",
-    "lease_until": 1795184353.131386,
+    "lease_until": 1795187100.4655564,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795177235.2936707,
-    "completed_head": "9e5790f373587bca9676cce8bb12dd024279f0eb",
-    "completed_tree": "069cd5fd2b4426668a06b8b62773d4de8127053f"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-loans-svg-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 109/109, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795163049.1699092,
-      "timestamp_str": "2026-11-20 11:24:09",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-loans-svg-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-loans-svg-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795163124.7952461,
-      "timestamp_str": "2026-11-20 11:25:24",
-      "agent": "agent",
-      "head": "3f6ebb9fc598ae99e9fcba6508f7ee9ce012f8ac",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-subscriptions-icons",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-modal-card-icons",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Use SVG icons in Add Card modal labels",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795179899.6707394,
+      "timestamp_str": "2026-11-20 16:04:59",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the newly inspected Add Card modal found two colorful label emojis clashing with the monochrome form design (G-003 aesthetic cohesion).",
+        "benefits": "Participation and smart-statement label icons converted to line-art SVGs; before/after vision reviews approved (96 -> 97).",
+        "risks": "Two render-only markup changes in index.html; no behavior, data or layout changes; 111/111 tests pass.",
+        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both modal screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-modal-card-icons",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795179900.4655564,
+      "timestamp_str": "2026-11-20 16:05:00",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
