@@ -221,14 +221,20 @@ function renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalE
     return;
   }
 
-  // A safe utilization score must not hide a dangerous cashflow burden.
+  // A high cashflow burden must not be described with a blanket "safe limit"
+  // claim: the utilization itself may be high.
+  const utilizationClause = (ratio) => {
+    if (ratio <= 30) return `limit doluluğunuz %${ratio.toFixed(1)} güvenli olsa da `;
+    if (ratio <= 55) return `limit doluluğunuz %${ratio.toFixed(1)} dengeli seviyede olmasına rağmen `;
+    return `limit doluluğunuz %${ratio.toFixed(1)} yüksek seviyede olduğu için `;
+  };
   const burden = Number(incomeBurdenRatio) || 0;
   if (burden > 65) {
     pill.className = 'health-score-pill health-critical';
     pill.textContent = t('healthCritical');
     fill.style.width = '25%';
     fill.style.background = '#f43f5e';
-    caption.textContent = `Zorunlu ödemeler gelirinizin %${burden.toFixed(1)}'ini aşıyor; limit doluluğunuz %${utilizationRatio.toFixed(1)} güvenli olsa da nakit akışı riski yüksek.`;
+    caption.textContent = `Zorunlu ödemeler gelirinizin %${burden.toFixed(1)}'ini aşıyor; ${utilizationClause(utilizationRatio)}nakit akışı riski yüksek.`;
     return;
   }
   if (burden > 40) {
@@ -236,7 +242,8 @@ function renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalE
     pill.textContent = t('healthWarning');
     fill.style.width = '48%';
     fill.style.background = 'linear-gradient(90deg, #f59e0b, #f43f5e)';
-    caption.textContent = `Limit doluluğunuz %${utilizationRatio.toFixed(1)} güvenli olsa da zorunlu ödemeler gelirinizin %${burden.toFixed(1)}'ini oluşturuyor. Nakit akışınızı gözden geçirin.`;
+    const clause = utilizationClause(utilizationRatio);
+    caption.textContent = `${clause.charAt(0).toUpperCase() + clause.slice(1)}zorunlu ödemeler gelirinizin %${burden.toFixed(1)}'ini oluşturuyor. Nakit akışınızı gözden geçirin.`;
     return;
   }
 

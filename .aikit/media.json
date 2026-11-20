@@ -44,44 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-timeline-actions-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/timeline-actions-before.html",
-      "commit": "a3013c578c972ca7a164bdcc8210de8ad5a10cbe",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1200",
-      "width": 1440,
-      "height": 1200,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Timeline view, action buttons, demo data) at 698fcfe: the Borcu Kapat and Taksiti D\u00fc\u015f buttons use colorful check and card emojis that clash with the app's monochrome line-art icon language. Event cards, amounts and due rows are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T22:21:07"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-timeline-actions-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/timeline-actions-after.html",
-      "commit": "3760d36af048d080593b500ea256e8933ff96b49",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1200",
-      "width": 1440,
-      "height": 1200,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Timeline view, action buttons, demo data) at 3760d36: the action buttons now use line-art check/card SVGs matching the app icon set (paid-state undo converted too). Amounts, due rows and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T22:21:31"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-pay-method-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/pay-method-before.html",
@@ -269,6 +231,44 @@
         "notes": "AFTER state-handling proof: next-cycle plans preserved and skipped until active, loan progress capped, paid amounts excluded from outflow forecasts, cash subscriptions included in insights, and a confirmation guards unsaved changes.",
         "score": 96,
         "reviewed_at": "2026-11-21T01:13:35"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-caption-before.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-caption-before.html",
+      "commit": "ac5d8aab8c93ccd16c7b3fc03e4cac787d99f2f0",
+      "taken_at": "2026-11-21",
+      "viewport": "1050x300",
+      "width": 1050,
+      "height": 300,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "BEFORE proof: high burden captions call 80% utilization 'g\u00fcvenli', and a \u20ba50.000 card shows 20%/\u20ba2.000 on its face while the banner says \u20ba4.000.",
+        "score": 90,
+        "reviewed_at": "2026-11-21T01:23:41"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-caption-after.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-caption-after.html",
+      "commit": "ac5d8aab8c93ccd16c7b3fc03e4cac787d99f2f0",
+      "taken_at": "2026-11-21",
+      "viewport": "1050x300",
+      "width": 1050,
+      "height": 300,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "AFTER proof: captions describe 80% utilization as high, the genuinely-safe 20% case keeps its wording, and the card face now agrees with the \u20ba4.000 banner at 40%.",
+        "score": 96,
+        "reviewed_at": "2026-11-21T01:23:43"
       }
     }
   ]

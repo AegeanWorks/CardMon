@@ -204,7 +204,7 @@ function renderCardsView() {
     
     // Min Payment & Katılım Bankası Rule
     const isKatilim = c.isParticipationBank || Number(c.minPaymentRatio) === 100;
-    const minRatio = isKatilim ? 100 : (Number(c.minPaymentRatio) || 20);
+    const minRatio = isKatilim ? 100 : (Number(c.minPaymentRatio) || (limit >= 25000 ? 40 : 20));
     const minAmount = isKatilim ? used : ((used * minRatio) / 100);
 
     // Date texts
