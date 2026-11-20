@@ -225,6 +225,18 @@
       "height": 900,
       "status": "pending_review",
       "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-timeline-emoji-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/timeline-emoji-after.html",
+      "commit": "fa90981b8238670e85686b9b74a5444be5a3d7d4",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

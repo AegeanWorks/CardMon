@@ -1787,5 +1787,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "cc7ad67f5e45017162539df92fa1d4fbcf8d9c14957daecc69eb26bd8f7b28e7",
     "baseline_digest": "cc7ad67f5e45017162539df92fa1d4fbcf8d9c14957daecc69eb26bd8f7b28e7"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-timeline-emoji-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "fa90981b8238670e85686b9b74a5444be5a3d7d4",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795194489.0105767,
+    "finished_at": 1795194673.3655355,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "90e8f6296243f917426ae300cac021392c6bf3ea8893008eea8770e20552c8f4",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795194673.3655388,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-timeline-emoji-after.png"
+      ],
+      "scoped_digest": "15763c97188ad58444ece72165daad365d3c84df84ba15ad33c2520fe9bf3df9"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "90e8f6296243f917426ae300cac021392c6bf3ea8893008eea8770e20552c8f4",
+    "baseline_digest": "90e8f6296243f917426ae300cac021392c6bf3ea8893008eea8770e20552c8f4"
   }
 ]
