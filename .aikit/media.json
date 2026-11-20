@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-card-perms-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-card-perms-before.html",
-      "commit": "c821c56c155308927d27edff0edcdd02ef98b69b",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Add Card modal, permissions section, demo data) at cc1c727: the five permission checkboxes use colorful emojis (globe, earth, antenna, ATM, snowflake) that clash with the app's monochrome line-art icon language. Checkbox layout, labels and selection state are otherwise clean.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T19:51:21"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-card-perms-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-card-perms-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T20:40:25"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-insights-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/insights-before.html",
+      "commit": "4db06536a9dea23d0cfb9ea78468890bd5c88f67",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x2800",
+      "width": 1440,
+      "height": 2800,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
