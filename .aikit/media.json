@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-card-detail-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-card-detail-before.html",
-      "commit": "02821f3c507f34f5ca0c179364c50a69e1e1b2d5",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Add Card modal, detail section, demo data) at 64d2e19: the Ekstre Kesimi and Son \u00d6deme preview rows and the explanatory note use colorful emojis (calendar, hourglass, bulb) that clash with the app's monochrome line-art icon language. Amounts, layout and spacing are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T19:57:37"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-card-detail-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-card-detail-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T20:56:37"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-exec-table-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/exec-table-before.html",
+      "commit": "b4ff7945aac957e267915a02a20879a5b5143b19",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x3000",
+      "width": 1440,
+      "height": 3000,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
