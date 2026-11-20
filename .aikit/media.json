@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-empty-tracks-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/empty-tracks-after.html",
-      "commit": "65b610b88792f76ad761e25c5de0d1707420a4e3",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 65b610b: both meaningless empty tracks are gone; the utilization card shows a clean label/value layout and the sidebar footer shows just its three numbers. No layout shift elsewhere, no clipping or contrast regression; populated states keep their meters via the body:has() scope.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T02:28:33"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-demo-preview.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/demo-preview.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T10:52:08"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-bank-used-stat-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/bank-used-stat-after.html",
+      "commit": "583c6852f1feabb37dd6708ff40d0d5bdc7a4c4e",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
