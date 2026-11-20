@@ -2,12 +2,12 @@
   "version": 1,
   "active_task": {
     "task_id": "cardmon-findings-batch5",
-    "last_phase": "phase 3",
-    "active_phase": 3,
-    "status": "in_progress",
-    "updated_at": 1795213752.5883272,
+    "last_phase": "phase 4",
+    "active_phase": 5,
+    "status": "completed",
+    "updated_at": 1795213807.6021044,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795220952.5883272,
+    "lease_until": 1795221007.6021044,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -15,44 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795213808.7750707,
+    "completed_head": "7fba80c921f84c79f86ee09ccf59c84d91735a36",
+    "completed_tree": "d3ad67fc3880a2c433b4e6ee0815d0d102a01157"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-full-read-defect-fixes",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[3/4] Phase 4 passed: npm test 122/122, project gates 4/4, UI surface verified and finished with vision-reviewed before/after proof",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795211183.7896128,
-      "timestamp_str": "2026-11-21 00:46:23",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-full-read-defect-fixes",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-full-read-defect-fixes' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795211310.2622142,
-      "timestamp_str": "2026-11-21 00:48:30",
-      "agent": "opencode",
-      "head": "a0ced7a9ff5781f66e25457945e8be8e0d685c7a",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-dynamic-month-labels",
       "phase": "phase 2",
@@ -417,6 +385,41 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-findings-batch5",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "Phase 4 confirmed: check CardMon --strict 4/4, npm test 140/140, UI finished",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795213807.6021044,
+      "timestamp_str": "2026-11-21 01:30:07",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-findings-batch5",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-findings-batch5' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795213808.8641334,
+      "timestamp_str": "2026-11-21 01:30:08",
+      "agent": "opencode",
+      "head": "7fba80c921f84c79f86ee09ccf59c84d91735a36",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
