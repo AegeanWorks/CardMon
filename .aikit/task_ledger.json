@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-dynamic-month-labels",
+    "task_id": "cardmon-findings-batch2",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795211593.851093,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795212332.0334303,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795218793.851093,
+    "lease_until": 1795219532.0334303,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -15,62 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795211652.7798815,
-    "completed_head": "ff743c80372d5916044a4b85fda42b1ee336c76f",
-    "completed_tree": "10f0a8c913b874811f21bba3d28b12c31802b5eb"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 5",
-      "phase_num": 3,
-      "description": "Reforge stage 5: stage 5 host review reviewed; run active; coverage 65/65",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795207513.7789202,
-      "timestamp_str": "2026-11-20 23:45:13",
-      "agent": "opencode",
-      "operator_task": "cardmon-pay-method-labels"
-    },
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 6",
-      "phase_num": 3,
-      "description": "Reforge stage 6: window 300, 50 commit(s), 11 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 13 binary not analysed",
-      "files_affected": [
-        "assets/screenshots/2026-11-20-advisor-clock-after.png",
-        "assets/screenshots/2026-11-20-advisor-icons-after.png",
-        "assets/screenshots/2026-11-20-cards-permissions-after.png",
-        "assets/screenshots/2026-11-20-cards-review.png",
-        "assets/screenshots/2026-11-20-cta-size-after.png",
-        "assets/screenshots/2026-11-20-cta-size-before.png",
-        "assets/screenshots/2026-11-20-demo-free-cash-after.png",
-        "assets/screenshots/2026-11-20-demo-preview.png",
-        "assets/screenshots/2026-11-20-empty-tracks-after.png",
-        "assets/screenshots/2026-11-20-empty-tracks-before.png",
-        "assets/screenshots/2026-11-20-health-burden-after.png",
-        "assets/screenshots/2026-11-20-pdf-disable-after.png",
-        "assets/screenshots/2026-11-20-pdf-disable-before.png"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795207545.6760094,
-      "timestamp_str": "2026-11-20 23:45:45",
-      "agent": "opencode",
-      "operator_task": "cardmon-pay-method-labels"
-    },
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 6",
-      "phase_num": 3,
-      "description": "Reforge stage 6: stage 6 host review reviewed; run active; coverage 64/64",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795207852.7000902,
-      "timestamp_str": "2026-11-20 23:50:52",
-      "agent": "opencode",
-      "operator_task": "cardmon-pay-method-labels"
-    },
     {
       "task_id": "reforge:run-1",
       "phase": "reforge stage 7",
@@ -400,6 +347,70 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-findings-batch2",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/3] Plan and failing-first tests for CSV escaping, ranking consistency, network XSS, v3 envelope validation, stale file handle",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795212309.7211163,
+      "timestamp_str": "2026-11-21 01:05:09",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "Full re-read surfaced still-live correctness and injection defects that the original 0-finding review missed.",
+        "benefits": "RFC-correct CSV, no raw HTML injection, consistent recommendation, validated imports, correct save-fallback state.",
+        "risks": "contract: validatePortfolioData keeps accepting minimal v3 envelopes; dependency: none; concurrency: none; state: file handle and imported state",
+        "mitigation": "Reject only present-but-wrong field types, escape all interpolated card fields, add 6 failing-first tests, verify with vision proof"
+      },
+      "plan_digest": "508f75130255f545b4eda61ea67946565b3073943dc0293a622c1ca7649af6ff",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-findings-batch2",
+      "phase": "phase 3",
+      "phase_num": 3,
+      "description": "[2/3] Fixed 6 defects: csvCell RFC escaping, topRankIndex consistency, escapeHtml for network fields, v3 field-type validation, stale activeHandle clear",
+      "files_affected": [
+        "js/reports.js",
+        "js/backup-vault.js",
+        "js/file-system.js",
+        "tests/full_read_fixes2.test.js"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795212329.2499363,
+      "timestamp_str": "2026-11-21 01:05:29",
+      "agent": "opencode:hy4-flash-free",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-findings-batch2",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[3/3] Phase 4: npm test 129/129, UI verified with vision-reviewed behavior proof",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795212332.0334303,
+      "timestamp_str": "2026-11-21 01:05:32",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }

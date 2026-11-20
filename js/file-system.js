@@ -42,6 +42,14 @@ function validatePortfolioData(raw) {
     if (!Array.isArray(raw.data.banks) || !Array.isArray(raw.data.cards)) {
       return { valid: false, error: 'Invalid portfolio data: banks or cards missing' };
     }
+    const has = (key) => Object.prototype.hasOwnProperty.call(raw.data, key);
+    if ((has('loans') && !Array.isArray(raw.data.loans)) ||
+        (has('cashSubscriptions') && !Array.isArray(raw.data.cashSubscriptions))) {
+      return { valid: false, error: 'Invalid portfolio data: loans or cashSubscriptions must be arrays' };
+    }
+    if (has('profile') && (!raw.data.profile || typeof raw.data.profile !== 'object' || Array.isArray(raw.data.profile))) {
+      return { valid: false, error: 'Invalid portfolio data: profile must be an object' };
+    }
     return { valid: true, data: raw.data, version: raw.version || '3.0' };
   }
   // Legacy backup format (version 2.0 / 1.0)
@@ -148,6 +156,7 @@ async function saveFileAs() {
     link.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
 
+    fileSystemState.activeHandle = null;
     fileSystemState.activeFileName = defaultFilename;
     fileSystemState.isDirty = false;
     fileSystemState.lastSavedAt = new Date();

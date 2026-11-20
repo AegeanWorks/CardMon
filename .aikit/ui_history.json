@@ -2378,5 +2378,59 @@
     "final_snapshot_entries": 0,
     "surface_digest": "64478e1811a3db9538ebdae61e5a9831bae2fb1baf76ae98787c7f9aabf569eb",
     "baseline_digest": "0f99f6e8d34590a7dbde96d61b0dce0fcd79208485162695c466a275c7ddccca"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      ".aikit/project.json",
+      "js/backup-vault.js",
+      "js/file-system.js",
+      "js/reports.js",
+      "assets/screenshots/2026-11-21-demo-escape-after.png",
+      "assets/screenshots/2026-11-21-demo-escape-before.png",
+      "tests/full_read_fixes2.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "109d96f",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795212187.1933749,
+    "finished_at": 1795212292.8497024,
+    "strikes": 0,
+    "reviewer": "agent:opencode",
+    "review": {
+      "reviewer": "agent:opencode",
+      "surface": "app",
+      "surface_digest": "6a17b139ec4af1ad88bec505ad2880ad6c5ce2205f1ee0b11923eff2b066ba1a",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795212292.8497055,
+      "scoped_paths": [
+        ".aikit/media.json",
+        ".aikit/project.json",
+        "js/backup-vault.js",
+        "js/file-system.js",
+        "js/reports.js",
+        "assets/screenshots/2026-11-21-demo-escape-after.png",
+        "assets/screenshots/2026-11-21-demo-escape-before.png",
+        "tests/full_read_fixes2.test.js"
+      ],
+      "scoped_digest": "3a3ede5df8a127c2d4d459e40f4c8e16404da40c22c0a04f1b5bd1923376ffd0"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/full_read_fixes2.test.js",
+        "reason": "Failing-first regressions for the escaping/validation fixes"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "6a17b139ec4af1ad88bec505ad2880ad6c5ce2205f1ee0b11923eff2b066ba1a",
+    "baseline_digest": "64478e1811a3db9538ebdae61e5a9831bae2fb1baf76ae98787c7f9aabf569eb"
   }
 ]

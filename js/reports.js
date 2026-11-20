@@ -61,6 +61,10 @@ function handleImportFile(e) {
   e.target.value = '';
 }
 
+function csvCell(value) {
+  return '"' + String(value == null ? '' : value).replace(/"/g, '""') + '"';
+}
+
 function exportCsvReport() {
   let csvContent = 'data:text/csv;charset=utf-8,';
   
@@ -77,17 +81,17 @@ function exportCsvReport() {
     const due = c.dateMethod === 'exact' ? `${c.dueDay}. Gun` : c.approxDueWeek;
 
     const row = [
-      `"${bank}"`,
-      `"${c.nickname}"`,
-      `"${c.last4 || ''}"`,
-      `"${t(c.type || 'typePersonal')}"`,
-      `"${c.network}"`,
+      csvCell(bank),
+      csvCell(c.nickname),
+      csvCell(c.last4 || ''),
+      csvCell(t(c.type || 'typePersonal')),
+      csvCell(c.network),
       limit,
       used,
       avail,
-      `"%${util}"`,
-      `"${cutoff}"`,
-      `"${due}"`
+      csvCell(`%${util}`),
+      csvCell(cutoff),
+      csvCell(due)
     ].join(',');
 
     csvContent += row + '\n';
@@ -507,7 +511,7 @@ function exportPdfReport() {
                 <tr>
                   <td><strong>${escapeHtml(b ? b.name : 'Banka')}</strong></td>
                   <td>${escapeHtml(c.nickname)} ${c.last4 ? `(•${c.last4})` : ''}</td>
-                  <td>${c.network || 'Mastercard'} • ${typeStr}</td>
+                  <td>${escapeHtml(c.network || 'Mastercard')} • ${typeStr}</td>
                   <td>${formatMoney(lim)}</td>
                   <td style="font-weight:700; color:${debt > 0 ? '#dc2626' : '#64748b'};">${formatMoney(debt)}</td>
                   <td style="color:#16a34a;">${formatMoney(avail)}</td>
@@ -918,6 +922,7 @@ function exportPdfReport() {
         const smartRankings = state.cards.map(c => calculateCardDeferralDays(c, now)).sort((a, b) => b.daysUntilPayment - a.daysUntilPayment);
         if (smartRankings.length === 0) return '';
         const bestSmartCard = smartRankings.find(r => r.availableLimit > 0) || smartRankings[0];
+        const topRankIndex = smartRankings.indexOf(bestSmartCard);
         const bestBank = state.banks.find(x => x.id === bestSmartCard.card.bankId) || { name: 'Banka' };
 
         return `
@@ -952,7 +957,7 @@ function exportPdfReport() {
               <tbody>
                 ${smartRankings.map((r, idx) => {
                   const b = state.banks.find(x => x.id === r.card.bankId) || { name: 'Banka' };
-                  const isTop = idx === 0;
+                  const isTop = idx === topRankIndex;
 
                   return `
                     <tr style="${isTop ? 'background:#f0fdf4; font-weight:600;' : ''}">

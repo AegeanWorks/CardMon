@@ -416,7 +416,7 @@ function renderNetworkAndTypeChart(totalLimit) {
               <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.25rem;">
                 <span style="font-weight: 600; display:flex; align-items:center; gap:0.4rem;">
                   <span style="width:8px; height:8px; border-radius:50%; background:${color};"></span>
-                  ${net} (${data.count} kart)
+                  ${escapeHtml(net)} (${data.count} kart)
                 </span>
                 <span><strong>${formatMoney(data.limit)}</strong> (${percent}%)</span>
               </div>
@@ -726,7 +726,7 @@ function renderExecutiveTable() {
                   <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></span>
                   <div>
                     <strong>${escapeHtml(c.nickname)}</strong>
-                    <div style="font-size:0.75rem; color:var(--text-muted);">${c.network} ${c.last4 ? `(•${c.last4})` : ''}</div>
+                    <div style="font-size:0.75rem; color:var(--text-muted);">${escapeHtml(c.network)} ${c.last4 ? `(•${escapeHtml(c.last4)})` : ''}</div>
                   </div>
                 </div>
               </td>
