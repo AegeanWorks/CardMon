@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-timeline-event-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/timeline-event-icons-after.html",
-      "commit": "d628f5fa950e2d4f2055db9fb87249109b3a37a8",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Timeline view, demo data) at d628f5f: all event icon boxes now use category-based line-art SVGs (card for dues, bag for subscriptions, scissors for cutoffs, home for rent), uniform and consistent with the header/summary icons. Event cards, amounts, badges and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T12:22:29"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-subs-card-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subs-card-icons-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-settings-review.html",
       "commit": "d34772c6007390e3c96c1ef00867f9d2b1a71b11",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-settings-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-settings-icons-after.html",
+      "commit": "e8a413ce99a458f611a5436fbcec1c2389b8e7f9",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
