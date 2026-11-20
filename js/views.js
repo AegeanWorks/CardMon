@@ -867,7 +867,7 @@ function renderLoansView() {
     <div class="loans-hero-card">
       <div>
         <div class="loans-hero-title">
-          <span>🏦</span>
+          <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V10l7-5 7 5v11"></path><path d="M9 21v-6h6v6"></path></svg></span>
           <span>Krediler & Taksitli Finansmanlar</span>
         </div>
         <p class="loans-hero-desc">
@@ -989,7 +989,7 @@ function renderLoansView() {
             <!-- Bottom Row: Payment Day & Quick Pay -->
             <div class="loan-card-bottom">
               <div class="loan-due-pill">
-                📅 Her ayın <strong>${payDay}. günü</strong>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="3" y1="11" x2="21" y2="11"></line></svg> Her ayın <strong>${payDay}. günü</strong>
                 ${loan.startCycle === 'next' ? '<span style="color:#38bdf8; font-size:0.72rem;">(İlk Taksit: Gelecek Ay)</span>' : (!isCompleted ? `<span style="color: ${daysLeft <= 3 ? '#fb7185' : '#94a3b8'}; font-size: 0.72rem;">(${daysLeft === 0 ? 'Bugün!' : `${daysLeft} gün kaldı`})</span>` : '')}
               </div>
 
@@ -1005,7 +1005,7 @@ function renderLoansView() {
                 `}
               </div>
             </div>
-            ${loan.notes ? `<div style="font-size:0.72rem; color:var(--text-muted); border-top:1px dashed rgba(255,255,255,0.06); padding-top:0.35rem;">📝 ${escapeHtml(loan.notes)}</div>` : ''}
+            ${loan.notes ? `<div style="font-size:0.72rem; color:var(--text-muted); border-top:1px dashed rgba(255,255,255,0.06); padding-top:0.35rem;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> ${escapeHtml(loan.notes)}</div>` : ''}
           </div>
         `;
       }).join('')}
