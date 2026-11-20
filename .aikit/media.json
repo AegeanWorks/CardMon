@@ -242,8 +242,15 @@
       "viewport": "1440x1200",
       "width": 1440,
       "height": 1200,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Timeline view, payment-method notes, demo data) at 1ff3fe3: the subscription payment method labels use colorful cash/bank/card emojis inside event notes, clashing with the app's monochrome text and line-art icons. Event cards, amounts and due rows are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T22:50:39"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-pay-method-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x1200",
       "width": 1440,
       "height": 1200,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Timeline view, payment-method notes, demo data) at 08556e9: payment-method labels are now plain text (emoji removed) because these fields are HTML-escaped; no raw markup leaks into notes. Amounts, due rows and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T22:51:03"
+      }
     }
   ]
 }
