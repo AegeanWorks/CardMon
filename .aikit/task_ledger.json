@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-empty-meters-cleanup",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795130954.8435214,
     "owner": "agent",
     "lease_until": 1795138154.8435214,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795154558.101523,
+    "completed_head": "99258aae01b92968224b144a1500126ad2c0aeec",
+    "completed_tree": "6c6bc185fef72b811fc6d08a063f286d8b8808e7"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-sidebar-badge-cleanup",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Hide zero-count sidebar badges in the empty portfolio",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795127889.7253644,
-      "timestamp_str": "2026-11-20 01:38:09",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision pass found five repeated '0' badges in the sidebar adding noise to an otherwise minimal empty state (G-003 simplistic/aesthetic).",
-        "benefits": "setTabBadge helper hides zero counts and restores them when data exists; sidebar labels align cleanly; before/after vision reviews approved (96 -> 97).",
-        "risks": "Small JS refactor across five badge sites plus one CSS rule; no data/behavior change; 107/107 tests pass.",
-        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-sidebar-badge-cleanup",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-empty-meters-cleanup",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-empty-meters-cleanup' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795154558.1647131,
+      "timestamp_str": "2026-11-20 09:02:38",
+      "agent": "agent",
+      "head": "99258aae01b92968224b144a1500126ad2c0aeec",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
