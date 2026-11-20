@@ -1797,20 +1797,20 @@ function renderDashboardView() {
     }
 
     if (nearest.type === 'card') {
-      nearestDueSubText = `💳 <strong>${escapeHtml(nearest.title)}</strong> (${escapeHtml(nearest.bankName)})<br>
+      nearestDueSubText = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> <strong>${escapeHtml(nearest.title)}</strong> (${escapeHtml(nearest.bankName)})<br>
       <span style="color:#fb7185; font-weight:700;">Toplam Borç: ${formatMoney(nearest.totalDebt)}</span> • <span style="color:#fbbf24; font-weight:600;">Asgari: ${formatMoney(nearest.amount)}</span>`;
     } else if (nearest.type === 'loan') {
-      nearestDueSubText = `🏦 <strong>${escapeHtml(nearest.title)}</strong> (${escapeHtml(nearest.bankName)})<br>
+      nearestDueSubText = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M5 10l7-7 7 7"></path><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><line x1="9" y1="21" x2="9" y2="14"></line><line x1="15" y1="21" x2="15" y2="14"></line></svg> <strong>${escapeHtml(nearest.title)}</strong> (${escapeHtml(nearest.bankName)})<br>
       <span style="color:#38bdf8; font-weight:700;">Aylık Taksit: ${formatMoney(nearest.amount)}</span> • <span style="color:#34d399; font-weight:600;">Kalan: ${formatMoney(nearest.totalDebt)} (${nearest.remainingInst} ay)</span>`;
     } else if (nearest.type === 'sub') {
-      nearestDueSubText = `${nearest.icon || '🔁'} <strong>${escapeHtml(nearest.title)}</strong> (${escapeHtml(nearest.bankName)})<br>
+      nearestDueSubText = `${nearest.icon || '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>'} <strong>${escapeHtml(nearest.title)}</strong> (${escapeHtml(nearest.bankName)})<br>
       <span style="color:#c084fc; font-weight:700;">Tutar: ${nearest.isEstimated ? '~' : ''}${formatMoney(nearest.amount)}</span> • <span style="color:#94a3b8; font-weight:600;">${escapeHtml(nearest.bankName)}</span>`;
     }
   } else if (state.cards.length === 0 && (!state.loans || state.loans.length === 0) && getAllSubscriptions().length === 0) {
     nearestDueSubText = t('noCardsYet');
   } else {
     nearestDueText = 'Borç Yok';
-    nearestDueSubText = '🎉 Tebrikler, ödenecek güncel borcunuz bulunmuyor.';
+    nearestDueSubText = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> Tebrikler, ödenecek güncel borcunuz bulunmuyor.';
   }
 
   // Update KPI Elements in DOM
