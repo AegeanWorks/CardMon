@@ -234,18 +234,6 @@
       }
     },
     {
-      "path": "assets/screenshots/2026-11-20-modal-loan-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-loan-review.html",
-      "commit": "900c2f139ce9d6a9d9e1d91a58e1922232e4fde1",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "pending_review",
-      "review": null
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-subscription-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-subscription-review.html",
