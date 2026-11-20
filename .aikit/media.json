@@ -266,9 +266,9 @@
         "status": "approved",
         "reviewer": "agent:cardmon-ui",
         "method": "vision",
-        "notes": "AFTER (populated demo data) at c997a6c: the free-cash figure now inherits the burden color, so with 107.8% burden the 0\u20ba surplus is red - matching the warning pill instead of implying health. All other metrics, badges and layout unchanged; no clipping or truncation. Semantic consistency restored.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T09:15:28"
+        "notes": "BEFORE (populated demo data) at c997a6c: the health widget shows a green 'M\u00dcKEMMEL / D\u00dc\u015e\u00dcK R\u0130SK' pill and a caption praising 26.9% limit utilization, while the cashflow widget below warns of 107.8% obligation burden with 0\u20ba free cash. The health signal contradicts the actual cashflow risk.",
+        "score": 93,
+        "reviewed_at": "2026-11-20T09:30:57"
       }
     },
     {
@@ -280,8 +280,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (populated demo data) at a191906: the health pill is now red 'KR\u0130T\u0130K / A\u015eIRI BOR\u00c7LANMA' with a red progress bar and a caption explaining that obligations exceed 107.8% of income despite 26.9% utilization. The health widget now agrees with the cashflow warning; no clipping, truncation or layout regressions.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T09:31:23"
+      }
     }
   ]
 }
