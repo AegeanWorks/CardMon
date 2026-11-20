@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-bank-used-stat",
+    "task_id": "cardmon-loans-svg-icons",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795162213.3661563,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795163049.1699092,
     "owner": "agent",
-    "lease_until": 1795169413.3661563,
+    "lease_until": 1795170249.1699092,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795162288.3988628,
-    "completed_head": "cc190a04af0e444fe90a59fe6945d038094eaa93",
-    "completed_tree": "1c9b61b544697146d1edf35f97961cd30d8d27b3"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-advisor-svg-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 108/108, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795157342.015702,
-      "timestamp_str": "2026-11-20 09:49:02",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-advisor-svg-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-advisor-svg-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795157412.6115615,
-      "timestamp_str": "2026-11-20 09:50:12",
-      "agent": "agent",
-      "head": "1771f76cbd10c89bdf288c32b1c91505f46afc76",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-advisor-clock-icon",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-loans-svg-icons",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Use line-art SVG icons in the Loans view",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795163048.459055,
+      "timestamp_str": "2026-11-20 11:24:08",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the newly inspected Loans view found bank/calendar/memo emojis clashing with the SVG icon language established across the other views (G-003 aesthetic cohesion).",
+        "benefits": "Hero, payment-day and note icons converted to line-art SVGs; before/after vision reviews approved (96 -> 97).",
+        "risks": "Three render-only string changes in js/views.js; no behavior, data or layout changes; 109/109 tests pass.",
+        "mitigation": "npm test 109/109, ui verify + ui finish --reviewed, vision analysis of both Loans-view screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-loans-svg-icons",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 109/109, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795163049.1699092,
+      "timestamp_str": "2026-11-20 11:24:09",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
