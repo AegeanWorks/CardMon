@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-full-read-defect-fixes",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795211183.7896128,
     "owner": "opencode:hy4-flash-free",
     "lease_until": 1795218383.7896128,
@@ -15,36 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795211310.1663983,
+    "completed_head": "a0ced7a9ff5781f66e25457945e8be8e0d685c7a",
+    "completed_tree": "7b0ec43e8ed2a8204fe4519e021d113d3778563f"
   },
   "checkpoints": [
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 3",
-      "phase_num": 3,
-      "description": "Reforge stage 3: window 150, 50 commit(s), 6 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 14 binary not analysed",
-      "files_affected": [
-        "assets/screenshots/2026-11-20-modal-card-perms-after.png",
-        "assets/screenshots/2026-11-20-modal-card-perms-before.png",
-        "assets/screenshots/2026-11-20-modal-quicktx-icons-after.png",
-        "assets/screenshots/2026-11-20-modal-quicktx-review.png",
-        "assets/screenshots/2026-11-20-modal-rent-icons-after.png",
-        "assets/screenshots/2026-11-20-modal-rent-review.png",
-        "assets/screenshots/2026-11-20-modal-shortcuts-icons-after.png",
-        "assets/screenshots/2026-11-20-modal-shortcuts-review.png",
-        "assets/screenshots/2026-11-20-modal-subscription-icons-after.png",
-        "assets/screenshots/2026-11-20-modal-subscription-review.png",
-        "assets/screenshots/2026-11-20-modal-vault-icons-after.png",
-        "assets/screenshots/2026-11-20-modal-vault-review.png",
-        "assets/screenshots/2026-11-20-modal-virtualcard-icons-after.png",
-        "assets/screenshots/2026-11-20-modal-virtualcard-review.png"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795206376.4132864,
-      "timestamp_str": "2026-11-20 23:26:16",
-      "agent": "opencode",
-      "operator_task": "cardmon-pay-method-labels"
-    },
     {
       "task_id": "reforge:run-1",
       "phase": "reforge stage 3",
@@ -402,6 +378,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-full-read-defect-fixes",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-full-read-defect-fixes' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795211310.2622142,
+      "timestamp_str": "2026-11-21 00:48:30",
+      "agent": "opencode",
+      "head": "a0ced7a9ff5781f66e25457945e8be8e0d685c7a",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
