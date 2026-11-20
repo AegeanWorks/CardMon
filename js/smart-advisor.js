@@ -64,24 +64,24 @@ function renderSmartCardAdvisor() {
     <div class="smart-advisor-banner">
       <div class="smart-advisor-header">
         <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-          <span class="smart-advisor-badge">🧠 Akıllı Harcama Danışmanı</span>
+          <span class="smart-advisor-badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"></path></svg> Akıllı Harcama Danışmanı</span>
           <span style="font-size:0.75rem; color:var(--text-muted);">Bugün (Ayın ${now.getDate()}'i) harcama için en avantajlı kart</span>
         </div>
         <button type="button" class="btn btn-secondary btn-sm" onclick="openSmartAdvisorModal()" style="font-size:0.75rem; padding:0.25rem 0.65rem;">
-          📊 Tüm Kartların Vade Sıralaması (${rankings.length})
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> Tüm Kartların Vade Sıralaması (${rankings.length})
         </button>
       </div>
 
       <div class="smart-advisor-card-highlight">
         <div style="display:flex; align-items:center; gap:0.85rem;">
-          <div style="font-size:1.9rem;">💳</div>
+          <div style="display:flex; align-items:center; justify-content:center; width:44px; height:44px; min-width:44px; border-radius:var(--radius-md); background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.25); color:var(--accent-cyan);"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"></rect><line x1="2" y1="10" x2="22" y2="10"></line><line x1="6" y1="15" x2="10" y2="15"></line></svg></div>
           <div>
             <div style="display:flex; align-items:center; gap:0.45rem; flex-wrap:wrap;">
               <span style="font-weight:800; font-size:1.05rem; color:#fff;">${escapeHtml(best.card.nickname)}</span>
               <span style="font-size:0.75rem; color:var(--text-muted);">(${escapeHtml(bank.name)}${best.card.last4 ? ` •${best.card.last4}` : ''})</span>
             </div>
             <div style="font-size:0.8rem; color:#38bdf8; margin-top:0.2rem;">
-              ${best.isNextMonthCutoff ? '✨ Ekstresi yeni kesildi! Harcamanız 1 ay sonraki ekstreye kalır.' : `Ekstre kesimine ${best.cutoffDay - best.today} gün var.`}
+              ${best.isNextMonthCutoff ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"></path></svg> Ekstresi yeni kesildi! Harcamanız 1 ay sonraki ekstreye kalır.' : `Ekstre kesimine ${best.cutoffDay - best.today} gün var.`}
               Kullanılabilir Limit: <strong>${formatMoney(best.availableLimit)}</strong>
             </div>
           </div>
