@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-bank-detail-icons",
+    "task_id": "cardmon-bank-used-stat",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795161196.6425412,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795162213.3661563,
     "owner": "agent",
-    "lease_until": 1795168396.6425412,
+    "lease_until": 1795169413.3661563,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795161265.9064746,
-    "completed_head": "66ab42ea368286b675691319f3a537161f21c816",
-    "completed_tree": "86c9789c56a20cd46c6dd8e3a246c73af568921d"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-burden-aware-health",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 108/108, ui verify + ui finish pass, before/after vision reviews approved (93/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795156380.6401682,
-      "timestamp_str": "2026-11-20 09:33:00",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-burden-aware-health",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-burden-aware-health' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795156452.8588295,
-      "timestamp_str": "2026-11-20 09:34:12",
-      "agent": "agent",
-      "head": "f5226b23f573a73c75fb732d85e505be20b8f03e",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-advisor-svg-icons",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-bank-used-stat",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Align bank used-amount stat with card-limit basis",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795162212.7836094,
+      "timestamp_str": "2026-11-20 11:10:12",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review found the bank card-limit stat mixing card and loan debt (108.450\u20ba) next to a card-based 23.7% utilization figure, an internally contradictory display (G-003 functional/usable).",
+        "benefits": "Used-amount stat now shows card debt only (28.450\u20ba), consistent with utilization and available limit; loans remain in the separate breakdown; failing-first test added; vision reviews approved (94 -> 97).",
+        "risks": "One render expression changed plus a test; no data model changes; banks without loans unaffected; 109/109 tests pass.",
+        "mitigation": "Failing-first test confirmed 1 failure before fix, then 109/109 pass; ui verify + ui finish --reviewed; vision analysis; check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-bank-used-stat",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 109/109, ui verify + ui finish pass, before/after vision reviews approved (94/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795162213.3661563,
+      "timestamp_str": "2026-11-20 11:10:13",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
