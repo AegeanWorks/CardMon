@@ -549,6 +549,16 @@ function renderPaymentFlowChart() {
 }
 
 // 9. Smart Financial Insights
+// Line-art SVGs for the smart-insight cards (no emoji mix).
+const INSIGHT_ICON_SVG = {
+  warning: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg>',
+  success: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 11 15 16 9"></polyline></svg>',
+  info: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>',
+  buffer: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>',
+  recurring: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>',
+  fee: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>'
+};
+
 function renderSmartInsights(utilizationRatio, totalUsed, totalLimit, totalEkHesap, totalMinDue) {
   const container = document.getElementById('smartInsightsContainer');
   if (!container) return;
@@ -572,7 +582,7 @@ function renderSmartInsights(utilizationRatio, totalUsed, totalLimit, totalEkHes
       type: 'warning',
       bg: 'rgba(245, 158, 11, 0.12)',
       border: 'rgba(245, 158, 11, 0.3)',
-      icon: '⚠️',
+      icon: INSIGHT_ICON_SVG.warning,
       iconBg: 'rgba(245, 158, 11, 0.2)',
       title: 'Yüksek Limit Doluluğuna Sahip Kartlar',
       desc: `${highUtilCards.map(c => `<strong>${escapeHtml(c.nickname)}</strong> (%${((c.usedBalance/c.limit)*100).toFixed(0)})`).join(', ')} kartlarınız %50 üzerinde limit kullanıyor. Kredi notu optimizasyonu için ödeme yapılması önerilir.`
@@ -582,7 +592,7 @@ function renderSmartInsights(utilizationRatio, totalUsed, totalLimit, totalEkHes
       type: 'success',
       bg: 'rgba(16, 185, 129, 0.12)',
       border: 'rgba(16, 185, 129, 0.3)',
-      icon: '✅',
+      icon: INSIGHT_ICON_SVG.success,
       iconBg: 'rgba(16, 185, 129, 0.2)',
       title: 'Optimum Kredi Skoru Seviyesi',
       desc: 'Tüm kredi kartlarınızın doluluk oranı güvenli aralıkta tutuluyor. Finansal kredibiliteniz çok iyi durumda.'
@@ -595,7 +605,7 @@ function renderSmartInsights(utilizationRatio, totalUsed, totalLimit, totalEkHes
       type: 'info',
       bg: 'rgba(59, 130, 246, 0.12)',
       border: 'rgba(59, 130, 246, 0.3)',
-      icon: '💡',
+      icon: INSIGHT_ICON_SVG.info,
       iconBg: 'rgba(59, 130, 246, 0.2)',
       title: 'Borç Kapatma Stratejisi (Çığ Yöntemi)',
       desc: `Bu ayki tahmini zorunlu asgari ödemeniz <strong>${formatMoney(totalMinDue)}</strong>. En yüksek bakiyeli kartınıza asgariden fazla ödeme yaparak faiz maliyetinizi asgari seviyeye indirebilirsiniz.`
@@ -608,7 +618,7 @@ function renderSmartInsights(utilizationRatio, totalUsed, totalLimit, totalEkHes
       type: 'buffer',
       bg: 'rgba(6, 182, 212, 0.12)',
       border: 'rgba(6, 182, 212, 0.3)',
-      icon: '🛡️',
+      icon: INSIGHT_ICON_SVG.buffer,
       iconBg: 'rgba(6, 182, 212, 0.2)',
       title: 'Acil Durum Likidite Güvencesi',
       desc: `Toplam <strong>${formatMoney(totalEkHesap)}</strong> tutarındaki Ek Hesap limitiniz acil nakit ihtiyaçları veya gecikmeleri önlemek için aktif durumda.`
@@ -623,7 +633,7 @@ function renderSmartInsights(utilizationRatio, totalUsed, totalLimit, totalEkHes
       type: 'info',
       bg: 'rgba(139, 92, 246, 0.12)',
       border: 'rgba(139, 92, 246, 0.3)',
-      icon: '🔁',
+      icon: INSIGHT_ICON_SVG.recurring,
       iconBg: 'rgba(139, 92, 246, 0.2)',
       title: 'Aylık Düzenli Abonelik & Otomatik Ödemeler',
       desc: `Kayıtlı <strong>${allSubs.length} adet</strong> aboneliğiniz için her ay tahmini <strong>${formatMoney(totalSubAmount)}</strong> düzenli çekim gerçekleşiyor. Kartlarınızı bloke ederken bu ödemeleri göz önünde bulundurunuz.`
@@ -637,7 +647,7 @@ function renderSmartInsights(utilizationRatio, totalUsed, totalLimit, totalEkHes
       type: 'warning',
       bg: 'rgba(245, 158, 11, 0.12)',
       border: 'rgba(245, 158, 11, 0.3)',
-      icon: '🏷️',
+      icon: INSIGHT_ICON_SVG.fee,
       iconBg: 'rgba(245, 158, 11, 0.2)',
       title: 'Kart Aidatı İade Talepleri Takibi',
       desc: `${feeCards.map(c => `<strong>${escapeHtml(c.nickname)}</strong> (${formatMoney(c.annualFeeAmount)})`).join(', ')} için aidat iade talebiniz bulunuyor. Banka müşteri hizmetlerinden iade veya puan durumunu kontrol ediniz.`
