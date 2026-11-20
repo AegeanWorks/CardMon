@@ -242,8 +242,15 @@
       "viewport": "1440x1100",
       "width": 1440,
       "height": 1100,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Backup Vault snapshot list, demo data) at 19b3525: the snapshot summary counts and action buttons use colorful emojis (bank, card, document, money, download, refresh, trash) clashing with the app's monochrome line-art icons. Card layout and status strip are otherwise clean.",
+        "score": 94,
+        "reviewed_at": "2026-11-20T21:20:33"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-vault-snaps-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x1100",
       "width": 1440,
       "height": 1100,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Backup Vault snapshot list, demo data) at 2d97e73: all seven emojis are replaced by line-art SVGs (bank, card, document, money, download, refresh, trash) matching the app icon set. Counts, amounts, dates and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T21:20:54"
+      }
     }
   ]
 }
