@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-empty-meters-cleanup",
+    "task_id": "cardmon-free-cash-burden-color",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795130954.8435214,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795155369.8900924,
     "owner": "agent",
-    "lease_until": 1795138154.8435214,
+    "lease_until": 1795162569.8900924,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795154558.101523,
-    "completed_head": "99258aae01b92968224b144a1500126ad2c0aeec",
-    "completed_tree": "6c6bc185fef72b811fc6d08a063f286d8b8808e7"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-sidebar-badge-cleanup",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795127890.7545745,
-      "timestamp_str": "2026-11-20 01:38:10",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-sidebar-badge-cleanup",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-sidebar-badge-cleanup' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795127923.8404787,
-      "timestamp_str": "2026-11-20 01:38:43",
-      "agent": "agent",
-      "head": "1fbeec412a11c8525e03c7e919cbe4946e0a2dd3",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-guidance-card-placement",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-free-cash-burden-color",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Align free-cash color with cashflow burden state",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795155369.288909,
+      "timestamp_str": "2026-11-20 09:16:09",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the populated demo dashboard found a green 0\u20ba free-cash figure next to a red high-burden warning (107.8% of income), a semantic contradiction (G-003 functional/usable).",
+        "benefits": "Free-cash total now reuses the computed burden color, so zero surplus under high burden reads red; before/after vision reviews on demo data approved (94 -> 97).",
+        "risks": "Single-line JS render change; no data, i18n or layout change; populated and empty states both verified; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both demo screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-free-cash-burden-color",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (94/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795155369.8900924,
+      "timestamp_str": "2026-11-20 09:16:09",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
