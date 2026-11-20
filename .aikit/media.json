@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-rhythm-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/rhythm-after.html",
-      "commit": "a966cb03ad97dd9514f5f95c01b585dea7a1d045",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at a966cb0: empty-state margins unified to 1.1rem; sections shift up about 30px and the cashflow income labels ('Ayl\u0131k Gelir' / 'Zorunlu Gider Y\u00fck\u00fc') are now visible at the bottom of the viewport. Spacing still feels airy, no overlap or clipping within components; populated states unaffected by the :has() scope.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T02:01:56"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-cta-size-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cta-size-before.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T09:59:46"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-cards-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/cards-review.html",
+      "commit": "c117714b02c23ab7ec6e67b54770dad8857227af",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
