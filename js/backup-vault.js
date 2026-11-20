@@ -324,7 +324,7 @@ function renderEkHesapAnalysisChart(totalEkHesap) {
   if (banksWithEkHesap.length === 0) {
     el.innerHTML = `
       <div style="text-align:center; padding: 1.5rem 1rem;">
-        <div style="font-size: 1.75rem; margin-bottom: 0.5rem;">🏦</div>
+        <div style="margin-bottom: 0.5rem;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M5 10l7-7 7 7"></path><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><line x1="9" y1="21" x2="9" y2="14"></line><line x1="15" y1="21" x2="15" y2="14"></line></svg></div>
         <p style="color:var(--text-secondary); font-size:0.85rem; margin-bottom:0.75rem;">Henüz tanımlı bir Ek Hesap (KMH) limitiniz bulunmuyor.</p>
         <button class="btn btn-secondary btn-sm" onclick="openAddBankModal()">${t('addBank')} / Düzenle</button>
       </div>
@@ -335,7 +335,7 @@ function renderEkHesapAnalysisChart(totalEkHesap) {
   el.innerHTML = `
     <div style="width: 100%; display: flex; flex-direction: column; gap: 1rem;">
       <div style="background: rgba(6, 182, 212, 0.1); border: 1px solid rgba(6, 182, 212, 0.25); border-radius: var(--radius-md); padding: 0.85rem 1rem; display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-size:0.85rem; font-weight:600; color:#22d3ee;">🛡️ Toplam Acil Durum Rezervi</span>
+        <span style="font-size:0.85rem; font-weight:600; color:#22d3ee;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Toplam Acil Durum Rezervi</span>
         <strong style="font-size:1.1rem; color:#ffffff;">${formatMoney(totalEkHesap)}</strong>
       </div>
 
