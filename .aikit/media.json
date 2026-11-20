@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-cta-size-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/cta-size-after.html",
-      "commit": "815d2eaf2012b79a8d2fa614e6d59d8cbbf2966a",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at 815d2ea: both onboarding CTAs now use standard button sizing with 15px icons - clearly larger tap targets and a stronger primary blue action. Hero grows slightly and pushes subsequent sections down a touch, but all content still fits with no clipping, overlap or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T02:10:46"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-pdf-disable-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/pdf-disable-before.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T10:14:52"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-card-action-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/card-action-icons-after.html",
+      "commit": "205855bb3c4694a80d82f55bfd229382c0e804a7",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
