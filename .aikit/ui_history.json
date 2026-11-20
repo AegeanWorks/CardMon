@@ -1639,5 +1639,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "4b4af4864dfe40a650c77d022982608be109b7d8ad372074ce4c62ae45c37547",
     "baseline_digest": "4b4af4864dfe40a650c77d022982608be109b7d8ad372074ce4c62ae45c37547"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-modal-quicktx-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "cb703dd1b7869355e59260894e0b84ac36488cac",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795192428.3938968,
+    "finished_at": 1795192544.198191,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "825c4453fd23865c4f1d88ef65e1129c25e49c33cfc32c0c80044a9be36555f0",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795192544.1981947,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-modal-quicktx-icons-after.png"
+      ],
+      "scoped_digest": "eeeb5d90ee6f027d5a02becdd20bc66a7340e4060043184ef4fb9f36e22b16d2"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "825c4453fd23865c4f1d88ef65e1129c25e49c33cfc32c0c80044a9be36555f0",
+    "baseline_digest": "825c4453fd23865c4f1d88ef65e1129c25e49c33cfc32c0c80044a9be36555f0"
   }
 ]

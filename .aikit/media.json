@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-subs-token-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/subs-token-after.html",
-      "commit": "7c85a173f7343b52cf3e9109db5a85a95496300f",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Subscriptions view, demo data) at 7c85a17: hero figures now use var(--accent-purple) and var(--accent-primary), matching the token palette used elsewhere. Amounts, labels and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T18:21:29"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-settings-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-settings-review.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-quicktx-review.html",
       "commit": "42c47b453d51f20638c7068396795083cba470cb",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-quicktx-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-quicktx-icons-after.html",
+      "commit": "cb703dd1b7869355e59260894e0b84ac36488cac",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
