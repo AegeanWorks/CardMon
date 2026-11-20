@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Loans view, demo data) at 79256df: the hero heading uses a bank emoji and loan cards use calendar/memo emojis, inconsistent with the line-art SVG iconography used in the other views. Loan figures, progress bars and layout are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T11:22:32"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-loans-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Loans view, demo data) at e1fbf15: line-art bank, calendar and pencil SVGs replace the emojis in the hero and loan cards. Hero, totals, progress bars and buttons unchanged; no clipping, truncation or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T11:22:56"
+      }
     }
   ]
 }
