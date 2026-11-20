@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-timeline-emoji-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/timeline-emoji-review.html",
-      "commit": "a81640a957927122b03b49e40d59ded2610e15b9",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Timeline view, demo data) at 2d88094: the event due rows use colorful emojis (calendar, flame) for the date and BUG\u00dcN! marker, clashing with the app's monochrome line-art icon language. Timeline cards, amounts and badges are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T20:11:51"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-timeline-emoji-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/timeline-emoji-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T21:09:24"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-vault-snaps-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/vault-snaps-before.html",
+      "commit": "3470e678d0a4012516047f4de3f8089d6fe6ea0e",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1100",
+      "width": 1440,
+      "height": 1100,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
