@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-subs-hero-tokens",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795188185.4402761,
     "owner": "agent",
     "lease_until": 1795195385.4402761,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795188286.1956115,
+    "completed_head": "4a4123289e9ecbe0ccc5490b08e4261236f91626",
+    "completed_tree": "245a524367f87585465e4524cf24f77a0595e60c"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-timeline-event-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons for timeline events",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795165788.596045,
-      "timestamp_str": "2026-11-20 12:09:48",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review found emoji event icons mixed with the line-art SVG icons in the Timeline header/summary, breaking icon consistency (G-003 aesthetic cohesion).",
-        "benefits": "Category-based SVG helper renders uniform card/bag/scissors/home icons for all timeline events; before/after vision reviews approved (96 -> 97).",
-        "risks": "Render-only helper and one template substitution in js/views.js; no behavior, data or layout changes; 109/109 tests pass.",
-        "mitigation": "npm test 109/109, ui verify + ui finish --reviewed, vision analysis of both Timeline-view screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-timeline-event-icons",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-subs-hero-tokens",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-subs-hero-tokens' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795188286.2634232,
+      "timestamp_str": "2026-11-20 18:24:46",
+      "agent": "agent",
+      "head": "4a4123289e9ecbe0ccc5490b08e4261236f91626",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
