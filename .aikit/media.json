@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-quicktx-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-quicktx-icons-after.html",
-      "commit": "cb703dd1b7869355e59260894e0b84ac36488cac",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Quick Transaction modal, demo data) at cb703dd: all seven emojis are replaced by line-art SVGs (bag, card, check, clock, calendar, warning) matching the app icon set. Toggle buttons, cycle options, preview amounts and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T19:36:58"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-virtualcard-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-virtualcard-review.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-detail-headers-before.html",
       "commit": "7bfbb7faa1aa047f86c277c32f35d0e6e06bafe2",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1500",
+      "width": 1440,
+      "height": 1500,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-card-detail-headers-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/card-detail-headers-after.html",
+      "commit": "bdfd5e752825e9991a63ffa33491af7677b1f756",
       "taken_at": "2026-11-20",
       "viewport": "1440x1500",
       "width": 1440,
