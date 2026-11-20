@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-cards-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/cards-review.html",
-      "commit": "c117714b02c23ab7ec6e67b54770dad8857227af",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (cards view, demo data) at c117714: permission pills use eight different emojis (globe, check, cross, lock, snowflake, etc.) mixed with status text, creating visual clutter; the row even wraps the 'Dondur' action onto a second line. Card artwork and limit stats are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T10:14:31"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-cards-permissions-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cards-permissions-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/timeline-review.html",
       "commit": "33166f2f4d80cdaa858410910b2d223d70d53eeb",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-timeline-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/timeline-icons-after.html",
+      "commit": "9723101a113a29d0c16518676be349713c8320ae",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
