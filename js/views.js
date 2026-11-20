@@ -252,7 +252,7 @@ function renderCardsView() {
 
     return `
       <div class="card-item-wrapper" id="card-${c.id}" style="${isFrozen ? 'opacity: 0.85;' : ''}">
-        ${isHighUtil ? `<div class="high-util-badge">⚠️ %${utilization.toFixed(0)} Yüksek Doluluk</div>` : ''}
+        ${isHighUtil ? `<div class="high-util-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg> %${utilization.toFixed(0)} Yüksek Doluluk</div>` : ''}
 
         <!-- Realistic 3D Credit Card Surface -->
         <div class="credit-card-face ${themeClass} ${isHighUtil ? 'high-util-warning' : ''}">
@@ -368,7 +368,7 @@ function renderCardsView() {
           <!-- Min Payment Estimation & Total Debt -->
           ${used > 0 ? `
           <div style="font-size: 0.76rem; color: var(--text-secondary); display: flex; justify-content: space-between; align-items:center; background: ${isKatilim ? 'rgba(16,185,129,0.1)' : 'rgba(0,0,0,0.15)'}; padding: 0.45rem 0.65rem; border-radius: 6px; border: 1px solid ${isKatilim ? 'rgba(16,185,129,0.25)' : 'rgba(255,255,255,0.06)'}; gap:0.5rem; flex-wrap:wrap;">
-            <span>${isKatilim ? '🕌 Katılım Asgari (Tüm Borç):' : `💳 Güncel Borç: <strong style="color:#fb7185;">${formatMoney(used)}</strong> • ${t('minPaymentDue')} (%${minRatio}):`}</span>
+            <span>${isKatilim ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M12 2l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1.5L12 2z"></path></svg> Katılım Asgari (Tüm Borç):' : `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> Güncel Borç: <strong style="color:#fb7185;">${formatMoney(used)}</strong> • ${t('minPaymentDue')} (%${minRatio}):`}</span>
             <strong style="color: ${isKatilim ? '#34d399' : 'var(--accent-amber)'};">${formatMoney(minAmount)}</strong>
           </div>
           ` : ''}
@@ -500,7 +500,7 @@ function renderCardsView() {
           <div class="subscriptions-section">
             <div class="virtual-cards-header">
               <span style="display:flex; align-items:center; gap:0.3rem;">
-                <span>🔁 ${t('subscriptions')} (${subscriptions.length})</span>
+                <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="17 1 21 5 17 9"></polyline><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><polyline points="7 23 3 19 7 15"></polyline><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg> ${t('subscriptions')} (${subscriptions.length})</span>
                 ${cardSubsTotalTry > 0 ? `<span class="sub-total-badge">${formatMoney(cardSubsTotalTry)}/ay</span>` : ''}
               </span>
               <button class="btn btn-secondary btn-sm" style="padding: 0.15rem 0.5rem; font-size: 0.7rem;" onclick="openAddSubscriptionModal('${c.id}')">
