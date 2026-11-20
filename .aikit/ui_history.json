@@ -973,5 +973,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "32e17b8b60ee64ea71dae5934dccc72fc32603acd206b41c287542c467458cde",
     "baseline_digest": "32e17b8b60ee64ea71dae5934dccc72fc32603acd206b41c287542c467458cde"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-banks-banner-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "d2c6d03c257dcab511c8a110371981c269063263",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795160176.8016977,
+    "finished_at": 1795160297.009423,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "674f13c2c6488f1b4b8e301f6e2d7637f44b390c537579fe9644190547e3e7af",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795160297.009425,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-banks-banner-after.png"
+      ],
+      "scoped_digest": "35f534296b36be6f9474b6f70bdb0ec785815986ba29f083915a22aa9e8296c9"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "674f13c2c6488f1b4b8e301f6e2d7637f44b390c537579fe9644190547e3e7af",
+    "baseline_digest": "674f13c2c6488f1b4b8e301f6e2d7637f44b390c537579fe9644190547e3e7af"
   }
 ]

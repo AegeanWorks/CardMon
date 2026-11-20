@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-pdf-disable-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/pdf-disable-after.html",
-      "commit": "cc3cdc847765f5c938cd13445d0944070ca7163d",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at cc3cdc8: the PDF button is visibly dimmed with a not-allowed cursor and a translated tooltip explaining that a bank or card is needed; it re-enables automatically with data. The blue onboarding CTA remains the clear primary action. No layout shift, clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T02:19:46"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-empty-tracks-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/empty-tracks-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/banks-review.html",
       "commit": "ddb86cceda2cb1311db3b489224c94e4cc8210c0",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-banks-banner-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/banks-banner-after.html",
+      "commit": "d2c6d03c257dcab511c8a110371981c269063263",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
