@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-findings-batch2",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795212332.0334303,
     "owner": "opencode:hy4-flash-free",
     "lease_until": 1795219532.0334303,
@@ -15,39 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795212421.31383,
+    "completed_head": "18ef9c3cf9b8abe7b835f6d7541c26f4a916c828",
+    "completed_tree": "7f6adcf95f65d046860282bbfd0a999b90361f3b"
   },
   "checkpoints": [
-    {
-      "task_id": "reforge:run-1",
-      "phase": "reforge stage 7",
-      "phase_num": 3,
-      "description": "Reforge stage 7: window 350, 50 commit(s), 7 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 17 binary not analysed",
-      "files_affected": [
-        "assets/screenshots/2026-11-20-analytics-before2.png",
-        "assets/screenshots/2026-11-20-analytics-empty-after.png",
-        "assets/screenshots/2026-11-20-analytics-empty-before.png",
-        "assets/screenshots/2026-11-20-badge-clean-after.png",
-        "assets/screenshots/2026-11-20-badge-clean-before.png",
-        "assets/screenshots/2026-11-20-card-reorder-after.png",
-        "assets/screenshots/2026-11-20-card-reorder-before.png",
-        "assets/screenshots/2026-11-20-cashflow-calm-after.png",
-        "assets/screenshots/2026-11-20-cashflow-calm-before.png",
-        "assets/screenshots/2026-11-20-nearest-none-after.png",
-        "assets/screenshots/2026-11-20-nearest-none-before.png",
-        "assets/screenshots/2026-11-20-rhythm-after.png",
-        "assets/screenshots/2026-11-20-rhythm-before.png",
-        "assets/screenshots/2026-11-20-svg-icon-after.png",
-        "assets/screenshots/2026-11-20-svg-icon-before.png",
-        "assets/screenshots/2026-11-20-zero-alerts-after.png",
-        "assets/screenshots/2026-11-20-zero-alerts-before.png"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795207898.7373714,
-      "timestamp_str": "2026-11-20 23:51:38",
-      "agent": "opencode",
-      "operator_task": "cardmon-pay-method-labels"
-    },
     {
       "task_id": "reforge:run-1",
       "phase": "reforge stage 7",
@@ -411,6 +384,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-findings-batch2",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-findings-batch2' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795212421.4190454,
+      "timestamp_str": "2026-11-21 01:07:01",
+      "agent": "opencode",
+      "head": "18ef9c3cf9b8abe7b835f6d7541c26f4a916c828",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
