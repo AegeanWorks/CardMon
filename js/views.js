@@ -1166,7 +1166,7 @@ function renderSubscriptionsView() {
                 <div>
                   <div style="display:flex; align-items:center; gap:0.35rem; flex-wrap:wrap;">
                     <h4 class="sub-name" style="margin:0;">${escapeHtml(sub.name)}</h4>
-                    ${sub.isEstimated ? '<span style="font-size:0.65rem; background:#fef3c7; color:#92400e; border:1px solid #fde68a; border-radius:4px; padding:1px 5px; font-weight:700;">📊 Tahmini</span>' : ''}
+                    ${sub.isEstimated ? '<span style="font-size:0.65rem; background:#fef3c7; color:#92400e; border:1px solid #fde68a; border-radius:4px; padding:1px 5px; font-weight:700;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> Tahmini</span>' : ''}
                   </div>
                   <span class="sub-category-tag">${escapeHtml(catLabel)}</span>
                 </div>
@@ -1192,7 +1192,7 @@ function renderSubscriptionsView() {
               <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.25rem;">
                 <span style="font-size:0.7rem; color:var(--text-muted);">Ödeme Günü:</span>
                 <span class="sub-billing-date-pill">
-                  📅 Ayın ${billingDay}${turkishDaySuffix(billingDay)}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="3" y1="11" x2="21" y2="11"></line></svg> Ayın ${billingDay}${turkishDaySuffix(billingDay)}
                   <strong style="color: ${daysLeft <= 3 ? '#fb7185' : '#34d399'};">(${daysLeft === 0 ? 'Bugün!' : `${daysLeft} gün kaldı`})</strong>
                 </span>
               </div>
@@ -1200,7 +1200,7 @@ function renderSubscriptionsView() {
 
             ${sub.isFrozen ? `
               <div style="background:rgba(244,63,94,0.12); border:1px solid rgba(244,63,94,0.3); border-radius:6px; padding:0.35rem 0.6rem; font-size:0.72rem; color:#fb7185; display:flex; align-items:center; gap:0.35rem;">
-                ⚠️ <strong>Uyarı:</strong> Bağlı kredi kartı dondurulduğu için bu aboneliğin ödemesi aksayabilir.
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg> <strong>Uyarı:</strong> Bağlı kredi kartı dondurulduğu için bu aboneliğin ödemesi aksayabilir.
               </div>
             ` : ''}
 
