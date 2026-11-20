@@ -662,13 +662,13 @@ function updateQuickTxInstallmentPreview() {
           <span style="color:#22d3ee;">${amount > 0 ? formatMoney(monthlyInstallment) : formatMoney(0)} × ${installments} Ay</span>
         </div>
         <div style="font-size:0.78rem; color:${isCutoffPassed ? '#f59e0b' : '#34d399'};">
-          📅 <strong>Ekstre Kesim Günü:</strong> Ayın ${cutoffDay}${turkishDaySuffix(cutoffDay)} (Bugün: ${today}. gün)
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="3" y1="11" x2="21" y2="11"></line></svg> <strong>Ekstre Kesim Günü:</strong> Ayın ${cutoffDay}${turkishDaySuffix(cutoffDay)} (Bugün: ${today}. gün)
         </div>
         <div style="font-size:0.78rem; color:var(--text-secondary);">
           ${isCutoffPassed ? `
-            ⚠️ <strong>1. Taksit Başlangıcı:</strong> Bu ayki ekstre kesildiği için ilk taksit <strong>bir sonraki ekstre döneminde</strong> ödenecektir.
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12" y2="17"></line></svg> <strong>1. Taksit Başlangıcı:</strong> Bu ayki ekstre kesildiği için ilk taksit <strong>bir sonraki ekstre döneminde</strong> ödenecektir.
           ` : `
-            ✅ <strong>1. Taksit Başlangıcı:</strong> Ekstre kesim gününe henüz gelinmediği için ilk taksit <strong>bu ayki ekstreye</strong> yansıyacaktır.
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> <strong>1. Taksit Başlangıcı:</strong> Ekstre kesim gününe henüz gelinmediği için ilk taksit <strong>bu ayki ekstreye</strong> yansıyacaktır.
           `}
         </div>
       </div>

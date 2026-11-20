@@ -1066,11 +1066,11 @@
           <div class="tx-type-selector">
             <label class="tx-type-btn" id="txTypeExpenseLabel">
               <input type="radio" name="quickTxType" id="txTypeExpense" value="expense" checked onchange="updateQuickTxFormMode()">
-              <span>🛍️ Harcama / Taksit Ekle</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> Harcama / Taksit Ekle</span>
             </label>
             <label class="tx-type-btn" id="txTypePaymentLabel">
               <input type="radio" name="quickTxType" id="txTypePayment" value="payment" onchange="updateQuickTxFormMode()">
-              <span>💳 Borç Ödeme Yap</span>
+              <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> Borç Ödeme Yap</span>
             </label>
           </div>
 
@@ -1117,11 +1117,11 @@
               <div style="display:flex; gap:0.5rem;">
                 <label id="startCycleCurrentLabel" style="flex:1; display:flex; align-items:center; gap:0.5rem; padding:0.45rem 0.65rem; border-radius:var(--radius-md); border:1px solid rgba(16,185,129,0.35); background:rgba(16,185,129,0.08); cursor:pointer; font-size:0.8rem; font-weight:600; color:#34d399; transition:all 0.15s;">
                   <input type="radio" name="startCycle" id="startCycleCurrent" value="current" checked onchange="updateQuickTxInstallmentPreview()" style="accent-color:#10b981;">
-                  ✅ Bu Ayki Ekstre
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> Bu Ayki Ekstre
                 </label>
                 <label id="startCycleNextLabel" style="flex:1; display:flex; align-items:center; gap:0.5rem; padding:0.45rem 0.65rem; border-radius:var(--radius-md); border:1px solid rgba(245,158,11,0.35); background:rgba(245,158,11,0.06); cursor:pointer; font-size:0.8rem; font-weight:600; color:#fbbf24; transition:all 0.15s;">
                   <input type="radio" name="startCycle" id="startCycleNext" value="next" onchange="updateQuickTxInstallmentPreview()" style="accent-color:#f59e0b;">
-                  ⏳ Sonraki Ekstre
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Sonraki Ekstre
                 </label>
               </div>
               <div id="startCycleNextWarning" style="display:none; margin-top:0.4rem; font-size:0.75rem; color:#fbbf24; background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.2); border-radius:6px; padding:0.4rem 0.6rem;">
