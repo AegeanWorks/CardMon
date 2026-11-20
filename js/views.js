@@ -1051,7 +1051,7 @@ function renderSubscriptionsView() {
     <div class="subscriptions-hero-card">
       <div>
         <div class="subscriptions-hero-title">
-          <span>🔄</span>
+          <span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg></span>
           <span>Abonelikler, Faturalar & Düzenli Giderler</span>
         </div>
         <p class="subscriptions-hero-desc">
@@ -1094,11 +1094,11 @@ function renderSubscriptionsView() {
         <div class="rent-simulator-card">
           <div class="rent-sim-header">
             <div style="display:flex; align-items:center; gap:0.5rem; flex-wrap:wrap;">
-              <span class="rent-sim-pill">🏠 Konut & Kira Kâr Analizi</span>
+              <span class="rent-sim-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg> Konut & Kira Kâr Analizi</span>
               <strong style="font-size:0.95rem; color:#fff;">Evin Olsaydı Kiradan Ne Kadar Kâr Edecektin?</strong>
             </div>
             <button type="button" class="btn btn-emerald btn-sm" onclick="openRentSimulatorModal()">
-              📊 Detaylı Simülatör & Hesaplama
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> Detaylı Simülatör & Hesaplama
             </button>
           </div>
 
