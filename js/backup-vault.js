@@ -713,7 +713,7 @@ function renderExecutiveTable() {
             <tr>
               <td>
                 <div class="card-cell-title">
-                  <span>💳</span>
+                  <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></span>
                   <div>
                     <strong>${escapeHtml(c.nickname)}</strong>
                     <div style="font-size:0.75rem; color:var(--text-muted);">${c.network} ${c.last4 ? `(•${c.last4})` : ''}</div>
@@ -735,7 +735,7 @@ function renderExecutiveTable() {
               <td style="color:#fbbf24; font-weight:600;">
                 ${debt > 0 ? `
                   <div>${formatMoney(minDue)}</div>
-                  ${isKatilim ? `<span style="font-size:0.68rem; color:#34d399; font-weight:700;">🕌 %100 Katılım</span>` : `<span style="font-size:0.68rem; color:var(--text-muted);">(%${ratio})</span>`}
+                  ${isKatilim ? `<span style="font-size:0.68rem; color:#34d399; font-weight:700;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M12 2l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1.5L12 2z"></path></svg> %100 Katılım</span>` : `<span style="font-size:0.68rem; color:var(--text-muted);">(%${ratio})</span>`}
                 ` : '-'}
               </td>
               <td><span style="color:var(--text-secondary); font-size:0.8rem;">${dueStr}</span></td>
