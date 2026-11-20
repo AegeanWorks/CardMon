@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-advisor-clock-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/advisor-clock-after.html",
-      "commit": "c10947ad232d1dbd84438dda75c80287cb781a10",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (populated demo data) at c10947a: the fire emoji is replaced by a small white clock SVG in the green days pill, completing the banner's line-art icon language. Pill geometry, label and all other dashboard sections unchanged; no clipping, truncation or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T09:59:46"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-cards-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cards-review.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T11:37:52"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-timeline-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/timeline-review.html",
+      "commit": "33166f2f4d80cdaa858410910b2d223d70d53eeb",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
