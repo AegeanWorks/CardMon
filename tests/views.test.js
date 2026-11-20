@@ -131,6 +131,25 @@ test('renderBanksView renders banks list and empty state', () => {
   assert.match(container.innerHTML, /Garanti BBVA/);
 });
 
+test('bank limit stat shows card debt only, not card plus loan debt', () => {
+  const h = createHarness();
+  const container = h.sandbox.document.getElementById('banksContainer');
+  h.loadDemoData(false);
+  h.renderBanksView();
+
+  const state = h.getState();
+  const garanti = state.banks.find(b => b.name === 'Garanti BBVA');
+  const cardDebt = state.cards
+    .filter(c => c.bankId === garanti.id)
+    .reduce((sum, c) => sum + (Number(c.usedBalance) || 0), 0);
+  assert.ok(cardDebt > 0, 'demo bank must have card debt');
+
+  // The "used amount" stat next to "card limit" must match the card-only utilization basis.
+  const usedStat = (container.innerHTML.split('bank-stat-value')[2] || '').split('</span>')[0];
+  assert.ok(usedStat.includes(h.formatMoney(cardDebt)),
+    'used amount stat must show card debt only, with loans in the separate breakdown');
+});
+
 test('renderEkHesapView renders overdraft credit lines and reserves', () => {
   const h = createHarness();
   const container = h.sandbox.document.getElementById('ekHesapContainer');

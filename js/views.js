@@ -669,8 +669,8 @@ function renderBanksView() {
           </div>
           <div class="bank-stat-item">
             <span class="bank-stat-label">${t('usedAmount')}</span>
-            <span class="bank-stat-value" style="color:${(totalBankDebt + totalBankLoanDebt) > 0 ? '#fb7185' : 'var(--text-secondary)'};">
-              ${formatMoney(totalBankDebt + totalBankLoanDebt)}
+            <span class="bank-stat-value" style="color:${totalBankDebt > 0 ? '#fb7185' : 'var(--text-secondary)'};">
+              ${formatMoney(totalBankDebt)}
             </span>
           </div>
         </div>
