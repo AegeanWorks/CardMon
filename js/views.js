@@ -244,10 +244,11 @@ function renderCardsView() {
 
     // Annual fee label
     let feeStatusLabel = '';
-    if (c.annualFeeStatus === 'refundRequested') feeStatusLabel = '⏳ İade İstendi';
-    else if (c.annualFeeStatus === 'refunded') feeStatusLabel = '✅ İade Alındı';
-    else if (c.annualFeeStatus === 'paid') feeStatusLabel = '💸 Ödendi';
-    else if (c.annualFeeStatus === 'exempt') feeStatusLabel = '🛡️ Aidatsız';
+    const feeIcon = (paths) => `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;">${paths}</svg>`;
+    if (c.annualFeeStatus === 'refundRequested') feeStatusLabel = feeIcon('<circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>') + ' İade İstendi';
+    else if (c.annualFeeStatus === 'refunded') feeStatusLabel = feeIcon('<polyline points="20 6 9 17 4 12"></polyline>') + ' İade Alındı';
+    else if (c.annualFeeStatus === 'paid') feeStatusLabel = feeIcon('<rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="3"></circle>') + ' Ödendi';
+    else if (c.annualFeeStatus === 'exempt') feeStatusLabel = feeIcon('<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>') + ' Aidatsız';
 
     return `
       <div class="card-item-wrapper" id="card-${c.id}" style="${isFrozen ? 'opacity: 0.85;' : ''}">
@@ -375,7 +376,7 @@ function renderCardsView() {
           <!-- Annual Fee Alert Banner -->
           ${(Number(c.annualFeeAmount) > 0 || c.annualFeeStatus === 'exempt') ? `
           <div class="fee-badge-alert">
-            <span>🏷️ Aidat: <strong>${c.annualFeeStatus === 'exempt' ? 'Muaf (Aidatsız)' : formatMoney(Number(c.annualFeeAmount))}</strong> ${c.annualFeeMonth && c.annualFeeMonth !== 'none' ? `(${c.annualFeeMonth}. Ay)` : ''}</span>
+            <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg> Aidat: <strong>${c.annualFeeStatus === 'exempt' ? 'Muaf (Aidatsız)' : formatMoney(Number(c.annualFeeAmount))}</strong> ${c.annualFeeMonth && c.annualFeeMonth !== 'none' ? `(${c.annualFeeMonth}. Ay)` : ''}</span>
             <span style="font-weight:700;">${feeStatusLabel}</span>
           </div>
           ` : ''}
