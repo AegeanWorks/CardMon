@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-card-fee-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/card-fee-before.html",
-      "commit": "1a3a5479c7ef2a4ff224c7116edb8d7c4e18fab1",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1500",
-      "width": 1440,
-      "height": 1500,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Cards view, fee status row, demo data) at abbb2cb: the Aidat banner and fee-status labels use colorful emojis (tag, hourglass, money-with-wings, check, shield) that clash with the app's monochrome line-art icon language. Card layout, amounts and utilization bars are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T20:24:12"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-card-fee-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-fee-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T21:20:54"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-kmh-chart-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/kmh-chart-before.html",
+      "commit": "6216d48c76e9ad4d6421a13a515e6ca9984576f9",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x3000",
+      "width": 1440,
+      "height": 3000,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
