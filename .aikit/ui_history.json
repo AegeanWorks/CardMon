@@ -2231,5 +2231,44 @@
     "final_snapshot_entries": 0,
     "surface_digest": "1f6ab73aa82504c58f5da882c29d8d6f244f9a44d072160c4bfaf825ba12dc1a",
     "baseline_digest": "1f6ab73aa82504c58f5da882c29d8d6f244f9a44d072160c4bfaf825ba12dc1a"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      ".aikit/project.json",
+      "assets/screenshots/2026-11-20-pay-method-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "08556e9f739c38986588a961ec194c5ff553bd27",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795203731.994097,
+    "finished_at": 1795204162.3632052,
+    "strikes": 1,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "5c1832de5f2b2e8c9a778daf1388021b421b140a9dcb41c1aceabc13a77ceaf4",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795204162.3632085,
+      "scoped_paths": [
+        ".aikit/media.json",
+        ".aikit/project.json",
+        "assets/screenshots/2026-11-20-pay-method-after.png"
+      ],
+      "scoped_digest": "661634552caba41a5124d0ad378527ac21be53aae32dd5248cb8d12da784eeab"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "5c1832de5f2b2e8c9a778daf1388021b421b140a9dcb41c1aceabc13a77ceaf4",
+    "baseline_digest": "5c1832de5f2b2e8c9a778daf1388021b421b140a9dcb41c1aceabc13a77ceaf4"
   }
 ]

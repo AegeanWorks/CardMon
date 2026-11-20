@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-vault-snaps-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/vault-snaps-after.html",
-      "commit": "2d97e7376675f47d514b046fb0b839342b4fd49b",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1100",
-      "width": 1440,
-      "height": 1100,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Backup Vault snapshot list, demo data) at 2d97e73: all seven emojis are replaced by line-art SVGs (bank, card, document, money, download, refresh, trash) matching the app icon set. Counts, amounts, dates and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T21:20:54"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-kmh-chart-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/kmh-chart-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/pay-method-before.html",
       "commit": "93045023bf9a3f581739527827cc2a6352a98128",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1200",
+      "width": 1440,
+      "height": 1200,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-pay-method-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/pay-method-after.html",
+      "commit": "08556e9f739c38986588a961ec194c5ff553bd27",
       "taken_at": "2026-11-20",
       "viewport": "1440x1200",
       "width": 1440,
