@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-quicktx-icons",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795192654.1569335,
     "owner": "agent",
     "lease_until": 1795199854.1569335,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795192675.2825367,
+    "completed_head": "412821880d3f4a5b4a3615f4983c7f003cc94f87",
+    "completed_tree": "30e4dc9d6b32dada5e65ad6d53d9cf0d3923c414"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-subs-hero-tokens",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use design tokens for subscription hero figures",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795188184.5968237,
-      "timestamp_str": "2026-11-20 18:23:04",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review found the two subscription hero headline figures using hardcoded Tailwind shades, breaking color cohesion with the token-based palette (G-003 aesthetic).",
-        "benefits": "Figures now use var(--accent-purple) and var(--accent-primary); before/after vision reviews approved (96 -> 97).",
-        "risks": "Two render-only color substitutions in js/views.js; no behavior, data or layout changes; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both Subscriptions-view screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-subs-hero-tokens",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-quicktx-icons",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-quicktx-icons' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795192675.3854516,
+      "timestamp_str": "2026-11-20 19:37:55",
+      "agent": "agent",
+      "head": "412821880d3f4a5b4a3615f4983c7f003cc94f87",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
