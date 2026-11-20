@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Timeline view, demo data) at 33166f2: the section title and summary banner use calendar, credit-card, bank and house emojis, inconsistent with the line-art SVG icon language used across the other views. Event cards, totals and layout are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T11:51:47"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-timeline-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Timeline view, demo data) at 9723101: line-art SVG icons now appear in the section title, banner and the three category metrics (card, bank, rent). Totals, event cards and layout unchanged; no clipping, truncation or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T11:52:13"
+      }
     }
   ]
 }
