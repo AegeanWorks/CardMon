@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Profile and Settings modal, demo data) at d34772c: the Backup Vault action uses a colorful archive emoji while the surrounding data-management buttons use monochrome line icons, breaking visual consistency. Form layout and spacing are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T18:41:56"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-modal-settings-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Profile and Settings modal, demo data) at e8a413c: the Backup Vault action now uses a line-art archive SVG consistent with the other data-management buttons (three vault labels updated app-wide). Form fields, layout and spacing unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T18:42:30"
+      }
     }
   ]
 }
