@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-timeline-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/timeline-icons-after.html",
-      "commit": "9723101a113a29d0c16518676be349713c8320ae",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Timeline view, demo data) at 9723101: event icon boxes mix emojis (credit card, cloud, scissors, play, home) with the line-art SVG icons used in the header and summary, leaving the event list visually inconsistent. Amounts, badges and layout are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T12:07:13"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-timeline-event-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/timeline-event-icons-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T18:21:29"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-settings-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-settings-review.html",
+      "commit": "d34772c6007390e3c96c1ef00867f9d2b1a71b11",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
