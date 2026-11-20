@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (cards view, demo data) at c117714: permission pills use eight different emojis (globe, check, cross, lock, snowflake, etc.) mixed with status text, creating visual clutter; the row even wraps the 'Dondur' action onto a second line. Card artwork and limit stats are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T10:14:31"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-cards-permissions-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (cards view, demo data) at 8cbf79d: emojis replaced by one small token-colored status dot per pill with clear text labels; the pills now fit on a single row, giving each card more vertical room. Click targets, tooltips and toggle behavior unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T10:14:52"
+      }
     }
   ]
 }
