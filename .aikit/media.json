@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-timeline-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/timeline-review.html",
-      "commit": "33166f2f4d80cdaa858410910b2d223d70d53eeb",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Timeline view, demo data) at 33166f2: the section title and summary banner use calendar, credit-card, bank and house emojis, inconsistent with the line-art SVG icon language used across the other views. Event cards, totals and layout are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T11:51:47"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-timeline-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/timeline-icons-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subs-token-before.html",
       "commit": "aa153baaebf1972efc92b348ebe023c07bbf8d79",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-subs-token-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/subs-token-after.html",
+      "commit": "7c85a173f7343b52cf3e9109db5a85a95496300f",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,

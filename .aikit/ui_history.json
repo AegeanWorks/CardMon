@@ -1417,5 +1417,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "c0e1ba78ff439cc2ae8fc9b87c3503c7cb1c4e4db6ab7c8a8c9e9f606693cedd",
     "baseline_digest": "c0e1ba78ff439cc2ae8fc9b87c3503c7cb1c4e4db6ab7c8a8c9e9f606693cedd"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-subs-token-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "7c85a173f7343b52cf3e9109db5a85a95496300f",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795187757.4381537,
+    "finished_at": 1795187925.4119012,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "9eb1d730d4eb40898e0af0728c3a7726f59680c1d0562d757c678fc54e214080",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795187925.411903,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-subs-token-after.png"
+      ],
+      "scoped_digest": "ac5c7a7b7c0a4ede936459cb7063d891533ada57319c9c2e37408f6f33814655"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "9eb1d730d4eb40898e0af0728c3a7726f59680c1d0562d757c678fc54e214080",
+    "baseline_digest": "9eb1d730d4eb40898e0af0728c3a7726f59680c1d0562d757c678fc54e214080"
   }
 ]
