@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-bank-detail-icons",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795161196.6425412,
     "owner": "agent",
     "lease_until": 1795168396.6425412,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795161265.9064746,
+    "completed_head": "66ab42ea368286b675691319f3a537161f21c816",
+    "completed_tree": "86c9789c56a20cd46c6dd8e3a246c73af568921d"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-burden-aware-health",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Make health score reflect cashflow burden",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795156380.0165813,
-      "timestamp_str": "2026-11-20 09:33:00",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the populated dashboard found a green 'excellent' health pill contradicting a 107.8% obligation burden and 0\u20ba free cash (G-003 functional/usable).",
-        "benefits": "Health score now considers burden (>65% critical, >40% warning) even with safe utilization; failing-first test added; before/after vision reviews approved (93 -> 97).",
-        "risks": "Added 5th optional parameter with default 0 so existing calls unchanged; Turkish caption literals match existing style; burden-free states keep prior behavior; 108/108 tests pass.",
-        "mitigation": "Failing-first test confirmed 1 failure before implementation, then 108/108 pass; ui verify + ui finish --reviewed; vision analysis; check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-burden-aware-health",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-bank-detail-icons",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-bank-detail-icons' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795161265.9887612,
+      "timestamp_str": "2026-11-20 10:54:25",
+      "agent": "agent",
+      "head": "66ab42ea368286b675691319f3a537161f21c816",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
