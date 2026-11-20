@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-empty-tracks-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/empty-tracks-before.html",
-      "commit": "033af3ea8e4db0461122b73c780ead1288463cc5",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 033af3e: two empty progress tracks remain - a grey meter under the 0.0% utilization KPI and a thin green bar in the sidebar portfolio card. Both convey no information when there is no data and clash with the already-calmed empty state. Layout otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T02:28:12"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-empty-tracks-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/empty-tracks-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T10:40:09"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-bank-detail-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/bank-detail-icons-after.html",
+      "commit": "1e6dbdd4b068ac2a7859b56df8b68b3a631a7c92",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

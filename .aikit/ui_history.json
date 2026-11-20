@@ -1010,5 +1010,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "674f13c2c6488f1b4b8e301f6e2d7637f44b390c537579fe9644190547e3e7af",
     "baseline_digest": "674f13c2c6488f1b4b8e301f6e2d7637f44b390c537579fe9644190547e3e7af"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-bank-detail-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "1e6dbdd4b068ac2a7859b56df8b68b3a631a7c92",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795160897.993929,
+    "finished_at": 1795161015.105604,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "24232618a220c3956cc9e1080a603ae8bc793fa29e175f9c64c4ec3d7ceb91dc",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795161015.1056054,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-bank-detail-icons-after.png"
+      ],
+      "scoped_digest": "eff8f8b52ed8f5aee38c189e7684726995980333e485ec39fa7577fae35b0460"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "24232618a220c3956cc9e1080a603ae8bc793fa29e175f9c64c4ec3d7ceb91dc",
+    "baseline_digest": "24232618a220c3956cc9e1080a603ae8bc793fa29e175f9c64c4ec3d7ceb91dc"
   }
 ]
