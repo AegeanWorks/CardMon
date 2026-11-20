@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-subs-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/subs-icons-after.html",
-      "commit": "7586d2f0a3c6caca6b7ed6fc4981fda192a5ebea",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Subscriptions view, demo data) at 7586d2f: service cards still use colorful emoji icons (film, music note, robot) while the hero and rent card had already been converted to line-art SVGs, leaving the service list visually inconsistent. Names, prices and layout are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T12:22:56"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-timeline-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/timeline-review.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T16:50:31"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-subs-token-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/subs-token-before.html",
+      "commit": "aa153baaebf1972efc92b348ebe023c07bbf8d79",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
