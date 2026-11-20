@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-burden-aware-health",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795156380.6401682,
     "owner": "agent",
     "lease_until": 1795163580.6401682,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795156452.7141623,
+    "completed_head": "f5226b23f573a73c75fb732d85e505be20b8f03e",
+    "completed_tree": "10323371d40c580b331dc6d76d992899ff3c9c46"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-guidance-svg-icon",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Replace emoji icon with line-art SVG in empty analytics card",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795128813.410845,
-      "timestamp_str": "2026-11-20 01:53:33",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision pass found a multicolor chart emoji clashed with CardMon's consistent line-art SVG iconography, reducing aesthetic cohesion (G-003).",
-        "benefits": "Crisp cyan SVG bar-chart icon in a tinted rounded square matching other icon boxes; before/after vision reviews approved (96 -> 97).",
-        "risks": "HTML/CSS-only cosmetic change; no behavior, data or copy changes; 107/107 tests pass.",
-        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-guidance-svg-icon",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-burden-aware-health",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-burden-aware-health' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795156452.8588295,
+      "timestamp_str": "2026-11-20 09:34:12",
+      "agent": "agent",
+      "head": "f5226b23f573a73c75fb732d85e505be20b8f03e",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
