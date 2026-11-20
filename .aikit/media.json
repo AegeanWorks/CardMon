@@ -247,9 +247,9 @@
         "status": "approved",
         "reviewer": "agent:cardmon-ui",
         "method": "vision",
-        "notes": "AFTER (Banks view, demo data) at 1e6dbdd: note rows now use a small pencil SVG and mini-card chips a credit-card SVG, completing the line-art icon language in the Banks view. Text, spacing and all bank metrics unchanged; no clipping, truncation or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T10:52:08"
+        "notes": "BEFORE (Banks view, demo data) at 1e6dbdd: for Garanti BBVA the 'Kart Limiti 120.000\u20ba' stat pairs with 'Kullan\u0131lan Tutar 108.450\u20ba' while the meter says 'Doluluk %23.7'. The used figure mixes card debt (28.450\u20ba) and loan debt (80.000\u20ba), contradicting the card-based utilization and available limit (91.550\u20ba).",
+        "score": 94,
+        "reviewed_at": "2026-11-20T11:08:31"
       }
     },
     {
@@ -261,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Banks view, demo data) at 583c685: 'Kullan\u0131lan Tutar' now shows 28.450\u20ba, matching card debt, 23.7% utilization and 91.550\u20ba available; the 80.000\u20ba loan remains in its separate 'Kredi Borcu (Kalan)' breakdown. Figures are internally consistent; layout and other banks unchanged.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T11:08:59"
+      }
     }
   ]
 }
