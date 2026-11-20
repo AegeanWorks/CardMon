@@ -477,7 +477,7 @@ function renderCardsView() {
                 ${virtualCards.map(vc => `
                   <div class="virtual-card-chip">
                     <span class="vc-name">
-                      ${vc.isInternetActive ? '🌐' : '🔒'}
+                      ${vc.isInternetActive ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>' : '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>'}
                       <strong>${escapeHtml(vc.nickname)}</strong>
                       ${vc.last4 ? `<span style="color:var(--text-muted); font-size:0.72rem;">(•${vc.last4})</span>` : ''}
                     </span>
