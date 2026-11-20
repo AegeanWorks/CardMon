@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Subscriptions view, demo data) at 42748cb: the hero uses a cycle emoji, the rent-analysis pill a house emoji and the simulator button a chart emoji, inconsistent with the line-art SVG icon language used across other views. Totals, rent projections and layout are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T11:37:26"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-subs-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Subscriptions view, demo data) at 7586d2f: line-art refresh, home and bar-chart SVGs replace the emojis in the hero, rent pill and simulator button. Hero totals, rent projections, service cards and layout unchanged; no clipping, truncation or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T11:37:52"
+      }
     }
   ]
 }
