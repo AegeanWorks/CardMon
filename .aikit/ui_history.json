@@ -825,5 +825,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "ebdc24d4c505263ce58296f95e3c6fd88df0cb7f0203248f9a794337a2f4f5ea",
     "baseline_digest": "ebdc24d4c505263ce58296f95e3c6fd88df0cb7f0203248f9a794337a2f4f5ea"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-advisor-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "8ef8a2ad808dd17e4096acb80a030ad5d64a1c93",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795156800.074047,
+    "finished_at": 1795157163.0751662,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "d9bf083f9bb44043b4d4448fd2c563f39fdcb040c663fe8350799fac8a974cde",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795157163.0751693,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-advisor-icons-after.png"
+      ],
+      "scoped_digest": "f384e41e53db8c1b45c4bec6ee32157935abab813256d179ccf1ec6f37a4b8f2"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "d9bf083f9bb44043b4d4448fd2c563f39fdcb040c663fe8350799fac8a974cde",
+    "baseline_digest": "d9bf083f9bb44043b4d4448fd2c563f39fdcb040c663fe8350799fac8a974cde"
   }
 ]
