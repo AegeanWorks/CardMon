@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-loans-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/loans-review.html",
-      "commit": "79256df9fe733619958103c090dbddd5afdf2aec",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Loans view, demo data) at 79256df: the hero heading uses a bank emoji and loan cards use calendar/memo emojis, inconsistent with the line-art SVG iconography used in the other views. Loan figures, progress bars and layout are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T11:22:32"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-loans-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/loans-icons-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-card-review.html",
       "commit": "4a589d3ecfb4ab517c73fe96692fd4fa54de5aa9",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-card-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-card-icons-after.html",
+      "commit": "75df648f57ab0f1365ac2f03006dc1997d74127d",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
