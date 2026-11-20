@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Backup Vault modal, demo data) at 8604e54: the green auto-backup status uses a colorful shield emoji while the header and action button use line-art SVG icons, breaking visual consistency in the modal. Layout and empty state are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T19:03:07"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-modal-vault-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Backup Vault modal, demo data) at 75fc221: the auto-backup status now uses a line-art shield SVG consistent with the rest of the modal; snapshot labels use matching shield/file SVGs once backups exist. Layout, text and empty state unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T19:03:37"
+      }
     }
   ]
 }
