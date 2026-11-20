@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-exec-table-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/exec-table-before.html",
-      "commit": "b4ff7945aac957e267915a02a20879a5b5143b19",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x3000",
-      "width": 1440,
-      "height": 3000,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Executive summary table, dashboard, demo data) at 7775bcc: each table row uses a colorful credit-card emoji in the first column, clashing with the app's monochrome line-art icon language. Column layout, amounts and health pills are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T21:09:06"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-exec-table-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/exec-table-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T22:10:29"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-timeline-actions-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/timeline-actions-before.html",
+      "commit": "a3013c578c972ca7a164bdcc8210de8ad5a10cbe",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1200",
+      "width": 1440,
+      "height": 1200,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
