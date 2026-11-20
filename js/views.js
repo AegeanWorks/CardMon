@@ -1533,11 +1533,11 @@ function renderTimelineView() {
                 <div class="timeline-event-actions" style="display:flex; align-items:center; gap:0.4rem;">
                   ${e.type === 'card_due' && e.cardId ? `
                     <button class="btn ${e.isPaid ? 'btn-secondary' : 'btn-emerald'} btn-sm" onclick="payCardFullDebt('${e.cardId}')" title="${e.isPaid ? 'Ödendi durumunu geri al ve borcu tekrar aç' : 'Dönem Borcunu Ödendi Olarak Kapat'}" style="padding:0.4rem 0.75rem; font-size:0.78rem; font-weight:700; border-radius:6px; display:inline-flex; align-items:center; gap:0.3rem;">
-                      ${e.isPaid ? '↩️ Ödendi (Kapatıldı)' : '✅ Borcu Kapat'}
+                      ${e.isPaid ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg> Ödendi (Kapatıldı)' : '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> Borcu Kapat'}
                     </button>
                     ${(!e.isPaid && hasInst) ? `
                       <button class="btn btn-secondary btn-sm" onclick="payCardMonthlyInstallments('${e.cardId}')" title="Bu Ayki Taksitleri Öde ve Borçtan Düş" style="padding:0.4rem 0.75rem; font-size:0.78rem; font-weight:700; border-radius:6px; display:inline-flex; align-items:center; gap:0.3rem;">
-                        💳 Taksiti Düş
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> Taksiti Düş
                       </button>
                     ` : ''}
                   ` : e.type === 'loan' && e.loanId ? `
