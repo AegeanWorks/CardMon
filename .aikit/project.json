@@ -28,8 +28,8 @@
   "has_ui": true,
   "ui_kind": "web",
   "ui_evidence": [
-    "demo-mono-after.html",
-    "demo-mono-before.html",
+    "demo-month-after.html",
+    "demo-month-before.html",
     "index.html"
   ],
   "ui_checked_at": "2026-11-21",

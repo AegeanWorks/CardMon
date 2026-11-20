@@ -2328,5 +2328,55 @@
     "final_snapshot_entries": 0,
     "surface_digest": "0f99f6e8d34590a7dbde96d61b0dce0fcd79208485162695c466a275c7ddccca",
     "baseline_digest": "5c1832de5f2b2e8c9a778daf1388021b421b140a9dcb41c1aceabc13a77ceaf4"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      ".aikit/project.json",
+      "index.html",
+      "tests/full_read_regressions.test.js",
+      "assets/screenshots/2026-11-21-demo-month-after.png",
+      "assets/screenshots/2026-11-21-demo-month-before.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "93cd3ee",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795211415.536424,
+    "finished_at": 1795211574.7866054,
+    "strikes": 2,
+    "reviewer": "agent:opencode",
+    "review": {
+      "reviewer": "agent:opencode",
+      "surface": "app",
+      "surface_digest": "64478e1811a3db9538ebdae61e5a9831bae2fb1baf76ae98787c7f9aabf569eb",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795211574.7866085,
+      "scoped_paths": [
+        ".aikit/media.json",
+        ".aikit/project.json",
+        "index.html",
+        "tests/full_read_regressions.test.js",
+        "assets/screenshots/2026-11-21-demo-month-after.png",
+        "assets/screenshots/2026-11-21-demo-month-before.png"
+      ],
+      "scoped_digest": "b0356b548a2858c5d297e840d3710c834baa2aba5c6e7e5e364f509648e41461"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/full_read_regressions.test.js",
+        "reason": "Failing-first regression for the month-label fix"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "64478e1811a3db9538ebdae61e5a9831bae2fb1baf76ae98787c7f9aabf569eb",
+    "baseline_digest": "0f99f6e8d34590a7dbde96d61b0dce0fcd79208485162695c466a275c7ddccca"
   }
 ]

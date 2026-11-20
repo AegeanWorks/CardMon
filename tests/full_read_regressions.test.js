@@ -151,6 +151,18 @@ test('README screenshot links point to distinct files', () => {
   assert.strictEqual(new Set(srcs).size, srcs.length, 'screenshot links must be distinct');
 });
 
+test('loan start-cycle options do not hardcode a month name', () => {
+  const html = read('index.html');
+  const select = html.split('id="loanStartCycleSelect"')[1] || '';
+  const options = select.split('</select>')[0];
+  const months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz',
+    'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+  for (const month of months) {
+    assert.ok(!options.includes(month), `option label hardcodes month ${month}`);
+  }
+  assert.ok(options.includes('value="next"') && options.includes('value="current"'));
+});
+
 test('project memory declares the canonical test command', () => {
   const project = JSON.parse(read('.aikit/project.json'));
   assert.strictEqual(project.test_command, 'npm test');
