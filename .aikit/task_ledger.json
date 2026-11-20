@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-vault-icons",
+    "task_id": "cardmon-vault-modal-icons",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795189442.8610148,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795190715.841992,
     "owner": "agent",
-    "lease_until": 1795196642.8610148,
+    "lease_until": 1795197915.841992,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795189539.1439283,
-    "completed_head": "260173113611205c38cfad9bdc99ba3ce26e12cb",
-    "completed_tree": "36de93b466949cf45a29e0b119855ff32bff5fcb"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-subscription-card-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 109/109, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795166682.0053809,
-      "timestamp_str": "2026-11-20 12:24:42",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-subscription-card-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-subscription-card-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795166765.0564513,
-      "timestamp_str": "2026-11-20 12:26:05",
-      "agent": "agent",
-      "head": "f519effde6e415f6d5e0085ac1033f7fc3efd351",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-turkish-day-suffix",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-vault-modal-icons",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Use line-art SVG icons in Backup Vault modal status and snapshot labels",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795190714.273942,
+      "timestamp_str": "2026-11-20 19:05:14",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the newly inspected Backup Vault modal found a colorful shield emoji in the green status strip among line-art SVG icons (G-003 aesthetic cohesion).",
+        "benefits": "Shield status icon and snapshot labels converted to line-art SVGs; before/after vision reviews approved (96 -> 97).",
+        "risks": "Two render-only changes in index.html and js/backup-vault.js; text labels preserved so existing tests pass; 111/111 tests pass.",
+        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both vault-modal screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-vault-modal-icons",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795190715.841992,
+      "timestamp_str": "2026-11-20 19:05:15",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
