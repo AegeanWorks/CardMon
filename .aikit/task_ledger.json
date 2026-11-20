@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-burden-aware-health",
+    "task_id": "cardmon-advisor-svg-icons",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795156380.6401682,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795157342.015702,
     "owner": "agent",
-    "lease_until": 1795163580.6401682,
+    "lease_until": 1795164542.015702,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795156452.7141623,
-    "completed_head": "f5226b23f573a73c75fb732d85e505be20b8f03e",
-    "completed_tree": "10323371d40c580b331dc6d76d992899ff3c9c46"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-guidance-svg-icon",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795128814.4252717,
-      "timestamp_str": "2026-11-20 01:53:34",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-guidance-svg-icon",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-guidance-svg-icon' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795128855.9841914,
-      "timestamp_str": "2026-11-20 01:54:15",
-      "agent": "agent",
-      "head": "e823e6a32de557aebebc3feaf4241ecb9a9ed38a",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-empty-state-rhythm",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-advisor-svg-icons",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Replace smart advisor emojis with line-art SVG icons",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795157340.5698967,
+      "timestamp_str": "2026-11-20 09:49:00",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the populated dashboard found four emojis in the smart advisor banner clashing with CardMon's established SVG icon language (G-003 aesthetic cohesion).",
+        "benefits": "Badge, button, card icon and cutoff note now use cyan line-art SVGs; before/after vision reviews approved (96 -> 97).",
+        "risks": "Render-only changes in js/smart-advisor.js; no data, i18n or layout changes; 108/108 tests pass.",
+        "mitigation": "npm test 108/108, ui verify + ui finish --reviewed, vision analysis of both demo screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-advisor-svg-icons",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 108/108, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795157342.015702,
+      "timestamp_str": "2026-11-20 09:49:02",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
