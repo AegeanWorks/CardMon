@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-modal-close-icon",
+    "task_id": "cardmon-subs-hero-tokens",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795182716.4586043,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795188185.4402761,
     "owner": "agent",
-    "lease_until": 1795189916.4586043,
+    "lease_until": 1795195385.4402761,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795182802.2692401,
-    "completed_head": "54b78deba1608839705b278adb8a11da0c0bf4d9",
-    "completed_tree": "dd6cb6cfba4a8e745c7f53a3c778cad8c0b68611"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-timeline-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 109/109, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795164807.507437,
-      "timestamp_str": "2026-11-20 11:53:27",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-timeline-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-timeline-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795164883.2916613,
-      "timestamp_str": "2026-11-20 11:54:43",
-      "agent": "agent",
-      "head": "7390067b72e39bc82f49f2d64a5704d475b6f451",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-timeline-event-icons",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-subs-hero-tokens",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Use design tokens for subscription hero figures",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795188184.5968237,
+      "timestamp_str": "2026-11-20 18:23:04",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review found the two subscription hero headline figures using hardcoded Tailwind shades, breaking color cohesion with the token-based palette (G-003 aesthetic).",
+        "benefits": "Figures now use var(--accent-purple) and var(--accent-primary); before/after vision reviews approved (96 -> 97).",
+        "risks": "Two render-only color substitutions in js/views.js; no behavior, data or layout changes; 111/111 tests pass.",
+        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both Subscriptions-view screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-subs-hero-tokens",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795188185.4402761,
+      "timestamp_str": "2026-11-20 18:23:05",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
