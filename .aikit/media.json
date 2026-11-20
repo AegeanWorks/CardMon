@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-ekhesap-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/ekhesap-review.html",
-      "commit": "936244741360661de58d2491a8207a52f1fada74",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (KMH view, demo data) at 9362447: the same two-line explanation about automatic overdraft and daily interest is repeated on every bank card, adding visual clutter and pushing additional cards below the fold. Figures, statuses and layout are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T15:17:19"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-ekhesap-note-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/ekhesap-note-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T19:03:37"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-shortcuts-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-shortcuts-review.html",
+      "commit": "6d85dbaee6ce4df3b8190bbda9ea209f7d28fee6",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
