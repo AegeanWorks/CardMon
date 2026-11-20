@@ -65,7 +65,7 @@ Free for personal use under the Aegean License 1.1 (AL-1.1); see [LICENSE](LICEN
 
 *commit `f6adaf53e97c5f31ddfe832e3743cfa0ca8ff98a` · 2026-11-14*
 
-<a href="https://github.com/AegeanWorks/CardMon/commit/03d327703d978b4283123e2b18d0c71cb18c99a1"><img src="assets/screenshots/2026-11-14-home.png" alt="CardMon interface at 2026-11-14"></a>
+<a href="https://github.com/AegeanWorks/CardMon/commit/03d327703d978b4283123e2b18d0c71cb18c99a1"><img src="assets/screenshots/2026-11-19-home.png" alt="CardMon interface at 2026-11-19"></a>
 
-*commit `03d327703d978b4283123e2b18d0c71cb18c99a1` · 2026-11-14*
+*commit `03d327703d978b4283123e2b18d0c71cb18c99a1` · 2026-11-19*
 <!-- aegean:screenshots:end -->

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "cardmon",
-  "test_command": null,
+  "test_command": "npm test",
   "topics": [
     "aikit",
     "aikit-integrated",
@@ -28,9 +28,11 @@
   "has_ui": true,
   "ui_kind": "web",
   "ui_evidence": [
+    "demo-mono-after.html",
+    "demo-mono-before.html",
     "index.html"
   ],
-  "ui_checked_at": "2026-11-20",
+  "ui_checked_at": "2026-11-21",
   "ui_source": "detected",
   "topics_source": "manual",
   "topics_reviewed_at": "2026-11-14"

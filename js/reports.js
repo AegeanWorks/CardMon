@@ -1,6 +1,10 @@
 // --------------------------------------------------------------------------
 // Import / Export & Data Management
 // --------------------------------------------------------------------------
+// Captured before any persisted profile is loaded, so a full clear can restore
+// the shipped defaults without duplicating them here.
+const DEFAULT_PROFILE = JSON.parse(JSON.stringify(state.profile));
+
 function exportJsonBackup() {
   const data = {
     version: '2.0',
@@ -113,6 +117,7 @@ function exportPdfReport() {
 
     const now = new Date();
     const currentMonthName = now.toLocaleString('tr-TR', { month: 'long', year: 'numeric' });
+    const nextMonthName = new Date(now.getFullYear(), now.getMonth() + 1, 1).toLocaleString('tr-TR', { month: 'long' });
     const fullDateStr = now.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 
     const p = state.profile || {};
@@ -256,6 +261,7 @@ function exportPdfReport() {
 
     // 5. Cards with Annual Fee
     const annualFeeCards = state.cards.filter(c => (Number(c.annualFeeAmount) || 0) > 0);
+    const annualFeeTotal = annualFeeCards.reduce((s, c) => s + (Number(c.annualFeeAmount) || 0), 0);
 
     // 6. Diagnosis & Evaluation
     let healthClass = 'good';
@@ -606,14 +612,14 @@ function exportPdfReport() {
                   <td><strong>${escapeHtml(b ? b.name : 'Banka')}</strong></td>
                   <td>
                     ${escapeHtml(l.title)}
-                    ${l.startCycle === 'next' ? '<span class="pdf-badge pdf-badge-warning" style="margin-left:3px; font-size:6.8pt;">İlk Taksit: Gelecek Ay (Eylül)</span>' : ''}
+                    ${l.startCycle === 'next' ? '<span class="pdf-badge pdf-badge-warning" style="margin-left:3px; font-size:6.8pt;">İlk Taksit: Gelecek Ay (${nextMonthName})</span>' : ''}
                   </td>
                   <td>${typeStr} ${l.interestRate ? `(%${l.interestRate})` : ''}</td>
                   <td>${formatMoney(Number(l.totalAmount) || 0)}</td>
                   <td>${paidInst} / ${totalInst} Ay (${remInst} ay kaldı)</td>
                   <td style="font-weight:700; color:#0284c7;">${formatMoney(monthlyAmt)}/ay</td>
                   <td style="font-weight:700; color:#ea580c;">${formatMoney(remDebt)}</td>
-                  <td>${l.startCycle === 'next' ? `Eylül (Her ayın ${l.paymentDay || 15}'i)` : `Her ayın ${l.paymentDay || 15}'i`}</td>
+                  <td>${l.startCycle === 'next' ? `${nextMonthName} (Her ayın ${l.paymentDay || 15}'i)` : `Her ayın ${l.paymentDay || 15}'i`}</td>
                 </tr>
               `;
             }).join('')}
@@ -698,7 +704,17 @@ function exportPdfReport() {
       <!-- 8. Ev Sahibi Olma & Kira Kâr / Tasarruf Analizi -->
       ${(() => {
         const rentSub = allSubs.find(s => s.category === 'Rent' || s.name.toLowerCase().includes('kira'));
-        const monthlyRent = rentSub ? convertToTry(rentSub.amount, rentSub.currency) : 24000;
+        if (!rentSub) {
+          return `
+            <div class="pdf-section">
+              <div class="pdf-section-title">8. Ev Sahibi Olma & Kira Kâr / Tasarruf Analizi</div>
+              <div style="font-size:8.5pt; color:#475569; margin-bottom:8px; line-height:1.4;">
+                Kira projeksiyonu için Kira kategorisinde bir abonelik tanımlayın. Mevcut kiranız olmadan varsayılan bir tutar varsayılamaz.
+              </div>
+            </div>
+          `;
+        }
+        const monthlyRent = convertToTry(rentSub.amount, rentSub.currency);
         const annualInflation = 35;
         const investmentReturn = 40;
 
@@ -879,8 +895,8 @@ function exportPdfReport() {
               </div>
               <div class="pdf-kpi-item">
                 <div class="pdf-kpi-label">Yıllık Kart Aidatı Maliyeti</div>
-                <div class="pdf-kpi-val" style="color:#16a34a;">₺0 (Muaf)</div>
-                <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">Tüm kartlarınız aidatsız statüdedir</div>
+                <div class="pdf-kpi-val" style="color:${annualFeeTotal > 0 ? '#dc2626' : '#16a34a'};">${annualFeeTotal > 0 ? formatMoney(annualFeeTotal) : '₺0 (Muaf)'}</div>
+                <div style="font-size:7.5pt; color:#64748b; margin-top:2px;">${annualFeeTotal > 0 ? `${annualFeeCards.length} kartta yıllık aidat takibi` : 'Tüm kartlarınız aidatsız statüdedir'}</div>
               </div>
               <div class="pdf-kpi-item">
                 <div class="pdf-kpi-label">Tahmini Yıllık Tasarruf Potansiyeli</div>
@@ -1053,7 +1069,7 @@ function exportPdfReport() {
       </div>
     `;
 
-    showToast('Ağustos 2026 Detaylı Finansal Denetim Raporu hazırlanıyor...');
+    showToast(`${currentMonthName} Detaylı Finansal Denetim Raporu hazırlanıyor...`);
     setTimeout(() => {
       window.print();
     }, 150);
@@ -1068,6 +1084,8 @@ function confirmClearAllData() {
     state.banks = [];
     state.cards = [];
     state.loans = [];
+    state.cashSubscriptions = [];
+    state.profile = JSON.parse(JSON.stringify(DEFAULT_PROFILE));
     saveToStorage();
     renderAll();
     showToast(t('clearedSuccess'));

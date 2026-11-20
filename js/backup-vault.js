@@ -12,11 +12,17 @@ function getBackupVault() {
   }
 }
 
+let lastBackupSaveOk = true;
+
 function saveBackupVault(vault) {
   try {
     localStorage.setItem(BACKUP_VAULT_KEY, JSON.stringify(vault.slice(0, 15)));
+    lastBackupSaveOk = true;
+    return true;
   } catch (e) {
     console.error('Failed to save backup vault:', e);
+    lastBackupSaveOk = false;
+    return false;
   }
 }
 
@@ -39,7 +45,7 @@ function createBackupSnapshot(type = 'manual') {
     (state.loans || []).reduce((s, l) => s + (Math.max(0, (l.totalInstallments || 1) - (l.paidInstallments || 0)) * (Number(l.monthlyPayment) || 0)), 0);
 
   const snapshot = {
-    id: 'snap-' + Date.now(),
+    id: 'snap-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
     timestamp: Date.now(),
     dateStr: now.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
     type: type,
@@ -67,7 +73,11 @@ function createBackupSnapshot(type = 'manual') {
 function createManualBackupSnapshot() {
   createBackupSnapshot('manual');
   renderBackupVaultList();
-  showToast('💾 Manuel yedek noktası başarıyla kasaya eklendi.');
+  if (lastBackupSaveOk) {
+    showToast('💾 Manuel yedek noktası başarıyla kasaya eklendi.');
+  } else {
+    showToast('⚠️ Yedek kaydedilemedi; lütfen depolama alanını kontrol edin.');
+  }
 }
 
 function openBackupVaultModal() {

@@ -2270,5 +2270,63 @@
     "final_snapshot_entries": 0,
     "surface_digest": "5c1832de5f2b2e8c9a778daf1388021b421b140a9dcb41c1aceabc13a77ceaf4",
     "baseline_digest": "5c1832de5f2b2e8c9a778daf1388021b421b140a9dcb41c1aceabc13a77ceaf4"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      ".aikit/project.json",
+      "README.md",
+      "css/base.css",
+      "js/backup-vault.js",
+      "js/reports.js",
+      "js/smart-advisor.js",
+      "assets/screenshots/2026-11-21-demo-mono-after.png",
+      "assets/screenshots/2026-11-21-demo-mono-before.png",
+      "tests/full_read_regressions.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "de45c3552732",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795210731.980056,
+    "finished_at": 1795211151.8007681,
+    "strikes": 3,
+    "reviewer": "agent:opencode",
+    "review": {
+      "reviewer": "agent:opencode",
+      "surface": "app",
+      "surface_digest": "0f99f6e8d34590a7dbde96d61b0dce0fcd79208485162695c466a275c7ddccca",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795211151.800771,
+      "scoped_paths": [
+        ".aikit/media.json",
+        ".aikit/project.json",
+        "README.md",
+        "css/base.css",
+        "js/backup-vault.js",
+        "js/reports.js",
+        "js/smart-advisor.js",
+        "assets/screenshots/2026-11-21-demo-mono-after.png",
+        "assets/screenshots/2026-11-21-demo-mono-before.png",
+        "tests/full_read_regressions.test.js"
+      ],
+      "scoped_digest": "5634cb544f994be8ddb9f183330fdd0a00c3c9c48a86800a130863f5fdb94006"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/full_read_regressions.test.js",
+        "reason": "Failing-first regressions for the live defects fixed in this UI task"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "0f99f6e8d34590a7dbde96d61b0dce0fcd79208485162695c466a275c7ddccca",
+    "baseline_digest": "5c1832de5f2b2e8c9a778daf1388021b421b140a9dcb41c1aceabc13a77ceaf4"
   }
 ]

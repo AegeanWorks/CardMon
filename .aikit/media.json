@@ -44,44 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-kmh-chart-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/kmh-chart-before.html",
-      "commit": "6216d48c76e9ad4d6421a13a515e6ca9984576f9",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x3000",
-      "width": 1440,
-      "height": 3000,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (KMH reserve chart, dashboard, demo data) at dc91c59: the Toplam Acil Durum Rezervi strip uses a colorful shield emoji while surrounding chart labels and amounts are rendered in monochrome line-art/text, breaking icon consistency. Chart layout and figures are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T21:34:07"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-kmh-chart-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/kmh-chart-after.html",
-      "commit": "4c45bfa9b3b5e6b58938ff366eae725cba20d288",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x3000",
-      "width": 1440,
-      "height": 3000,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (KMH reserve chart, dashboard, demo data) at 4c45bfa: the reserve strip now uses a line-art shield SVG tinted to the cyan label color, matching the app icon set (empty-state bank icon converted too). Figures, bars and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T21:34:28"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-nearest-due-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/nearest-due-before.html",
@@ -269,6 +231,44 @@
         "notes": "AFTER (Timeline view, payment-method notes, demo data) at 08556e9: payment-method labels are now plain text (emoji removed) because these fields are HTML-escaped; no raw markup leaks into notes. Amounts, due rows and layout unchanged; no clipping or contrast regression.",
         "score": 97,
         "reviewed_at": "2026-11-20T22:51:03"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-mono-before.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-mono-before.html",
+      "commit": "de45c35527327c5e2a7041a79b0b31344266c80e",
+      "taken_at": "2026-11-21",
+      "viewport": "900x300",
+      "width": 900,
+      "height": 300,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "BEFORE proof at de45c35: with --font-family-mono undefined, the card-digit and stat-value samples fall back to the inherited sans-serif face; digits are proportionally spaced and visually inconsistent with the intended monospace treatment. Layout and contrast are otherwise clean.",
+        "score": 90,
+        "reviewed_at": "2026-11-21T00:43:40"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-mono-after.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-mono-after.html",
+      "commit": "de45c35527327c5e2a7041a79b0b31344266c80e",
+      "taken_at": "2026-11-21",
+      "viewport": "900x300",
+      "width": 900,
+      "height": 300,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "AFTER proof: --font-family-mono is defined in css/base.css, and the same card-digit and stat-value samples now render in fixed-width monospace with consistent digit spacing. The change is confined to the token definition; no layout, contrast or hierarchy regression is visible.",
+        "score": 96,
+        "reviewed_at": "2026-11-21T00:43:48"
       }
     }
   ]

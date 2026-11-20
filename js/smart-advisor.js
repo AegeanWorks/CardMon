@@ -10,6 +10,10 @@ function calculateCardDeferralDays(card, now = new Date()) {
   let dueDay = card.dateMethod === 'exact' ? Number(card.dueDay) : getApproxDay(card.approxDueWeek);
   if (!cutoffDay || isNaN(cutoffDay)) cutoffDay = 15;
   if (!dueDay || isNaN(dueDay)) dueDay = 25;
+  // Approximate weeks map to days 4/11/18/25/29; clamp so a 28-day February
+  // never yields an unreachable cut-off or due day.
+  cutoffDay = Math.min(cutoffDay, currentMonthDays);
+  dueDay = Math.min(dueDay, currentMonthDays);
 
   let daysUntilPayment = 0;
   let isNextMonthCutoff = false;
