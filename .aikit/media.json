@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-ekhesap-note-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/ekhesap-note-after.html",
-      "commit": "62ba86eecc3eb56fabb9a726ade57799e44963c1",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (KMH view, demo data) at 62ba86e: the explanation now appears once in a compact info strip below the hero; bank cards are shorter and denser with more cards visible. Limits, shares and statuses unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T15:17:47"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-card-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-card-review.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-shortcuts-review.html",
       "commit": "6d85dbaee6ce4df3b8190bbda9ea209f7d28fee6",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-shortcuts-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-shortcuts-icons-after.html",
+      "commit": "f0d51162c0b186d66a0f870fef6d0a2340176e9d",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
