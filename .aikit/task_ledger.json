@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-findings-batch4",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795213458.3163688,
     "owner": "opencode:hy4-flash-free",
     "lease_until": 1795220658.3163688,
@@ -15,26 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795213497.634888,
+    "completed_head": "7333c1d4ecf493dfc5f08e24ec2f79357c4d1ec3",
+    "completed_tree": "3b695f171a296d688dacbd6438578d00993ca97c"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-reforge-full-audit",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-reforge-full-audit' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795209261.1994815,
-      "timestamp_str": "2026-11-21 00:14:21",
-      "agent": "agent",
-      "head": "e9f404efcdabd83c71f74b13caabfeadcae7bc04",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-full-read-defect-fixes",
       "phase": "phase 2",
@@ -424,6 +410,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-findings-batch4",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-findings-batch4' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795213497.7926397,
+      "timestamp_str": "2026-11-21 01:24:57",
+      "agent": "opencode",
+      "head": "7333c1d4ecf493dfc5f08e24ec2f79357c4d1ec3",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
