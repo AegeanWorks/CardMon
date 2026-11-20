@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Rent Simulator modal, demo data) at 1295ef7: the title, insight header and three comparison bullets use colorful emojis (home, bulb, chart, bank) that clash with the app's monochrome line-art icon language. Stat cards, inputs and projection table are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T19:15:35"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-modal-rent-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Rent Simulator modal, demo data) at 0d9f696: the five emojis are replaced by line-art SVGs (home, bulb, home, trending-up, bank) matching the app icon set. Inputs, stat cards, amounts and projection table unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T19:15:56"
+      }
     }
   ]
 }
