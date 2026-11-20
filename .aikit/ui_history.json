@@ -1232,5 +1232,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "a6f1aa76561e1c9b5cead90ed79c7744988af477df0c6353fc253bb94fe02364",
     "baseline_digest": "a6f1aa76561e1c9b5cead90ed79c7744988af477df0c6353fc253bb94fe02364"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-subs-card-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "d54fce2c3c177b3c954283884b51b770252d6087",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795166284.5352044,
+    "finished_at": 1795166419.4900084,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "4831101b2e30bace0d7b8cb1c0518e1612bd62701564c785c8224fd7d9019f42",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795166419.4900103,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-subs-card-icons-after.png"
+      ],
+      "scoped_digest": "304ede8e1fa564bcf4d841a69cd2a47feb7ccb45c5575ce6cf9d3cac59e52ae2"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "4831101b2e30bace0d7b8cb1c0518e1612bd62701564c785c8224fd7d9019f42",
+    "baseline_digest": "4831101b2e30bace0d7b8cb1c0518e1612bd62701564c785c8224fd7d9019f42"
   }
 ]
