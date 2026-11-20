@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-banks-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/banks-review.html",
-      "commit": "ddb86cceda2cb1311db3b489224c94e4cc8210c0",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Banks view, demo data) at ddb86cc: the portfolio summary banner uses a bank emoji icon while the Cards and dashboard banners use line-art SVGs, breaking icon consistency. Banner layout, metrics and bank cards are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T10:39:43"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-banks-banner-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/banks-banner-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T12:23:25"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-subs-day-suffix-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/subs-day-suffix-after.html",
+      "commit": "45b885fb023ff50c7a4bf7f5193bba7634bf6afa",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
