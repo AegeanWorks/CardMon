@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-subs-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/subs-review.html",
-      "commit": "42748cb02c0655d5658438b8e75aa249cdc3c9fd",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Subscriptions view, demo data) at 42748cb: the hero uses a cycle emoji, the rent-analysis pill a house emoji and the simulator button a chart emoji, inconsistent with the line-art SVG icon language used across other views. Totals, rent projections and layout are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T11:37:26"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-subs-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subs-icons-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-advisor-review.html",
       "commit": "2a0f30ebe3bbca183f07c6f9440bc8da3e4844f2",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-advisor-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-advisor-icons-after.html",
+      "commit": "f4700d655578540503fef0dca550b8ab9f591697",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
