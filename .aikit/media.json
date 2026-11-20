@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Add Subscription modal, demo data) at cbc8c36: seven preset pills and two section labels use colorful emojis (home, building, bolt, clapper, note, robot, cloud, card, chart) that clash with the monochrome line-art icon language used elsewhere in the app. Form layout and fields are otherwise clean.",
+        "score": 94,
+        "reviewed_at": "2026-11-20T19:26:32"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-modal-subscription-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Add Subscription modal, demo data) at 68fee4c: preset pills and two section labels now use small line-art SVGs consistent with the app icon set. Pill geometry, labels, amounts and form fields unchanged; no clipping or contrast regression. Category select emoji remains (native option cannot render SVG).",
+        "score": 97,
+        "reviewed_at": "2026-11-20T19:26:40"
+      }
     }
   ]
 }
