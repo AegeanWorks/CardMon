@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-vault-icons",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795189442.8610148,
     "owner": "agent",
     "lease_until": 1795196642.8610148,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795189539.1439283,
+    "completed_head": "260173113611205c38cfad9bdc99ba3ce26e12cb",
+    "completed_tree": "36de93b466949cf45a29e0b119855ff32bff5fcb"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-subscription-card-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons for subscription cards",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795166681.2021465,
-      "timestamp_str": "2026-11-20 12:24:41",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review found colorful emoji icons in subscription service cards while the rest of the view used line-art SVGs, breaking aesthetic cohesion (G-003).",
-        "benefits": "Emoji-to-SVG display mapper added; service card icons are now monochrome and consistent; before/after vision reviews approved (96 -> 97).",
-        "risks": "Display-only mapper in js/views.js; getSubIcon semantic values and its 11 tests untouched; no behavior, data or layout changes; 109/109 tests pass.",
-        "mitigation": "npm test 109/109, ui verify + ui finish --reviewed, vision analysis of both Subscriptions-view screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-subscription-card-icons",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-vault-icons",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-vault-icons' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795189539.2338386,
+      "timestamp_str": "2026-11-20 18:45:39",
+      "agent": "agent",
+      "head": "260173113611205c38cfad9bdc99ba3ce26e12cb",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
