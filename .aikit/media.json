@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-card-reorder-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/card-reorder-after.html",
-      "commit": "a7df442904edfee36973b4305c97e95763e19ea6",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at a7df442: the guidance card now sits directly below the KPI strip with its icon, heading and full description visible without scrolling, giving the empty state a clear next-step explanation before the cashflow widget. Cashflow title, metric cards and total row remain visible; no component clipping, truncation or contrast regressions.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T01:44:43"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-svg-icon-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/svg-icon-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/demo-preview.html",
       "commit": "2a24348354e70b551172bdaee39b51f8d9f86934",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-demo-free-cash-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/demo-free-cash-after.html",
+      "commit": "c997a6c7a3542e7edef2ef2306389aaa89a07f53",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
