@@ -275,6 +275,14 @@
   user-select: none;
 }
 
+.perm-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: currentColor;
+}
+
 .perm-pill.active {
   background: rgba(16, 185, 129, 0.12);
   color: #34d399;

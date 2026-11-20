@@ -303,23 +303,23 @@ function renderCardsView() {
           <div class="card-permissions-bar">
             ${isFrozen ? `
               <div class="perm-pill frozen-badge" onclick="toggleCardPermission('${c.id}', 'isFrozen')" title="Kilidi Kaldırmak İçin Tıklayın">
-                ❄️ Kart Kilitli / Donduruldu (Tıkla ve Aç)
+                Kart Kilitli / Donduruldu (Tıkla ve Aç)
               </div>
             ` : `
               <div class="perm-pill ${perms.internet ? 'active' : 'blocked'}" onclick="toggleCardPermission('${c.id}', 'internet')" title="İnternet Alışverişini Aç/Kapat">
-                🌐 İnternet: ${perms.internet ? '✅ Açık' : '❌ Bloke'}
+                <span class="perm-status-dot"></span> İnternet: ${perms.internet ? 'Açık' : 'Bloke'}
               </div>
               <div class="perm-pill ${perms.abroad ? 'active' : 'blocked'}" onclick="toggleCardPermission('${c.id}', 'abroad')" title="Yurtdışı Alışverişini Aç/Kapat">
-                🌍 Yurtdışı: ${perms.abroad ? '✅ Açık' : '❌ Bloke'}
+                <span class="perm-status-dot"></span> Yurtdışı: ${perms.abroad ? 'Açık' : 'Bloke'}
               </div>
               <div class="perm-pill ${perms.contactless ? 'active' : 'blocked'}" onclick="toggleCardPermission('${c.id}', 'contactless')" title="Temassız Ödemeyi Aç/Kapat">
-                📡 Temassız: ${perms.contactless ? '✅' : '❌'}
+                <span class="perm-status-dot"></span> Temassız
               </div>
               <div class="perm-pill ${perms.cashAdvance ? 'active' : 'blocked'}" onclick="toggleCardPermission('${c.id}', 'cashAdvance')" title="Nakit Avansı Aç/Kapat">
-                🏧 Avans: ${perms.cashAdvance ? '✅' : '❌'}
+                <span class="perm-status-dot"></span> Avans
               </div>
               <div class="perm-pill active" onclick="toggleCardPermission('${c.id}', 'isFrozen')" title="Kartı Geçici Dondur" style="color:#94a3b8; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.1);">
-                🔒 Dondur
+                Dondur
               </div>
             `}
           </div>
