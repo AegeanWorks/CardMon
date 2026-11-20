@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-subscription-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-subscription-icons-after.html",
-      "commit": "68fee4c71d980a04730423cccd5a1e1219b57728",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Add Subscription modal, demo data) at 68fee4c: preset pills and two section labels now use small line-art SVGs consistent with the app icon set. Pill geometry, labels, amounts and form fields unchanged; no clipping or contrast regression. Category select emoji remains (native option cannot render SVG).",
-        "score": 97,
-        "reviewed_at": "2026-11-20T19:26:40"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-quicktx-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-quicktx-review.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-fee-before.html",
       "commit": "1a3a5479c7ef2a4ff224c7116edb8d7c4e18fab1",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1500",
+      "width": 1440,
+      "height": 1500,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-card-fee-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/card-fee-after.html",
+      "commit": "221964536dc07a0a4bdc4590876372ebb9c19181",
       "taken_at": "2026-11-20",
       "viewport": "1440x1500",
       "width": 1440,
