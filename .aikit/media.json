@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Quick Transaction modal, demo data) at 59baa61: the two type-toggle buttons, two start-cycle options and the installment preview use colorful emojis (bag, card, check, hourglass, calendar, warning) that clash with the app's monochrome line-art icon language. Form layout, amounts and selection state are otherwise clean.",
+        "score": 94,
+        "reviewed_at": "2026-11-20T19:36:42"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-modal-quicktx-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Quick Transaction modal, demo data) at cb703dd: all seven emojis are replaced by line-art SVGs (bag, card, check, clock, calendar, warning) matching the app icon set. Toggle buttons, cycle options, preview amounts and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T19:36:58"
+      }
     }
   ]
 }
