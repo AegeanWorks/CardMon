@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-card-detail-headers-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/card-detail-headers-before.html",
-      "commit": "7bfbb7faa1aa047f86c277c32f35d0e6e06bafe2",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1500",
-      "width": 1440,
-      "height": 1500,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Cards view, detail headers, demo data) at 77aa500: the Aktif Taksitler, Sanal Kartlar, Kart Borcu and Kredi Borcu sub-section headers use colorful emojis (bags, card, bank) clashing with the app's monochrome line-art icon language. Card layout, amounts and chips are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T20:32:02"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-card-detail-headers-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-detail-headers-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T21:34:28"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-nearest-due-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/nearest-due-before.html",
+      "commit": "df366b47c4234fe443f4062ea2e39054a4861663",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
