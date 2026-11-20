@@ -251,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T20:12:06"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-card-fee-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/card-fee-before.html",
+      "commit": "1a3a5479c7ef2a4ff224c7116edb8d7c4e18fab1",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1500",
+      "width": 1440,
+      "height": 1500,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
