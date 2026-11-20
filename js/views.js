@@ -1274,13 +1274,6 @@ const TIMELINE_EVENT_SVG = {
   rent: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>'
 };
 
-// Payment-method icons: line-art glyphs for cash / bank transfer / card.
-const PAY_METHOD_SVG = {
-  cash: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="3"></circle></svg>',
-  bank: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><line x1="3" y1="21" x2="21" y2="21"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M5 10l7-7 7 7"></path><line x1="5" y1="21" x2="5" y2="10"></line><line x1="19" y1="21" x2="19" y2="10"></line><line x1="9" y1="21" x2="9" y2="14"></line><line x1="15" y1="21" x2="15" y2="14"></line></svg>',
-  card: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>'
-};
-
 function timelineEventSvg(e) {
   if (e.isPaid) return TIMELINE_EVENT_SVG.paid;
   if (e.type === 'card_cutoff') return TIMELINE_EVENT_SVG.cutoff;
@@ -1399,7 +1392,7 @@ function renderTimelineView() {
     let daysLeft = payDay >= today ? payDay - today : payDay + currentMonthDays - today;
 
     let icon = getSubIcon(sub.name, sub.category);
-    let paymentLabel = sub.paymentType === 'cash' ? `${PAY_METHOD_SVG.cash} Nakit / Elden` : (sub.paymentType === 'bank_transfer' ? `${PAY_METHOD_SVG.bank} Banka Havalesi` : `${PAY_METHOD_SVG.card} ${sub.cardNickname}`);
+    let paymentLabel = sub.paymentType === 'cash' ? 'Nakit / Elden' : (sub.paymentType === 'bank_transfer' ? 'Banka Havalesi' : sub.cardNickname);
     let color = sub.paymentType === 'cash' ? '#10b981' : (sub.paymentType === 'bank_transfer' ? '#0284c7' : '#c084fc');
 
     timelineEvents.push({
@@ -1772,7 +1765,7 @@ function renderDashboardView() {
     const eventDate = new Date(now.getFullYear(), now.getMonth(), today + daysLeft);
     const eventMonthName = eventDate.toLocaleString('tr-TR', { month: 'short' });
     const icon = getSubIcon(sub.name, sub.category);
-    const methodStr = sub.paymentType === 'cash' ? `${PAY_METHOD_SVG.cash} Nakit` : (sub.paymentType === 'bank_transfer' ? `${PAY_METHOD_SVG.bank} Havale/EFT` : `${PAY_METHOD_SVG.card} ${sub.cardNickname}`);
+    const methodStr = sub.paymentType === 'cash' ? 'Nakit' : (sub.paymentType === 'bank_transfer' ? 'Havale/EFT' : sub.cardNickname);
 
     upcomingEvents.push({
       type: 'sub',
