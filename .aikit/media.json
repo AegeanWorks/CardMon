@@ -251,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T21:58:08"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-loan-status-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/loan-status-before.html",
+      "commit": "71962c9a44da1116a0f4df0877bfb3b9ed8e3856",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1200",
+      "width": 1440,
+      "height": 1200,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
