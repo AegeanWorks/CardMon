@@ -251,11 +251,11 @@ function updateCardDateLivePreview() {
   previewBox.innerHTML = `
     <div style="display:flex; flex-direction:column; gap:0.3rem;">
       <div style="display:flex; justify-content:space-between; align-items:center;">
-        <span>📅 <strong>Ekstre Kesimi:</strong> Her ayın ${cutoffDay}'i</span>
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="3" y1="11" x2="21" y2="11"></line></svg> <strong>Ekstre Kesimi:</strong> Her ayın ${cutoffDay}'i</span>
         <span style="color:#38bdf8; font-weight:700;">${daysToCutoff === 0 ? 'Bugün kesiliyor!' : `${daysToCutoff} gün sonra`}</span>
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center;">
-        <span>⏳ <strong>Son Ödeme:</strong> Her ayın ${dueDay}'i</span>
+        <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <strong>Son Ödeme:</strong> Her ayın ${dueDay}'i</span>
         <span style="color:#fbbf24; font-weight:700;">${daysToDue === 0 ? 'Bugün son gün!' : `${daysToDue} gün sonra`}</span>
       </div>
       <div style="font-size:0.72rem; color:var(--text-muted); border-top:1px dashed rgba(255,255,255,0.1); padding-top:0.3rem; margin-top:0.2rem;">
