@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-modal-close-icon",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795182716.4586043,
     "owner": "agent",
     "lease_until": 1795189916.4586043,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795182802.2692401,
+    "completed_head": "54b78deba1608839705b278adb8a11da0c0bf4d9",
+    "completed_tree": "dd6cb6cfba4a8e745c7f53a3c778cad8c0b68611"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-timeline-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons in Timeline header and summary",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795164806.7037237,
-      "timestamp_str": "2026-11-20 11:53:26",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the newly inspected Timeline view found calendar/card/bank/house emojis clashing with the SVG icon language used across the other views (G-003 aesthetic cohesion).",
-        "benefits": "Title, banner icon and three category metrics converted to line-art SVGs; before/after vision reviews approved (96 -> 97).",
-        "risks": "Five render-only string changes in js/views.js; no behavior, data or layout changes; 109/109 tests pass.",
-        "mitigation": "npm test 109/109, ui verify + ui finish --reviewed, vision analysis of both Timeline-view screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-timeline-icons",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-modal-close-icon",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-modal-close-icon' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795182802.3768158,
+      "timestamp_str": "2026-11-20 16:53:22",
+      "agent": "agent",
+      "head": "54b78deba1608839705b278adb8a11da0c0bf4d9",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
