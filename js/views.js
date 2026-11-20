@@ -1060,12 +1060,12 @@ function renderSubscriptionsView() {
       <div class="subscriptions-hero-stats-group">
         <div class="subscriptions-hero-stat">
           <div class="subscriptions-hero-stat-label">Aylık Toplam Gider (TRY)</div>
-          <div class="subscriptions-hero-stat-val" style="color: #c084fc;">${formatMoney(totalMonthly)}</div>
+          <div class="subscriptions-hero-stat-val" style="color: var(--accent-purple);">${formatMoney(totalMonthly)}</div>
           <div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.2rem;">${allSubs.length} aktif kayıt</div>
         </div>
         <div class="subscriptions-hero-stat">
           <div class="subscriptions-hero-stat-label">Yıllık Projeksiyon (TRY)</div>
-          <div class="subscriptions-hero-stat-val" style="color: #60a5fa;">${formatMoney(totalYearly)}</div>
+          <div class="subscriptions-hero-stat-val" style="color: var(--accent-primary);">${formatMoney(totalYearly)}</div>
           <div style="font-size:0.72rem; color:var(--text-muted); margin-top:0.2rem;">Yıllık toplam maliyet</div>
         </div>
       </div>
