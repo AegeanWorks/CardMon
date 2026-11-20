@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-advisor-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface with demo data after smart advisor SVG icon polish",
-      "commit": "8ef8a2ad808dd17e4096acb80a030ad5d64a1c93",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (populated demo data) at 8ef8a2a: the advisor '35 G\u00fcn Sonra \u00d6deme' pill still shows a fire emoji while the rest of the banner was converted to line-art SVGs - a leftover inconsistency from the previous icon cleanup. Pill layout and text are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T09:59:23"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-advisor-clock-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/advisor-clock-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subs-review.html",
       "commit": "42748cb02c0655d5658438b8e75aa249cdc3c9fd",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-subs-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/subs-icons-after.html",
+      "commit": "7586d2f0a3c6caca6b7ed6fc4981fda192a5ebea",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,

@@ -1121,5 +1121,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "8108d57d47ab63b989eb9bd9ac1a876c8b4970b5b33f5e906c579745be0dd819",
     "baseline_digest": "8108d57d47ab63b989eb9bd9ac1a876c8b4970b5b33f5e906c579745be0dd819"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-subs-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "7586d2f0a3c6caca6b7ed6fc4981fda192a5ebea",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795163624.5452373,
+    "finished_at": 1795163746.031826,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "3082b2b28836a1813e40735ae4d2f0630f34780d8cef3f5ff1d69b9e3d8557eb",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795163746.0318274,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-subs-icons-after.png"
+      ],
+      "scoped_digest": "7686fca6da88e65b3785f721e59e8d3a04e512c1bee80815b523f0410b480949"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "3082b2b28836a1813e40735ae4d2f0630f34780d8cef3f5ff1d69b9e3d8557eb",
+    "baseline_digest": "3082b2b28836a1813e40735ae4d2f0630f34780d8cef3f5ff1d69b9e3d8557eb"
   }
 ]
