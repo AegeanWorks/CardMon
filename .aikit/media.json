@@ -244,6 +244,18 @@
       "height": 900,
       "status": "pending_review",
       "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-subscription-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-subscription-icons-after.html",
+      "commit": "68fee4c71d980a04730423cccd5a1e1219b57728",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

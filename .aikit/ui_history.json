@@ -1602,5 +1602,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "61fa2769522bc4ac1c70abf8da13aa295d0f2c8dd6178c6d11c5de546ac22050",
     "baseline_digest": "61fa2769522bc4ac1c70abf8da13aa295d0f2c8dd6178c6d11c5de546ac22050"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-modal-subscription-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "68fee4c71d980a04730423cccd5a1e1219b57728",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795191896.2848577,
+    "finished_at": 1795191951.0930612,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "4b4af4864dfe40a650c77d022982608be109b7d8ad372074ce4c62ae45c37547",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795191951.0930645,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-modal-subscription-icons-after.png"
+      ],
+      "scoped_digest": "53abe12b101330e5d3847b6a28f0109ae23b98ad88efe4f6fb53bb83712fb783"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "4b4af4864dfe40a650c77d022982608be109b7d8ad372074ce4c62ae45c37547",
+    "baseline_digest": "4b4af4864dfe40a650c77d022982608be109b7d8ad372074ce4c62ae45c37547"
   }
 ]
