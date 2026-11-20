@@ -1414,7 +1414,7 @@ function renderTimelineView() {
     <!-- Timeline Hero Header -->
     <div class="tab-section-header">
       <div>
-        <h2 class="tab-section-title">📅 ${currentMonthName} Ayı Ekstre & Ödeme Takvimi</h2>
+        <h2 class="tab-section-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="3" y1="11" x2="21" y2="11"></line></svg> ${currentMonthName} Ayı Ekstre & Ödeme Takvimi</h2>
         <p class="tab-section-subtitle">Kredi kartı ekstre kesimleri, kredi taksitleri, ev kirası, aidat ve aboneliklerin gün bazlı nakit akışı</p>
       </div>
       <div style="display:flex; align-items:center; gap:0.5rem;">
@@ -1428,13 +1428,13 @@ function renderTimelineView() {
     <!-- Timeline Summary Banner with Planned, Paid & Remaining Outflow -->
     <div class="view-summary-banner timeline-summary-banner">
       <div class="banner-title-group">
-        <span class="banner-icon">📅</span>
+        <span class="banner-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="3" y1="11" x2="21" y2="11"></line></svg></span>
         <span class="banner-heading">Bu Ayki Toplam Nakit Çıkışı (${paymentEvents.length} Ödeme)</span>
       </div>
       <div class="banner-metrics-group">
-        <span>💳 ${paymentEvents.filter(e => e.type === 'card_due').length} Kart</span>
-        <span>🏦 ${paymentEvents.filter(e => e.type === 'loan').length} Kredi</span>
-        <span>🏠/🍿 ${paymentEvents.filter(e => e.type === 'subscription').length} Kira & Gider</span>
+        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;"><rect x="2" y="5" width="20" height="14" rx="3"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg> ${paymentEvents.filter(e => e.type === 'card_due').length} Kart</span>
+        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M3 21h18"></path><path d="M5 21V10l7-5 7 5v11"></path><path d="M9 21v-6h6v6"></path></svg> ${paymentEvents.filter(e => e.type === 'loan').length} Kredi</span>
+        <span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg> ${paymentEvents.filter(e => e.type === 'subscription').length} Kira & Gider</span>
         <span>Toplam: <strong style="color:#c084fc;">${formatMoney(totalPlannedOutflow)}</strong></span>
         ${totalPaidOutflow > 0 ? `<span style="background:rgba(16,185,129,0.18); color:#34d399; padding:0.15rem 0.5rem; border-radius:4px; font-weight:700;">✓ Ödenen: ${formatMoney(totalPaidOutflow)}</span>` : ''}
         ${totalRemainingOutflow > 0 && totalPaidOutflow > 0 ? `<span style="color:#fb7185; font-weight:700;">Kalan: ${formatMoney(totalRemainingOutflow)}</span>` : ''}
