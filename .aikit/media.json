@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-health-burden-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface with demo data after burden-aware health score",
-      "commit": "a1919060d15387b4530317539e7de18f35dd5292",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (populated demo data) at a191906: the smart advisor banner uses four colorful emojis (brain badge, chart button, credit card, sparkle) that clash with CardMon's consistent line-art SVG iconography elsewhere. Banner layout, spacing and content are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T09:47:29"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-advisor-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface with demo data after smart advisor SVG icon polish",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T11:22:56"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-subs-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/subs-review.html",
+      "commit": "42748cb02c0655d5658438b8e75aa249cdc3c9fd",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
