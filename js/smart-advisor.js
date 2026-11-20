@@ -88,7 +88,7 @@ function renderSmartCardAdvisor() {
         </div>
 
         <div class="smart-advisor-days-pill">
-          <span>🔥</span>
+          <span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 16 14"></polyline></svg></span>
           <span>${best.daysUntilPayment} Gün Sonra Ödeme</span>
         </div>
       </div>
