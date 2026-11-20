@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-subs-card-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/subs-card-icons-after.html",
-      "commit": "d54fce2c3c177b3c954283884b51b770252d6087",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Subscriptions view, demo data) at d54fce2: the '\u00d6deme G\u00fcn\u00fc' labels use incorrect Turkish suffixation ('Ay\u0131n 14'i', 'Ay\u0131n 20'i', 'Ay\u0131n 12'i'), a visible grammar flaw in a user-facing date. Icons, layout and figures are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T13:13:34"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-subs-day-suffix-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subs-day-suffix-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T18:42:30"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-vault-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-vault-review.html",
+      "commit": "8604e5471afda37696898de0657b4be168f3d330",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
