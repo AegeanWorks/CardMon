@@ -728,7 +728,7 @@ function renderBanksView() {
     <!-- Top Overall Banks Total Summary Banner -->
     <div class="view-summary-banner banks-summary-banner">
       <div class="banner-title-group">
-        <span class="banner-icon">🏦</span>
+        <span class="banner-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"></path><path d="M5 21V10l7-5 7 5v11"></path><path d="M9 21v-6h6v6"></path></svg></span>
         <span class="banner-heading">Banka Portföyü Toplamı (${state.banks.length} Banka)</span>
       </div>
       <div class="banner-metrics-group">
