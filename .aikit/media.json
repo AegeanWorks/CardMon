@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-virtualcard-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-virtualcard-icons-after.html",
-      "commit": "de9d2214434d1e49ac25eab11931c87d5a3eb6f3",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Add Virtual Card modal, demo data) at de9d221: the internet-shopping checkbox now uses a line-art globe SVG matching the app icon set (the virtual-card list badge was converted to globe/lock SVGs too). Fields, labels and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T19:45:07"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-card-perms-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-card-perms-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-status-icons-before.html",
       "commit": "2c8d3c4cbe6bec529067a0b1c54a04a37e7e1152",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1500",
+      "width": 1440,
+      "height": 1500,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-card-status-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/card-status-icons-after.html",
+      "commit": "5bebf40b7bf0d20c112c52d17bd430ee81a8ee06",
       "taken_at": "2026-11-20",
       "viewport": "1440x1500",
       "width": 1440,
