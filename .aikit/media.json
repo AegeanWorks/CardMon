@@ -44,44 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-advisor-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-advisor-review.html",
-      "commit": "2a0f30ebe3bbca183f07c6f9440bc8da3e4844f2",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Smart Advisor modal, demo data) at 2a0f30e: the close button SVG has malformed line coordinates and renders as a tiny diagonal arrow instead of an X, a usability defect; the title uses a brain emoji unlike the app SVG icons. Ranking rows and layout are otherwise clean.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T16:50:00"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-modal-advisor-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-advisor-icons-after.html",
-      "commit": "f4700d655578540503fef0dca550b8ab9f591697",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Smart Advisor modal, demo data) at f4700d6: the close button now renders a clear X in four modals, and the advisor title uses a line-art sparkle SVG. Ranking rows, amounts and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T16:50:31"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-subs-token-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subs-token-before.html",
@@ -270,6 +232,30 @@
         "score": 97,
         "reviewed_at": "2026-11-20T19:15:56"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-loan-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-loan-review.html",
+      "commit": "900c2f139ce9d6a9d9e1d91a58e1922232e4fde1",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-subscription-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-subscription-review.html",
+      "commit": "900c2f139ce9d6a9d9e1d91a58e1922232e4fde1",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
