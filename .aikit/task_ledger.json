@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-card-status-icons",
+    "task_id": "cardmon-insight-icons",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795196464.824758,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795197455.554887,
     "owner": "agent",
-    "lease_until": 1795203664.824758,
+    "lease_until": 1795204655.554887,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795196494.7599883,
-    "completed_head": "642985a620664a0846236b4890cb06f937d49c1e",
-    "completed_tree": "bb76af626b5fe197c581b0d0c9d37b379d09f17b"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-virtualcard-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795193139.2891574,
-      "timestamp_str": "2026-11-20 19:45:39",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-virtualcard-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-virtualcard-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795193163.5639384,
-      "timestamp_str": "2026-11-20 19:46:03",
-      "agent": "agent",
-      "head": "cf8995269a780537cee4e00176cae4ac10f5621a",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-card-perm-icons",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-insight-icons",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Use line-art SVG icons in smart insight cards",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795197452.0376003,
+      "timestamp_str": "2026-11-20 20:57:32",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the dashboard Smart Insights section found five colorful emojis on insight tiles clashing with the app's monochrome line-art icons (G-003 aesthetic cohesion).",
+        "benefits": "All insight icons now use line-art SVG variants via an INSIGHT_ICON_SVG map; before/after vision reviews approved (94 -> 97).",
+        "risks": "One render-only change in js/backup-vault.js adding an SVG map; titles and text preserved so tests pass; 111/111 tests pass.",
+        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both insights screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-insight-icons",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (94/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795197455.554887,
+      "timestamp_str": "2026-11-20 20:57:35",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
