@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-cta-size-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/cta-size-before.html",
-      "commit": "6ac72fe0b0178d5fa679be825cc6fec7cb0395a0",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 6ac72fe: the two onboarding CTAs use small 'btn-sm' sizing (~30px tall, 0.8rem text) and read as secondary controls even though they are the only available actions in this empty state; hit targets are modest. Layout otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T02:10:27"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-cta-size-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cta-size-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/cards-review.html",
       "commit": "c117714b02c23ab7ec6e67b54770dad8857227af",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-cards-permissions-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/cards-permissions-after.html",
+      "commit": "fc890fe1ab7aa8dca6683514433b0abae9a6b762",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,

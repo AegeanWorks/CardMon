@@ -899,5 +899,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "1549dc3edb10e8db7446c49d9e51b982471cde1ed5cdd84d58907c8cfd722246",
     "baseline_digest": "1549dc3edb10e8db7446c49d9e51b982471cde1ed5cdd84d58907c8cfd722246"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-cards-permissions-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "fc890fe1ab7aa8dca6683514433b0abae9a6b762",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795158663.0659428,
+    "finished_at": 1795158776.5656078,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "9aad8b35414136b6089f75fd3fe74b509083c984f36df5bc8ef45e6348716d33",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795158776.56561,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-cards-permissions-after.png"
+      ],
+      "scoped_digest": "cf8bcde9920f95b9fbbd2478b030fb951d32db85c4be0ac146d7f8f0a6fa5984"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "9aad8b35414136b6089f75fd3fe74b509083c984f36df5bc8ef45e6348716d33",
+    "baseline_digest": "9aad8b35414136b6089f75fd3fe74b509083c984f36df5bc8ef45e6348716d33"
   }
 ]
