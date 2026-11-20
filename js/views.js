@@ -1151,7 +1151,7 @@ function renderSubscriptionsView() {
       ` : allSubs.map(sub => {
         const billingDay = Number(sub.billingDay) || 1;
         const daysLeft = billingDay >= today ? billingDay - today : billingDay + getDaysInCurrentMonth() - today;
-        const icon = getSubIcon(sub.name, sub.category);
+        const icon = subIconSvg(getSubIcon(sub.name, sub.category));
         const isYearly = sub.cycle === 'yearly';
         const subCurr = sub.currency || 'TRY';
         const isForeign = subCurr !== 'TRY';
@@ -1243,6 +1243,26 @@ function getSubIcon(name = '', category = '') {
   if (category === 'Lifestyle') return '🌟';
   if (category === 'Education') return '🎓';
   return '⚡';
+}
+
+// Subscription card icons: map the semantic emoji to a line-art SVG for display.
+function subIconSvg(emoji) {
+  const wrap = (paths) => `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
+  switch (emoji) {
+    case '🏠': return wrap('<path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path>');
+    case '🏢': return wrap('<rect x="4" y="3" width="16" height="18" rx="2"></rect><line x1="9" y1="8" x2="9" y2="8"></line><line x1="15" y1="8" x2="15" y2="8"></line><line x1="9" y1="13" x2="9" y2="13"></line><line x1="15" y1="13" x2="15" y2="13"></line>');
+    case '🎬': case '🍿': return wrap('<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M7 5l2 3M17 5l-2 3M3 10h18"></path>');
+    case '🎵': return wrap('<path d="M9 18V5l10-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="16" cy="16" r="3"></circle>');
+    case '▶️': return wrap('<circle cx="12" cy="12" r="9"></circle><path d="M10 8l6 4-6 4z"></path>');
+    case '🤖': case '🌟': case '🎓': return wrap('<path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"></path>');
+    case '☁️': return wrap('<path d="M6 18a4 4 0 0 1 0-8 6 6 0 0 1 11-2 4 4 0 0 1 1 8z"></path>');
+    case '📦': case '🗄️': return wrap('<rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M3 12h18M12 7v13"></path>');
+    case '🎨': return wrap('<circle cx="12" cy="12" r="9"></circle><circle cx="8" cy="9" r="1"></circle><circle cx="15" cy="8" r="1"></circle><circle cx="16" cy="14" r="1"></circle>');
+    case '⚡': case '🏋️': return wrap('<path d="M13 2L4 14h7l-1 8 9-12h-7z"></path>');
+    case '💻': return wrap('<rect x="3" y="5" width="18" height="12" rx="2"></rect><path d="M2 20h20"></path>');
+    case '📄': return wrap('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path>');
+    default: return wrap('<circle cx="12" cy="12" r="3"></circle>');
+  }
 }
 
 // Timeline event icons: one line-art glyph per event kind, no emoji mix.
