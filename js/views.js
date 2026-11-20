@@ -292,10 +292,10 @@ function renderCardsView() {
           <!-- Quick Transaction Actions Bar (Pay Debt / Add Expense) -->
           <div class="card-quick-tx-bar">
             <button class="btn-quick-tx btn-pay-debt" onclick="openQuickTxModal('${c.id}', 'payment')" title="Kart Borcu Öde">
-              💳 ₺ Borç Öde
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg> ₺ Borç Öde
             </button>
             <button class="btn-quick-tx btn-add-expense" onclick="openQuickTxModal('${c.id}', 'expense')" title="Harcama / Taksit Ekle">
-              🛍️ ₺ Harcama / Taksit
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1 12H5L6 8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg> ₺ Harcama / Taksit
             </button>
           </div>
 
@@ -552,7 +552,7 @@ function renderCardsView() {
     <!-- Top Overall Cards Total Summary Banner -->
     <div class="view-summary-banner cards-summary-banner">
       <div class="banner-title-group">
-        <span class="banner-icon">💳</span>
+        <span class="banner-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg></span>
         <span class="banner-heading">Kredi Kartları Portföy Toplamı (${state.cards.length} Kart)</span>
       </div>
       <div class="banner-metrics-group">
