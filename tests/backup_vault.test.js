@@ -240,6 +240,22 @@ test('renderHealthScoreWidget renders correct status pill and progress for vario
   assert.strictEqual(fill.style.width, '25%');
 });
 
+test('renderHealthScoreWidget reflects cashflow burden even when utilization is safe', () => {
+  const h = createHarness();
+  const pill = h.sandbox.document.getElementById('healthScorePill');
+  const caption = h.sandbox.document.getElementById('healthScoreCaption');
+
+  // Moderate burden with safe utilization should warn
+  h.renderHealthScoreWidget(26.9, 127550, 475000, 150000, 50);
+  assert.match(pill.className, /health-warning/);
+  assert.match(caption.textContent, /50\.0/);
+
+  // High burden must override the safe utilization score with a critical result
+  h.renderHealthScoreWidget(26.9, 127550, 475000, 150000, 107.8);
+  assert.match(pill.className, /health-critical/);
+  assert.match(caption.textContent, /107\.8/);
+});
+
 test('renderBankAnalysisChart renders bank debt and limit bars or empty fallback', () => {
   const h = createHarness();
   const canvas = h.sandbox.document.getElementById('bankChartCanvas');

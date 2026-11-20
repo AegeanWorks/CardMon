@@ -1835,7 +1835,7 @@ function renderDashboardView() {
   }
 
   // 4. Financial Health Score Widget
-  renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalEkHesap);
+  renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalEkHesap, incomeBurdenRatio);
 
   // 4.5. 🧠 Akıllı Kart Harcama Danışmanı (Best Card to Spend Right Now)
   renderSmartCardAdvisor();

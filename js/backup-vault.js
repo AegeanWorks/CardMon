@@ -188,7 +188,7 @@ function cBankName(bankId) {
   return b ? b.name : 'Banka';
 }
 
-function renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalEkHesap) {
+function renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalEkHesap, incomeBurdenRatio = 0) {
   const pill = document.getElementById('healthScorePill');
   const fill = document.getElementById('healthScoreFill');
   const caption = document.getElementById('healthScoreCaption');
@@ -208,6 +208,25 @@ function renderHealthScoreWidget(utilizationRatio, totalUsed, totalLimit, totalE
     pill.textContent = t('healthNoData');
     fill.style.width = '0%';
     caption.textContent = t('healthEmptyHint');
+    return;
+  }
+
+  // A safe utilization score must not hide a dangerous cashflow burden.
+  const burden = Number(incomeBurdenRatio) || 0;
+  if (burden > 65) {
+    pill.className = 'health-score-pill health-critical';
+    pill.textContent = t('healthCritical');
+    fill.style.width = '25%';
+    fill.style.background = '#f43f5e';
+    caption.textContent = `Zorunlu ödemeler gelirinizin %${burden.toFixed(1)}'ini aşıyor; limit doluluğunuz %${utilizationRatio.toFixed(1)} güvenli olsa da nakit akışı riski yüksek.`;
+    return;
+  }
+  if (burden > 40) {
+    pill.className = 'health-score-pill health-warning';
+    pill.textContent = t('healthWarning');
+    fill.style.width = '48%';
+    fill.style.background = 'linear-gradient(90deg, #f59e0b, #f43f5e)';
+    caption.textContent = `Limit doluluğunuz %${utilizationRatio.toFixed(1)} güvenli olsa da zorunlu ödemeler gelirinizin %${burden.toFixed(1)}'ini oluşturuyor. Nakit akışınızı gözden geçirin.`;
     return;
   }
 
