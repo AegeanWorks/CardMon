@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (KMH view, demo data) at 9362447: the same two-line explanation about automatic overdraft and daily interest is repeated on every bank card, adding visual clutter and pushing additional cards below the fold. Figures, statuses and layout are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T15:17:19"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-ekhesap-note-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (KMH view, demo data) at 62ba86e: the explanation now appears once in a compact info strip below the hero; bank cards are shorter and denser with more cards visible. Limits, shares and statuses unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T15:17:47"
+      }
     }
   ]
 }
