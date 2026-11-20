@@ -242,8 +242,15 @@
       "viewport": "1440x1200",
       "width": 1440,
       "height": 1200,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Loans view, status badges, demo data) at fa46b72: the next-installment tag, completed marker and debt-closed badge use colorful emojis (sparkle, party, check) that clash with the app's monochrome line-art icons. Card layout and amounts are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T22:10:07"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-loan-status-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x1200",
       "width": 1440,
       "height": 1200,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Loans view, status badges, demo data) at f31d683: the three emojis are replaced by line-art sparkle/check SVGs matching the app icon set. Installment counts, amounts, progress bars and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T22:10:29"
+      }
     }
   ]
 }
