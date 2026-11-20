@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Add Virtual Card modal, demo data) at 4bc1c4c: the internet-shopping checkbox uses a colorful globe emoji while the checkmark and app icon language are monochrome line-art SVGs, breaking visual consistency. Form fields, parent-card selector and layout are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T19:44:57"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-modal-virtualcard-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Add Virtual Card modal, demo data) at de9d221: the internet-shopping checkbox now uses a line-art globe SVG matching the app icon set (the virtual-card list badge was converted to globe/lock SVGs too). Fields, labels and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T19:45:07"
+      }
     }
   ]
 }
