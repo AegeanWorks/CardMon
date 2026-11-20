@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-timeline-emoji-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/timeline-emoji-after.html",
-      "commit": "fa90981b8238670e85686b9b74a5444be5a3d7d4",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Timeline view, demo data) at fa90981: the due rows now use line-art calendar and flame SVGs matching the app icon set; the paid-state branch uses a check SVG too. Event cards, amounts, badges and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T20:12:06"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-card-fee-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-fee-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/vault-snaps-before.html",
       "commit": "3470e678d0a4012516047f4de3f8089d6fe6ea0e",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1100",
+      "width": 1440,
+      "height": 1100,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-vault-snaps-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/vault-snaps-after.html",
+      "commit": "2d97e7376675f47d514b046fb0b839342b4fd49b",
       "taken_at": "2026-11-20",
       "viewport": "1440x1100",
       "width": 1440,
