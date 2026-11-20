@@ -247,9 +247,9 @@
         "status": "approved",
         "reviewer": "agent:cardmon-ui",
         "method": "vision",
-        "notes": "AFTER (Subscriptions view, demo data) at d54fce2: service card icons are now monochrome line-art SVGs (film, music, sparkle) matching the rest of the app. Names, prices, category labels and layout unchanged; no clipping, truncation or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T12:23:25"
+        "notes": "BEFORE (Subscriptions view, demo data) at d54fce2: the '\u00d6deme G\u00fcn\u00fc' labels use incorrect Turkish suffixation ('Ay\u0131n 14'i', 'Ay\u0131n 20'i', 'Ay\u0131n 12'i'), a visible grammar flaw in a user-facing date. Icons, layout and figures are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T13:13:34"
       }
     },
     {
@@ -261,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Subscriptions view, demo data) at 45b885f: payment-day labels now read 'Ay\u0131n 14'\u00fc', 'Ay\u0131n 20'si', 'Ay\u0131n 12'si' etc. with correct Turkish suffixes. No layout, typography or contrast changes; amounts and remaining-day badges unchanged.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T13:13:59"
+      }
     }
   ]
 }
