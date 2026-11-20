@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-empty-pdf-gate",
+    "task_id": "cardmon-empty-meters-cleanup",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795130429.6636662,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795130954.8435214,
     "owner": "agent",
-    "lease_until": 1795137629.6636662,
+    "lease_until": 1795138154.8435214,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795130473.403684,
-    "completed_head": "0116e04a091ee5aefdb6f99f019a41ef79b1862a",
-    "completed_tree": "b8ba32652328b75242af3cf08c24701a6317c895"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-nearest-none-label",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795127419.6371398,
-      "timestamp_str": "2026-11-20 01:30:19",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-nearest-none-label",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-nearest-none-label' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795127459.0870366,
-      "timestamp_str": "2026-11-20 01:30:59",
-      "agent": "agent",
-      "head": "3313f23685a554322eaaf96c7935460662714855",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-sidebar-badge-cleanup",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-empty-meters-cleanup",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Hide meaningless empty meters in the empty portfolio",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795130953.9039016,
+      "timestamp_str": "2026-11-20 02:29:13",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision pass found two empty progress tracks (utilization KPI and sidebar portfolio card) conveying no information with zero data, inconsistent with the calmed empty state (G-003 simplistic/aesthetic).",
+        "benefits": "Both tracks hidden via body:has() scope; cards show clean label/value layouts; before/after vision reviews approved (96 -> 97).",
+        "risks": "CSS-only empty-state rule; populated meters unchanged; 107/107 tests pass.",
+        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-empty-meters-cleanup",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795130954.8435214,
+      "timestamp_str": "2026-11-20 02:29:14",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
