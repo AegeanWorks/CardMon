@@ -242,8 +242,15 @@
       "viewport": "1440x3000",
       "width": 1440,
       "height": 3000,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (KMH reserve chart, dashboard, demo data) at dc91c59: the Toplam Acil Durum Rezervi strip uses a colorful shield emoji while surrounding chart labels and amounts are rendered in monochrome line-art/text, breaking icon consistency. Chart layout and figures are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T21:34:07"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-kmh-chart-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x3000",
       "width": 1440,
       "height": 3000,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (KMH reserve chart, dashboard, demo data) at 4c45bfa: the reserve strip now uses a line-art shield SVG tinted to the cyan label color, matching the app icon set (empty-state bank icon converted too). Figures, bars and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T21:34:28"
+      }
     }
   ]
 }
