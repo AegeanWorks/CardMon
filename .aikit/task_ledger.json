@@ -22,331 +22,6 @@
   },
   "checkpoints": [
     {
-      "task_id": "cardmon-vault-snapshot-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (94/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795198894.996252,
-      "timestamp_str": "2026-11-20 21:21:34",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-vault-snapshot-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-vault-snapshot-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795198919.6715446,
-      "timestamp_str": "2026-11-20 21:21:59",
-      "agent": "agent",
-      "head": "57123b05d0d1365a5c925638b1cf18c145094179",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-kmh-chart-icon",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art icon in KMH reserve chart strip",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795199710.50541,
-      "timestamp_str": "2026-11-20 21:35:10",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the dashboard KMH reserve chart found a colorful shield emoji in the reserve strip among monochrome labels and amounts (G-003 aesthetic cohesion).",
-        "benefits": "Reserve strip and empty-state bank icon now use line-art SVGs; before/after vision reviews approved (96 -> 97).",
-        "risks": "Two render-only changes in js/backup-vault.js; figures and labels preserved so tests pass; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both KMH-chart screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-kmh-chart-icon",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795199712.6682835,
-      "timestamp_str": "2026-11-20 21:35:12",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-kmh-chart-icon",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-kmh-chart-icon' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795199737.9349885,
-      "timestamp_str": "2026-11-20 21:35:37",
-      "agent": "agent",
-      "head": "65e030338758a72750cac110ab67bcc542ab3b25",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-nearest-due-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art icons in nearest-due dashboard strip",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795200338.1720335,
-      "timestamp_str": "2026-11-20 21:45:38",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the dashboard nearest-payment strip found a colorful card emoji before the next-due item among monochrome text and line-art icons (G-003 aesthetic cohesion).",
-        "benefits": "Next-due detail now uses line-art card/bank/refresh/check SVGs across all branches; before/after vision reviews approved (96 -> 97).",
-        "risks": "Four render-only changes in js/views.js; names and amounts preserved so tests pass; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both nearest-due screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-nearest-due-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795200339.141494,
-      "timestamp_str": "2026-11-20 21:45:39",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-nearest-due-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-nearest-due-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795200367.2819378,
-      "timestamp_str": "2026-11-20 21:46:07",
-      "agent": "agent",
-      "head": "55d471cc7988a00498d538b09072075ee39a3d6d",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-sub-card-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons in subscription card labels",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795201143.1611557,
-      "timestamp_str": "2026-11-20 21:59:03",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the Subscriptions view card labels found a colorful calendar emoji in the billing-day pill and emoji badges for estimated/frozen states, clashing with the app's monochrome line-art icons (G-003 aesthetic cohesion).",
-        "benefits": "Billing-day pill and estimate/warning badges now use line-art SVGs; before/after vision reviews approved (95 -> 97).",
-        "risks": "Three render-only changes in js/views.js; amounts and day labels preserved so tests pass; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both subscription-card screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-sub-card-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795201145.0071802,
-      "timestamp_str": "2026-11-20 21:59:05",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-sub-card-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-sub-card-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795201170.3657343,
-      "timestamp_str": "2026-11-20 21:59:30",
-      "agent": "agent",
-      "head": "edaf766763d592febbca0d2c27e425a99db956ef",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-loan-status-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons in loan status badges",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795201884.3574748,
-      "timestamp_str": "2026-11-20 22:11:24",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the Loans view status badges found colorful emojis (sparkle, party, check) clashing with the app's monochrome line-art icons (G-003 aesthetic cohesion).",
-        "benefits": "Next-installment, completed and debt-closed badges now use line-art sparkle/check SVGs; before/after vision reviews approved (95 -> 97).",
-        "risks": "Three render-only changes in js/views.js; counts and amounts preserved so tests pass; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both loan-status screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-loan-status-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795201886.1837335,
-      "timestamp_str": "2026-11-20 22:11:26",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-loan-status-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-loan-status-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795201918.797465,
-      "timestamp_str": "2026-11-20 22:11:58",
-      "agent": "agent",
-      "head": "a68542b13b37e53dd874681cb0fbd897814e30c6",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-timeline-action-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons in timeline action buttons",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795202544.7910252,
-      "timestamp_str": "2026-11-20 22:22:24",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the Timeline view action buttons found colorful check and card emojis clashing with the app's monochrome line-art icons (G-003 aesthetic cohesion).",
-        "benefits": "Action buttons now use line-art check/card/undo SVGs; before/after vision reviews approved (95 -> 97).",
-        "risks": "Three render-only changes in js/views.js; labels and handlers preserved so tests pass; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both timeline-action screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-timeline-action-icons",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795202545.8819911,
-      "timestamp_str": "2026-11-20 22:22:25",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-timeline-action-icons",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-timeline-action-icons' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795202577.0171733,
-      "timestamp_str": "2026-11-20 22:22:57",
-      "agent": "agent",
-      "head": "5e5cdbf58ec96f6cc577abf1e896c40667a250eb",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
       "task_id": "cardmon-pay-method-labels",
       "phase": "phase 1",
       "phase_num": 1,
@@ -403,6 +78,318 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 1",
+      "phase_num": 3,
+      "description": "Reforge stage 1: stage 1 host review reviewed; run active; coverage 64/64",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795206082.9073243,
+      "timestamp_str": "2026-11-20 23:21:22",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 2",
+      "phase_num": 3,
+      "description": "Reforge stage 2: window 100, 50 commit(s), 6 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 15 binary not analysed",
+      "files_affected": [
+        "assets/screenshots/2026-11-20-card-detail-headers-after.png",
+        "assets/screenshots/2026-11-20-card-detail-headers-before.png",
+        "assets/screenshots/2026-11-20-card-fee-after.png",
+        "assets/screenshots/2026-11-20-card-fee-before.png",
+        "assets/screenshots/2026-11-20-card-status-icons-after.png",
+        "assets/screenshots/2026-11-20-card-status-icons-before.png",
+        "assets/screenshots/2026-11-20-exec-table-after.png",
+        "assets/screenshots/2026-11-20-exec-table-before.png",
+        "assets/screenshots/2026-11-20-insights-after.png",
+        "assets/screenshots/2026-11-20-insights-before.png",
+        "assets/screenshots/2026-11-20-modal-card-detail-after.png",
+        "assets/screenshots/2026-11-20-modal-card-detail-before.png",
+        "assets/screenshots/2026-11-20-timeline-emoji-after.png",
+        "assets/screenshots/2026-11-20-timeline-emoji-review.png",
+        "assets/screenshots/2026-11-20-vault-snaps-before.png"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795206132.6180925,
+      "timestamp_str": "2026-11-20 23:22:12",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 2",
+      "phase_num": 3,
+      "description": "Reforge stage 2: stage 2 host review reviewed; run active; coverage 71/71",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795206360.562462,
+      "timestamp_str": "2026-11-20 23:26:00",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 3",
+      "phase_num": 3,
+      "description": "Reforge stage 3: window 150, 50 commit(s), 6 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 14 binary not analysed",
+      "files_affected": [
+        "assets/screenshots/2026-11-20-modal-card-perms-after.png",
+        "assets/screenshots/2026-11-20-modal-card-perms-before.png",
+        "assets/screenshots/2026-11-20-modal-quicktx-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-quicktx-review.png",
+        "assets/screenshots/2026-11-20-modal-rent-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-rent-review.png",
+        "assets/screenshots/2026-11-20-modal-shortcuts-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-shortcuts-review.png",
+        "assets/screenshots/2026-11-20-modal-subscription-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-subscription-review.png",
+        "assets/screenshots/2026-11-20-modal-vault-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-vault-review.png",
+        "assets/screenshots/2026-11-20-modal-virtualcard-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-virtualcard-review.png"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795206376.4132864,
+      "timestamp_str": "2026-11-20 23:26:16",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 3",
+      "phase_num": 3,
+      "description": "Reforge stage 3: stage 3 host review reviewed; run active; coverage 61/61",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795206710.7179205,
+      "timestamp_str": "2026-11-20 23:31:50",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 4",
+      "phase_num": 3,
+      "description": "Reforge stage 4: window 200, 50 commit(s), 11 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 12 binary not analysed",
+      "files_affected": [
+        "assets/screenshots/2026-11-20-ekhesap-note-after.png",
+        "assets/screenshots/2026-11-20-ekhesap-review.png",
+        "assets/screenshots/2026-11-20-modal-advisor-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-advisor-review.png",
+        "assets/screenshots/2026-11-20-modal-card-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-card-review.png",
+        "assets/screenshots/2026-11-20-modal-settings-icons-after.png",
+        "assets/screenshots/2026-11-20-modal-settings-review.png",
+        "assets/screenshots/2026-11-20-subs-card-icons-after.png",
+        "assets/screenshots/2026-11-20-subs-day-suffix-after.png",
+        "assets/screenshots/2026-11-20-subs-token-after.png",
+        "assets/screenshots/2026-11-20-subs-token-before.png"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795206787.4702652,
+      "timestamp_str": "2026-11-20 23:33:07",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 4",
+      "phase_num": 3,
+      "description": "Reforge stage 4: stage 4 host review reviewed; run active; coverage 68/68",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795207226.4908912,
+      "timestamp_str": "2026-11-20 23:40:26",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 5",
+      "phase_num": 3,
+      "description": "Reforge stage 5: window 250, 50 commit(s), 4 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 12 binary not analysed",
+      "files_affected": [
+        "assets/screenshots/2026-11-20-bank-detail-icons-after.png",
+        "assets/screenshots/2026-11-20-bank-used-stat-after.png",
+        "assets/screenshots/2026-11-20-banks-banner-after.png",
+        "assets/screenshots/2026-11-20-banks-review.png",
+        "assets/screenshots/2026-11-20-card-action-icons-after.png",
+        "assets/screenshots/2026-11-20-loans-icons-after.png",
+        "assets/screenshots/2026-11-20-loans-review.png",
+        "assets/screenshots/2026-11-20-subs-icons-after.png",
+        "assets/screenshots/2026-11-20-subs-review.png",
+        "assets/screenshots/2026-11-20-timeline-event-icons-after.png",
+        "assets/screenshots/2026-11-20-timeline-icons-after.png",
+        "assets/screenshots/2026-11-20-timeline-review.png"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795207281.7440681,
+      "timestamp_str": "2026-11-20 23:41:21",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 5",
+      "phase_num": 3,
+      "description": "Reforge stage 5: stage 5 host review reviewed; run active; coverage 65/65",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795207513.7789202,
+      "timestamp_str": "2026-11-20 23:45:13",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 6",
+      "phase_num": 3,
+      "description": "Reforge stage 6: window 300, 50 commit(s), 11 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 13 binary not analysed",
+      "files_affected": [
+        "assets/screenshots/2026-11-20-advisor-clock-after.png",
+        "assets/screenshots/2026-11-20-advisor-icons-after.png",
+        "assets/screenshots/2026-11-20-cards-permissions-after.png",
+        "assets/screenshots/2026-11-20-cards-review.png",
+        "assets/screenshots/2026-11-20-cta-size-after.png",
+        "assets/screenshots/2026-11-20-cta-size-before.png",
+        "assets/screenshots/2026-11-20-demo-free-cash-after.png",
+        "assets/screenshots/2026-11-20-demo-preview.png",
+        "assets/screenshots/2026-11-20-empty-tracks-after.png",
+        "assets/screenshots/2026-11-20-empty-tracks-before.png",
+        "assets/screenshots/2026-11-20-health-burden-after.png",
+        "assets/screenshots/2026-11-20-pdf-disable-after.png",
+        "assets/screenshots/2026-11-20-pdf-disable-before.png"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795207545.6760094,
+      "timestamp_str": "2026-11-20 23:45:45",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 6",
+      "phase_num": 3,
+      "description": "Reforge stage 6: stage 6 host review reviewed; run active; coverage 64/64",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795207852.7000902,
+      "timestamp_str": "2026-11-20 23:50:52",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 7",
+      "phase_num": 3,
+      "description": "Reforge stage 7: window 350, 50 commit(s), 7 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 17 binary not analysed",
+      "files_affected": [
+        "assets/screenshots/2026-11-20-analytics-before2.png",
+        "assets/screenshots/2026-11-20-analytics-empty-after.png",
+        "assets/screenshots/2026-11-20-analytics-empty-before.png",
+        "assets/screenshots/2026-11-20-badge-clean-after.png",
+        "assets/screenshots/2026-11-20-badge-clean-before.png",
+        "assets/screenshots/2026-11-20-card-reorder-after.png",
+        "assets/screenshots/2026-11-20-card-reorder-before.png",
+        "assets/screenshots/2026-11-20-cashflow-calm-after.png",
+        "assets/screenshots/2026-11-20-cashflow-calm-before.png",
+        "assets/screenshots/2026-11-20-nearest-none-after.png",
+        "assets/screenshots/2026-11-20-nearest-none-before.png",
+        "assets/screenshots/2026-11-20-rhythm-after.png",
+        "assets/screenshots/2026-11-20-rhythm-before.png",
+        "assets/screenshots/2026-11-20-svg-icon-after.png",
+        "assets/screenshots/2026-11-20-svg-icon-before.png",
+        "assets/screenshots/2026-11-20-zero-alerts-after.png",
+        "assets/screenshots/2026-11-20-zero-alerts-before.png"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795207898.7373714,
+      "timestamp_str": "2026-11-20 23:51:38",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 7",
+      "phase_num": 3,
+      "description": "Reforge stage 7: stage 7 host review reviewed; run active; coverage 85/85",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795208232.917671,
+      "timestamp_str": "2026-11-20 23:57:12",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 8",
+      "phase_num": 3,
+      "description": "Reforge stage 8: window 400, 50 commit(s), 13 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 14 binary not analysed",
+      "files_affected": [
+        "assets/screenshots/2026-11-19-dashboard.png",
+        "assets/screenshots/2026-11-20-bank-cta-after.png",
+        "assets/screenshots/2026-11-20-bank-cta-before.png",
+        "assets/screenshots/2026-11-20-calm-empty-after.png",
+        "assets/screenshots/2026-11-20-calm-empty-before.png",
+        "assets/screenshots/2026-11-20-dashboard-after.png",
+        "assets/screenshots/2026-11-20-dashboard-wide.png",
+        "assets/screenshots/2026-11-20-empty-state-after.png",
+        "assets/screenshots/2026-11-20-empty-state-before.png",
+        "assets/screenshots/2026-11-20-home.png",
+        "assets/screenshots/2026-11-20-strip-center-after.png",
+        "assets/screenshots/2026-11-20-strip-center-before.png",
+        "assets/screenshots/2026-11-20-subtitle-empty-after.png",
+        "assets/screenshots/2026-11-20-subtitle-empty-before.png"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795208279.9163132,
+      "timestamp_str": "2026-11-20 23:57:59",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 8",
+      "phase_num": 3,
+      "description": "Reforge stage 8: stage 8 host review reviewed; run active; coverage 67/67",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795208548.5814762,
+      "timestamp_str": "2026-11-21 00:02:28",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 9",
+      "phase_num": 3,
+      "description": "Reforge stage 9: window 426, 26 commit(s), 50 file(s) reviewed (unreviewed), 0 finding(s), 0 repaired, empty \u2014 nothing to commit, 3 binary not analysed",
+      "files_affected": [
+        "assets/screenshots/2026-11-14-home.png",
+        "assets/screenshots/2026-11-19-home-before.png",
+        "assets/screenshots/2026-11-19-home.png"
+      ],
+      "status": "in_progress",
+      "timestamp": 1795208649.4881675,
+      "timestamp_str": "2026-11-21 00:04:09",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
+    },
+    {
+      "task_id": "reforge:run-1",
+      "phase": "reforge stage 9",
+      "phase_num": 3,
+      "description": "Reforge stage 9: stage 9 host review reviewed; run completed; coverage 196/196",
+      "files_affected": [],
+      "status": "completed",
+      "timestamp": 1795209104.996421,
+      "timestamp_str": "2026-11-21 00:11:44",
+      "agent": "opencode",
+      "operator_task": "cardmon-pay-method-labels"
     }
   ]
 }
