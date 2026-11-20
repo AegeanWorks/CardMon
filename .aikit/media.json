@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-shortcuts-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-shortcuts-review.html",
-      "commit": "6d85dbaee6ce4df3b8190bbda9ea209f7d28fee6",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Keyboard Shortcuts modal, demo data) at 9d071d5: the title uses a colorful keyboard emoji while the close control and app icon language are monochrome line-art SVGs, breaking visual consistency. Shortcut rows, keycaps and layout are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T19:10:18"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-shortcuts-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-shortcuts-icons-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T19:51:35"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-card-detail-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-card-detail-before.html",
+      "commit": "02821f3c507f34f5ca0c179364c50a69e1e1b2d5",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
