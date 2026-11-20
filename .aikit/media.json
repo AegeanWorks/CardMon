@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-vault-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-vault-review.html",
-      "commit": "8604e5471afda37696898de0657b4be168f3d330",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Backup Vault modal, demo data) at 8604e54: the green auto-backup status uses a colorful shield emoji while the header and action button use line-art SVG icons, breaking visual consistency in the modal. Layout and empty state are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T19:03:07"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-vault-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-vault-icons-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T19:45:07"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-card-perms-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-card-perms-before.html",
+      "commit": "c821c56c155308927d27edff0edcdd02ef98b69b",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
