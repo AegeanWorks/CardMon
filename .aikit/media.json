@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-banks-banner-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/banks-banner-after.html",
-      "commit": "d2c6d03c257dcab511c8a110371981c269063263",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Banks view, demo data) at d2c6d03: bank note rows use a memo emoji and mini-card chips use a credit-card emoji, inconsistent with the line-art SVGs used for the banner and action buttons in this view. Layout and text are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T10:51:43"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-bank-detail-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/bank-detail-icons-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T13:13:59"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-ekhesap-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/ekhesap-review.html",
+      "commit": "936244741360661de58d2491a8207a52f1fada74",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
