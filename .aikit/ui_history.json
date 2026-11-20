@@ -862,5 +862,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "d9bf083f9bb44043b4d4448fd2c563f39fdcb040c663fe8350799fac8a974cde",
     "baseline_digest": "d9bf083f9bb44043b4d4448fd2c563f39fdcb040c663fe8350799fac8a974cde"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-advisor-clock-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "c10947ad232d1dbd84438dda75c80287cb781a10",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795157758.6068137,
+    "finished_at": 1795157876.6646848,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "1549dc3edb10e8db7446c49d9e51b982471cde1ed5cdd84d58907c8cfd722246",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795157876.6646879,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-advisor-clock-after.png"
+      ],
+      "scoped_digest": "948c1e4229bfbf5fdee51d2c8e512d112b84eea7c79089642534010756711564"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "1549dc3edb10e8db7446c49d9e51b982471cde1ed5cdd84d58907c8cfd722246",
+    "baseline_digest": "1549dc3edb10e8db7446c49d9e51b982471cde1ed5cdd84d58907c8cfd722246"
   }
 ]

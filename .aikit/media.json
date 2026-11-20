@@ -44,63 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-svg-icon-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/svg-icon-before.html",
-      "commit": "a28226d816e12322e3255f0e8150ab2dd5e77a44",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at a28226d: the guidance card uses a colorful chart emoji, visually inconsistent with the line-art SVG iconography used everywhere else in CardMon; it reads as a small multicolor glyph on an otherwise monochrome cyan-accented card. Layout and typography are clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T01:52:42"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-svg-icon-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/svg-icon-after.html",
-      "commit": "fe47225bacb8ef91873617d5c0bf4212c2299ca9",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER at fe47225: the icon is now a crisp cyan bar-chart SVG inside a tinted rounded square, matching the app's other icon boxes and line-art style. Card geometry, heading and description are unchanged; no layout shift, clipping or contrast regression. Visual consistency improved.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T01:52:57"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-rhythm-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/rhythm-before.html",
-      "commit": "3bbab7a6fd9dd4b3fec9d1c4b3d6d288c86042d2",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 3bbab7a: section spacing (hero 1.5rem, KPI 1.75rem, guidance card 2rem) pushes the cashflow widget's income summary below the 1440x900 viewport, so users must scroll to see the last summary line. Content and typography otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T02:01:39"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-rhythm-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/rhythm-after.html",
@@ -308,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T09:47:54"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-advisor-clock-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/advisor-clock-after.html",
+      "commit": "c10947ad232d1dbd84438dda75c80287cb781a10",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
