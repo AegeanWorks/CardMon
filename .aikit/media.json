@@ -247,9 +247,9 @@
         "status": "approved",
         "reviewer": "agent:cardmon-ui",
         "method": "vision",
-        "notes": "AFTER (Banks view, demo data) at d2c6d03: the bank emoji is replaced by a crisp line-art bank SVG, matching the Cards and dashboard banners. Banner geometry, metrics and all bank cards unchanged; no clipping, truncation or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T10:40:09"
+        "notes": "BEFORE (Banks view, demo data) at d2c6d03: bank note rows use a memo emoji and mini-card chips use a credit-card emoji, inconsistent with the line-art SVGs used for the banner and action buttons in this view. Layout and text are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T10:51:43"
       }
     },
     {
@@ -261,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Banks view, demo data) at 1e6dbdd: note rows now use a small pencil SVG and mini-card chips a credit-card SVG, completing the line-art icon language in the Banks view. Text, spacing and all bank metrics unchanged; no clipping, truncation or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T10:52:08"
+      }
     }
   ]
 }
