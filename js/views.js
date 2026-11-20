@@ -1275,13 +1275,15 @@ const TIMELINE_EVENT_SVG = {
 };
 
 function timelineEventSvg(e) {
-  if (e.isPaid) return TIMELINE_EVENT_SVG.paid;
+  // Paid state is conveyed by the event's CSS class; the glyph still identifies
+  // the event kind so a paid loan is not indistinguishable from a paid cutoff.
   if (e.type === 'card_cutoff') return TIMELINE_EVENT_SVG.cutoff;
   if (e.type === 'loan') return TIMELINE_EVENT_SVG.loan;
   if (e.type === 'subscription') {
     return (e.category === 'Rent' || /kira/i.test(e.title || ''))
       ? TIMELINE_EVENT_SVG.rent : TIMELINE_EVENT_SVG.sub;
   }
+  if (e.isPaid) return TIMELINE_EVENT_SVG.paid;
   return TIMELINE_EVENT_SVG.due;
 }
 

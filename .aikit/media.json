@@ -44,44 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-pay-method-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/pay-method-before.html",
-      "commit": "93045023bf9a3f581739527827cc2a6352a98128",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1200",
-      "width": 1440,
-      "height": 1200,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Timeline view, payment-method notes, demo data) at 1ff3fe3: the subscription payment method labels use colorful cash/bank/card emojis inside event notes, clashing with the app's monochrome text and line-art icons. Event cards, amounts and due rows are otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T22:50:39"
-      }
-    },
-    {
-      "path": "assets/screenshots/2026-11-20-pay-method-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/pay-method-after.html",
-      "commit": "08556e9f739c38986588a961ec194c5ff553bd27",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1200",
-      "width": 1440,
-      "height": 1200,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Timeline view, payment-method notes, demo data) at 08556e9: payment-method labels are now plain text (emoji removed) because these fields are HTML-escaped; no raw markup leaks into notes. Amounts, due rows and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T22:51:03"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-21-demo-mono-before.png",
       "alt": "CardMon interface at 2026-11-21",
       "caption": "CardMon interface captured from projects/CardMon/demo-mono-before.html",
@@ -269,6 +231,44 @@
         "notes": "AFTER proof: captions describe 80% utilization as high, the genuinely-safe 20% case keeps its wording, and the card face now agrees with the \u20ba4.000 banner at 40%.",
         "score": 96,
         "reviewed_at": "2026-11-21T01:23:43"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-timeline-before.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-timeline-before.html",
+      "commit": "7977fd27e04c77ac7979179353132e634d26c238",
+      "taken_at": "2026-11-21",
+      "viewport": "950x280",
+      "width": 950,
+      "height": 280,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "BEFORE proof: every paid timeline event collapses to the checkmark, so paid loans, subscriptions and rent are visually indistinguishable by kind.",
+        "score": 90,
+        "reviewed_at": "2026-11-21T01:27:55"
+      }
+    },
+    {
+      "path": "assets/screenshots/2026-11-21-demo-timeline-after.png",
+      "alt": "CardMon interface at 2026-11-21",
+      "caption": "CardMon interface captured from projects/CardMon/demo-timeline-after.html",
+      "commit": "7977fd27e04c77ac7979179353132e634d26c238",
+      "taken_at": "2026-11-21",
+      "viewport": "950x280",
+      "width": 950,
+      "height": 280,
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:opencode",
+        "method": "vision",
+        "notes": "AFTER proof: paid events keep loan/subscription/rent glyphs with paid styling handled separately; unpaid events unchanged.",
+        "score": 96,
+        "reviewed_at": "2026-11-21T01:27:57"
       }
     }
   ]

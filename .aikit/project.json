@@ -28,8 +28,8 @@
   "has_ui": true,
   "ui_kind": "web",
   "ui_evidence": [
-    "demo-caption-after.html",
-    "demo-caption-before.html",
+    "demo-timeline-after.html",
+    "demo-timeline-before.html",
     "index.html"
   ],
   "ui_checked_at": "2026-11-21",

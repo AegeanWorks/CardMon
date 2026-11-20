@@ -2542,5 +2542,55 @@
     "final_snapshot_entries": 0,
     "surface_digest": "c3e729338b641cf155932b11f83dd36a0da6d9aca0192af6b78dd11727331a33",
     "baseline_digest": "7ab11db73844f2b52562d8d295e9a18bb88449f2182aa3c23c19b651444a2183"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      ".aikit/project.json",
+      "js/views.js",
+      "tests/full_read_fixes4.test.js",
+      "assets/screenshots/2026-11-21-demo-timeline-after.png",
+      "assets/screenshots/2026-11-21-demo-timeline-before.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "7977fd2",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795213629.7358024,
+    "finished_at": 1795213735.359346,
+    "strikes": 0,
+    "reviewer": "agent:opencode",
+    "review": {
+      "reviewer": "agent:opencode",
+      "surface": "app",
+      "surface_digest": "a6c69336d5cad0aff340ec7bfd3dde5d0db939f063d06c2a6555e61297c4a80d",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795213735.3593493,
+      "scoped_paths": [
+        ".aikit/media.json",
+        ".aikit/project.json",
+        "js/views.js",
+        "tests/full_read_fixes4.test.js",
+        "assets/screenshots/2026-11-21-demo-timeline-after.png",
+        "assets/screenshots/2026-11-21-demo-timeline-before.png"
+      ],
+      "scoped_digest": "92951506da94e46950cb2de7c66b09718cc5ced158fabd941bfd765c42256b78"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/full_read_fixes4.test.js",
+        "reason": "Failing-first timeline icon regression"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "a6c69336d5cad0aff340ec7bfd3dde5d0db939f063d06c2a6555e61297c4a80d",
+    "baseline_digest": "c3e729338b641cf155932b11f83dd36a0da6d9aca0192af6b78dd11727331a33"
   }
 ]

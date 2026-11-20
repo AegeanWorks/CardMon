@@ -38,6 +38,15 @@ test('card-face minimum payment uses the same high-limit ratio as the banner', (
   assert.ok(!html.includes('%20'), 'card face must not use the 20% low-limit fallback');
 });
 
+test('paid timeline events keep their type-specific icon', () => {
+  const harness = createHarness();
+  const svg = harness.evalInContext('timelineEventSvg({ isPaid: true, type: "loan" })');
+  const loanSvg = harness.evalInContext('TIMELINE_EVENT_SVG.loan');
+  const paidSvg = harness.evalInContext('TIMELINE_EVENT_SVG.paid');
+  assert.strictEqual(svg, loanSvg, 'a paid loan must still use the loan icon');
+  assert.notStrictEqual(svg, paidSvg, 'paid styling is handled by CSS, not by hiding the type');
+});
+
 test('burden captions still call genuinely low utilization safe', () => {
   const harness = createHarness();
   const critical = caption(harness, 20, 70);

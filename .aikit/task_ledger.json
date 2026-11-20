@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-findings-batch4",
-    "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795213458.3163688,
+    "task_id": "cardmon-findings-batch5",
+    "last_phase": "phase 3",
+    "active_phase": 3,
+    "status": "in_progress",
+    "updated_at": 1795213752.5883272,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795220658.3163688,
+    "lease_until": 1795220952.5883272,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -15,61 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795213497.634888,
-    "completed_head": "7333c1d4ecf493dfc5f08e24ec2f79357c4d1ec3",
-    "completed_tree": "3b695f171a296d688dacbd6438578d00993ca97c"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-full-read-defect-fixes",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/4] Plan and failing-first regression tests for verified live defects",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795210317.5543826,
-      "timestamp_str": "2026-11-21 00:31:57",
-      "agent": "opencode:hy4-flash-free",
-      "impact_assessment": {
-        "why": "The genuine full re-read of all 9 reforge stages surfaced 41+ real defects that the original snippet-based review missed; several are still live in current code and mislead users (wrong months, false fee/rent figures, incomplete clear-all, saved language ignored, swallowed backup failures).",
-        "benefits": "Correct user-facing financial figures and reliable core behaviours; restore trust in the reforge audit; leave durable failing-first tests.",
-        "risks": "contract: exported function signatures must stay stable; dependency: none new; concurrency: none; state: clear-all and storage paths touch persisted state",
-        "mitigation": "Keep signatures unchanged, add tests in the existing node:test harness, change only verified defect sites, run full npm test and check --strict before commit"
-      },
-      "plan_digest": "8847d793618a077cd2e0603bc60b2c0ef1d057d30d558ba8e4eaa8f2ff87db80",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-full-read-defect-fixes",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[2/4] Fixed live defects: smart-advisor date clamp, vault save status + unique ids, report month/rent/fee/clear-all, README screenshot, test_command, mono token; failing-first regressions added",
-      "files_affected": [
-        "js/smart-advisor.js",
-        "js/backup-vault.js",
-        "js/reports.js",
-        "css/base.css",
-        "README.md",
-        ".aikit/project.json",
-        "tests/full_read_regressions.test.js"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795211173.7023888,
-      "timestamp_str": "2026-11-21 00:46:13",
-      "agent": "opencode:hy4-flash-free",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-full-read-defect-fixes",
       "phase": "phase 4",
@@ -427,6 +375,48 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-findings-batch5",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Failing-first test and fix for paid timeline events losing their kind icon",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795213751.5901783,
+      "timestamp_str": "2026-11-21 01:29:11",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "The isPaid short-circuit made every paid event render the same checkmark, hiding event kind.",
+        "benefits": "Paid loans, subscriptions and rent remain distinguishable while paid styling stays intact.",
+        "risks": "contract: helper signature unchanged; dependency: none; concurrency: none; state: none",
+        "mitigation": "Move the paid fallback after type checks, add a regression test and vision proof"
+      },
+      "plan_digest": "fe95f7970c7de36a6085a53ebee6f75068e5f6e8c32f79e39adbf596154df103",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-findings-batch5",
+      "phase": "phase 3",
+      "phase_num": 3,
+      "description": "[2/2] Phase 4 passed: npm test 140/140, UI verified with vision-reviewed proof",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795213752.5883272,
+      "timestamp_str": "2026-11-21 01:29:12",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
