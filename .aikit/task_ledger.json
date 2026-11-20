@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-permission-pill-cleanup",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795158956.7533708,
     "owner": "agent",
     "lease_until": 1795166156.7533708,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795159022.7221332,
+    "completed_head": "62ab5444874ec384b70d3bd18cfb577e0b962956",
+    "completed_tree": "419b229d993e8b3e014d2da2a9518d2e99785df5"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-empty-pdf-gate",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Disable PDF export when the portfolio is empty",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795130428.8837671,
-      "timestamp_str": "2026-11-20 02:20:28",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision pass showed an enabled PDF export inviting an all-zero report in the empty state, which is not a useful action (G-003 functional/usable).",
-        "benefits": "PDF button disabled with a translated explanatory tooltip and re-enabled automatically with data; primary onboarding CTA remains the focus; before/after vision reviews approved (96 -> 97).",
-        "risks": "Small id + state toggle across index.html, js/backup-vault.js, i18n.js and CSS; export function itself untouched; 107/107 tests pass.",
-        "mitigation": "npm test 107/107, ui verify + ui finish --reviewed, vision analysis of both screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-empty-pdf-gate",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-permission-pill-cleanup",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-permission-pill-cleanup' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795159022.779055,
+      "timestamp_str": "2026-11-20 10:17:02",
+      "agent": "agent",
+      "head": "62ab5444874ec384b70d3bd18cfb577e0b962956",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
