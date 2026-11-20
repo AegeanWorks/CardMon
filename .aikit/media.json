@@ -285,9 +285,9 @@
         "status": "approved",
         "reviewer": "agent:cardmon-ui",
         "method": "vision",
-        "notes": "AFTER (populated demo data) at a191906: the health pill is now red 'KR\u0130T\u0130K / A\u015eIRI BOR\u00c7LANMA' with a red progress bar and a caption explaining that obligations exceed 107.8% of income despite 26.9% utilization. The health widget now agrees with the cashflow warning; no clipping, truncation or layout regressions.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T09:31:23"
+        "notes": "BEFORE (populated demo data) at a191906: the smart advisor banner uses four colorful emojis (brain badge, chart button, credit card, sparkle) that clash with CardMon's consistent line-art SVG iconography elsewhere. Banner layout, spacing and content are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T09:47:29"
       }
     },
     {
@@ -299,8 +299,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (populated demo data) at 8ef8a2a: all four emojis replaced with cyan line-art SVGs - star in the badge, bar chart in the button, a credit-card icon in a tinted rounded square, and a sparkle in the cutoff note. Banner geometry, text and all other dashboard sections unchanged; no clipping, truncation or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T09:47:54"
+      }
     }
   ]
 }
