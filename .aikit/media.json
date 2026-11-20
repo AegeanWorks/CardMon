@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-vault-snaps-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/vault-snaps-before.html",
-      "commit": "3470e678d0a4012516047f4de3f8089d6fe6ea0e",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1100",
-      "width": 1440,
-      "height": 1100,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Backup Vault snapshot list, demo data) at 19b3525: the snapshot summary counts and action buttons use colorful emojis (bank, card, document, money, download, refresh, trash) clashing with the app's monochrome line-art icons. Card layout and status strip are otherwise clean.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T21:20:33"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-vault-snaps-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/vault-snaps-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T22:21:31"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-pay-method-before.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/pay-method-before.html",
+      "commit": "93045023bf9a3f581739527827cc2a6352a98128",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x1200",
+      "width": 1440,
+      "height": 1200,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
