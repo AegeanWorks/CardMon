@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-subs-day-suffix-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/subs-day-suffix-after.html",
-      "commit": "45b885fb023ff50c7a4bf7f5193bba7634bf6afa",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Subscriptions view, demo data) at 45b885f: payment-day labels now read 'Ay\u0131n 14'\u00fc', 'Ay\u0131n 20'si', 'Ay\u0131n 12'si' etc. with correct Turkish suffixes. No layout, typography or contrast changes; amounts and remaining-day badges unchanged.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T13:13:59"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-ekhesap-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/ekhesap-review.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-vault-review.html",
       "commit": "8604e5471afda37696898de0657b4be168f3d330",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-vault-icons-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-vault-icons-after.html",
+      "commit": "75fc221d7a0327467b3df76dd63d50a6128b9651",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,

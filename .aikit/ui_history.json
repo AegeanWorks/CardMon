@@ -1491,5 +1491,42 @@
     "final_snapshot_entries": 0,
     "surface_digest": "751af514b6284f036aa172cb71fda051125565c163e97222a6583cce0049bef1",
     "baseline_digest": "751af514b6284f036aa172cb71fda051125565c163e97222a6583cce0049bef1"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/media.json",
+      "assets/screenshots/2026-11-20-modal-vault-icons-after.png"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "75fc221d7a0327467b3df76dd63d50a6128b9651",
+    "contract_hash": "242af08c6ae7b95904d7c386165b956a0f5c12dd2de91275add4b3e412ffcc6a",
+    "started_at": 1795190273.5907574,
+    "finished_at": 1795190449.3232343,
+    "strikes": 0,
+    "reviewer": "agent",
+    "review": {
+      "reviewer": "agent",
+      "surface": "app",
+      "surface_digest": "e8a06a75c7f4766c47aa64d4408ad55cdce1ea771b0693da49480aa063a737e1",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795190449.323237,
+      "scoped_paths": [
+        ".aikit/media.json",
+        "assets/screenshots/2026-11-20-modal-vault-icons-after.png"
+      ],
+      "scoped_digest": "22ec32140a08fdee9fe73b84685e72b21e6428ea2a58a692181151f81ecac1fa"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "e8a06a75c7f4766c47aa64d4408ad55cdce1ea771b0693da49480aa063a737e1",
+    "baseline_digest": "e8a06a75c7f4766c47aa64d4408ad55cdce1ea771b0693da49480aa063a737e1"
   }
 ]
