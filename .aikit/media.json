@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-bank-used-stat-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/bank-used-stat-after.html",
-      "commit": "583c6852f1feabb37dd6708ff40d0d5bdc7a4c4e",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Banks view, demo data) at 583c685: 'Kullan\u0131lan Tutar' now shows 28.450\u20ba, matching card debt, 23.7% utilization and 91.550\u20ba available; the 80.000\u20ba loan remains in its separate 'Kredi Borcu (Kalan)' breakdown. Figures are internally consistent; layout and other banks unchanged.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T11:08:59"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-loans-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/loans-review.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T15:17:47"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-card-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-card-review.html",
+      "commit": "4a589d3ecfb4ab517c73fe96692fd4fa54de5aa9",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
