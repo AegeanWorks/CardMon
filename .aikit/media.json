@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-pdf-disable-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/pdf-disable-before.html",
-      "commit": "62cbe7cc048b7db893fed5fe882ba1456606d8ea",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 62cbe7c: the topbar 'PDF Raporu' button appears fully enabled while the portfolio is empty, inviting an export of an all-zero report with no useful content. The rest of the topbar and hero are clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T02:19:29"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-pdf-disable-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/pdf-disable-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T10:26:19"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-banks-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/banks-review.html",
+      "commit": "ddb86cceda2cb1311db3b489224c94e4cc8210c0",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
