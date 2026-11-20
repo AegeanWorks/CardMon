@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-shortcuts-icon",
+    "task_id": "cardmon-rent-modal-icons",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795191057.5994315,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795191379.885726,
     "owner": "agent",
-    "lease_until": 1795198257.5994315,
+    "lease_until": 1795198579.885726,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795191083.5635126,
-    "completed_head": "e6bebdde86a6c9e3948ddcb28807a5dd5ba2395d",
-    "completed_tree": "3a40a651e6ef17e9995ce080d2e20df337b696b5"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-kmh-note-dedup",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795177153.131386,
-      "timestamp_str": "2026-11-20 15:19:13",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-kmh-note-dedup",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-kmh-note-dedup' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795177235.375521,
-      "timestamp_str": "2026-11-20 15:20:35",
-      "agent": "agent",
-      "head": "9e5790f373587bca9676cce8bb12dd024279f0eb",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-modal-card-icons",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-rent-modal-icons",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Use line-art SVG icons in rent simulator modal",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795191378.8975372,
+      "timestamp_str": "2026-11-20 19:16:18",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the newly inspected Rent Simulator modal found five colorful emojis in the title, insight header and comparison bullets clashing with the app's monochrome line-art icons (G-003 aesthetic cohesion).",
+        "benefits": "Title, insight header and three bullets now use line-art home/bulb/trend/bank SVGs; before/after vision reviews approved (95 -> 97).",
+        "risks": "Five render-only changes in index.html and js/modals.js; text labels preserved so tests pass; 111/111 tests pass.",
+        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both rent-modal screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-rent-modal-icons",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 111/111, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795191379.885726,
+      "timestamp_str": "2026-11-20 19:16:19",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
