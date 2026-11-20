@@ -773,6 +773,11 @@ function renderEkHesapView() {
       </div>
     </div>
 
+    <div class="ekhesap-info-notice ekhesap-pool-note">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="11" x2="12" y2="16"></line><line x1="12" y1="8" x2="12" y2="8"></line></svg>
+      Bu limit, vadesiz hesabınızda bakiye kalmadığında otomatik devreye girer. Yalnızca kullanılan gün kadar faiz işler.
+    </div>
+
     <!-- Bank Ek Hesap Cards Grid -->
     <div class="ekhesap-grid">
       ${state.banks.length === 0 ? `
@@ -828,13 +833,6 @@ function renderEkHesapView() {
               </div>
             ` : ''}
 
-            <div class="ekhesap-info-notice">
-              ${hasLimit ? `
-                💡 Bu limit, vadesiz hesabınızda bakiye kalmadığında otomatik devreye girer. Yalnızca kullanılan gün kadar faiz işler.
-              ` : `
-                ℹ️ Bu bankada ek hesap limitiniz yoksa düzenle butonundan tanımlayabilirsiniz.
-              `}
-            </div>
           </div>
         `;
       }).join('')}

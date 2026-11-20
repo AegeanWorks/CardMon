@@ -160,6 +160,15 @@ test('renderEkHesapView renders overdraft credit lines and reserves', () => {
   assert.match(container.innerHTML, /Ek Hesap &amp; Kredili Mevduat|Ek Hesap & Kredili Mevduat/);
 });
 
+test('ek hesap pool explanation appears once, not on every bank card', () => {
+  const h = createHarness();
+  const container = h.sandbox.document.getElementById('ekHesapContainer');
+  h.loadDemoData(false);
+  h.renderEkHesapView();
+  const occurrences = (container.innerHTML.match(/otomatik devreye girer/g) || []).length;
+  assert.equal(occurrences, 1);
+});
+
 test('renderLoansView renders active loan cards or empty message', () => {
   const h = createHarness();
   const container = h.sandbox.document.getElementById('loansContainer');

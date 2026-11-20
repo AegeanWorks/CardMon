@@ -746,6 +746,13 @@ body:has(.health-score-pill.health-empty) .sidebar-portfolio-card .meter-bar {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.ekhesap-pool-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
 /* ==========================================================================
    ANALYTICS & CHARTS VIEW
    ========================================================================== */
