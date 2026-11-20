@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-demo-preview.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/demo-preview.html",
-      "commit": "2a24348354e70b551172bdaee39b51f8d9f86934",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (populated demo data) at 2a24348: the cashflow pill warns 'Y\u00fcksek Y\u00fck\u00fcml\u00fcl\u00fck Bask\u0131s\u0131 (Gelirin %107.8'i)' in red and free cash is 0\u20ba, yet 'Kalan Net Serbest Nakit 0\u20ba' is bright emerald, implying a healthy surplus and contradicting the warning. Rest of the dashboard is clean and well aligned.",
-        "score": 94,
-        "reviewed_at": "2026-11-20T09:15:09"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-demo-free-cash-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/demo-free-cash-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T11:08:59"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-loans-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/loans-review.html",
+      "commit": "79256df9fe733619958103c090dbddd5afdf2aec",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
