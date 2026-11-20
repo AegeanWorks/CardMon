@@ -17,6 +17,14 @@ function getApproxDay(approxWeekKey) {
   }
 }
 
+function turkishDaySuffix(day) {
+  const suffixes = ['', "'i", "'si", "'ü", "'ü", "'i", "'sı", "'si", "'i", "'u", "'u",
+    "'i", "'si", "'ü", "'ü", "'i", "'sı", "'si", "'i", "'u", "'si",
+    "'i", "'si", "'ü", "'ü", "'i", "'sı", "'si", "'i", "'u", "'u", "'i"];
+  const n = Number(day);
+  return Number.isInteger(n) && n >= 1 && n <= 31 ? suffixes[n] : "'i";
+}
+
 function getUtilizationColor(utilization) {
   if (utilization <= 30) return 'var(--accent-emerald)';
   if (utilization <= 70) return 'var(--accent-amber)';

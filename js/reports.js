@@ -415,7 +415,7 @@ function exportPdfReport() {
 
               const contentRows = [];
               if (isSalaryWeek) {
-                contentRows.push(`<div style="color:#16a34a; font-weight:700; font-size:7.8pt;">Maaş & Gelir Girişi (Ayın ${salaryDay}'i)</div>`);
+                contentRows.push(`<div style="color:#16a34a; font-weight:700; font-size:7.8pt;">Maaş & Gelir Girişi (Ayın ${salaryDay}${turkishDaySuffix(salaryDay)})</div>`);
               }
               if (data.cards.length > 0) {
                 contentRows.push(`<div style="font-size:7.5pt;"><strong>Kredi Kartı Ödemesi:</strong> ${data.cards.map(c => `${escapeHtml(c.name)} Kartı (${formatMoney(c.amt)})`).join(', ')}</div>`);

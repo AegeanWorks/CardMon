@@ -662,7 +662,7 @@ function updateQuickTxInstallmentPreview() {
           <span style="color:#22d3ee;">${amount > 0 ? formatMoney(monthlyInstallment) : formatMoney(0)} × ${installments} Ay</span>
         </div>
         <div style="font-size:0.78rem; color:${isCutoffPassed ? '#f59e0b' : '#34d399'};">
-          📅 <strong>Ekstre Kesim Günü:</strong> Ayın ${cutoffDay}'i (Bugün: ${today}. gün)
+          📅 <strong>Ekstre Kesim Günü:</strong> Ayın ${cutoffDay}${turkishDaySuffix(cutoffDay)} (Bugün: ${today}. gün)
         </div>
         <div style="font-size:0.78rem; color:var(--text-secondary);">
           ${isCutoffPassed ? `

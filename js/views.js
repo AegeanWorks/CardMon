@@ -1193,7 +1193,7 @@ function renderSubscriptionsView() {
               <div style="display:flex; flex-direction:column; align-items:flex-end; gap:0.25rem;">
                 <span style="font-size:0.7rem; color:var(--text-muted);">Ödeme Günü:</span>
                 <span class="sub-billing-date-pill">
-                  📅 Ayın ${billingDay}'i
+                  📅 Ayın ${billingDay}${turkishDaySuffix(billingDay)}
                   <strong style="color: ${daysLeft <= 3 ? '#fb7185' : '#34d399'};">(${daysLeft === 0 ? 'Bugün!' : `${daysLeft} gün kaldı`})</strong>
                 </span>
               </div>

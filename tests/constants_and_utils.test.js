@@ -107,3 +107,13 @@ test('showToast creates toast notification in container', () => {
   h.showToast('Test Toast Message');
   assert.equal(appended, true);
 });
+
+test('turkishDaySuffix follows Turkish number suffix rules', () => {
+  const h = createHarness();
+  assert.equal(h.turkishDaySuffix(1), "'i");
+  assert.equal(h.turkishDaySuffix(12), "'si");
+  assert.equal(h.turkishDaySuffix(14), "'ü");
+  assert.equal(h.turkishDaySuffix(20), "'si");
+  assert.equal(h.turkishDaySuffix(28), "'i");
+  assert.equal(h.turkishDaySuffix(30), "'u");
+});
