@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-card-review.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-card-review.html",
-      "commit": "4a589d3ecfb4ab517c73fe96692fd4fa54de5aa9",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Add Card modal, demo data) at 4a589d3: two label emojis (flag-style participation marker and calendar) stand out in monochrome form fields, inconsistent with line-art SVG iconography used elsewhere. Form layout, spacing and labels are otherwise clean.",
-        "score": 96,
-        "reviewed_at": "2026-11-20T16:02:57"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-card-icons-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-card-icons-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T19:10:29"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-rent-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-rent-review.html",
+      "commit": "3fc0891e19d43b34b80c06a148614d737fdf2477",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
