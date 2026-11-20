@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-advisor-clock-icon",
+    "task_id": "cardmon-permission-pill-cleanup",
     "last_phase": "phase 4",
-    "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795158056.034397,
+    "active_phase": 4,
+    "status": "in_progress",
+    "updated_at": 1795158956.7533708,
     "owner": "agent",
-    "lease_until": 1795165256.034397,
+    "lease_until": 1795166156.7533708,
     "started_by": "agent",
     "continuations": [],
     "workspaces": [
@@ -15,47 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795158126.2490983,
-    "completed_head": "5bbea4ba5d5bc397ecf7ad26a9f3b3d7c8b7a864",
-    "completed_tree": "ca5e5a37dc8881340b502cb8c3b8b64aa0831ac4"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-onboarding-cta-size",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Verify: npm test 107/107, ui verify + ui finish pass, before/after vision reviews approved (96/97), check --strict 4/4",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795129888.000069,
-      "timestamp_str": "2026-11-20 02:11:27",
-      "agent": "agent",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-onboarding-cta-size",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-onboarding-cta-size' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795129926.4096005,
-      "timestamp_str": "2026-11-20 02:12:06",
-      "agent": "agent",
-      "head": "5736829933cadb269bdad17be6f380784b3fa0c8",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-empty-pdf-gate",
       "phase": "phase 1",
@@ -403,6 +365,47 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-permission-pill-cleanup",
+      "phase": "phase 1",
+      "phase_num": 1,
+      "description": "[1/2] Simplify card permission pills with token status dots",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795158956.1967335,
+      "timestamp_str": "2026-11-20 10:15:56",
+      "agent": "agent",
+      "impact_assessment": {
+        "why": "Vision review of the Cards view found permission pills cluttered with eight different emojis and wrapping the freeze action onto a second line (G-003 simplistic/aesthetic).",
+        "benefits": "Emojis replaced by one small token-colored dot with clear labels; pills fit one row, giving cards more vertical room; before/after vision reviews approved (95 -> 97).",
+        "risks": "Render-only changes in js/views.js and one CSS rule; toggle handlers, titles and behavior unchanged; 108/108 tests pass.",
+        "mitigation": "npm test 108/108, ui verify + ui finish --reviewed, vision analysis of both Cards-view screenshots, check --strict 4/4."
+      },
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-permission-pill-cleanup",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Verify: npm test 108/108, ui verify + ui finish pass, before/after vision reviews approved (95/97), check --strict 4/4",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795158956.7533708,
+      "timestamp_str": "2026-11-20 10:15:56",
+      "agent": "agent",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }
