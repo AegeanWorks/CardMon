@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Subscriptions view, demo data) at aa153ba: the two hero headline figures use hardcoded Tailwind shades (#c084fc purple-400 and #60a5fa blue-400) rather than CardMon design tokens, breaking color cohesion with the rest of the app. Layout and figures are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T18:20:59"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-subs-token-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Subscriptions view, demo data) at 7c85a17: hero figures now use var(--accent-purple) and var(--accent-primary), matching the token palette used elsewhere. Amounts, labels and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T18:21:29"
+      }
     }
   ]
 }
