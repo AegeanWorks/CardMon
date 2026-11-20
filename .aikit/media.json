@@ -247,9 +247,9 @@
         "status": "approved",
         "reviewer": "agent:cardmon-ui",
         "method": "vision",
-        "notes": "AFTER (Timeline view, demo data) at 9723101: line-art SVG icons now appear in the section title, banner and the three category metrics (card, bank, rent). Totals, event cards and layout unchanged; no clipping, truncation or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T11:52:13"
+        "notes": "BEFORE (Timeline view, demo data) at 9723101: event icon boxes mix emojis (credit card, cloud, scissors, play, home) with the line-art SVG icons used in the header and summary, leaving the event list visually inconsistent. Amounts, badges and layout are otherwise clean.",
+        "score": 96,
+        "reviewed_at": "2026-11-20T12:07:13"
       }
     },
     {
@@ -261,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Timeline view, demo data) at d628f5f: all event icon boxes now use category-based line-art SVGs (card for dues, bag for subscriptions, scissors for cutoffs, home for rent), uniform and consistent with the header/summary icons. Event cards, amounts, badges and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T12:08:30"
+      }
     }
   ]
 }
