@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-card-detail-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-card-detail-after.html",
-      "commit": "14c7ed070e986c91d4fe9b6d7997fddd0199d474",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Add Card modal, detail section, demo data) at 14c7ed0: the preview rows and note now use line-art calendar, clock and bulb SVGs matching the app icon set. Amounts, day counts, labels and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T19:57:50"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-timeline-emoji-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/timeline-emoji-review.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/exec-table-before.html",
       "commit": "b4ff7945aac957e267915a02a20879a5b5143b19",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x3000",
+      "width": 1440,
+      "height": 3000,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-exec-table-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/exec-table-after.html",
+      "commit": "b2fd4636372a4dc303bab65a1cc6f1970bffab18",
       "taken_at": "2026-11-20",
       "viewport": "1440x3000",
       "width": 1440,
