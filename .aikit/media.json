@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-card-detail-headers-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/card-detail-headers-after.html",
-      "commit": "bdfd5e752825e9991a63ffa33491af7677b1f756",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x1500",
-      "width": 1440,
-      "height": 1500,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Cards view, detail headers, demo data) at bdfd5e7: the sub-section headers now use line-art bag/card/bank SVGs matching the app icon set (planned-installment and activate states converted too). Amounts, counts, chips and layout unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T20:32:20"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-card-status-icons-before.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-status-icons-before.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/nearest-due-before.html",
       "commit": "df366b47c4234fe443f4062ea2e39054a4861663",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-nearest-due-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/nearest-due-after.html",
+      "commit": "cd2ae3180c492253e001ce97b8b953c88cc2928e",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
