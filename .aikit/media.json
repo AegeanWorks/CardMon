@@ -242,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Add Card modal, permissions section, demo data) at cc1c727: the five permission checkboxes use colorful emojis (globe, earth, antenna, ATM, snowflake) that clash with the app's monochrome line-art icon language. Checkbox layout, labels and selection state are otherwise clean.",
+        "score": 94,
+        "reviewed_at": "2026-11-20T19:51:21"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-modal-card-perms-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Add Card modal, permissions section, demo data) at 7691962: the five emojis are replaced by distinct line-art SVGs (globe, paper-plane, contactless waves, ATM, snowflake) matching the app icon set. Checkbox layout, labels, selection state and surrounding fields unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T19:51:35"
+      }
     }
   ]
 }
