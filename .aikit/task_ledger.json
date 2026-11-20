@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-loan-status-icons",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795201886.1837335,
     "owner": "agent",
     "lease_until": 1795209086.1837335,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795201918.670311,
+    "completed_head": "a68542b13b37e53dd874681cb0fbd897814e30c6",
+    "completed_tree": "8c8c677414dc811ec49ae3ef85292e1ffca7e641"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-insight-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons in smart insight cards",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795197452.0376003,
-      "timestamp_str": "2026-11-20 20:57:32",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the dashboard Smart Insights section found five colorful emojis on insight tiles clashing with the app's monochrome line-art icons (G-003 aesthetic cohesion).",
-        "benefits": "All insight icons now use line-art SVG variants via an INSIGHT_ICON_SVG map; before/after vision reviews approved (94 -> 97).",
-        "risks": "One render-only change in js/backup-vault.js adding an SVG map; titles and text preserved so tests pass; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both insights screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-insight-icons",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-loan-status-icons",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-loan-status-icons' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795201918.797465,
+      "timestamp_str": "2026-11-20 22:11:58",
+      "agent": "agent",
+      "head": "a68542b13b37e53dd874681cb0fbd897814e30c6",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
