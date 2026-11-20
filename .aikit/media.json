@@ -242,8 +242,15 @@
       "viewport": "1440x3000",
       "width": 1440,
       "height": 3000,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Executive summary table, dashboard, demo data) at 7775bcc: each table row uses a colorful credit-card emoji in the first column, clashing with the app's monochrome line-art icon language. Column layout, amounts and health pills are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T21:09:06"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-exec-table-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x3000",
       "width": 1440,
       "height": 3000,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Executive summary table, dashboard, demo data) at b2fd463: the row icon is now a line-art card SVG matching the app icon set (the Kat\u0131l\u0131m participation badge uses a star SVG too). Amounts, columns and health pills unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T21:09:24"
+      }
     }
   ]
 }
