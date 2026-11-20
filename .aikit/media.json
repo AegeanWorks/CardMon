@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-bank-detail-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/bank-detail-icons-after.html",
-      "commit": "1e6dbdd4b068ac2a7859b56df8b68b3a631a7c92",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE (Banks view, demo data) at 1e6dbdd: for Garanti BBVA the 'Kart Limiti 120.000\u20ba' stat pairs with 'Kullan\u0131lan Tutar 108.450\u20ba' while the meter says 'Doluluk %23.7'. The used figure mixes card debt (28.450\u20ba) and loan debt (80.000\u20ba), contradicting the card-based utilization and available limit (91.550\u20ba).",
-        "score": 94,
-        "reviewed_at": "2026-11-20T11:08:31"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-bank-used-stat-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/bank-used-stat-after.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/ekhesap-review.html",
       "commit": "936244741360661de58d2491a8207a52f1fada74",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-ekhesap-note-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/ekhesap-note-after.html",
+      "commit": "62ba86eecc3eb56fabb9a726ade57799e44963c1",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
