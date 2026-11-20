@@ -942,7 +942,7 @@ function renderLoansView() {
                   <h4 class="loan-title">${escapeHtml(loan.title || 'Banka Kredisi')}</h4>
                   <div style="display:flex; align-items:center; gap:0.35rem; flex-wrap:wrap; margin-top:2px;">
                     <span class="loan-type-tag">${typeLabel}</span>
-                    ${loan.startCycle === 'next' ? '<span class="loan-type-tag" style="background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3);">✨ İlk Taksit: Gelecek Ay (Eylül)</span>' : ''}
+                    ${loan.startCycle === 'next' ? '<span class="loan-type-tag" style="background:rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3);"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"></path></svg> İlk Taksit: Gelecek Ay (Eylül)</span>' : ''}
                   </div>
                 </div>
               </div>
@@ -976,7 +976,7 @@ function renderLoansView() {
             <div class="loan-progress-box">
               <div class="loan-progress-header">
                 <span>
-                  <strong>${paidInst}/${totalInst} Ay</strong> ${isCompleted ? '🎉 (Tamamlandı)' : `(Kalan: ${remainingInst} Ay)`}
+                  <strong>${paidInst}/${totalInst} Ay</strong> ${isCompleted ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> (Tamamlandı)' : `(Kalan: ${remainingInst} Ay)`}
                 </span>
                 <strong style="color: ${isCompleted ? '#34d399' : '#38bdf8'};">%${progressPct} Ödendi</strong>
               </div>
@@ -999,7 +999,7 @@ function renderLoansView() {
                   </button>
                 ` : `
                   <span style="font-size:0.75rem; color:#34d399; font-weight:700; background:rgba(16,185,129,0.15); padding:0.25rem 0.6rem; border-radius:6px;">
-                    ✅ Borç Kapandı
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><polyline points="20 6 9 17 4 12"></polyline></svg> Borç Kapandı
                   </span>
                 `}
               </div>
