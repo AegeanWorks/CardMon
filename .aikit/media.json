@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-modal-vault-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/modal-vault-icons-after.html",
-      "commit": "75fc221d7a0327467b3df76dd63d50a6128b9651",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Backup Vault modal, demo data) at 75fc221: the auto-backup status now uses a line-art shield SVG consistent with the rest of the modal; snapshot labels use matching shield/file SVGs once backups exist. Layout, text and empty state unchanged; no clipping or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T19:03:37"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-modal-shortcuts-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-shortcuts-review.html",
@@ -257,6 +238,18 @@
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/modal-card-perms-before.html",
       "commit": "c821c56c155308927d27edff0edcdd02ef98b69b",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-card-perms-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-card-perms-after.html",
+      "commit": "7691962d1fae14c17b8e7aec9ed0be70389253b7",
       "taken_at": "2026-11-20",
       "viewport": "1440x900",
       "width": 1440,
