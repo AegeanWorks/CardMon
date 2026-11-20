@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-card-reorder-before.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/card-reorder-before.html",
-      "commit": "5ed5fdec6c762e7c8e7b07b0a9ea1859e1209827",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "BEFORE at 5ed5fde: the empty-state analytics guidance card sits after the cashflow widget, so only its header peeks into the 1440x900 viewport and the explanation of what appears with data requires scrolling. Layout, typography and spacing otherwise clean.",
-        "score": 95,
-        "reviewed_at": "2026-11-20T01:44:28"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-card-reorder-after.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/card-reorder-after.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T02:28:33"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-demo-preview.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/demo-preview.html",
+      "commit": "2a24348354e70b551172bdaee39b51f8d9f86934",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }

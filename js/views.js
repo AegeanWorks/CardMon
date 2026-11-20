@@ -1629,7 +1629,7 @@ function renderDashboardView() {
           ${monthlyIncome > 0 ? `
             <div class="cashflow-total-block align-right">
               <span class="cashflow-total-label">Kalan Net Serbest Nakit</span>
-              <div class="cashflow-total-val" style="color:var(--accent-emerald);">${formatMoney(remainingFreeCash)}</div>
+              <div class="cashflow-total-val" style="color:${burdenColor};">${formatMoney(remainingFreeCash)}</div>
             </div>
           ` : ''}
         </div>
