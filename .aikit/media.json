@@ -242,8 +242,15 @@
       "viewport": "1440x1500",
       "width": 1440,
       "height": 1500,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Cards view, status rows, demo data) at c191471: the G\u00fcncel Bor\u00e7 and Ba\u011fl\u0131 Abonelikler rows use colorful emojis (card, refresh) that clash with the app's monochrome line-art icon language. Card layout, amounts and chips are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T20:40:08"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-card-status-icons-after.png",
@@ -254,8 +261,15 @@
       "viewport": "1440x1500",
       "width": 1440,
       "height": 1500,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Cards view, status rows, demo data) at 5bebf40: the G\u00fcncel Bor\u00e7 and Ba\u011fl\u0131 Abonelikler rows now use line-art card/refresh SVGs matching the app icon set (high-utilization and Kat\u0131l\u0131m states converted too). Amounts, counts and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T20:40:25"
+      }
     }
   ]
 }
