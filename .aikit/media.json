@@ -44,25 +44,6 @@
   },
   "screenshots": [
     {
-      "path": "assets/screenshots/2026-11-20-loans-icons-after.png",
-      "alt": "CardMon interface at 2026-11-20",
-      "caption": "CardMon interface captured from projects/CardMon/loans-icons-after.html",
-      "commit": "e1fbf151f58f2c1bef2560f06c7074a5757ca230",
-      "taken_at": "2026-11-20",
-      "viewport": "1440x900",
-      "width": 1440,
-      "height": 900,
-      "status": "approved",
-      "review": {
-        "status": "approved",
-        "reviewer": "agent:cardmon-ui",
-        "method": "vision",
-        "notes": "AFTER (Loans view, demo data) at e1fbf15: line-art bank, calendar and pencil SVGs replace the emojis in the hero and loan cards. Hero, totals, progress bars and buttons unchanged; no clipping, truncation or contrast regression.",
-        "score": 97,
-        "reviewed_at": "2026-11-20T11:22:56"
-      }
-    },
-    {
       "path": "assets/screenshots/2026-11-20-subs-review.png",
       "alt": "CardMon interface at 2026-11-20",
       "caption": "CardMon interface captured from projects/CardMon/subs-review.html",
@@ -270,6 +251,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T16:03:30"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-modal-advisor-review.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface captured from projects/CardMon/modal-advisor-review.html",
+      "commit": "2a0f30ebe3bbca183f07c6f9440bc8da3e4844f2",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
