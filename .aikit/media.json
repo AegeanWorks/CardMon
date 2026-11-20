@@ -223,8 +223,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "BEFORE (Timeline view, demo data) at 2d88094: the event due rows use colorful emojis (calendar, flame) for the date and BUG\u00dcN! marker, clashing with the app's monochrome line-art icon language. Timeline cards, amounts and badges are otherwise clean.",
+        "score": 95,
+        "reviewed_at": "2026-11-20T20:11:51"
+      }
     },
     {
       "path": "assets/screenshots/2026-11-20-timeline-emoji-after.png",
@@ -235,8 +242,15 @@
       "viewport": "1440x900",
       "width": 1440,
       "height": 900,
-      "status": "pending_review",
-      "review": null
+      "status": "approved",
+      "review": {
+        "status": "approved",
+        "reviewer": "agent:cardmon-ui",
+        "method": "vision",
+        "notes": "AFTER (Timeline view, demo data) at fa90981: the due rows now use line-art calendar and flame SVGs matching the app icon set; the paid-state branch uses a check SVG too. Event cards, amounts, badges and layout unchanged; no clipping or contrast regression.",
+        "score": 97,
+        "reviewed_at": "2026-11-20T20:12:06"
+      }
     }
   ]
 }
