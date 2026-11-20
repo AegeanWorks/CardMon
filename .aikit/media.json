@@ -270,6 +270,18 @@
         "score": 97,
         "reviewed_at": "2026-11-20T09:15:28"
       }
+    },
+    {
+      "path": "assets/screenshots/2026-11-20-health-burden-after.png",
+      "alt": "CardMon interface at 2026-11-20",
+      "caption": "CardMon interface with demo data after burden-aware health score",
+      "commit": "a1919060d15387b4530317539e7de18f35dd5292",
+      "taken_at": "2026-11-20",
+      "viewport": "1440x900",
+      "width": 1440,
+      "height": 900,
+      "status": "pending_review",
+      "review": null
     }
   ]
 }
