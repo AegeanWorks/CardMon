@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-kmh-chart-icon",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795199712.6682835,
     "owner": "agent",
     "lease_until": 1795206912.6682835,
@@ -15,32 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795199737.8178024,
+    "completed_head": "65e030338758a72750cac110ab67bcc542ab3b25",
+    "completed_tree": "9d7606a507cf001fca8648a68ef84eeafd679e1b"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-fee-status-icons",
-      "phase": "phase 1",
-      "phase_num": 1,
-      "description": "[1/2] Use line-art SVG icons for card annual-fee status",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795195498.1396003,
-      "timestamp_str": "2026-11-20 20:24:58",
-      "agent": "agent",
-      "impact_assessment": {
-        "why": "Vision review of the Cards view fee row found colorful emojis (tag, hourglass, money, check, shield) clashing with the app's monochrome line-art icons (G-003 aesthetic cohesion).",
-        "benefits": "Aidat banner and all four fee states now use line-art SVGs; before/after vision reviews approved (95 -> 97).",
-        "risks": "Two render-only changes in js/views.js; amounts and status text preserved so tests pass; 111/111 tests pass.",
-        "mitigation": "npm test 111/111, ui verify + ui finish --reviewed, vision analysis of both card-fee screenshots, check --strict 4/4."
-      },
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-fee-status-icons",
       "phase": "phase 4",
@@ -406,6 +386,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-kmh-chart-icon",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-kmh-chart-icon' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795199737.9349885,
+      "timestamp_str": "2026-11-20 21:35:37",
+      "agent": "agent",
+      "head": "65e030338758a72750cac110ab67bcc542ab3b25",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
