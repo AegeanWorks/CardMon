@@ -142,31 +142,30 @@ async function apkStartBuild() {
   apkRender();
 }
 
+function apkDownloadNote(message) {
+  const note = apkElement('apkDownloadNote');
+  if (note) {
+    note.textContent = message || '';
+    note.style.display = message ? 'block' : 'none';
+  }
+}
+
 async function apkDownload() {
+  apkDownloadNote('');
   try {
     const response = await fetch('/api/build-apk/download', { headers: apkHeaders() });
     if (!response.ok) throw new Error(`Download failed (${response.status})`);
     const blob = await response.blob();
-    if (typeof window !== 'undefined' && window.CardMonAndroid &&
-        typeof window.CardMonAndroid.downloadBase64 === 'function' && typeof FileReader !== 'undefined') {
-      const reader = new FileReader();
-      reader.onloadend = function () {
-        const value = String(reader.result || '');
-        const base64 = value.includes(',') ? value.slice(value.indexOf(',') + 1) : '';
-        window.CardMonAndroid.downloadBase64('cardmon-debug.apk', base64, 'application/vnd.android.package-archive');
-      };
-      reader.readAsDataURL(blob);
-      return;
+    if (typeof downloadBlob !== 'function') {
+      throw new Error('Download helper unavailable — reload the page');
     }
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'cardmon-debug.apk';
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    // Shared helper routes through CardMonAndroid when present, browser otherwise.
+    downloadBlob(blob, 'cardmon-debug.apk');
+    apkDownloadNote(typeof window !== 'undefined' && window.CardMonAndroid
+      ? 'Saved to Downloads on your device.'
+      : 'Download started — check your Downloads folder.');
   } catch (err) {
+    apkDownloadNote('');
     apkUi.job = { state: 'failed', log: err.message };
     apkRender();
   }

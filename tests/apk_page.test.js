@@ -8,6 +8,7 @@ const vm = require('node:vm');
 
 const ROOT = path.join(__dirname, '..');
 const SCRIPT = fs.readFileSync(path.join(ROOT, 'js', 'apk-page.js'), 'utf8');
+const UTILS = fs.readFileSync(path.join(ROOT, 'js', 'utils.js'), 'utf8');
 
 function ok(body, status = 200) {
   return { ok: status >= 200 && status < 300, status, json: async () => body };
@@ -22,7 +23,10 @@ function createPageHarness(fetchImpl) {
     value: '',
     href: '',
     disabled: false,
-    style: { display: 'none' }
+    style: { display: 'none' },
+    click() {},
+    remove() {},
+    setAttribute(k, v) { this[k] = v; }
   });
   const store = new Map();
   const sandbox = {
@@ -49,6 +53,7 @@ function createPageHarness(fetchImpl) {
     URL: { createObjectURL: () => 'blob:fake', revokeObjectURL() {} }
   };
   vm.createContext(sandbox);
+  vm.runInContext(UTILS, sandbox);
   vm.runInContext(SCRIPT, sandbox);
   return {
     sandbox,
@@ -66,8 +71,37 @@ test('APK page HTML exposes build, status, result and download controls', () => 
   assert.match(html, /id="apkStatus"/);
   assert.match(html, /id="apkResult"/);
   assert.match(html, /id="apkDownloadBtn"/);
+  assert.match(html, /id="apkDownloadNote"/);
+  assert.match(html, /Back to CardMon/);
+  assert.match(html, /src="js\/utils\.js"[\s\S]*src="js\/apk-page\.js"/);
+  assert.match(html, /env\(safe-area-inset-bottom\)/);
   assert.match(html, /src="js\/apk-page.js"/);
   assert.match(html, /viewport/);
+});
+
+test('APK download uses the shared helper and shows on-screen confirmation', async () => {
+  const h = createPageHarness(async () => ok({ state: 'idle' }));
+  const blobs = [];
+  h.sandbox.downloadBlob = (blob, name) => blobs.push({ blob, name });
+  h.sandbox.fetch = async () => ({ ok: true, status: 200, blob: async () => ({ type: 'application/vnd.android.package-archive' }) });
+
+  await h.run('apkDownload()');
+
+  assert.equal(blobs.length, 1);
+  assert.equal(blobs[0].name, 'cardmon-debug.apk');
+  assert.equal(h.el('apkDownloadNote').style.display, 'block');
+  assert.match(h.el('apkDownloadNote').textContent, /Downloads/);
+});
+
+test('APK download reports the native save path when the Android bridge is present', async () => {
+  const h = createPageHarness(async () => ok({ state: 'idle' }));
+  h.sandbox.downloadBlob = () => {};
+  h.sandbox.window = { CardMonAndroid: { downloadBase64() {} } };
+  h.sandbox.fetch = async () => ({ ok: true, status: 200, blob: async () => ({}) });
+
+  await h.run('apkDownload()');
+
+  assert.match(h.el('apkDownloadNote').textContent, /Saved to Downloads/);
 });
 
 test('apkStatusMessage describes every build state', () => {

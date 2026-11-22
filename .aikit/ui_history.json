@@ -3621,5 +3621,65 @@
     "final_snapshot_entries": 0,
     "surface_digest": "5031684a531e6dc9c91cb89d6df34a92412246678bf139158e250158080529d8",
     "baseline_digest": "d324fa0b52509fee376250dd485411c6231327bf122666ff738e43ae44b0fc63"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/decisions.md",
+      "android/README.md",
+      "android/app/src/main/java/com/aegeanworks/cardmon/MainActivity.java",
+      "android/app/src/main/res/layout/activity_web.xml",
+      "android/app/src/main/res/values/strings.xml",
+      "apk.html",
+      "js/apk-page.js",
+      "tests/android_bridge.test.js",
+      "tests/apk_page.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795377718.4095836,
+    "finished_at": 1795377753.4237144,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "bd25f75ffe43e8c09a6daee88f1c36856207ff3ecb26ccf08a30cdce92d79caa",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795377753.4237163,
+      "scoped_paths": [
+        ".aikit/decisions.md",
+        "android/README.md",
+        "android/app/src/main/java/com/aegeanworks/cardmon/MainActivity.java",
+        "android/app/src/main/res/layout/activity_web.xml",
+        "android/app/src/main/res/values/strings.xml",
+        "apk.html",
+        "js/apk-page.js",
+        "tests/android_bridge.test.js",
+        "tests/apk_page.test.js"
+      ],
+      "scoped_digest": "dafad5791f59888edaa79e29ef0d6ebbc47f27a46bc3ceb1047b09ec5c77e58b"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/android_bridge.test.js",
+        "reason": "Native shortcut assertions"
+      },
+      {
+        "path": "tests/apk_page.test.js",
+        "reason": "Mobile APK page UI tests"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "bd25f75ffe43e8c09a6daee88f1c36856207ff3ecb26ccf08a30cdce92d79caa",
+    "baseline_digest": "5031684a531e6dc9c91cb89d6df34a92412246678bf139158e250158080529d8"
   }
 ]

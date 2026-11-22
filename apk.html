@@ -25,7 +25,14 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding: 28px 16px 48px;
+      padding: max(28px, env(safe-area-inset-top)) 16px max(48px, env(safe-area-inset-bottom));
+    }
+    /* Keep the card and its 15px touch targets usable on small phones. */
+    @media (max-width: 360px) {
+      body { padding-inline: 10px; }
+      .card { padding: 18px 14px; }
+      button { padding: 14px 10px; font-size: 15px; }
+      input { font-size: 16px; } /* prevents iOS zoom-on-focus */
     }
     .card {
       width: 100%;
@@ -78,7 +85,13 @@
     #apkResult { background: rgba(16,185,129,0.10); border: 1px solid rgba(16,185,129,0.3); }
     #apkResult p { margin: 0 0 12px; font-size: 13px; line-height: 1.5; }
     #apkError { background: rgba(239,68,68,0.10); border: 1px solid rgba(239,68,68,0.3); color: #fca5a5; font-size: 12px; word-break: break-word; }
+    #apkDownloadNote { display: none; margin-top: 10px; font-size: 12px; color: var(--accent); line-height: 1.4; }
     .hint { font-size: 11px; color: var(--muted); margin-top: 18px; line-height: 1.5; }
+    .back-link {
+      display: block; margin-top: 16px; padding: 12px; text-align: center;
+      font-size: 13px; font-weight: 600; color: var(--muted);
+      border: 1px solid var(--border); border-radius: 12px; text-decoration: none;
+    }
     a { color: var(--accent); }
   </style>
 </head>
@@ -104,13 +117,16 @@
     <div id="apkResult">
       <p>APK ready. Download and install it on your Android device (you may need to allow installation from unknown sources).</p>
       <button type="button" id="apkDownloadBtn" onclick="apkDownload()">Download APK</button>
+      <div id="apkDownloadNote" role="status" aria-live="polite"></div>
     </div>
 
     <div id="apkError"></div>
 
     <p class="hint">The build uses the local Android SDK and Gradle on your PC. If the server is offline, run <code>npm start</code> first.</p>
+    <a class="back-link" href="/">← Back to CardMon</a>
   </main>
 
+  <script src="js/utils.js"></script>
   <script src="js/apk-page.js"></script>
 </body>
 </html>

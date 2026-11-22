@@ -7,6 +7,7 @@
     <string name="invalid_url">Enter a valid server address</string>
     <string name="discovery_failed">Server not found; enter the address manually</string>
     <string name="server_settings">Server settings</string>
+    <string name="apk">APK</string>
     <string name="setup_title">Connect to CardMon server</string>
     <string name="setup_hint">Start the CardMon sync server on your computer and enter its address on the same Wi-Fi network.</string>
 </resources>

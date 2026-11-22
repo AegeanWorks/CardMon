@@ -33,6 +33,10 @@ inside it. Native bridges cover the browser APIs WebView lacks:
 - **PDF report** uses the system print dialog;
 - campaign "official link" pop-ups stay in the same tab.
 
+The **APK** button in the native top bar opens the mobile download page directly;
+it shows a confirmation after saving and has a **Back to CardMon** link. The page
+also adapts to narrow screens and notched displays.
+
 ## Building the APK
 
 From the project root:

@@ -215,6 +215,17 @@ public class MainActivity extends Activity {
         return targets.toArray(new InetAddress[0]);
     }
 
+    /** Reuses the configured host/port so the APK page works on any LAN address. */
+    private String apkUrlFor(String serverUrl) {
+        Uri base = Uri.parse(serverUrl);
+        return new Uri.Builder()
+                .scheme(base.getScheme())
+                .authority(base.getAuthority())
+                .path("/apk")
+                .build()
+                .toString();
+    }
+
     @SuppressLint("SetJavaScriptEnabled")
     private void showWebView(String url) {
         setContentView(R.layout.activity_web);
@@ -283,6 +294,17 @@ public class MainActivity extends Activity {
 
         webView.addJavascriptInterface(new CardMonBridge(), "CardMonAndroid");
         webView.loadUrl(url);
+
+        // Direct shortcut to the mobile APK page (has its own "Back to CardMon" link).
+        final String apkUrl = apkUrlFor(url);
+        Button apkButton = (Button) findViewById(R.id.apkButton);
+        apkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                webView.loadUrl(apkUrl);
+                Toast.makeText(MainActivity.this, "Opening APK page", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         Button settingsButton = (Button) findViewById(R.id.settingsButton);
         settingsButton.setOnClickListener(new View.OnClickListener() {

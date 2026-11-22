@@ -24,6 +24,19 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/apkButton"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="@string/apk"
+            android:textSize="11sp"
+            android:backgroundTint="#1A2234"
+            android:textColor="#10B981"
+            android:minWidth="0dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_marginEnd="6dp" />
+
+        <Button
             android:id="@+id/settingsButton"
             android:layout_width="wrap_content"
             android:layout_height="36dp"

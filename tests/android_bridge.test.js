@@ -21,6 +21,18 @@ test('Android companion wires downloads, file picking and printing', () => {
   assert.match(source, /onCreateWindow/);
 });
 
+test('native top bar exposes a direct APK page shortcut', () => {
+  const res = path.join(__dirname, '..', 'android', 'app', 'src', 'main', 'res');
+  const layout = fs.readFileSync(path.join(res, 'layout', 'activity_web.xml'), 'utf8');
+  const strings = fs.readFileSync(path.join(res, 'values', 'strings.xml'), 'utf8');
+  const source = fs.readFileSync(JAVA, 'utf8');
+  assert.match(layout, /android:id="@\+id\/apkButton"/);
+  assert.match(strings, /<string name="apk">APK<\/string>/);
+  assert.match(source, /findViewById\(R\.id\.apkButton\)/);
+  assert.match(source, /apkUrlFor\(String serverUrl\)/);
+  assert.match(source, /\.path\("\/apk"\)/);
+});
+
 test('JSON export routes through the Android download bridge when present', () => {
   const h = createHarness();
   const calls = [];
