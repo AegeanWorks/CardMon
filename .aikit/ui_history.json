@@ -2999,5 +2999,457 @@
     "final_snapshot_entries": 0,
     "surface_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76",
     "baseline_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "README.md",
+      "css/insights.css",
+      "i18n.js",
+      "index.html",
+      "js/campaign-router.js",
+      "js/money-insights.js",
+      "server/campaign-feed.js",
+      "server/http-server.js",
+      "tests/campaign_feed.test.js",
+      "tests/campaign_router.test.js",
+      "tests/harness.js",
+      "tests/sync_server.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795359907.0880716,
+    "finished_at": 1795359978.1554234,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "280cf37f8ee8bba8ed1f4a19a25deeea37d0ea65a4787c59b7dc4da06cd39069",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795359978.155427,
+      "scoped_paths": [
+        "README.md",
+        "css/insights.css",
+        "i18n.js",
+        "index.html",
+        "js/campaign-router.js",
+        "js/money-insights.js",
+        "server/campaign-feed.js",
+        "server/http-server.js",
+        "tests/campaign_feed.test.js",
+        "tests/campaign_router.test.js",
+        "tests/harness.js",
+        "tests/sync_server.test.js"
+      ],
+      "scoped_digest": "1e43315abda52916e85de895078b47d20b751722c83fff5a8634b887f2bc5f26"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/campaign_feed.test.js",
+        "reason": "Tests for campaign proxy normalization and cache"
+      },
+      {
+        "path": "tests/campaign_router.test.js",
+        "reason": "Failing-first tests for card ranking"
+      },
+      {
+        "path": "tests/harness.js",
+        "reason": "Load the campaign-router module into the test sandbox"
+      },
+      {
+        "path": "tests/sync_server.test.js",
+        "reason": "Test the campaign proxy HTTP route"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "280cf37f8ee8bba8ed1f4a19a25deeea37d0ea65a4787c59b7dc4da06cd39069",
+    "baseline_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "README.md",
+      "css/insights.css",
+      "i18n.js",
+      "index.html",
+      "js/campaign-router.js",
+      "js/en-overlay.js",
+      "js/main.js",
+      "js/money-insights.js",
+      "server/campaign-feed.js",
+      "server/http-server.js",
+      "server/index.js",
+      "tests/campaign_feed.test.js",
+      "tests/campaign_router.test.js",
+      "tests/harness.js",
+      "tests/public_release.test.js",
+      "tests/sync_server.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795361056.261066,
+    "finished_at": 1795361121.171604,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "292719fd911ef10a2f2fa7fd53e1dbe49ad8b636b0d13d9013355aea61eed105",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795361121.1716056,
+      "scoped_paths": [
+        "README.md",
+        "css/insights.css",
+        "i18n.js",
+        "index.html",
+        "js/campaign-router.js",
+        "js/en-overlay.js",
+        "js/main.js",
+        "js/money-insights.js",
+        "server/campaign-feed.js",
+        "server/http-server.js",
+        "server/index.js",
+        "tests/campaign_feed.test.js",
+        "tests/campaign_router.test.js",
+        "tests/harness.js",
+        "tests/public_release.test.js",
+        "tests/sync_server.test.js"
+      ],
+      "scoped_digest": "460fe4f4799e5118638a24df649f04b929dc48824e04df7d2c379fe70e486104"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/campaign_feed.test.js",
+        "reason": "Poller tests"
+      },
+      {
+        "path": "tests/campaign_router.test.js",
+        "reason": "Startup wiring assertions"
+      },
+      {
+        "path": "tests/harness.js",
+        "reason": "Module loading for tests"
+      },
+      {
+        "path": "tests/public_release.test.js",
+        "reason": "Language overlay regression coverage"
+      },
+      {
+        "path": "tests/sync_server.test.js",
+        "reason": "Campaign endpoint coverage"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "292719fd911ef10a2f2fa7fd53e1dbe49ad8b636b0d13d9013355aea61eed105",
+    "baseline_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "README.md",
+      "css/insights.css",
+      "i18n.js",
+      "index.html",
+      "js/campaign-router.js",
+      "js/en-overlay.js",
+      "js/main.js",
+      "js/money-insights.js",
+      "server/campaign-feed.js",
+      "server/http-server.js",
+      "server/index.js",
+      "tests/campaign_feed.test.js",
+      "tests/campaign_router.test.js",
+      "tests/harness.js",
+      "tests/money_insights.test.js",
+      "tests/public_release.test.js",
+      "tests/sync_server.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795362303.6286893,
+    "finished_at": 1795362346.027032,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "a6ac59c0906b142e9f0085b7d9a814e40855c3c922f643c3b817874414c5d84e",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795362346.0270336,
+      "scoped_paths": [
+        "README.md",
+        "css/insights.css",
+        "i18n.js",
+        "index.html",
+        "js/campaign-router.js",
+        "js/en-overlay.js",
+        "js/main.js",
+        "js/money-insights.js",
+        "server/campaign-feed.js",
+        "server/http-server.js",
+        "server/index.js",
+        "tests/campaign_feed.test.js",
+        "tests/campaign_router.test.js",
+        "tests/harness.js",
+        "tests/money_insights.test.js",
+        "tests/public_release.test.js",
+        "tests/sync_server.test.js"
+      ],
+      "scoped_digest": "c45de0fc0299952ab2cf3052f802c58b62ef31b400354baaad2e12ceadc8c983"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/campaign_feed.test.js",
+        "reason": "Deals normalization tests"
+      },
+      {
+        "path": "tests/campaign_router.test.js",
+        "reason": "Benefit parsing and offer filter tests"
+      },
+      {
+        "path": "tests/harness.js",
+        "reason": "Router module loading"
+      },
+      {
+        "path": "tests/money_insights.test.js",
+        "reason": "Discount listing render test"
+      },
+      {
+        "path": "tests/public_release.test.js",
+        "reason": "Language overlay coverage"
+      },
+      {
+        "path": "tests/sync_server.test.js",
+        "reason": "Campaign endpoint coverage"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "a6ac59c0906b142e9f0085b7d9a814e40855c3c922f643c3b817874414c5d84e",
+    "baseline_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "README.md",
+      "css/insights.css",
+      "i18n.js",
+      "index.html",
+      "js/en-overlay.js",
+      "js/main.js",
+      "js/money-insights.js",
+      "server/http-server.js",
+      "server/index.js",
+      "tests/harness.js",
+      "tests/money_insights.test.js",
+      "tests/public_release.test.js",
+      "tests/sync_server.test.js",
+      "js/campaign-router.js",
+      "server/campaign-feed.js",
+      "server/search-api.js",
+      "tests/campaign_feed.test.js",
+      "tests/campaign_router.test.js",
+      "tests/search_api.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795363024.8250375,
+    "finished_at": 1795363077.7060444,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "7dda4ec9d69973db39c4d60151496233d9411f301861fb13033aeae74967f678",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795363077.7060473,
+      "scoped_paths": [
+        "README.md",
+        "css/insights.css",
+        "i18n.js",
+        "index.html",
+        "js/en-overlay.js",
+        "js/main.js",
+        "js/money-insights.js",
+        "server/http-server.js",
+        "server/index.js",
+        "tests/harness.js",
+        "tests/money_insights.test.js",
+        "tests/public_release.test.js",
+        "tests/sync_server.test.js",
+        "js/campaign-router.js",
+        "server/campaign-feed.js",
+        "server/search-api.js",
+        "tests/campaign_feed.test.js",
+        "tests/campaign_router.test.js",
+        "tests/search_api.test.js"
+      ],
+      "scoped_digest": "c59fc2397929a39a14f41e905c2bf346fb19a90f13de559a39f836bb058c07c2"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/harness.js",
+        "reason": "Router module loading"
+      },
+      {
+        "path": "tests/money_insights.test.js",
+        "reason": "Search UI coverage"
+      },
+      {
+        "path": "tests/public_release.test.js",
+        "reason": "Language overlay coverage"
+      },
+      {
+        "path": "tests/sync_server.test.js",
+        "reason": "Search endpoint coverage"
+      },
+      {
+        "path": "tests/campaign_feed.test.js",
+        "reason": "Campaign dataset coverage"
+      },
+      {
+        "path": "tests/campaign_router.test.js",
+        "reason": "Web search coverage"
+      },
+      {
+        "path": "tests/search_api.test.js",
+        "reason": "Search adapter tests"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "7dda4ec9d69973db39c4d60151496233d9411f301861fb13033aeae74967f678",
+    "baseline_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "README.md",
+      "css/insights.css",
+      "i18n.js",
+      "index.html",
+      "js/campaign-router.js",
+      "js/en-overlay.js",
+      "js/main.js",
+      "js/money-insights.js",
+      "server/campaign-feed.js",
+      "server/http-server.js",
+      "server/index.js",
+      "server/search-api.js",
+      "tests/campaign_feed.test.js",
+      "tests/campaign_router.test.js",
+      "tests/harness.js",
+      "tests/money_insights.test.js",
+      "tests/public_release.test.js",
+      "tests/search_api.test.js",
+      "tests/sync_server.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795364325.0759678,
+    "finished_at": 1795364388.950891,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "87d24a639d54d1d93aba7475f28c70967590f0963476862fa81b2a08843d1d94",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795364388.9509015,
+      "scoped_paths": [
+        "README.md",
+        "css/insights.css",
+        "i18n.js",
+        "index.html",
+        "js/campaign-router.js",
+        "js/en-overlay.js",
+        "js/main.js",
+        "js/money-insights.js",
+        "server/campaign-feed.js",
+        "server/http-server.js",
+        "server/index.js",
+        "server/search-api.js",
+        "tests/campaign_feed.test.js",
+        "tests/campaign_router.test.js",
+        "tests/harness.js",
+        "tests/money_insights.test.js",
+        "tests/public_release.test.js",
+        "tests/search_api.test.js",
+        "tests/sync_server.test.js"
+      ],
+      "scoped_digest": "28a1377f70b5249b7211b9518a7772d7aea7ad875cd1abc0bbc0b636244b7e2d"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/campaign_feed.test.js",
+        "reason": "Dataset tests"
+      },
+      {
+        "path": "tests/campaign_router.test.js",
+        "reason": "Bank scope web tests"
+      },
+      {
+        "path": "tests/harness.js",
+        "reason": "Module loading"
+      },
+      {
+        "path": "tests/money_insights.test.js",
+        "reason": "Insights UI tests"
+      },
+      {
+        "path": "tests/public_release.test.js",
+        "reason": "Language tests"
+      },
+      {
+        "path": "tests/search_api.test.js",
+        "reason": "Bank scope tests"
+      },
+      {
+        "path": "tests/sync_server.test.js",
+        "reason": "Search endpoint tests"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "87d24a639d54d1d93aba7475f28c70967590f0963476862fa81b2a08843d1d94",
+    "baseline_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76"
   }
 ]

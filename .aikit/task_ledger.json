@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-money-release",
+    "task_id": "cardmon-campaign-router",
     "last_phase": "phase 4",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1795346876.4832766,
+    "updated_at": 1795364445.461365,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795354076.4832766,
+    "lease_until": 1795371645.461365,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -16,146 +16,11 @@
         "path": "projects/CardMon"
       }
     ],
-    "completed_at": 1795346877.0962677,
-    "completed_head": "243e7abc9c1022c977eb6dc720d48539c28ff585",
-    "completed_tree": "8c8cd0247552605cd906b0f1877e17c2448485bb"
+    "completed_at": 1795366533.6327395,
+    "completed_head": "64faad591d5767b801e015f36cb0d6ad6c52f12f",
+    "completed_tree": "32491386258ba4c9a458f031fc8095af8f576f21"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-findings-batch5",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-findings-batch5' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795213808.8641334,
-      "timestamp_str": "2026-11-21 01:30:08",
-      "agent": "opencode",
-      "head": "7fba80c921f84c79f86ee09ccf59c84d91735a36",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-findings-complete",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/2] Close remaining findings: permission state text and nine test-coverage gaps",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795214384.2155242,
-      "timestamp_str": "2026-11-21 01:39:44",
-      "agent": "opencode:hy4-flash-free",
-      "impact_assessment": {
-        "why": "Every surfaced finding should be either fixed or closed with evidence; the remaining quality findings had no regression proof.",
-        "benefits": "Accessible state labels and assertions for previously untested branches.",
-        "risks": "contract: none; dependency: none; concurrency: none; state: none",
-        "mitigation": "Add one consolidated failing-first coverage suite, keep all existing assertions, vision proof"
-      },
-      "plan_digest": "ef2f72e218eb67b65b43efb57fc7a6b4885667b60ab1b49b3ff4c1b42cce2773",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-complete",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "Phase 4 passed: npm test 149/149, check --strict 4/4, UI finished with vision proof",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795214384.9194355,
-      "timestamp_str": "2026-11-21 01:39:44",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-complete",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-findings-complete' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795214425.15717,
-      "timestamp_str": "2026-11-21 01:40:25",
-      "agent": "opencode",
-      "head": "62d836a2c28210b305e1034a19e4e5dfe52c0044",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-local-sync-apk",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/2] Plan: local sync server, Android APK build, phone APK page, English/public-safety and UI consolidation",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795308494.7922938,
-      "timestamp_str": "2026-11-22 03:48:14",
-      "agent": "opencode:hy4-flash-free",
-      "impact_assessment": {
-        "why": "CardMon needed LAN sync with Android, an APK build reachable from the phone browser, and a clean public-release surface.",
-        "benefits": "One-click server, auto-discovery, on-demand APK build, English-first UI, no personal data, one home per action.",
-        "risks": "contract: additive APIs and new modules; dependency: none beyond Node stdlib and the local Android SDK; concurrency: one build job at a time; state: revisioned portfolio file.",
-        "mitigation": "Failing-first tests for server/client/build/UI, explicit staging, 4/4 gates, and a UI surface task with reviewed verification."
-      },
-      "plan_digest": "548fbfb123e8df397b0999a8c0b0a0d43c2f46bedcc40238226e7127e86b0036",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-local-sync-apk",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Phase 4: 206/206 tests, 4/4 gates, UI task verified and finished",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795308650.6163003,
-      "timestamp_str": "2026-11-22 03:50:50",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-local-sync-apk",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-local-sync-apk' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795309030.2709265,
-      "timestamp_str": "2026-11-22 03:57:10",
-      "agent": "opencode:hy4-flash-free",
-      "head": "982c84cb642deb6d6df4372a967a802b37f1ad10",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-secret-scan-fix",
       "phase": "phase 2",
@@ -403,6 +268,137 @@
       "timestamp_str": "2026-11-22 14:27:57",
       "agent": "opencode:hy4-flash-free",
       "head": "243e7abc9c1022c977eb6dc720d48539c28ff585",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
+    },
+    {
+      "task_id": "cardmon-campaign-router",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Plan: live campaign proxy and best-card router",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795360013.4399726,
+      "timestamp_str": "2026-11-22 18:06:53",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "User asked whether online kampanya data can be pulled and used for the best-card router.",
+        "benefits": "Ranked cards per category using 234 sourced campaigns with official links, refreshed through a 6-hour cached same-origin proxy.",
+        "risks": "contract: additive API and module; dependency: third-party open dataset with no CORS header and no fuel coverage; concurrency: none; state: in-memory 6-hour cache",
+        "mitigation": "Server-side proxy with graceful stale/last-known fallback, category fallback labelled limited, failing-first tests and UI task verification."
+      },
+      "plan_digest": "3c8a3e2b9ae720a6c672b3cd5cdc3983d385692a266192ca9ce7175793328c69",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-campaign-router",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 254/254 tests, live proxy returned 234 offers, UI task closed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795360014.4132612,
+      "timestamp_str": "2026-11-22 18:06:54",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-campaign-router",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 256/256 tests, auto campaign puller verified live, language overlay fixed, UI task closed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795361135.3178954,
+      "timestamp_str": "2026-11-22 18:25:35",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-campaign-router",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 260/260 tests, real bonus amounts and deals rendered with official links, UI task closed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795362362.1201813,
+      "timestamp_str": "2026-11-22 18:46:02",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-campaign-router",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 267/267 tests, search endpoint verified live (local mode), UI task closed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795363103.3640764,
+      "timestamp_str": "2026-11-22 18:58:23",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-campaign-router",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 270/270 tests, bank-scoped search verified live, UI task closed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795364445.461365,
+      "timestamp_str": "2026-11-22 19:20:45",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-campaign-router",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-campaign-router' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795366533.7495365,
+      "timestamp_str": "2026-11-22 19:55:33",
+      "agent": "opencode:hy4-flash-free",
+      "head": "64faad591d5767b801e015f36cb0d6ad6c52f12f",
       "delivery": {
         "roots": [
           "."
