@@ -146,7 +146,9 @@ const EN_EXPLICIT_MAP = {
   'Açık Pencereyi / Modalı Kapat': 'Close open window / modal',
   'Kısayol Rehberini Aç / Kapat': 'Open / close shortcut guide',
   'Portföyünüzü aynı Wi-Fi ağındaki CardMon sunucusuna senkronize edin ve Android uygulamasını buradan indirin.': 'Sync your portfolio with the CardMon server on the same Wi-Fi network and download the Android app here.',
-  'Telefon tarayıcısı için doğrudan APK sayfasını aç / Open the phone-friendly APK page →': 'Open the phone-friendly APK page →'
+  'Telefon tarayıcısı için doğrudan APK sayfasını aç / Open the phone-friendly APK page →': 'Open the phone-friendly APK page →',
+  'Para Zamanlaması &amp; FX': 'Money Timing & FX',
+  'Para Zamanlaması & FX': 'Money Timing & FX'
 };
 
 // Runtime-generated labels, toasts and demo descriptions from the JS modules.

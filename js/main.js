@@ -232,8 +232,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Otomatik Haftalık Yedek Kontrolü
   checkAndTriggerAutoWeeklyBackup();
 
-  // Fetch live FX rates in background
+  // Fetch live FX rates and TÜİK inflation figures in the background
   fetchExchangeRates();
+  if (typeof autoRefreshInflation === 'function') autoRefreshInflation();
 });
 
 

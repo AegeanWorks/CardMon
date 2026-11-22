@@ -86,6 +86,11 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
             <span data-i18n="syncNav">Sync &amp; Mobil</span>
           </button>
+
+          <button class="sidebar-nav-btn tab-btn" data-tab="insights" onclick="navigateToTab('insights')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg>
+            <span data-i18n="moneyInsights">Para Zamanlaması &amp; FX</span>
+          </button>
         </nav>
       </div>
 
@@ -536,6 +541,15 @@
     <div class="tab-pane" id="tabPane-timeline">
       <div class="timeline-container" id="timelineContainer">
         <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         TAB 7: MONEY TIMING & FX / INFLATION VIEW
+         ======================================================================= -->
+    <div class="tab-pane" id="tabPane-insights">
+      <div id="moneyInsightsContainer">
+        <!-- Rendered dynamically by js/money-insights.js -->
       </div>
     </div>
 
@@ -1580,10 +1594,15 @@
   <script src="js/en-overlay.js"></script>
   <script src="js/constants.js"></script>
   <script src="js/utils.js"></script>
+  <script src="js/money-timing.js"></script>
+  <script src="js/fx-inflation.js"></script>
+  <script src="js/inflation-feed.js"></script>
+  <script src="js/memur-raise.js"></script>
   <script src="js/file-system.js"></script>
   <script src="js/state.js"></script>
   <script src="js/smart-advisor.js"></script>
   <script src="js/backup-vault.js"></script>
+  <script src="js/money-insights.js"></script>
   <script src="js/views.js"></script>
   <script src="js/modals.js"></script>
   <script src="js/reports.js"></script>

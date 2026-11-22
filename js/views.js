@@ -12,6 +12,7 @@ function renderAll() {
   renderLoansView();
   renderSubscriptionsView();
   renderTimelineView();
+  if (typeof renderMoneyInsights === 'function') renderMoneyInsights();
   if (typeof refreshEnglishOverlay === 'function') refreshEnglishOverlay();
 }
 

@@ -314,7 +314,52 @@ const I18N = {
     debtLabel: "Borç:",
     shortcuts: "Kısayollar",
     delegationLabel: "Doluluk:",
-    cardManagementNav: "KART & LİMİT YÖNETİMİ"
+    cardManagementNav: "KART & LİMİT YÖNETİMİ",
+
+    // Money timing & FX inflation view
+    moneyInsights: "Para Zamanlaması & FX",
+    timingTitle: "Faizsiz Vade Optimizasyonu",
+    timingDesc: "Bugün alışveriş yapmak ile ekstre kesiminden hemen sonra beklemek arasındaki faizsiz gün farkını karşılaştırır.",
+    cardColumn: "Kart",
+    todayFreeDays: "Bugün alırsan",
+    waitUntil: "Bekle: ayın",
+    extraDays: "Ekstra faizsiz gün",
+    recommendWait: "Bekle",
+    buyToday: "Bugün al",
+    fxTitle: "Enflasyon & Döviz Görünümü",
+    fxDesc: "Nominal borcun yeniden değerlemesi ve dövize bağlı düzenli giderlerin etkisi (yerel tahminler).",
+    inflationRate: "Aylık enflasyon (%)",
+    months: "Ay sayısı",
+    nominalDebt: "Nominal borç",
+    realDebt: "Bugünkü para ile gerçek borç",
+    erosion: "Enflasyon erimesi",
+    fxExposure: "Döviz bağlı aylık gider",
+    fxShock: "Döviz şoku (%)",
+    shockedTotal: "Şok sonrası aylık toplam",
+    fxShareInfo: "Döviz bağlı giderler, düzenli harcamaların %{value}% kadarını oluşturuyor.",
+    fxIncomeWarn: "Döviz bağlı giderler aylık gelirin %{value}% kadarını aşıyor; TRY alternatifini değerlendirin.",
+    applySettings: "Hesapla",
+    noTimingData: "Vade karşılaştırması için kart ekleyin.",
+    autoInflation: "Enflasyonu otomatik güncelle (TÜİK)",
+    refreshInflation: "Şimdi Güncelle",
+    inflationFeedStatus: "Kaynak: %{source} · Dönem: %{period} · Aylık: %{monthly}% · Yıllık: %{annual}%",
+    inflationFeedError: "Otomatik güncelleme başarısız: %{error}. Son bilinen değer kullanılıyor.",
+    inflationUpdated: "Enflasyon verisi güncellendi",
+    memurTitle: "Memur Zammı Hesaplayıcı",
+    memurDesc: "Altı aylık TÜFE artışı ile toplu sözleşme oranından enflasyon farkı hesaplanır; TÜİK verisi otomatik güncellenir.",
+    nextRaise: "Bir sonraki zam",
+    sixMonthInflation: "6 aylık enflasyon",
+    inflationDifference: "Enflasyon farkı",
+    contractRaise: "Toplu sözleşme zammı",
+    totalRaise: "Toplam zam",
+    provisional: "Geçici: %{count}/6 ay açıklandı",
+    final: "Kesinleşti: 6/6 ay",
+    currentSalary: "Mevcut maaş (₺)",
+    salaryIncrease: "Maaş artışı",
+    newSalary: "Yeni maaş",
+    monthOcak: "Ocak",
+    monthTemmuz: "Temmuz",
+    noInflationData: "Enflasyon verisi henüz yüklenmedi."
   },
   
   en: {
@@ -631,7 +676,52 @@ const I18N = {
     debtLabel: "Debt:",
     shortcuts: "Shortcuts",
     delegationLabel: "Utilization:",
-    cardManagementNav: "CARD & LIMIT MANAGEMENT"
+    cardManagementNav: "CARD & LIMIT MANAGEMENT",
+
+    // Money timing & FX inflation view
+    moneyInsights: "Money Timing & FX",
+    timingTitle: "Interest-free days optimizer",
+    timingDesc: "Compares buying today with waiting until just after the statement cut-off to extend the interest-free window.",
+    cardColumn: "Card",
+    todayFreeDays: "Buy today",
+    waitUntil: "Wait until day",
+    extraDays: "Extra free days",
+    recommendWait: "Wait",
+    buyToday: "Buy today",
+    fxTitle: "Inflation & FX view",
+    fxDesc: "Revalues nominal debt and shows FX-linked recurring costs under local assumptions.",
+    inflationRate: "Monthly inflation (%)",
+    months: "Months",
+    nominalDebt: "Nominal debt",
+    realDebt: "Real debt in today's money",
+    erosion: "Inflation erosion",
+    fxExposure: "FX-linked monthly cost",
+    fxShock: "FX shock (%)",
+    shockedTotal: "Monthly total after shock",
+    fxShareInfo: "FX-linked costs make up %{value}% of recurring monthly spend.",
+    fxIncomeWarn: "FX-linked costs exceed %{value}% of monthly income — consider a TRY alternative.",
+    applySettings: "Calculate",
+    noTimingData: "Add a card to see the timing comparison.",
+    autoInflation: "Auto-update inflation (TÜİK)",
+    refreshInflation: "Refresh now",
+    inflationFeedStatus: "Source: %{source} · Period: %{period} · Monthly: %{monthly}% · Annual: %{annual}%",
+    inflationFeedError: "Auto-update failed: %{error}. Using last known value.",
+    inflationUpdated: "Inflation data updated",
+    memurTitle: "Civil-servant raise calculator",
+    memurDesc: "Six-month CPI plus the collective-agreement rate determine the inflation difference; TÜİK data refreshes automatically.",
+    nextRaise: "Next raise",
+    sixMonthInflation: "6-month inflation",
+    inflationDifference: "Inflation difference",
+    contractRaise: "Collective agreement",
+    totalRaise: "Total raise",
+    provisional: "Provisional: %{count}/6 months published",
+    final: "Final: 6/6 months",
+    currentSalary: "Current salary (TRY)",
+    salaryIncrease: "Salary increase",
+    newSalary: "New salary",
+    monthOcak: "January",
+    monthTemmuz: "July",
+    noInflationData: "Inflation data has not loaded yet."
   }
 };
 
@@ -649,14 +739,19 @@ function setLanguage(lang) {
   }
 }
 
-function t(key) {
+function t(key, params) {
+  let value = key;
   if (I18N[currentLang] && I18N[currentLang][key]) {
-    return I18N[currentLang][key];
+    value = I18N[currentLang][key];
+  } else if (I18N.tr[key]) {
+    value = I18N.tr[key];
   }
-  if (I18N.tr[key]) {
-    return I18N.tr[key];
+  if (params && typeof value === 'string') {
+    for (const name of Object.keys(params)) {
+      value = value.split(`%{${name}}`).join(String(params[name]));
+    }
   }
-  return key;
+  return value;
 }
 
 function setCurrency(curr) {

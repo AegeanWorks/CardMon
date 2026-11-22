@@ -2707,5 +2707,267 @@
     "final_snapshot_entries": 0,
     "surface_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca",
     "baseline_digest": "1bc052bc4621eccdf3c6a4947d8df8eaf104ce048867770ac3fa88b602e38eb5"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "README.md",
+      "css/insights.css",
+      "i18n.js",
+      "index.html",
+      "js/en-overlay.js",
+      "js/fx-inflation.js",
+      "js/money-insights.js",
+      "js/money-timing.js",
+      "js/views.js",
+      "styles.css",
+      "tests/fx_inflation.test.js",
+      "tests/harness.js",
+      "tests/money_insights.test.js",
+      "tests/money_timing.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "794b00353f452a893d88c4e31a87c104e5a23326",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795340829.6757662,
+    "finished_at": 1795341415.626741,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "c65951695d282c7cfcf248680306078b0b202137cab01e06789dea683e28fb4f",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795341415.6267428,
+      "scoped_paths": [
+        "README.md",
+        "css/insights.css",
+        "i18n.js",
+        "index.html",
+        "js/en-overlay.js",
+        "js/fx-inflation.js",
+        "js/money-insights.js",
+        "js/money-timing.js",
+        "js/views.js",
+        "styles.css",
+        "tests/fx_inflation.test.js",
+        "tests/harness.js",
+        "tests/money_insights.test.js",
+        "tests/money_timing.test.js"
+      ],
+      "scoped_digest": "0acbd8f86b94667271003ba50eb1991d556143e7539904d76e39ff0d1285c40c"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/fx_inflation.test.js",
+        "reason": "Failing-first tests for the FX/inflation module"
+      },
+      {
+        "path": "tests/money_timing.test.js",
+        "reason": "Failing-first tests for the timing optimizer"
+      },
+      {
+        "path": "tests/money_insights.test.js",
+        "reason": "Tests for the new Money Insights tab wiring and rendering"
+      },
+      {
+        "path": "tests/harness.js",
+        "reason": "Load the three new modules into the test sandbox"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "c65951695d282c7cfcf248680306078b0b202137cab01e06789dea683e28fb4f",
+    "baseline_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "README.md",
+      "css/insights.css",
+      "i18n.js",
+      "index.html",
+      "js/en-overlay.js",
+      "js/fx-inflation.js",
+      "js/inflation-feed.js",
+      "js/main.js",
+      "js/money-insights.js",
+      "js/money-timing.js",
+      "js/views.js",
+      "styles.css",
+      "tests/fx_inflation.test.js",
+      "tests/harness.js",
+      "tests/inflation_feed.test.js",
+      "tests/money_insights.test.js",
+      "tests/money_timing.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "794b00353f452a893d88c4e31a87c104e5a23326",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795344185.7430327,
+    "finished_at": 1795344216.8187895,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "9993871b7e3a56381a09d9496002b14060b492f94dbdb968ca9d810948da6f9f",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795344216.8187914,
+      "scoped_paths": [
+        "README.md",
+        "css/insights.css",
+        "i18n.js",
+        "index.html",
+        "js/en-overlay.js",
+        "js/fx-inflation.js",
+        "js/inflation-feed.js",
+        "js/main.js",
+        "js/money-insights.js",
+        "js/money-timing.js",
+        "js/views.js",
+        "styles.css",
+        "tests/fx_inflation.test.js",
+        "tests/harness.js",
+        "tests/inflation_feed.test.js",
+        "tests/money_insights.test.js",
+        "tests/money_timing.test.js"
+      ],
+      "scoped_digest": "b25bca6c23bf7ccded2d27d31f41aefb09896d81d2400a1883f31b5de59b71f3"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/inflation_feed.test.js",
+        "reason": "Tests for automatic inflation feed parsing and refresh"
+      },
+      {
+        "path": "tests/fx_inflation.test.js",
+        "reason": "Updated settings shape expectations for auto-refresh fields"
+      },
+      {
+        "path": "tests/money_insights.test.js",
+        "reason": "Updated settings expectations for auto-refresh fields"
+      },
+      {
+        "path": "tests/money_timing.test.js",
+        "reason": "No functional change; task scope covers the new UI tab"
+      },
+      {
+        "path": "tests/harness.js",
+        "reason": "Load the new inflation-feed module into the test sandbox"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "9993871b7e3a56381a09d9496002b14060b492f94dbdb968ca9d810948da6f9f",
+    "baseline_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "README.md",
+      "i18n.js",
+      "index.html",
+      "js/en-overlay.js",
+      "js/main.js",
+      "js/views.js",
+      "styles.css",
+      "tests/harness.js",
+      "css/insights.css",
+      "js/fx-inflation.js",
+      "js/inflation-feed.js",
+      "js/memur-raise.js",
+      "js/money-insights.js",
+      "js/money-timing.js",
+      "tests/fx_inflation.test.js",
+      "tests/inflation_feed.test.js",
+      "tests/memur_raise.test.js",
+      "tests/money_insights.test.js",
+      "tests/money_timing.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "794b00353f452a893d88c4e31a87c104e5a23326",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795345029.7521029,
+    "finished_at": 1795345130.0279949,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "598f1d955b6026c7d41dde2d7a6dcc89f12c94fe0bb6659598934813816d6b0e",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795345130.0279975,
+      "scoped_paths": [
+        "README.md",
+        "i18n.js",
+        "index.html",
+        "js/en-overlay.js",
+        "js/main.js",
+        "js/views.js",
+        "styles.css",
+        "tests/harness.js",
+        "css/insights.css",
+        "js/fx-inflation.js",
+        "js/inflation-feed.js",
+        "js/memur-raise.js",
+        "js/money-insights.js",
+        "js/money-timing.js",
+        "tests/fx_inflation.test.js",
+        "tests/inflation_feed.test.js",
+        "tests/memur_raise.test.js",
+        "tests/money_insights.test.js",
+        "tests/money_timing.test.js"
+      ],
+      "scoped_digest": "3eacdc1a6237dea4925d4f0b9da1edcad5a6a25c0d38ddbdb48bd3140483bca0"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/memur_raise.test.js",
+        "reason": "Failing-first tests for the raise calculator"
+      },
+      {
+        "path": "tests/harness.js",
+        "reason": "Load the memur-raise module into the test sandbox"
+      },
+      {
+        "path": "tests/fx_inflation.test.js",
+        "reason": "Settings shape coverage for auto-refresh"
+      },
+      {
+        "path": "tests/inflation_feed.test.js",
+        "reason": "Auto-feed coverage used by the raise calculator"
+      },
+      {
+        "path": "tests/money_insights.test.js",
+        "reason": "Insights tab rendering coverage"
+      },
+      {
+        "path": "tests/money_timing.test.js",
+        "reason": "Timing module coverage within the same UI task"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "598f1d955b6026c7d41dde2d7a6dcc89f12c94fe0bb6659598934813816d6b0e",
+    "baseline_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca"
   }
 ]

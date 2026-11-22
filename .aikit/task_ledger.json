@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-public-release",
+    "task_id": "cardmon-money-timing-fx",
     "last_phase": "phase 4",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1795310102.507899,
+    "updated_at": 1795345153.9173353,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795317302.507899,
+    "lease_until": 1795352353.9173353,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -16,91 +16,11 @@
         "path": "projects/CardMon"
       }
     ],
-    "completed_at": 1795310103.2002616,
-    "completed_head": "6cd919f70d1aeb856d090b26032c193e39d8c2ef",
-    "completed_tree": "40ad01ab05d2951975632c7133eb394c50cd51db"
+    "completed_at": 1795346372.6433628,
+    "completed_head": "7cb76552873caf01262b485e5d282dd57b2ef08e",
+    "completed_tree": "d8d2118fb7f8eb209bea01d25c97c42eab454ac4"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-findings-batch4",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/3] Plan and failing-first tests for misleading health captions and min-payment ratio mismatch",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795213456.276578,
-      "timestamp_str": "2026-11-21 01:24:16",
-      "agent": "opencode:hy4-flash-free",
-      "impact_assessment": {
-        "why": "Two user-facing inconsistencies from the full re-read remained: 80% utilization called safe under high burden, and card-face ratio disagreeing with the portfolio banner.",
-        "benefits": "Trustworthy health messaging and consistent minimum figures.",
-        "risks": "contract: function signatures unchanged; dependency: none; concurrency: none; state: none",
-        "mitigation": "Threshold-based caption clauses, shared high-limit fallback, 4 failing-first tests, vision proof"
-      },
-      "plan_digest": "0f4cb2235baa6a7d3a64aad77d9a5ed170d8274b72e3c982477d7aade060e592",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch4",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[2/3] Fixed captions in backup-vault.js and minRatio fallback in views.js",
-      "files_affected": [
-        "js/backup-vault.js",
-        "js/views.js",
-        "tests/full_read_fixes4.test.js"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795213457.2729926,
-      "timestamp_str": "2026-11-21 01:24:17",
-      "agent": "opencode:hy4-flash-free",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch4",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[3/3] Phase 4: npm test 139/139, UI verified with vision-reviewed proof",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795213458.3163688,
-      "timestamp_str": "2026-11-21 01:24:18",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch4",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-findings-batch4' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795213497.7926397,
-      "timestamp_str": "2026-11-21 01:24:57",
-      "agent": "opencode",
-      "head": "7333c1d4ecf493dfc5f08e24ec2f79357c4d1ec3",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-findings-batch5",
       "phase": "phase 2",
@@ -407,6 +327,83 @@
       "timestamp_str": "2026-11-22 04:15:03",
       "agent": "opencode:hy4-flash-free",
       "head": "6cd919f70d1aeb856d090b26032c193e39d8c2ef",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
+    },
+    {
+      "task_id": "cardmon-money-timing-fx",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Plan: interest-free timing optimizer and FX/inflation view",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795340780.716778,
+      "timestamp_str": "2026-11-22 12:46:20",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "Users asked to maximize money usage: longer interest-free windows and visibility into inflation/FX exposure.",
+        "benefits": "Actionable wait-vs-buy advice per card, real-debt and FX exposure figures, all computed locally from existing portfolio data.",
+        "risks": "contract: additive module and read-only UI tab; dependency: none, uses existing exchangeRates; concurrency: none; state: optional local settings for inflation assumptions",
+        "mitigation": "Failing-first pure-function tests, English UI via existing i18n/overlay, no new permissions, full gates and UI task verification."
+      },
+      "plan_digest": "7116bda43e12908c62a7744c81ccc10ed8836e627b353f0ddc4c347e57cc639e",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-money-timing-fx",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 226/226 tests, 4/4 gates, UI task verified and finished",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795341424.5397925,
+      "timestamp_str": "2026-11-22 12:57:04",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-money-timing-fx",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 243/243 tests, 4/4 gates, memur raise calculator verified, UI task closed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795345153.9173353,
+      "timestamp_str": "2026-11-22 13:59:13",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-money-timing-fx",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-money-timing-fx' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795346373.3402174,
+      "timestamp_str": "2026-11-22 14:19:33",
+      "agent": "opencode:hy4-flash-free",
+      "head": "7cb76552873caf01262b485e5d282dd57b2ef08e",
       "delivery": {
         "roots": [
           "."

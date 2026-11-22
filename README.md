@@ -38,6 +38,13 @@ CardMon/
 ├── REUSE.toml                <- license metadata
 ├── assets/                   <- branding and visual assets
 ├── css/                      <- modular stylesheet design system
+│   ├── base.css
+│   ├── components.css
+│   ├── insights.css          <- Money Timing & FX tab styles
+│   ├── layout.css
+│   ├── modals.css
+│   ├── sync.css              <- sync panel styles
+│   └── views.css
 ├── i18n.js                   <- internationalization and currency formatting
 ├── index.html                <- application interface and layout
 ├── apk.html                  <- phone-friendly standalone APK build/download page
@@ -47,6 +54,11 @@ CardMon/
 │   ├── en-overlay.js         <- English overlay for legacy hard-coded labels
 │   ├── file-system.js
 │   ├── main.js
+│   ├── money-insights.js     <- Money Timing & FX tab renderer
+│   ├── money-timing.js       <- interest-free days optimizer
+│   ├── fx-inflation.js       <- real-debt and FX exposure math
+│   ├── inflation-feed.js     <- automatic TÜİK CPI refresh
+│   ├── memur-raise.js        <- civil-servant raise calculator
 │   ├── modals.js
 │   ├── reports.js
 │   ├── smart-advisor.js
@@ -67,6 +79,48 @@ CardMon/
 ├── styles.css                <- stylesheet aggregator entrypoint
 └── tests/                    <- unit and integration test suite
 ```
+
+## 💡 Money Timing & FX Insights
+
+The **Money Timing & FX** tab turns the portfolio into timing decisions; all
+calculations are local and use the data you already entered.
+
+- **Interest-free days optimizer** — for each card it compares buying today
+  with waiting until the first day after the statement cut-off. It reports the
+  free days for both options and the *extra* days gained, recommending "Wait"
+  only when the gain is at least 7 days. Day handling supports exact days,
+  approximate weeks, and short months.
+- **Inflation & FX view** — total debt (card balances plus remaining loan
+  installments) is discounted by a user-set monthly inflation rate over a
+  chosen horizon, showing the real value in today's money and the erosion.
+  Recurring cash subscriptions are grouped by currency, converted with the
+  current exchange rates, and a configurable FX shock scenario shows the
+  TRY impact. Alerts flag FX-heavy recurring spend.
+
+**Automatic official data.** On startup, and at most once every 24 hours, the
+app pulls the latest TÜİK CPI figures from a public JSON feed
+(`ortakalan.io/veri/api/enflasyon-yillara-gore.json`, sourced from TÜİK, CORS
+enabled). It latest monthly change becomes the inflation assumption and the
+annual figure is displayed alongside it. The feed response is parsed for the
+newest period, applied locally, and a failure keeps the last known value with a
+visible error message. Auto-update can be turned off in the tab; **Refresh now**
+forces an immediate pull. As of the latest release the feed reports TÜİK's
+October 2026 figures: monthly **2.58%**, annual **29.77%** (ENAG's independent
+estimate for the same period is 45.12%).
+
+**Memur zammı.** The same tab includes a civil-servant raise calculator. It
+compounds the published monthly CPI changes over the six-month base period,
+computes `enflasyon farkı = (1 + six-month CPI) / (1 + previous collective rate) − 1`,
+then applies `(1 + new collective rate) × (1 + difference) − 1`. Rates come from
+the 8th collective agreement table (2026: 11% / 7%, 2027: 5% / 4%). With the
+current feed (Jul–Oct 2026, 4 of 6 months) it reports a provisional **6.26%**
+raise for January 2027, matching the published estimate of 6.27%. Entering a
+current salary shows the TRY increase and new salary. All figures update
+whenever the inflation feed refreshes.
+
+Assumptions (inflation rate, months, shock %, auto-refresh flag and last update)
+are stored locally in `cardmon_fx_settings_v1`; nothing is uploaded. The optional
+salary used by the raise calculator is stored in `cardmon_memur_salary_v1`.
 
 ## 📱 Local Sync & Android App
 
