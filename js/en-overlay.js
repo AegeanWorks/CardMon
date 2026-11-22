@@ -392,7 +392,9 @@ function startOverlayObserver() {
   const observer = new MutationObserver(() => {
     if (typeof currentLang !== 'undefined' && currentLang === 'en') refreshEnglishOverlay();
   });
-  observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+  // Only watch structural changes: observing characterData would re-trigger
+  // the overlay on its own nodeValue writes and loop indefinitely.
+  observer.observe(document.body, { childList: true, subtree: true });
 }
 
 if (typeof document !== 'undefined' && typeof document.addEventListener === 'function') {

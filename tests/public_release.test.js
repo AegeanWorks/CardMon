@@ -139,6 +139,13 @@ test('standalone APK page and its logic contain no Turkish text', () => {
   assert.equal(/[şŞğĞıİçÇöÖüÜ]/.test(script), false);
 });
 
+test('English overlay observer does not watch its own characterData writes', () => {
+  const source = fs.readFileSync(path.join(ROOT, 'js', 'en-overlay.js'), 'utf8');
+  const observe = source.match(/observer\.observe\([^;]+\);/);
+  assert.ok(observe, 'observer.observe call must exist');
+  assert.doesNotMatch(observe[0], /characterData/, 'watching characterData re-triggers the overlay in a loop');
+});
+
 test('English overlay covers dynamic dashboard labels and observes new DOM', () => {
   const h = createHarness();
   const source = fs.readFileSync(path.join(ROOT, 'js', 'en-overlay.js'), 'utf8');
