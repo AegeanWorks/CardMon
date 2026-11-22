@@ -86,6 +86,20 @@
   color: #94a3b8;
 }
 
+.mi-row.mi-best {
+  border-color: rgba(16, 185, 129, 0.45);
+  background: rgba(16, 185, 129, 0.07);
+}
+
+.mi-offer-row {
+  align-items: flex-start;
+}
+
+.mi-offer-row a {
+  color: var(--accent-emerald, #10b981);
+  text-decoration: none;
+}
+
 .mi-inputs {
   display: flex;
   flex-wrap: wrap;

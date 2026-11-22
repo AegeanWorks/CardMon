@@ -139,6 +139,16 @@ test('standalone APK page and its logic contain no Turkish text', () => {
   assert.equal(/[şŞğĞıİçÇöÖüÜ]/.test(script), false);
 });
 
+test('English overlay covers dynamic dashboard labels and observes new DOM', () => {
+  const h = createHarness();
+  const source = fs.readFileSync(path.join(ROOT, 'js', 'en-overlay.js'), 'utf8');
+  assert.match(source, /MutationObserver/);
+  const lookup = (key) => vm.runInContext(`enTranslationMap().get(${JSON.stringify(key)})`, h.sandbox);
+  assert.equal(lookup('Aylık Nakit Çıkışı & Zorunlu Ödemeler Özeti'), 'Monthly Cash Outflow & Required Payments Summary');
+  assert.equal(lookup('Kart Asgari Ödemeleri'), 'Card minimum payments');
+  assert.equal(lookup('Ekstre & Ödeme Takvimi'), 'Statement & Payment Calendar');
+});
+
 test('English overlay translates legacy labels and restores them on Turkish', () => {
   const h = overlayHarness('en');
   assert.equal(h.textNode.nodeValue, ' Save ');

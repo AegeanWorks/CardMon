@@ -11,6 +11,8 @@ const path = require('node:path');
 const http = require('node:http');
 const { getPortfolio, putPortfolio } = require('./sync-store');
 const { BuildManager, detectEnvironment } = require('./build-apk');
+const { fetchCampaignData, cachedCampaignData } = require('./campaign-feed');
+const { searchCampaigns, parseBankScope } = require('./search-api');
 
 const MAX_BODY = 8 * 1024 * 1024;
 
@@ -120,6 +122,7 @@ function createServer(options = {}) {
   const distDir = options.distDir || path.join(rootDir, 'dist');
   const token = options.token || '';
   const builders = options.buildManager || new BuildManager({ androidDir: path.join(rootDir, 'android'), outputDir: distDir });
+  const campaignFetch = options.campaignFetch || null;
 
   return http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -155,6 +158,31 @@ function createServer(options = {}) {
           authRequired: !!token,
           android: detectEnvironment(path.join(rootDir, 'android'))
         });
+        return;
+      }
+
+      if (route === '/api/campaign-search' && req.method === 'GET') {
+        const query = url.searchParams.get('q') || '';
+        const limit = Math.min(20, Math.max(1, Number(url.searchParams.get('limit')) || 12));
+        let data = cachedCampaignData();
+        if (!data) {
+          try { data = await fetchCampaignData(campaignFetch); }
+          catch (err) { data = { offers: [], deals: [] }; }
+        }
+        const result = await searchCampaigns(query, { campaignData: data, limit, banks: parseBankScope(url.searchParams.get('banks')) });
+        sendJson(res, 200, { query, ...result });
+        return;
+      }
+
+      if (route === '/api/campaigns' && req.method === 'GET') {
+        try {
+          const data = await fetchCampaignData(campaignFetch);
+          sendJson(res, 200, data);
+        } catch (err) {
+          const stale = cachedCampaignData();
+          if (stale) sendJson(res, 200, { ...stale, error: err.message });
+          else sendJson(res, 503, { error: err.message, offers: [] });
+        }
         return;
       }
 

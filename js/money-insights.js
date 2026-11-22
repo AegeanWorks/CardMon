@@ -175,9 +175,171 @@ function renderMemurSection() {
     </section>`;
 }
 
+function safeExternalUrl(url) {
+  const value = String(url || '').trim();
+  return /^https?:\/\//i.test(value) ? value : '#';
+}
+
+function renderCampaignResult() {
+  const el = document.getElementById('campaignResult');
+  if (!el) return;
+  const categorySelect = document.getElementById('campaignCategory');
+  const spendInput = document.getElementById('campaignSpend');
+  const category = (categorySelect && categorySelect.value) || 'digital';
+  const spend = spendInput ? Number(spendInput.value) || 0 : 0;
+  if (!state.cards || !state.cards.length) {
+    el.innerHTML = `<div class="mi-alert">${escapeHtml(t('campaignNoCards'))}</div>`;
+    return;
+  }
+  const data = typeof campaignCache !== 'undefined' && campaignCache ? campaignCache : null;
+  if (!data || !data.offers || !data.offers.length) {
+    el.innerHTML = `<div class="mi-alert warning">${escapeHtml(t('campaignNoData'))}</div>`;
+    return;
+  }
+  const ranked = typeof rankCardsForCategory === 'function'
+    ? rankCardsForCategory({ cards: state.cards, banks: state.banks, offers: data.offers, category, spend })
+    : [];
+
+  const cardRows = ranked.map((item, index) => {
+    const best = index === 0 && item.earn > 0;
+    const detail = item.offer
+      ? `${escapeHtml(item.offer.bankName)} · ${escapeHtml(item.offer.benefitLabel || `${item.offer.rate}%`)} · ${escapeHtml(item.offer.appName)}`
+      : escapeHtml(t('campaignNoOffer'));
+    return `
+      <div class="mi-row ${best ? 'mi-best' : ''}">
+        <div class="mi-card-name">
+          <strong>${escapeHtml(item.card.nickname || t('cardColumn'))}</strong>
+          <span>${detail}</span>
+        </div>
+        <div class="mi-metric"><strong>${escapeHtml(formatMoney(item.earn, 'TRY'))}</strong><span>${escapeHtml(t('salaryIncrease'))}</span></div>
+        <div>${best ? `<span class="mi-pill mi-wait">${escapeHtml(t('campaignBest'))}</span>` : ''}</div>
+      </div>`;
+  }).join('');
+
+  const campaigns = typeof activeCampaigns === 'function'
+    ? activeCampaigns(data.offers, category, spend)
+    : [];
+  const campaignRows = campaigns.length
+    ? campaigns.map((offer) => `
+      <div class="mi-row mi-offer-row">
+        <div class="mi-card-name">
+          <strong>${escapeHtml(offer.benefitLabel || `${offer.rate}%`)}</strong>
+          <span>${escapeHtml(offer.bankName)} · ${escapeHtml(offer.appName)}</span>
+          <span>${escapeHtml(offer.note || offer.product)}</span>
+        </div>
+        <div class="mi-metric"><strong>${escapeHtml(formatMoney(campaignValueTry(offer, spend), 'TRY'))}</strong><span>${escapeHtml(t('campaignWorth'))}</span></div>
+        <span style="font-size:0.7rem; color:var(--text-muted);">${escapeHtml(t('expires'))} ${escapeHtml(offer.endDate)}</span>
+        <a href="${escapeHtml(safeExternalUrl(offer.sourceUrl))}" target="_blank" rel="noopener noreferrer" style="font-size:0.72rem;">${escapeHtml(t('viewOffer'))}</a>
+      </div>`).join('')
+    : `<div class="mi-alert">${escapeHtml(t('noCampaigns'))}</div>`;
+
+  const deals = typeof featuredDeals === 'function' ? featuredDeals(data.deals, category) : [];
+  const dealRows = deals.length
+    ? deals.map((deal) => `
+      <div class="mi-row mi-offer-row">
+        <div class="mi-card-name">
+          <strong>${escapeHtml(deal.price || deal.badge)}</strong>
+          <span>${escapeHtml(deal.title)}</span>
+          <span>${escapeHtml(deal.store)} · ${escapeHtml(deal.expires)}</span>
+        </div>
+        <a href="${escapeHtml(safeExternalUrl(deal.sourceUrl))}" target="_blank" rel="noopener noreferrer" style="font-size:0.72rem;">${escapeHtml(t('viewOffer'))}</a>
+      </div>`).join('')
+    : `<div class="mi-alert">${escapeHtml(t('noDeals'))}</div>`;
+
+  el.innerHTML = `
+    <h4 style="font-size:0.82rem; margin:0.4rem 0;">${escapeHtml(t('campaignBest'))}</h4>
+    <div class="mi-table">${cardRows}</div>
+    <h4 style="font-size:0.82rem; margin:0.9rem 0 0.4rem;">${escapeHtml(t('activeCampaigns'))}</h4>
+    <div class="mi-table">${campaignRows}</div>
+    <h4 style="font-size:0.82rem; margin:0.9rem 0 0.4rem;">${escapeHtml(t('featuredDeals'))}</h4>
+    <div class="mi-table">${dealRows}</div>`;
+}
+
+function refreshCampaignResult() {
+  if (typeof fetchCampaigns !== 'function') return;
+  fetchCampaigns(true).then(renderCampaignResult);
+}
+
+function renderCampaignSearchResult() {
+  const el = document.getElementById('campaignSearchResult');
+  if (!el) return;
+  const data = typeof getCampaignSearchResults === 'function' ? getCampaignSearchResults() : null;
+  if (!data || !data.results.length) {
+    el.innerHTML = `<div class="mi-alert">${escapeHtml(t('campaignSearchHint'))}</div>`;
+    return;
+  }
+  const modeLabel = data.mode === 'web' ? t('campaignSearchWeb') : t('campaignSearchLocal');
+  const bankLabel = (data.banks || []).join(', ');
+  el.innerHTML = `
+    <p style="font-size:0.72rem; color:var(--text-muted);">${escapeHtml(modeLabel)}${bankLabel ? ` · ${escapeHtml(bankLabel)}` : ''}</p>
+    <div class="mi-table">${data.results.map((item) => `
+      <div class="mi-row mi-offer-row">
+        <div class="mi-card-name">
+          <strong>${escapeHtml(item.title)}</strong>
+          <span>${escapeHtml(item.bank || item.source)}</span>
+          <span>${escapeHtml(item.snippet)}</span>
+        </div>
+        <a href="${escapeHtml(safeExternalUrl(item.url))}" target="_blank" rel="noopener noreferrer" style="font-size:0.72rem;">${escapeHtml(t('viewOffer'))}</a>
+      </div>`).join('')}</div>`;
+}
+
+function runCampaignSearch() {
+  const input = document.getElementById('campaignSearchInput');
+  const query = input ? input.value.trim() : '';
+  if (!query) return;
+  if (typeof searchCampaignsWeb !== 'function') return;
+  searchCampaignsWeb(query, state.banks || []).then(renderCampaignSearchResult);
+}
+
+function renderCampaignSection() {
+  const categoryOptions = [
+    ['digital', 'catDigital'], ['shopping', 'catShopping'], ['groceries', 'catGroceries'],
+    ['travel', 'catTravel'], ['education', 'catEducation'], ['fuel', 'catFuel'], ['other', 'catOther']
+  ].map(([value, key]) => `<option value="${value}">${escapeHtml(t(key))}</option>`).join('');
+
+  return `
+    <section class="mi-section">
+      <div class="section-header-row"><h3>${escapeHtml(t('campaignTitle'))}</h3></div>
+      <p style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">${escapeHtml(t('campaignDesc'))}</p>
+      <div class="mi-inputs">
+        <label>${escapeHtml(t('campaignCategory'))}
+          <select class="form-input" id="campaignCategory" onchange="renderCampaignResult()">${categoryOptions}</select>
+        </label>
+        <label>${escapeHtml(t('campaignSpend'))}<input type="number" id="campaignSpend" class="form-input" min="0" step="any" placeholder="2000" value="2000" onchange="renderCampaignResult()"></label>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="refreshCampaignResult()">${escapeHtml(t('campaignRefresh'))}</button>
+      </div>
+      <div class="mi-table" id="campaignResult"></div>
+      <div class="mi-inputs" style="margin-top:0.9rem;">
+        <label style="flex:1;">${escapeHtml(t('campaignSearchPlaceholder'))}
+          <input type="text" id="campaignSearchInput" class="form-input" data-i18n-placeholder="campaignSearchPlaceholder" placeholder="${escapeHtml(t('campaignSearchPlaceholder'))}">
+        </label>
+        <button type="button" class="btn btn-primary btn-sm" onclick="runCampaignSearch()">${escapeHtml(t('campaignSearchBtn'))}</button>
+      </div>
+      <div id="campaignSearchResult"></div>
+    </section>`;
+}
+
+let autoBankSearchDone = false;
+
 function renderMoneyInsights() {
   const container = document.getElementById('moneyInsightsContainer');
   if (!container) return;
-  container.innerHTML = renderTimingSection() + renderFxSection() + renderMemurSection();
+  container.innerHTML = renderTimingSection() + renderFxSection() + renderMemurSection() + renderCampaignSection();
   renderMemurSalaryResult();
+
+  const searchUserBanks = () => {
+    if (autoBankSearchDone || typeof searchCampaignsWeb !== 'function') return;
+    const banks = (state.banks || []).filter((bank) => bank.name);
+    if (!banks.length) return;
+    autoBankSearchDone = true;
+    searchCampaignsWeb('', banks).then(renderCampaignSearchResult);
+  };
+
+  if (typeof fetchCampaigns === 'function' && typeof campaignCache !== 'undefined' && !campaignCache) {
+    fetchCampaigns().then(() => { renderCampaignResult(); searchUserBanks(); });
+  } else {
+    renderCampaignResult();
+    searchUserBanks();
+  }
+  renderCampaignSearchResult();
 }

@@ -8,6 +8,7 @@ const path = require('node:path');
 const { createServer, listen } = require('../server/http-server');
 const { BuildManager } = require('../server/build-apk');
 const { parseArgs } = require('../server/index');
+const { resetCampaignCache } = require('../server/campaign-feed');
 
 async function withServer(options, fn) {
   const server = createServer(options);
@@ -140,6 +141,55 @@ test('phone-friendly /apk page and /build-apk alias are served publicly', async 
       assert.equal(res.status, 200, `${route} should be public`);
       assert.match(html, /id="apkBuildBtn"/);
     }
+  });
+});
+
+test('campaign proxy endpoint serves normalized campaign data', async () => {
+  resetCampaignCache();
+  const root = tempRoot();
+  const campaignFetch = async () => ({
+    ok: true,
+    status: 200,
+    json: async () => ({
+      meta: { snapshotDate: '2026-11-19' },
+      apps: [{ id: 'spotify', name: 'Spotify', category: 'digital' }],
+      banks: [{ id: 'akbank', name: 'Akbank' }],
+      offers: [{ id: 'o1', appId: 'spotify', bankId: 'akbank', rate: 50, limit: 100, status: 'active' }]
+    })
+  });
+  await withServer({ rootDir: root, dataDir: path.join(root, 'data'), campaignFetch }, async (base) => {
+    const res = await fetch(`${base}/api/campaigns`);
+    const body = await res.json();
+    assert.equal(res.status, 200);
+    assert.equal(body.offerCount, 1);
+    assert.equal(body.offers[0].category, 'digital');
+    assert.equal(body.offers[0].bankName, 'Akbank');
+    assert.equal(body.cached, false);
+  });
+});
+
+test('campaign search endpoint returns merged local results', async () => {
+  resetCampaignCache();
+  const root = tempRoot();
+  const campaignFetch = async () => ({
+    ok: true,
+    status: 200,
+    json: async () => ({
+      meta: { snapshotDate: '2026-11-19' },
+      apps: [{ id: 'spotify', name: 'Spotify', category: 'digital' }],
+      banks: [{ id: 'garanti-bbva', name: 'Garanti BBVA' }],
+      offers: [{ id: 'o1', appId: 'spotify', bankId: 'garanti-bbva', benefitLabel: '500 TL', note: 'Spotify bonus', status: 'active' }]
+    })
+  });
+  await withServer({ rootDir: root, dataDir: path.join(root, 'data'), campaignFetch }, async (base) => {
+    const res = await fetch(`${base}/api/campaign-search?q=spotify&banks=Garanti%20BBVA%7Cgaranti-bbva`);
+    const body = await res.json();
+    assert.equal(res.status, 200);
+    assert.equal(body.query, 'spotify');
+    assert.deepEqual(JSON.parse(JSON.stringify(body.banks)), ['Garanti BBVA']);
+    assert.ok(body.results.length >= 1);
+    assert.equal(body.results[0].bank, 'Garanti BBVA');
+    assert.match(body.results[0].title, /Spotify/);
   });
 });
 

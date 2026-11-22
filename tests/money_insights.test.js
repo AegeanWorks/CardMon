@@ -47,6 +47,28 @@ test('renderMoneyInsights shows timing rows and FX figures', () => {
   assert.match(html, /USD/);
 });
 
+// hygiene: allow synthetic fixture URLs, no network request is made
+test('insights tab renders discount amounts, bonuses and official links', () => {
+  const h = createHarness();
+  h.evalInContext(`
+    state.cards = [{ id: 'c1', nickname: 'Bonus', bankId: 'b1', dateMethod: 'exact', cutoffDay: 15, dueDay: 25, limit: 100000, usedBalance: 1000 }];
+    state.banks = [{ id: 'b1', name: 'Garanti BBVA', presetKey: 'garanti' }];
+    campaignCache = {
+      offers: [{ id: 'o1', bankId: 'garanti-bbva', bankName: 'Garanti BBVA', appName: 'Bonus', category: 'digital', rate: 50, limit: 100, benefitLabel: '800 TL', note: 'Cashback', status: 'active_on_snapshot', endDate: '2026-12-31', sourceUrl: 'https://example.com/offer' }], // hygiene: allow synthetic fixture URL
+      deals: [{ id: 'd1', category: 'digital', title: 'Streaming %50', price: '%50', store: 'Garanti', expires: '31 Aralık 2026', sourceUrl: 'https://example.com/deal' }], // hygiene: allow synthetic fixture URL
+      snapshotDate: '2026-11-19',
+      error: ''
+    };
+  `);
+  h.renderMoneyInsights();
+  const html = h.sandbox.document.getElementById('campaignResult').innerHTML;
+  assert.match(html, /800 TL/);
+  assert.match(html, /Cashback/);
+  assert.match(html, /Streaming %50/);
+  assert.match(html, /viewOffer|Resmi kampanyayı gör|official/i);
+  assert.match(html, /https:\/\/example\.com\/offer/);
+});
+
 test('saveFxSettingsFromUi persists the entered assumptions', () => {
   const h = createHarness();
   h.sandbox.document.getElementById('inflationRateInput').value = '7.5';

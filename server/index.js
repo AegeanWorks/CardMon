@@ -8,6 +8,7 @@
 const path = require('node:path');
 const { listen, lanAddresses } = require('./http-server');
 const { createDiscoveryServer } = require('./discovery');
+const { startCampaignPoller } = require('./campaign-feed');
 
 function parseArgs(argv) {
   const args = {};
@@ -57,8 +58,15 @@ function main() {
       });
     }
 
+    // Pull campaign data in the background so /api/campaigns is warm on first use.
+    const stopCampaignPoller = startCampaignPoller({
+      onError: (err) => console.log(`  Campaigns: refresh failed (${err.message}); serving last good data`)
+    });
+    console.log('  Campaigns: background refresh every 6 hours');
+
     console.log('  Stop:     Ctrl+C');
     const shutdown = () => {
+      stopCampaignPoller();
       if (discovery) discovery.socket.close();
       server.close(() => process.exit(0));
     };

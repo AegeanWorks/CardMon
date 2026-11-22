@@ -222,6 +222,57 @@ const EN_RUNTIME_MAP = {
   'İhtiyaç Kredisi (Ev Tadilatı)': 'Personal loan (home renovation)',
   'Maaş hesabından otomatik çekiliyor': 'Automatically deducted from salary account',
   'Taşıt Kredisi (Araç Alımı)': 'Auto loan (vehicle purchase)',
+  'Aylık Nakit Çıkışı & Zorunlu Ödemeler Özeti': 'Monthly Cash Outflow & Required Payments Summary',
+  'Güvenli Nakit Dengesi': 'Safe cash buffer',
+  'Kart Asgari Ödemeleri': 'Card minimum payments',
+  'Kredi Aylık Taksitleri': 'Monthly loan installments',
+  'Bu Ay Çıkacak Toplam Zorunlu Tutar': 'Total required amount due this month',
+  'Aylık Gelir:': 'Monthly income:',
+  'Zorunlu Gider Yükü:': 'Required expense burden:',
+  'harcama için en avantajlı kart': 'best card for spending',
+  'Tüm Kartların Vade Sıralaması': 'Deferral ranking for all cards',
+  'Ekstresi yeni kesildi! Harcamanız 1 ay sonraki ekstreye kalır.': 'Statement just cut — your purchase goes on next month’s statement.',
+  'Gün Sonra Ödeme': 'days until payment',
+  'Banka Portföyü Toplamı': 'Bank portfolio total',
+  'Tanımlı Kart:': 'Registered cards:',
+  'Kredi Kartları Portföy Toplamı': 'Credit card portfolio total',
+  'Asgari Yükü:': 'Minimum burden:',
+  '₺ Borç Öde': 'Pay debt',
+  'İnternet: Açık': 'Online: enabled',
+  'İnternet: Bloke': 'Online: blocked',
+  'Yurtdışı: Açık': 'International: enabled',
+  'Yurtdışı: Bloke': 'International: blocked',
+  'Temassız: Açık': 'Contactless: enabled',
+  'Avans: Açık': 'Cash advance: enabled',
+  'Güncel Borç:': 'Current debt:',
+  'Ekstre & Ödeme Takvimi': 'Statement & Payment Calendar',
+  'Bu Ayki Toplam Nakit Çıkışı': 'Total cash outflow this month',
+  'Son Ödeme Günü': 'Payment due date',
+  'Gelir Girişi': 'Income entry',
+  'Dönem harcamaları hesaplanır ve faturalandırılır.': 'Period spending is calculated and billed.',
+  'ana maaş/gelir girişi': 'main salary/income entry',
+  'Abonelikler, Faturalar & Düzenli Giderler': 'Subscriptions, Bills & Recurring Expenses',
+  'Aylık Toplam Gider': 'Total monthly expenses',
+  'Yıllık Projeksiyon': 'Annual projection',
+  'Evin Olsaydı Kiradan Ne Kadar Kâr Edecektin?': 'Would buying be better than renting?',
+  'Detaylı Simülatör & Hesaplama': 'Detailed simulator & calculation',
+  'Kira ödemek yerine ev sahibi olunduğunda cebinizde kalacak net tutarlar:': 'Net amounts left when owning instead of renting:',
+  'Yılda Cebinde Kalacak': 'Left in your pocket per year',
+  'Vadesiz mevduat hesaplarınıza bağlı hazır nakit avans limitleriniz.': 'Ready cash advance limits linked to your checking accounts.',
+  'Bu limit, vadesiz hesabınızda bakiye kalmadığında otomatik devreye girer.': 'This limit activates automatically when your checking balance runs out.',
+  'KMH Tanımlı Değil': 'No overdraft defined',
+  'Tanımlı Ek Hesap Limiti': 'Defined overdraft limit',
+  'Tüm bankalardaki ihtiyaç, konut, taşıt ve ticari kredilerinizi tek ekranda yönetin.': 'Manage personal, housing, vehicle and business loans from all banks in one place.',
+  'Aylık Toplam Kredi Taksiti': 'Total monthly loan installment',
+  'Bu ay ödenecek taksit': 'Installment due this month',
+  'Kredi Planlarım & Ödeme Durumu': 'My loan plans & payment status',
+  'Vade bitişine kalan süre ve geri ödeme ilerleme durumu': 'Time remaining and repayment progress',
+  'Henüz Kayıtlı Kredi Bulunmuyor': 'No registered loans yet',
+  '+ İlk Krediyi Ekle': '+ Add first loan',
+  'Kart Şebekesi (Network) Payı': 'Card network share',
+  'Kart Türleri Dağılımı:': 'Card type distribution:',
+  'Maaş Girişi': 'Salary deposit',
+  'Toplam Portföy': 'Total portfolio',
   'Planlanan ödeme bulunmuyor (Sakin dönem)': 'No planned payments (quiet period)',
   'Kayıtlı kredi kartı bulunmamaktadır.': 'No credit cards registered.',
   'Konsolide yıllık kart üyelik maliyeti': 'Consolidated annual card membership cost',
@@ -243,10 +294,10 @@ function enTranslationMap() {
     if (from && to && from !== to && !map.has(from)) map.set(from, to);
   }
   for (const key of Object.keys(EN_EXPLICIT_MAP)) {
-    if (!map.has(key)) map.set(key, EN_EXPLICIT_MAP[key]);
+    map.set(key, EN_EXPLICIT_MAP[key]);
   }
   for (const key of Object.keys(EN_RUNTIME_MAP)) {
-    if (!map.has(key)) map.set(key, EN_RUNTIME_MAP[key]);
+    map.set(key, EN_RUNTIME_MAP[key]);
   }
   return map;
 }
@@ -269,58 +320,66 @@ function clearEnglishOverlay() {
   enOverlayEntries = [];
 }
 
+let overlayApplying = false;
+
 function applyEnglishOverlay(root) {
-  clearEnglishOverlay();
-  if (typeof currentLang === 'undefined' || currentLang !== 'en') return;
-  if (typeof document === 'undefined' || typeof document.createTreeWalker !== 'function') return;
+  if (overlayApplying) return;
+  overlayApplying = true;
+  try {
+    clearEnglishOverlay();
+    if (typeof currentLang === 'undefined' || currentLang !== 'en') return;
+    if (typeof document === 'undefined' || typeof document.createTreeWalker !== 'function') return;
 
-  const map = enTranslationMap();
-  if (!map.size) return;
-  const target = root || document.body;
-  if (!target) return;
+    const map = enTranslationMap();
+    if (!map.size) return;
+    const target = root || document.body;
+    if (!target) return;
 
-  const textNodes = [];
-  const walker = document.createTreeWalker(target, 4); // NodeFilter.SHOW_TEXT
-  let node = walker.nextNode();
-  while (node) {
-    const tag = node.parentNode && node.parentNode.nodeName;
-    if (tag !== 'SCRIPT' && tag !== 'STYLE' && typeof node.nodeValue === 'string') {
-      textNodes.push(node);
+    const textNodes = [];
+    const walker = document.createTreeWalker(target, 4); // NodeFilter.SHOW_TEXT
+    let node = walker.nextNode();
+    while (node) {
+      const tag = node.parentNode && node.parentNode.nodeName;
+      if (tag !== 'SCRIPT' && tag !== 'STYLE' && typeof node.nodeValue === 'string') {
+        textNodes.push(node);
+      }
+      node = walker.nextNode();
     }
-    node = walker.nextNode();
-  }
 
-  const phrases = Array.from(map.entries())
-    .filter(([key]) => key.length >= 12)
-    .sort((left, right) => right[0].length - left[0].length);
+    const phrases = Array.from(map.entries())
+      .filter(([key]) => key.length >= 12)
+      .sort((left, right) => right[0].length - left[0].length);
 
-  for (const textNode of textNodes) {
-    const original = textNode.nodeValue;
-    const key = original.trim();
-    const translated = key && map.get(key);
-    let updated = translated ? original.replace(key, translated) : original;
-    if (!translated) {
-      // Generated HTML often leaves a Turkish phrase inside a larger text node.
-      for (const [phrase, english] of phrases) {
-        if (updated.includes(phrase)) updated = updated.split(phrase).join(english);
+    for (const textNode of textNodes) {
+      const original = textNode.nodeValue;
+      const key = original.trim();
+      const translated = key && map.get(key);
+      let updated = translated ? original.replace(key, translated) : original;
+      if (!translated) {
+        // Generated HTML often leaves a Turkish phrase inside a larger text node.
+        for (const [phrase, english] of phrases) {
+          if (updated.includes(phrase)) updated = updated.split(phrase).join(english);
+        }
+      }
+      if (updated === original) continue;
+      enOverlayEntries.push({ node: textNode, attr: null, original });
+      textNode.nodeValue = updated;
+    }
+
+    const elements = typeof document.querySelectorAll === 'function' ? document.querySelectorAll('*') : [];
+    for (const element of elements) {
+      for (const attr of EN_OVERLAY_ATTRIBUTES) {
+        let value;
+        try { value = element.getAttribute(attr); } catch (err) { continue; }
+        if (!value) continue;
+        const translated = map.get(value.trim());
+        if (!translated) continue;
+        enOverlayEntries.push({ node: element, attr, original: value });
+        element.setAttribute(attr, translated);
       }
     }
-    if (updated === original) continue;
-    enOverlayEntries.push({ node: textNode, attr: null, original });
-    textNode.nodeValue = updated;
-  }
-
-  const elements = typeof document.querySelectorAll === 'function' ? document.querySelectorAll('*') : [];
-  for (const element of elements) {
-    for (const attr of EN_OVERLAY_ATTRIBUTES) {
-      let value;
-      try { value = element.getAttribute(attr); } catch (err) { continue; }
-      if (!value) continue;
-      const translated = map.get(value.trim());
-      if (!translated) continue;
-      enOverlayEntries.push({ node: element, attr, original: value });
-      element.setAttribute(attr, translated);
-    }
+  } finally {
+    overlayApplying = false;
   }
 }
 
@@ -328,10 +387,22 @@ function refreshEnglishOverlay() {
   applyEnglishOverlay();
 }
 
+function startOverlayObserver() {
+  if (typeof MutationObserver !== 'function' || typeof document === 'undefined' || !document.body) return;
+  const observer = new MutationObserver(() => {
+    if (typeof currentLang !== 'undefined' && currentLang === 'en') refreshEnglishOverlay();
+  });
+  observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+}
+
 if (typeof document !== 'undefined' && typeof document.addEventListener === 'function') {
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', refreshEnglishOverlay);
+    document.addEventListener('DOMContentLoaded', () => {
+      refreshEnglishOverlay();
+      startOverlayObserver();
+    });
   } else {
     refreshEnglishOverlay();
+    startOverlayObserver();
   }
 }

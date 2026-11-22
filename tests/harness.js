@@ -14,6 +14,7 @@ const SCRIPT_FILES = [
   path.join(ROOT_DIR, 'js', 'fx-inflation.js'),
   path.join(ROOT_DIR, 'js', 'inflation-feed.js'),
   path.join(ROOT_DIR, 'js', 'memur-raise.js'),
+  path.join(ROOT_DIR, 'js', 'campaign-router.js'),
   path.join(ROOT_DIR, 'js', 'file-system.js'),
   path.join(ROOT_DIR, 'js', 'state.js'),
   path.join(ROOT_DIR, 'js', 'smart-advisor.js'),
