@@ -3,8 +3,8 @@
   "active_task": {
     "task_id": "cardmon-mobile-apk-ui",
     "last_phase": "phase 4",
-    "active_phase": 4,
-    "status": "in_progress",
+    "active_phase": 5,
+    "status": "completed",
     "updated_at": 1795377696.8183,
     "owner": "opencode:hy4-flash-free",
     "lease_until": 1795384896.8183,
@@ -15,21 +15,12 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ]
+    ],
+    "completed_at": 1795377866.3039804,
+    "completed_head": "331fef847333f56a99c7f26cd6bd18fde5ddb008",
+    "completed_tree": "00d3174a9b3da590155d2bdb96e7d530a45a2071"
   },
   "checkpoints": [
-    {
-      "task_id": "reforge:run-3",
-      "phase": "reforge stage 4",
-      "phase_num": 3,
-      "description": "Reforge stage 4: stage 4 host review reviewed; run active; coverage 65/65",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795370167.6440353,
-      "timestamp_str": "2026-11-22 20:56:07",
-      "agent": "opencode",
-      "operator_task": "cardmon-campaign-router"
-    },
     {
       "task_id": "reforge:run-3",
       "phase": "reforge stage 5",
@@ -396,6 +387,23 @@
           "path": "projects/CardMon"
         }
       ]
+    },
+    {
+      "task_id": "cardmon-mobile-apk-ui",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-mobile-apk-ui' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795377866.3792074,
+      "timestamp_str": "2026-11-22 23:04:26",
+      "agent": "opencode:hy4-flash-free",
+      "head": "331fef847333f56a99c7f26cd6bd18fde5ddb008",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
     }
   ]
 }
