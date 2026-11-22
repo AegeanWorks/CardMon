@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-secret-scan-fix",
+    "task_id": "cardmon-public-release",
     "last_phase": "phase 4",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1795309746.549467,
+    "updated_at": 1795310102.507899,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795316946.549467,
+    "lease_until": 1795317302.507899,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -16,70 +16,11 @@
         "path": "projects/CardMon"
       }
     ],
-    "completed_at": 1795309780.2026684,
-    "completed_head": "9486f06da3acfdb96caa7d280069cb7cc034dd7c",
-    "completed_tree": "a9b46950465c66aae451302877c52b20a4645f6b"
+    "completed_at": 1795310103.2002616,
+    "completed_head": "6cd919f70d1aeb856d090b26032c193e39d8c2ef",
+    "completed_tree": "40ad01ab05d2951975632c7133eb394c50cd51db"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-findings-batch3",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[2/3] Fixed 6 defects in modals.js, reports.js, backup-vault.js, file-system.js and i18n.js",
-      "files_affected": [
-        "js/modals.js",
-        "js/reports.js",
-        "js/backup-vault.js",
-        "js/file-system.js",
-        "i18n.js",
-        "tests/full_read_fixes3.test.js"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795212870.5285423,
-      "timestamp_str": "2026-11-21 01:14:30",
-      "agent": "opencode:hy4-flash-free",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch3",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[3/3] Phase 4: npm test 135/135, UI verified with vision-reviewed behavior proof",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795212873.616337,
-      "timestamp_str": "2026-11-21 01:14:33",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch3",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-findings-batch3' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795212991.4144735,
-      "timestamp_str": "2026-11-21 01:16:31",
-      "agent": "opencode",
-      "head": "6bf9c9b75b92b91131621c0d35e4b2f6687f25b5",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
     {
       "task_id": "cardmon-findings-batch4",
       "phase": "phase 2",
@@ -407,6 +348,65 @@
       "timestamp_str": "2026-11-22 04:09:40",
       "agent": "opencode:hy4-flash-free",
       "head": "9486f06da3acfdb96caa7d280069cb7cc034dd7c",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
+    },
+    {
+      "task_id": "cardmon-public-release",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Plan: deliver local sync, Android APK build and public-ready UI as one release",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795310095.2309318,
+      "timestamp_str": "2026-11-22 04:14:55",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "The user authorized commit and push of the accumulated CardMon work.",
+        "benefits": "Single clean commit with no secret-scan false positives and a complete reviewed UI contract.",
+        "risks": "contract: additive APIs; dependency: local Android SDK; concurrency: one build job; state: revisioned portfolio file",
+        "mitigation": "Rewrite local commits to include the allow-secret pragma, rerun all gates, keep the UI contract finished."
+      },
+      "plan_digest": "346be606e74f580af3d90b93ca5e6421860b812757bf8830a899d11e0dc3e329",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-public-release",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 206/206 tests and 4/4 gates on the final commit",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795310102.507899,
+      "timestamp_str": "2026-11-22 04:15:02",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-public-release",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-public-release' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795310103.2784271,
+      "timestamp_str": "2026-11-22 04:15:03",
+      "agent": "opencode:hy4-flash-free",
+      "head": "6cd919f70d1aeb856d090b26032c193e39d8c2ef",
       "delivery": {
         "roots": [
           "."
