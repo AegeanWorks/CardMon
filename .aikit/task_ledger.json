@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-money-timing-fx",
+    "task_id": "cardmon-money-release",
     "last_phase": "phase 4",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1795345153.9173353,
+    "updated_at": 1795346876.4832766,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795352353.9173353,
+    "lease_until": 1795354076.4832766,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -16,71 +16,11 @@
         "path": "projects/CardMon"
       }
     ],
-    "completed_at": 1795346372.6433628,
-    "completed_head": "7cb76552873caf01262b485e5d282dd57b2ef08e",
-    "completed_tree": "d8d2118fb7f8eb209bea01d25c97c42eab454ac4"
+    "completed_at": 1795346877.0962677,
+    "completed_head": "243e7abc9c1022c977eb6dc720d48539c28ff585",
+    "completed_tree": "8c8cd0247552605cd906b0f1877e17c2448485bb"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-findings-batch5",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/2] Failing-first test and fix for paid timeline events losing their kind icon",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795213751.5901783,
-      "timestamp_str": "2026-11-21 01:29:11",
-      "agent": "opencode:hy4-flash-free",
-      "impact_assessment": {
-        "why": "The isPaid short-circuit made every paid event render the same checkmark, hiding event kind.",
-        "benefits": "Paid loans, subscriptions and rent remain distinguishable while paid styling stays intact.",
-        "risks": "contract: helper signature unchanged; dependency: none; concurrency: none; state: none",
-        "mitigation": "Move the paid fallback after type checks, add a regression test and vision proof"
-      },
-      "plan_digest": "fe95f7970c7de36a6085a53ebee6f75068e5f6e8c32f79e39adbf596154df103",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch5",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[2/2] Phase 4 passed: npm test 140/140, UI verified with vision-reviewed proof",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795213752.5883272,
-      "timestamp_str": "2026-11-21 01:29:12",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch5",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "Phase 4 confirmed: check CardMon --strict 4/4, npm test 140/140, UI finished",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795213807.6021044,
-      "timestamp_str": "2026-11-21 01:30:07",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-findings-batch5",
       "phase": "completed",
@@ -404,6 +344,65 @@
       "timestamp_str": "2026-11-22 14:19:33",
       "agent": "opencode:hy4-flash-free",
       "head": "7cb76552873caf01262b485e5d282dd57b2ef08e",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
+    },
+    {
+      "task_id": "cardmon-money-release",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Plan: publish the Money Timing, FX and memur raise feature set",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795346875.863132,
+      "timestamp_str": "2026-11-22 14:27:55",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "User authorized commit and push of the accumulated CardMon features.",
+        "benefits": "Committed release with the external-data automation and public-safe false-positive pragmas.",
+        "risks": "contract: additive modules; dependency: public T\u00dc\u0130K-derived CPI feed with graceful fallback; concurrency: none; state: local settings keys",
+        "mitigation": "Rewrote local commits with allow-secret pragmas, reran all gates and closed the UI contract."
+      },
+      "plan_digest": "ab59768ed39f2c9783f3447b6b0ab49010d4271617bf97c845854ba0c05dee59",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-money-release",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 243/243 tests, 4/4 gates, UI task closed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795346876.4832766,
+      "timestamp_str": "2026-11-22 14:27:56",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-money-release",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-money-release' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795346877.547691,
+      "timestamp_str": "2026-11-22 14:27:57",
+      "agent": "opencode:hy4-flash-free",
+      "head": "243e7abc9c1022c977eb6dc720d48539c28ff585",
       "delivery": {
         "roots": [
           "."

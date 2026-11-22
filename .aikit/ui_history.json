@@ -2969,5 +2969,35 @@
     "final_snapshot_entries": 0,
     "surface_digest": "598f1d955b6026c7d41dde2d7a6dcc89f12c94fe0bb6659598934813816d6b0e",
     "baseline_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [],
+    "no_visual_reason": "",
+    "no_change_reason": "Reviewed the committed Money Timing, FX and memur raise UI after commit rewrite",
+    "baseline_commit": "794b00353f452a893d88c4e31a87c104e5a23326",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795346847.3645046,
+    "finished_at": 1795346866.3155892,
+    "strikes": 0,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795346866.3155909
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76",
+    "baseline_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca"
   }
 ]
