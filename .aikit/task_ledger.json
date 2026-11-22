@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-overlay-observer-fix",
-    "last_phase": "phase 4",
+    "task_id": "cardmon-android-full-features",
+    "last_phase": "phase 5",
     "active_phase": 5,
-    "status": "completed",
-    "updated_at": 1795371493.1871686,
+    "status": "in_progress",
+    "updated_at": 1795376665.5527806,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795378693.1871686,
+    "lease_until": 1795383865.5527806,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -15,66 +15,9 @@
         "name": "CardMon",
         "path": "projects/CardMon"
       }
-    ],
-    "completed_at": 1795371493.6469219,
-    "completed_head": "af7626f03786a702a9b2baa46cfedfbcf24b2fa6",
-    "completed_tree": "6551cf864ce89fe9f8707dce3af4615d731d81ed"
+    ]
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-campaign-router",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Phase 4: 260/260 tests, real bonus amounts and deals rendered with official links, UI task closed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795362362.1201813,
-      "timestamp_str": "2026-11-22 18:46:02",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-campaign-router",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Phase 4: 267/267 tests, search endpoint verified live (local mode), UI task closed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795363103.3640764,
-      "timestamp_str": "2026-11-22 18:58:23",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-campaign-router",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[2/2] Phase 4: 270/270 tests, bank-scoped search verified live, UI task closed",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795364445.461365,
-      "timestamp_str": "2026-11-22 19:20:45",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-campaign-router",
       "phase": "completed",
@@ -390,6 +333,66 @@
         ],
         "forced": false
       }
+    },
+    {
+      "task_id": "cardmon-android-full-features",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Plan: add WebView download, file-chooser and print bridges so the APK supports all app functions",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795371931.4028087,
+      "timestamp_str": "2026-11-22 21:25:31",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "The APK WebView lacked handlers for blob/data downloads, <input type=file> and window.print, so export/import/PDF/APK download were broken on the phone.",
+        "benefits": "All web-app features work inside the Android app; downloads land in the Downloads folder with a visible toast.",
+        "risks": "contract: additive JS bridge; dependency: Android framework only; concurrency: callbacks on UI thread; state: none",
+        "mitigation": "Route downloads through native bridges with browser fallback, handle file chooser callbacks, rebuild APK and verify with tests and aapt2."
+      },
+      "plan_digest": "d44be04b6f1d7e77f62be8b079a5be791e6433c520b40f472e6eb4d448065416",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-android-full-features",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 275/275 tests, APK rebuilt with native bridges, aapt2 verified, UI layouts intact",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795372969.1910195,
+      "timestamp_str": "2026-11-22 21:42:49",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-android-full-features",
+      "phase": "phase 5",
+      "phase_num": 5,
+      "description": "[2/2] Final verification: 276/276 tests, 4/4 gates, encodeURIComponent data-URL fix + regression test, ADR-004, all APK functions verified on emulator",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795376665.5527806,
+      "timestamp_str": "2026-11-22 22:44:25",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
     }
   ]
 }

@@ -16,13 +16,8 @@ function exportJsonBackup() {
     profile: state.profile
   };
 
-  const jsonStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(data, null, 2));
-  const downloadAnchor = document.createElement('a');
-  downloadAnchor.setAttribute('href', jsonStr);
-  downloadAnchor.setAttribute('download', `cardmon_backup_${new Date().toISOString().slice(0, 10)}.json`);
-  document.body.appendChild(downloadAnchor);
-  downloadAnchor.click();
-  downloadAnchor.remove();
+  downloadText(`cardmon_backup_${new Date().toISOString().slice(0, 10)}.json`,
+    JSON.stringify(data, null, 2), 'text/json');
 }
 
 function triggerImportJson() {
@@ -66,8 +61,8 @@ function csvCell(value) {
 }
 
 function exportCsvReport() {
-  let csvContent = 'data:text/csv;charset=utf-8,';
-  
+  let csvContent = '';
+
   // Headers
   csvContent += 'Banka,Kart Adi,Son 4 Hane,Kart Turu,Sebeke,Limit,Guncel Borc,Kullanilabilir Limit,Doluluk %,Ekstre Kesim,Son Odeme\n';
 
@@ -97,13 +92,7 @@ function exportCsvReport() {
     csvContent += row + '\n';
   });
 
-  const encodedUri = encodeURI(csvContent);
-  const link = document.createElement('a');
-  link.setAttribute('href', encodedUri);
-  link.setAttribute('download', `cardmon_financial_report_${new Date().toISOString().slice(0, 10)}.csv`);
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
+  downloadText(`cardmon_financial_report_${new Date().toISOString().slice(0, 10)}.csv`, csvContent, 'text/csv');
 }
 
 // --------------------------------------------------------------------------
@@ -1076,7 +1065,7 @@ function exportPdfReport() {
 
     showToast(`${currentMonthName} Detaylı Finansal Denetim Raporu hazırlanıyor...`);
     setTimeout(() => {
-      window.print();
+      triggerPrint();
     }, 150);
   } catch (err) {
     console.error('PDF export error:', err);

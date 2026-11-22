@@ -2,19 +2,37 @@ package com.aegeanworks.cardmon;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DownloadManager;
+import android.content.ContentValues;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Message;
+import android.print.PrintManager;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Patterns;
 import android.view.View;
+import android.webkit.DownloadListener;
+import android.webkit.JavascriptInterface;
+import android.webkit.URLUtil;
+import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.Inet4Address;
@@ -30,9 +48,9 @@ import java.util.List;
  * CardMon Android companion.
  *
  * <p>Finds the CardMon local server on the Wi-Fi with a single UDP broadcast
- * (no continuous scanning, no cloud). If the server is already known from a
- * previous run it is used directly. Sync itself stays manual unless the user
- * explicitly enables auto-sync in the web app.</p>
+ * (no continuous scanning, no cloud). The WebView exposes small bridges for
+ * downloads, file picking and printing so every web-app function also works
+ * inside the APK.</p>
  */
 public class MainActivity extends Activity {
     private static final String PREFS = "cardmon";
@@ -40,9 +58,11 @@ public class MainActivity extends Activity {
     private static final String DISCOVERY_TOKEN = "CARDMON_DISCOVER_V1";
     private static final int DISCOVERY_PORT = 8766;
     private static final int DEFAULT_HTTP_PORT = 8765;
+    private static final int FILE_CHOOSER_REQUEST = 1001;
 
     private WebView webView;
     private EditText serverUrlInput;
+    private ValueCallback<Uri[]> filePathCallback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -211,9 +231,57 @@ public class MainActivity extends Activity {
         settings.setSupportZoom(true);
         settings.setBuiltInZoomControls(true);
         settings.setDisplayZoomControls(false);
+        settings.setSupportMultipleWindows(false);
 
         webView.setWebViewClient(new WebViewClient());
-        webView.setWebChromeClient(new WebChromeClient());
+
+        // Keep target="_blank" links in the same tab and support file picking.
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg) {
+                WebView.WebViewTransport transport = (WebView.WebViewTransport) resultMsg.obj;
+                transport.setWebView(view);
+                resultMsg.sendToTarget();
+                return true;
+            }
+
+            @Override
+            public boolean onShowFileChooser(WebView view, ValueCallback<Uri[]> callback, FileChooserParams params) {
+                if (filePathCallback != null) filePathCallback.onReceiveValue(null);
+                filePathCallback = callback;
+                try {
+                    Intent intent = params.createIntent();
+                    startActivityForResult(Intent.createChooser(intent, "Choose file"), FILE_CHOOSER_REQUEST);
+                } catch (Exception error) {
+                    filePathCallback = null;
+                    Toast.makeText(MainActivity.this, "File picker unavailable", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+                return true;
+            }
+        });
+
+        // Plain http(s) downloads (e.g. the built APK) go through DownloadManager.
+        webView.setDownloadListener(new DownloadListener() {
+            @Override
+            public void onDownloadStart(String url, String userAgent, String contentDisposition,
+                                        String mimeType, long contentLength) {
+                try {
+                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(url));
+                    String name = URLUtil.guessFileName(url, contentDisposition, mimeType);
+                    request.setTitle(name);
+                    request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
+                    DownloadManager manager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                    manager.enqueue(request);
+                    Toast.makeText(MainActivity.this, "Downloading " + name, Toast.LENGTH_SHORT).show();
+                } catch (Exception error) {
+                    Toast.makeText(MainActivity.this, "Download failed: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        webView.addJavascriptInterface(new CardMonBridge(), "CardMonAndroid");
         webView.loadUrl(url);
 
         Button settingsButton = (Button) findViewById(R.id.settingsButton);
@@ -221,6 +289,81 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 showSetupScreen();
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != FILE_CHOOSER_REQUEST || filePathCallback == null) return;
+        Uri[] results = null;
+        if (resultCode == RESULT_OK && data != null && data.getData() != null) {
+            results = new Uri[]{data.getData()};
+        }
+        filePathCallback.onReceiveValue(results);
+        filePathCallback = null;
+    }
+
+    /** Small, explicitly named bridge used only by CardMon's own web pages. */
+    private class CardMonBridge {
+        @JavascriptInterface
+        public void printPage() {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        PrintManager manager = (PrintManager) getSystemService(PRINT_SERVICE);
+                        manager.print("CardMon report", webView.createPrintDocumentAdapter("CardMon report"), null);
+                    } catch (Exception error) {
+                        Toast.makeText(MainActivity.this, "Print unavailable: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public void downloadText(String filename, String text, String mime) {
+            saveToDownloads(filename, text.getBytes(StandardCharsets.UTF_8), mime);
+        }
+
+        @JavascriptInterface
+        public void downloadBase64(String filename, String base64, String mime) {
+            try {
+                saveToDownloads(filename, Base64.decode(base64, Base64.DEFAULT), mime);
+            } catch (Exception error) {
+                Toast.makeText(MainActivity.this, "Decode failed: " + error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    private void saveToDownloads(final String filename, final byte[] bytes, final String mime) {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String type = mime == null ? "application/octet-stream" : mime;
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                        ContentValues values = new ContentValues();
+                        values.put(MediaStore.Downloads.DISPLAY_NAME, filename);
+                        values.put(MediaStore.Downloads.MIME_TYPE, type);
+                        values.put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+                        Uri uri = getContentResolver().insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values);
+                        if (uri == null) throw new IllegalStateException("MediaStore insert failed");
+                        try (OutputStream out = getContentResolver().openOutputStream(uri)) {
+                            out.write(bytes);
+                        }
+                    } else {
+                        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+                        if (!dir.exists()) dir.mkdirs();
+                        try (FileOutputStream out = new FileOutputStream(new File(dir, filename))) {
+                            out.write(bytes);
+                        }
+                    }
+                    Toast.makeText(MainActivity.this, "Saved to Downloads: " + filename, Toast.LENGTH_SHORT).show();
+                } catch (Exception error) {
+                    Toast.makeText(MainActivity.this, "Save failed: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

@@ -146,15 +146,7 @@ async function saveFileAs() {
 
   // Graceful browser download fallback
   try {
-    const blob = new Blob([content], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = defaultFilename;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    downloadBlob(new Blob([content], { type: 'application/json' }), defaultFilename);
 
     fileSystemState.activeHandle = null;
     fileSystemState.activeFileName = defaultFilename;

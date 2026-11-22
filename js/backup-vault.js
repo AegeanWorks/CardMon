@@ -170,13 +170,8 @@ function downloadBackupSnapshotJson(snapId) {
   const snap = vault.find(v => v.id === snapId);
   if (!snap || !snap.data) return;
 
-  const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(snap.data, null, 2));
-  const a = document.createElement('a');
-  a.setAttribute('href', dataStr);
-  a.setAttribute('download', `cardmon_backup_${snap.dateStr.replace(/[\s,:]+/g, '_')}.json`);
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
+  downloadText(`cardmon_backup_${snap.dateStr.replace(/[\s,:]+/g, '_')}.json`,
+    JSON.stringify(snap.data, null, 2), 'text/json');
   showToast('📥 Yedek JSON dosyası indirildi.');
 }
 

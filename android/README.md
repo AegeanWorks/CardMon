@@ -22,6 +22,17 @@ port `8766`, and the app does not run a background scanner. Sync itself is also
 manual by default — enable *Auto-sync* in the web app only if you want
 continuous uploading.
 
+## App capabilities
+
+The app is a full WebView client for the CardMon web app, so the Money Timing,
+FX/inflation, memur zammı, campaign router, sync and APK-build screens all work
+inside it. Native bridges cover the browser APIs WebView lacks:
+
+- exports (JSON/CSV/backup) and the built APK are saved to **Downloads**;
+- **import backup** opens the Android file picker;
+- **PDF report** uses the system print dialog;
+- campaign "official link" pop-ups stay in the same tab.
+
 ## Building the APK
 
 From the project root:

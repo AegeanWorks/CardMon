@@ -47,7 +47,7 @@ test('exportCsvReport generates valid CSV content with headers and card rows', (
   assert.ok(downloadedUri.startsWith('data:text/csv;charset=utf-8,'));
   assert.ok(downloadedFilename.endsWith('.csv'));
 
-  const decodedCsv = decodeURI(downloadedUri.replace('data:text/csv;charset=utf-8,', ''));
+  const decodedCsv = decodeURIComponent(downloadedUri.replace('data:text/csv;charset=utf-8,', ''));
   assert.ok(decodedCsv.includes('Banka,Kart Adi,Son 4 Hane'));
   assert.ok(decodedCsv.includes('"Garanti BBVA"'));
   assert.ok(decodedCsv.includes('"Bonus Gold"'));

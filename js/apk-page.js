@@ -147,6 +147,17 @@ async function apkDownload() {
     const response = await fetch('/api/build-apk/download', { headers: apkHeaders() });
     if (!response.ok) throw new Error(`Download failed (${response.status})`);
     const blob = await response.blob();
+    if (typeof window !== 'undefined' && window.CardMonAndroid &&
+        typeof window.CardMonAndroid.downloadBase64 === 'function' && typeof FileReader !== 'undefined') {
+      const reader = new FileReader();
+      reader.onloadend = function () {
+        const value = String(reader.result || '');
+        const base64 = value.includes(',') ? value.slice(value.indexOf(',') + 1) : '';
+        window.CardMonAndroid.downloadBase64('cardmon-debug.apk', base64, 'application/vnd.android.package-archive');
+      };
+      reader.readAsDataURL(blob);
+      return;
+    }
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;

@@ -3495,5 +3495,131 @@
     "final_snapshot_entries": 0,
     "surface_digest": "d324fa0b52509fee376250dd485411c6231327bf122666ff738e43ae44b0fc63",
     "baseline_digest": "87d24a639d54d1d93aba7475f28c70967590f0963476862fa81b2a08843d1d94"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      "android/README.md",
+      "android/app/src/main/AndroidManifest.xml",
+      "android/app/src/main/java/com/aegeanworks/cardmon/MainActivity.java",
+      "js/apk-page.js",
+      "js/backup-vault.js",
+      "js/file-system.js",
+      "js/reports.js",
+      "js/utils.js",
+      "tests/android_bridge.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795373008.469732,
+    "finished_at": 1795373046.0564125,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "02586653c3a525a6e88d47de0a3eee4017ff650705465aa7269297709baf4fdd",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795373046.056415,
+      "scoped_paths": [
+        "android/README.md",
+        "android/app/src/main/AndroidManifest.xml",
+        "android/app/src/main/java/com/aegeanworks/cardmon/MainActivity.java",
+        "js/apk-page.js",
+        "js/backup-vault.js",
+        "js/file-system.js",
+        "js/reports.js",
+        "js/utils.js",
+        "tests/android_bridge.test.js"
+      ],
+      "scoped_digest": "24f0f1af326dfd46be1e14b75d5f98aaca4fc33f97c1b75f81606833d3014a02"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/android_bridge.test.js",
+        "reason": "Bridge routing tests"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "02586653c3a525a6e88d47de0a3eee4017ff650705465aa7269297709baf4fdd",
+    "baseline_digest": "d324fa0b52509fee376250dd485411c6231327bf122666ff738e43ae44b0fc63"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/decisions.md",
+      "android/README.md",
+      "android/app/src/main/AndroidManifest.xml",
+      "android/app/src/main/java/com/aegeanworks/cardmon/MainActivity.java",
+      "js/apk-page.js",
+      "js/backup-vault.js",
+      "js/file-system.js",
+      "js/reports.js",
+      "js/utils.js",
+      "tests/android_bridge.test.js",
+      "tests/constants_and_utils.test.js",
+      "tests/reports.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795376688.250667,
+    "finished_at": 1795376720.6050189,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "5031684a531e6dc9c91cb89d6df34a92412246678bf139158e250158080529d8",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795376720.605021,
+      "scoped_paths": [
+        ".aikit/decisions.md",
+        "android/README.md",
+        "android/app/src/main/AndroidManifest.xml",
+        "android/app/src/main/java/com/aegeanworks/cardmon/MainActivity.java",
+        "js/apk-page.js",
+        "js/backup-vault.js",
+        "js/file-system.js",
+        "js/reports.js",
+        "js/utils.js",
+        "tests/android_bridge.test.js",
+        "tests/constants_and_utils.test.js",
+        "tests/reports.test.js"
+      ],
+      "scoped_digest": "49ab591198707aa52c295d6514733316879a5fbb4804da152e0afdbfb72a81c4"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/android_bridge.test.js",
+        "reason": "Bridge routing tests"
+      },
+      {
+        "path": "tests/constants_and_utils.test.js",
+        "reason": "Data-URL encoding regression test"
+      },
+      {
+        "path": "tests/reports.test.js",
+        "reason": "Match decoder to encodeURIComponent"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "5031684a531e6dc9c91cb89d6df34a92412246678bf139158e250158080529d8",
+    "baseline_digest": "d324fa0b52509fee376250dd485411c6231327bf122666ff738e43ae44b0fc63"
   }
 ]

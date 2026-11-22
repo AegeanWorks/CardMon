@@ -108,6 +108,31 @@ test('showToast creates toast notification in container', () => {
   assert.equal(appended, true);
 });
 
+test('downloadText browser fallback encodes reserved characters in the data URL', () => {
+  const h = createHarness();
+  let href = '';
+  const origCreate = h.sandbox.document.createElement;
+  h.sandbox.document.createElement = (tag) => {
+    const el = origCreate(tag);
+    if (tag === 'a') {
+      const origSetAttr = el.setAttribute;
+      el.setAttribute = (key, value) => {
+        if (key === 'href') href = value;
+        origSetAttr(key, value);
+      };
+      el.click = () => {};
+    }
+    return el;
+  };
+  const payload = 'bank#1,card&2=3?4';
+
+  h.downloadText('test.txt', payload, 'text/plain');
+
+  assert.ok(href.startsWith('data:text/plain;charset=utf-8,'));
+  assert.equal(decodeURIComponent(href.slice(href.indexOf(',') + 1)), payload);
+  assert.ok(!href.includes('#1'), 'a literal # must not truncate the data URL payload');
+});
+
 test('turkishDaySuffix follows Turkish number suffix rules', () => {
   const h = createHarness();
   assert.equal(h.turkishDaySuffix(1), "'i");

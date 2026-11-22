@@ -56,6 +56,56 @@ function escapeHtml(str) {
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+function hasAndroidBridge(method) {
+  return typeof window !== 'undefined' && window.CardMonAndroid &&
+    typeof window.CardMonAndroid[method] === 'function';
+}
+
+function downloadText(filename, text, mime) {
+  if (hasAndroidBridge('downloadText')) {
+    window.CardMonAndroid.downloadText(filename, text, mime || 'application/octet-stream');
+    return;
+  }
+  // encodeURI leaves '#', '?' and reserved characters raw; in a data URL a
+  // literal '#' would truncate the payload, so encode every unsafe character.
+  const dataUrl = `data:${mime || 'text/plain'};charset=utf-8,${encodeURIComponent(text)}`;
+  const anchor = document.createElement('a');
+  anchor.setAttribute('href', dataUrl);
+  anchor.setAttribute('download', filename);
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+}
+
+function downloadBlob(blob, filename) {
+  if (hasAndroidBridge('downloadBase64') && typeof FileReader !== 'undefined') {
+    const reader = new FileReader();
+    reader.onloadend = function () {
+      const value = String(reader.result || '');
+      const base64 = value.includes(',') ? value.slice(value.indexOf(',') + 1) : '';
+      window.CardMonAndroid.downloadBase64(filename, base64, blob.type || 'application/octet-stream');
+    };
+    reader.readAsDataURL(blob);
+    return;
+  }
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function triggerPrint() {
+  if (hasAndroidBridge('printPage')) {
+    window.CardMonAndroid.printPage();
+    return;
+  }
+  window.print();
+}
+
 function showToast(msg) {
   if (typeof enTranslateText === 'function') msg = enTranslateText(msg);
   let toastContainer = document.getElementById('toastContainer');
