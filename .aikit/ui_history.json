@@ -3451,5 +3451,49 @@
     "final_snapshot_entries": 0,
     "surface_digest": "87d24a639d54d1d93aba7475f28c70967590f0963476862fa81b2a08843d1d94",
     "baseline_digest": "fe85d1680cf3e81330819df559370f225d525b12e84121d7a34dd144447f7c76"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/reforge.json",
+      "js/en-overlay.js",
+      "tests/public_release.test.js"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "HEAD",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795368909.8849287,
+    "finished_at": 1795368940.620238,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "d324fa0b52509fee376250dd485411c6231327bf122666ff738e43ae44b0fc63",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795368940.62024,
+      "scoped_paths": [
+        ".aikit/reforge.json",
+        "js/en-overlay.js",
+        "tests/public_release.test.js"
+      ],
+      "scoped_digest": "3f2dfc2ef32f64c50db6c1f335612dbc600d290ec1ea7d6f6d83366e406eea1c"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [
+      {
+        "path": "tests/public_release.test.js",
+        "reason": "Regression test for the observer loop defect"
+      }
+    ],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "d324fa0b52509fee376250dd485411c6231327bf122666ff738e43ae44b0fc63",
+    "baseline_digest": "87d24a639d54d1d93aba7475f28c70967590f0963476862fa81b2a08843d1d94"
   }
 ]
