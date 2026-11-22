@@ -75,7 +75,7 @@ function setCardTypeFilter(type) {
 // User Profile & Settings Modal
 // --------------------------------------------------------------------------
 function openProfileModal() {
-  const p = state.profile || { firstName: 'Yunus', lastName: 'Emre', title: 'Finansal Yönetici', avatarColor: '#3b82f6', monthlyIncome: 75000, salaryDay: 1 };
+  const p = state.profile || { firstName: 'CardMon', lastName: 'User', title: 'Portfolio Manager', avatarColor: '#3b82f6', monthlyIncome: 75000, salaryDay: 1 };
   
   document.getElementById('profileFirstName').value = p.firstName || '';
   document.getElementById('profileLastName').value = p.lastName || '';
@@ -105,8 +105,8 @@ function updateProfileModalLivePreview() {
   const title = (document.getElementById('profileTitle')?.value || '').trim();
   const color = document.getElementById('profileAvatarColor')?.value || '#3b82f6';
 
-  const fullName = `${first} ${last}`.trim() || 'Yunus Emre';
-  const initials = (((first[0] || 'Y') + (last[0] || (first[1] || 'E')))).toUpperCase();
+  const fullName = `${first} ${last}`.trim() || 'CardMon User';
+  const initials = (((first[0] || 'C') + (last[0] || (first[1] || 'U')))).toUpperCase();
 
   const previewAvatar = document.getElementById('modalAvatarPreview');
   if (previewAvatar) {
@@ -132,9 +132,9 @@ function handleProfileFormSubmit(e) {
   const selectedLang = document.getElementById('profileLangSelect').value;
 
   state.profile = {
-    firstName: firstName || 'Yunus',
-    lastName: lastName || 'Emre',
-    title: title || 'Finansal Yönetici',
+    firstName: firstName || 'CardMon',
+    lastName: lastName || 'User',
+    title: title || 'Portfolio Manager',
     avatarColor: avatarColor || '#3b82f6',
     monthlyIncome,
     salaryDay

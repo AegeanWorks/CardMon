@@ -12,7 +12,7 @@ test('profile modal lifecycle: open, live preview, submit, close', () => {
   // Open profile modal
   h.openProfileModal();
   assert.strictEqual(overlay.classList.contains('active'), true);
-  assert.strictEqual(h.sandbox.document.getElementById('profileFirstName').value, 'Yunus');
+  assert.strictEqual(h.sandbox.document.getElementById('profileFirstName').value, 'CardMon');
 
   // Live preview update
   h.sandbox.document.getElementById('profileFirstName').value = 'Kaan';

@@ -11,7 +11,7 @@ test('serializePortfolio encodes state into v3 cardmon_portfolio envelope', () =
     cards: [{ id: 'c1', bankId: 'b1', name: 'Miles&Smiles', limit: 100000, usedBalance: 25000 }],
     loans: [],
     cashSubscriptions: [],
-    profile: { firstName: 'Yunus', lastName: 'Emre' }
+    profile: { firstName: 'CardMon', lastName: 'User' }
   };
 
   const serialized = harness.evalInContext('serializePortfolio')(mockState);

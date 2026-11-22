@@ -4,6 +4,7 @@
     "app": {
       "paths": [
         "index.html",
+        "apk.html",
         "styles.css",
         "css/**",
         "js/**",

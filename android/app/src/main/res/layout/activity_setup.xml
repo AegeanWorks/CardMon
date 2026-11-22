@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="28dp"
+    android:background="#0A0E1A">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setup_title"
+        android:textColor="#E2E8F0"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginTop="48dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setup_hint"
+        android:textColor="#94A3B8"
+        android:textSize="14sp"
+        android:lineSpacingExtra="4dp"
+        android:layout_marginTop="12dp" />
+
+    <EditText
+        android:id="@+id/serverUrlInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/server_url_hint"
+        android:inputType="textUri"
+        android:imeOptions="actionGo"
+        android:singleLine="true"
+        android:textColor="#E2E8F0"
+        android:textColorHint="#64748B"
+        android:layout_marginTop="28dp" />
+
+    <Button
+        android:id="@+id/discoverButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/discover"
+        android:backgroundTint="#1A2234"
+        android:textColor="#10B981"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/connectButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/connect"
+        android:backgroundTint="#10B981"
+        android:textColor="#04140E"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

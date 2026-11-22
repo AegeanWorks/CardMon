@@ -8,3 +8,13 @@
 __pycache__/
 *.py[cod]
 node_modules/
+
+# Local sync server runtime data and generated APK output
+.sync-data/
+dist/
+
+# Android build artifacts (wrapper jar and sources are tracked)
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties

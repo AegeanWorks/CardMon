@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +39,7 @@
 
         <!-- Sidebar Navigation Menu -->
         <nav class="sidebar-nav">
-          <div class="sidebar-section-label">YÖNETİM & ANALİZ</div>
+          <div class="sidebar-section-label" data-i18n="managementNav">YÖNETİM & ANALİZ</div>
 
           <button class="sidebar-nav-btn tab-btn active" data-tab="dashboard" onclick="navigateToTab('dashboard')">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
@@ -82,9 +82,9 @@
             <span id="timelineUrgentDot" style="display:none;" class="timeline-urgent-dot"></span>
           </button>
 
-          <button class="sidebar-nav-btn tab-btn" type="button" onclick="openProfileModal()">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-            <span data-i18n="profileSettings">Profil & Ayarlar</span>
+          <button class="sidebar-nav-btn tab-btn" type="button" onclick="openSyncModal()" title="Yerel Senkronizasyon / Android">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg>
+            <span data-i18n="syncNav">Sync &amp; Mobil</span>
           </button>
         </nav>
       </div>
@@ -124,14 +124,14 @@
         </div>
 
         <div class="topbar-right">
-          <!-- Direct PDF Report Button -->
-          <button type="button" class="topbar-action-btn" id="topbarPdfBtn" onclick="exportPdfReport()" title="Finansal PDF Raporunu İndir">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="12" y1="11" x2="12" y2="17"></line></svg>
-            <span>PDF Raporu</span>
-          </button>
+          <!-- Direct APK Build/Download Page (works from a phone browser) -->
+          <a class="topbar-action-btn" id="topbarApkBtn" href="/apk" title="APK Oluştur / İndir (Build / Download APK)" style="text-decoration:none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"></path><polyline points="7 10 12 15 17 10"></polyline><path d="M5 21h14"></path></svg>
+            <span>APK</span>
+          </a>
 
-          <!-- Active File Status Indicator -->
-          <div class="file-status-badge" id="fileStatusBadge" style="display:none;" onclick="saveToActiveFile()" title="Aktif Dosya (Kaydetmek için tıklayın)">
+          <!-- Active File Status Indicator (status only; all file actions live in the settings menu) -->
+          <div class="file-status-badge" id="fileStatusBadge" style="display:none;" title="Aktif Dosya">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
             <span class="file-name"></span>
             <span class="file-status-dot synced"></span>
@@ -143,19 +143,13 @@
             <span class="save-text" data-i18n="autoSaved">Otomatik Kaydedildi</span>
           </div>
 
-          <!-- Keyboard Shortcuts Quick Trigger -->
-          <button type="button" class="btn btn-secondary header-icon-btn" id="headerShortcutsBtn" onclick="openShortcutsModal()" title="Klavye Kısayolları (?)" style="padding: 0.35rem 0.65rem; font-size: 0.78rem; display: inline-flex; align-items: center; gap: 0.35rem; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); color: var(--text-secondary); cursor: pointer;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6" y2="8"></line><line x1="10" y1="8" x2="10" y2="8"></line><line x1="14" y1="8" x2="14" y2="8"></line><line x1="18" y1="8" x2="18" y2="8"></line><line x1="10" y1="16" x2="14" y2="16"></line></svg>
-            <span style="font-weight: 600;">Kısayollar</span>
-          </button>
-
           <!-- User Profile & Settings/Backup Menu in Top-Right -->
           <div class="topbar-user-wrapper" id="settingsDropdownWrapper">
             <button type="button" class="topbar-user-btn" id="openProfileBtn" onclick="toggleSettingsDropdown(event)" title="Profil, Ayarlar & Yedekleme">
-              <div class="user-avatar-badge" id="headerUserAvatar">YE</div>
+              <div class="user-avatar-badge" id="headerUserAvatar">CM</div>
               <div class="topbar-user-meta">
-                <span class="topbar-user-name" id="headerUserName">Yunus Emre</span>
-                <span class="topbar-user-title">Finansal Yönetici</span>
+                <span class="topbar-user-name" id="headerUserName">CardMon User</span>
+                <span class="topbar-user-title">Portfolio Manager</span>
               </div>
               <svg class="gear-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
             </button>
@@ -163,8 +157,8 @@
             <!-- Settings & Yedek Dropdown Menu (Opens downwards) -->
             <div class="settings-dropdown-menu topbar-dropdown-menu" id="settingsDropdownMenu">
               <div class="dropdown-header">
-                <strong id="dropdownUserName">Yunus Emre</strong>
-                <span id="dropdownUserTitle">Finansal Yönetici</span>
+                <strong id="dropdownUserName">CardMon User</strong>
+                <span id="dropdownUserTitle">Portfolio Manager</span>
               </div>
               
               <div class="dropdown-divider"></div>
@@ -253,7 +247,7 @@
         <div class="welcome-hero-content">
           <div class="welcome-badge">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-            <span><span data-i18n="welcomeBack">Hoş Geldiniz</span>, <strong id="welcomeUserName">Yunus Emre</strong></span>
+            <span><span data-i18n="welcomeBack">Hoş Geldiniz</span>, <strong id="welcomeUserName">CardMon User</strong></span>
           </div>
           <h2 class="welcome-title">Finansal Özet & Portföy Analizi</h2>
           <p class="welcome-subtitle" id="welcomeSubtitle" data-i18n="welcomeSubtitle">Banka limitleriniz, ek hesap rezervleriniz ve kredi kartı ödeme projeksiyonlarınız aşağıda özetlenmiştir.</p>
@@ -456,10 +450,6 @@
       <section class="executive-table-section">
         <div class="section-header-row">
           <h3 data-i18n="executiveTable">Tüm Kartların Yönetici Özeti</h3>
-          <button class="btn btn-secondary btn-sm" onclick="exportPdfReport()">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="12" y1="11" x2="12" y2="17"></line></svg>
-            <span data-i18n="exportPdf">PDF İndir</span>
-          </button>
         </div>
         <div class="table-responsive" id="executiveTableContainer">
           <!-- Rendered dynamically by app.js -->
@@ -925,10 +915,10 @@
         <div class="modal-body">
           <!-- Profile Avatar Preview & Header -->
           <div class="profile-hero-preview">
-            <div class="profile-avatar-large" id="modalAvatarPreview">YE</div>
+            <div class="profile-avatar-large" id="modalAvatarPreview">CM</div>
             <div class="profile-preview-meta">
-              <h3 id="modalUserNamePreview">Yunus Emre</h3>
-              <p id="modalUserTitlePreview">Finansal Yönetici</p>
+              <h3 id="modalUserNamePreview">CardMon User</h3>
+              <p id="modalUserTitlePreview">Portfolio Manager</p>
             </div>
           </div>
 
@@ -936,11 +926,11 @@
           <div class="form-row">
             <div class="form-group">
               <label data-i18n="firstName">Ad</label>
-              <input type="text" class="form-control" id="profileFirstName" placeholder="Yunus" required>
+              <input type="text" class="form-control" id="profileFirstName" placeholder="CardMon" required>
             </div>
             <div class="form-group">
               <label data-i18n="lastName">Soyad</label>
-              <input type="text" class="form-control" id="profileLastName" placeholder="Emre">
+              <input type="text" class="form-control" id="profileLastName" placeholder="User">
             </div>
           </div>
 
@@ -948,7 +938,7 @@
           <div class="form-row">
             <div class="form-group">
               <label data-i18n="userTitle">Unvan / Meslek</label>
-              <input type="text" class="form-control" id="profileTitle" placeholder="Finansal Yönetici">
+              <input type="text" class="form-control" id="profileTitle" placeholder="Portfolio Manager">
             </div>
             <div class="form-group">
               <label>Avatar / Profil Rengi</label>
@@ -981,7 +971,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Uygulama Dili</label>
+              <label data-i18n="appLanguage">Uygulama Dili</label>
               <select class="form-control" id="profileLangSelect">
                 <option value="tr">🇹🇷 Türkçe</option>
                 <option value="en">🇬🇧 English</option>
@@ -989,50 +979,6 @@
             </div>
           </div>
 
-          <!-- Data Management Controls Group -->
-          <div class="settings-data-section">
-            <h4 data-i18n="dataManagement">Veri Yönetimi & Yedekleme</h4>
-            <div class="settings-action-buttons">
-              <button type="button" class="btn btn-primary btn-sm" onclick="saveToActiveFile(); closeProfileModal();">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-                <span data-i18n="saveToFile">Dosyaya Kaydet</span>
-              </button>
-              <button type="button" class="btn btn-secondary btn-sm" onclick="saveFileAs(); closeProfileModal();">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
-                <span data-i18n="saveFileAs">Farklı Kaydet</span>
-              </button>
-              <button type="button" class="btn btn-secondary btn-sm" onclick="openPortfolioFile(); closeProfileModal();">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                <span data-i18n="openFromFile">Dosyadan Aç</span>
-              </button>
-              <button type="button" class="btn btn-emerald btn-sm" onclick="openBackupVaultModal(); closeProfileModal();">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
-                <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line></svg> Yedek Kasası & Geçmiş Noktalar</span>
-              </button>
-              <button type="button" class="btn btn-secondary btn-sm" onclick="exportJsonBackup()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                <span data-i18n="exportJson">Yedek İndir (JSON)</span>
-              </button>
-              <button type="button" class="btn btn-secondary btn-sm" onclick="triggerImportJson()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
-                <span data-i18n="importJson">Yedek Yükle</span>
-              </button>
-              <button type="button" class="btn btn-secondary btn-sm" onclick="exportCsvReport()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-                <span data-i18n="exportCsv">CSV Raporu</span>
-              </button>
-              <button type="button" class="btn btn-secondary btn-sm" onclick="exportPdfReport(); closeProfileModal();">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="12" y1="11" x2="12" y2="17"></line></svg>
-                <span>PDF Raporu</span>
-              </button>
-              <button type="button" class="btn btn-secondary btn-sm" onclick="loadDemoData(true)">
-                <span data-i18n="loadDemo">Örnek Veri Yükle</span>
-              </button>
-              <button type="button" class="btn btn-danger-outline btn-sm" onclick="confirmClearAllData()">
-                <span data-i18n="clearAll">Tümünü Temizle</span>
-              </button>
-            </div>
-          </div>
         </div>
 
         <div class="modal-footer">
@@ -1572,6 +1518,57 @@
     </div>
   </div>
 
+  <!-- =======================================================================
+       MODAL: LOCAL SYNC & ANDROID APK
+       ======================================================================= -->
+  <div class="modal-overlay" id="syncModalOverlay">
+    <div class="modal-container" style="max-width: 620px;">
+      <div class="modal-header">
+        <h2><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle;"><path d="M21 2v6h-6"></path><path d="M3 12a9 9 0 0 1 15-6.7L21 8"></path><path d="M3 22v-6h6"></path><path d="M21 12a9 9 0 0 1-15 6.7L3 16"></path></svg> <span data-i18n="syncTitle">Yerel Senkronizasyon &amp; Android</span></h2>
+        <button class="close-btn" type="button" onclick="closeSyncModal()" aria-label="Kapat">✕</button>
+      </div>
+      <div class="modal-body" style="padding: 1.25rem;">
+        <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem;" data-i18n="syncDescription">
+          Portföyünüzü aynı Wi-Fi ağındaki CardMon sunucusuna senkronize edin ve Android uygulamasını buradan indirin.
+        </p>
+
+        <div style="display:flex; align-items:center; gap:0.5rem; padding:0.6rem 0.75rem; border:1px solid rgba(255,255,255,0.07); border-radius:var(--radius-sm); margin-bottom:1rem;">
+          <span class="sync-status-dot info" id="syncStatusDot"></span>
+          <span id="syncStatusText" style="font-size:0.8rem; color:var(--text-muted);">—</span>
+          <span style="margin-left:auto; font-size:0.75rem; color:var(--text-muted);">rev <strong id="syncRevision">0</strong></span>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr; gap:0.85rem;">
+          <label style="display:flex; flex-direction:column; gap:0.35rem; font-size:0.78rem; font-weight:600;">
+            <span data-i18n="syncServerUrl">Sunucu Adresi</span>
+            <!-- hygiene: allow LAN example address is placeholder text, not a loaded third-party asset -->
+            <input type="text" id="syncServerUrl" class="form-input" placeholder="http://192.0.2.10:8765" autocomplete="off">
+          </label>
+          <label style="display:flex; flex-direction:column; gap:0.35rem; font-size:0.78rem; font-weight:600;">
+            <span data-i18n="syncToken">Erişim Token'ı (opsiyonel)</span>
+            <input type="password" id="syncToken" class="form-input" placeholder="••••••" autocomplete="off">
+          </label>
+          <label style="display:flex; align-items:center; gap:0.55rem; font-size:0.82rem;">
+            <input type="checkbox" id="syncAuto">
+            <span data-i18n="syncAuto">Değişiklikleri otomatik senkronize et</span>
+          </label>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.1rem;">
+          <button type="button" class="btn btn-secondary" onclick="saveSyncSettingsFromForm()"><span data-i18n="save">Kaydet</span></button>
+          <button type="button" class="btn btn-secondary" onclick="testSyncConnection()"><span data-i18n="syncTest">Bağlantıyı Test Et</span></button>
+          <button type="button" class="btn btn-secondary" onclick="pullFromServerUi()"><span data-i18n="syncPull">Sunucudan Çek</span></button>
+          <button type="button" class="btn btn-primary" onclick="pushToServerUi()"><span data-i18n="syncPush">Sunucuya Gönder</span></button>
+          <button type="button" class="btn btn-secondary" onclick="forcePushToServerUi()" title="Yerel veriyi sunucudakinin üzerine yaz"><span data-i18n="syncForcePush">Zorla Gönder</span></button>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" onclick="closeSyncModal()"><span data-i18n="cancel">Kapat</span></button>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer"></div>
 
@@ -1580,6 +1577,7 @@
 
   <!-- Scripts -->
   <script src="i18n.js"></script>
+  <script src="js/en-overlay.js"></script>
   <script src="js/constants.js"></script>
   <script src="js/utils.js"></script>
   <script src="js/file-system.js"></script>
@@ -1589,6 +1587,7 @@
   <script src="js/views.js"></script>
   <script src="js/modals.js"></script>
   <script src="js/reports.js"></script>
+  <script src="js/sync-client.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

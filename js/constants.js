@@ -64,9 +64,9 @@ let state = {
   loans: [],
   cashSubscriptions: [],
   profile: {
-    firstName: 'Yunus',
-    lastName: 'Emre',
-    title: 'Finansal Yönetici',
+    firstName: 'CardMon',
+    lastName: 'User',
+    title: 'Portfolio Manager',
     avatarColor: '#3b82f6',
     monthlyIncome: 75000,
     salaryDay: 1,

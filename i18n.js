@@ -29,6 +29,33 @@ const I18N = {
     fileLoadError: "Dosya yüklenirken hata oluştu: Geçersiz dosya formatı",
     unsavedChanges: "Kaydedilmemiş Değişiklikler",
     fileSynced: "Dosya Eşitlendi",
+
+    // Local Sync & Android
+    syncNav: "Sync & Mobil",
+    syncTitle: "Yerel Senkronizasyon & Android",
+    syncDescription: "Portföyünüzü aynı Wi-Fi ağındaki CardMon sunucusuna senkronize edin ve Android uygulamasını buradan derleyip indirin.",
+    syncServerUrl: "Sunucu Adresi",
+    syncToken: "Erişim Token'ı (opsiyonel)",
+    syncAuto: "Değişiklikleri otomatik senkronize et",
+    syncTest: "Bağlantıyı Test Et",
+    syncPull: "Sunucudan Çek",
+    syncPush: "Sunucuya Gönder",
+    syncForcePush: "Zorla Gönder",
+    syncSettingsSaved: "Senkronizasyon ayarları kaydedildi",
+    syncConnected: "Sunucuya bağlanıldı",
+    syncFailed: "Senkronizasyon hatası",
+    syncPulled: "Sunucudan çekildi",
+    syncPushed: "Sunucuya gönderildi",
+    syncConflict: "Çakışma: sunucuda daha yeni bir sürüm var",
+    syncForcePushHint: "Yerel veriyi yazmak için Zorla Gönder kullanılabilir.",
+    syncReady: "Senkronizasyon hazır",
+    syncIdle: "Senkronizasyon yapılandırılmadı",
+    buildApk: "Android APK Oluştur",
+    buildApkHint: "Yerel Android SDK ve Gradle ile uygulamayı derler; APK bu sayfadan indirilebilir.",
+    buildApkRunning: "APK derleniyor...",
+    buildApkDone: "APK hazır",
+    buildApkFailed: "APK derlemesi başarısız",
+    buildApkDownload: "APK'yı İndir",
     exportJson: "Yedek İndir (JSON)",
     importJson: "Yedek Yükle",
     exportCsv: "CSV Olarak İndir",
@@ -276,7 +303,18 @@ const I18N = {
     cardSaved: "Kredi kartı kaydedildi.",
     bankSaved: "Banka bilgisi kaydedildi.",
     cardDeleted: "Kredi kartı silindi.",
-    bankDeleted: "Banka silindi."
+    bankDeleted: "Banka silindi.",
+
+    // Public-release English coverage for legacy hard-coded labels
+    managementNav: "YÖNETİM & ANALİZ",
+    appLanguage: "Uygulama Dili",
+    profileEdit: "Profili & Ayarları Düzenle",
+    backupExport: "Yedekleme & Dışa Aktar",
+    availableLimit: "Kullanılabilir Limit",
+    debtLabel: "Borç:",
+    shortcuts: "Kısayollar",
+    delegationLabel: "Doluluk:",
+    cardManagementNav: "KART & LİMİT YÖNETİMİ"
   },
   
   en: {
@@ -308,6 +346,33 @@ const I18N = {
     fileLoadError: "Error loading file: Invalid format",
     unsavedChanges: "Unsaved Changes",
     fileSynced: "File Synced",
+
+    // Local Sync & Android
+    syncNav: "Sync & Mobile",
+    syncTitle: "Local Sync & Android",
+    syncDescription: "Sync your portfolio with the CardMon server on the same Wi-Fi network and build/download the Android app right here.",
+    syncServerUrl: "Server Address",
+    syncToken: "Access Token (optional)",
+    syncAuto: "Auto-sync changes",
+    syncTest: "Test Connection",
+    syncPull: "Pull from Server",
+    syncPush: "Push to Server",
+    syncForcePush: "Force Push",
+    syncSettingsSaved: "Sync settings saved",
+    syncConnected: "Connected to server",
+    syncFailed: "Sync failed",
+    syncPulled: "Pulled from server",
+    syncPushed: "Pushed to server",
+    syncConflict: "Conflict: the server has a newer revision",
+    syncForcePushHint: "Use Force Push to overwrite with local data.",
+    syncReady: "Sync ready",
+    syncIdle: "Sync not configured",
+    buildApk: "Build Android APK",
+    buildApkHint: "Builds the app with the local Android SDK and Gradle; the APK can be downloaded on this page.",
+    buildApkRunning: "Building APK...",
+    buildApkDone: "APK ready",
+    buildApkFailed: "APK build failed",
+    buildApkDownload: "Download APK",
     exportJson: "Export Backup (JSON)",
     importJson: "Import Backup",
     exportCsv: "Export CSV",
@@ -555,12 +620,23 @@ const I18N = {
     cardSaved: "Credit card saved.",
     bankSaved: "Bank information saved.",
     cardDeleted: "Credit card deleted.",
-    bankDeleted: "Bank deleted."
+    bankDeleted: "Bank deleted.",
+
+    // Public-release English coverage for legacy hard-coded labels
+    managementNav: "MANAGEMENT & ANALYSIS",
+    appLanguage: "App language",
+    profileEdit: "Edit profile & settings",
+    backupExport: "Backup & export",
+    availableLimit: "Available limit",
+    debtLabel: "Debt:",
+    shortcuts: "Shortcuts",
+    delegationLabel: "Utilization:",
+    cardManagementNav: "CARD & LIMIT MANAGEMENT"
   }
 };
 
 // Current Active Language ('tr' or 'en')
-let currentLang = localStorage.getItem('bank_app_lang') || 'tr';
+let currentLang = localStorage.getItem('bank_app_lang') || 'en';
 let currentCurrency = localStorage.getItem('bank_app_currency') || 'TRY';
 
 function setLanguage(lang) {
@@ -569,6 +645,7 @@ function setLanguage(lang) {
     localStorage.setItem('bank_app_lang', lang);
     document.documentElement.lang = lang;
     updatePageTranslations();
+    if (typeof refreshEnglishOverlay === 'function') refreshEnglishOverlay();
   }
 }
 

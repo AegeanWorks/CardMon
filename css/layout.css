@@ -449,6 +449,26 @@
   display: flex !important;
 }
 
+/* The top-right user menu carries both .topbar-dropdown-menu and
+   .settings-dropdown-menu. The latter hides itself with opacity/pointer-events
+   for the sidebar popover, so the combined selector must explicitly restore
+   visibility when active. Without this the settings menu opens but is
+   invisible and unclickable. */
+.topbar-user-wrapper .settings-dropdown-menu.topbar-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  min-width: 260px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.topbar-user-wrapper .settings-dropdown-menu.topbar-dropdown-menu.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .topbar-dropdown-menu .dropdown-header {
   padding: 0.35rem 0.5rem;
   display: flex;

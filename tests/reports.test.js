@@ -62,7 +62,7 @@ test('exportJsonBackup generates valid JSON export structure', () => {
   state.cards = [{ id: 'c-10', bankId: 'b-10', nickname: 'Maximum', limit: 50000 }];
   state.loans = [];
   state.cashSubscriptions = [];
-  state.profile = { firstName: 'Yunus' };
+  state.profile = { firstName: 'CardMon' };
 
   let downloadedUri = '';
   const origCreateElement = harness.sandbox.document.createElement;
@@ -88,7 +88,7 @@ test('exportJsonBackup generates valid JSON export structure', () => {
   assert.strictEqual(parsed.version, '2.0');
   assert.strictEqual(parsed.banks.length, 1);
   assert.strictEqual(parsed.banks[0].name, 'İş Bankası');
-  assert.strictEqual(parsed.profile.firstName, 'Yunus');
+  assert.strictEqual(parsed.profile.firstName, 'CardMon');
 });
 
 test('triggerImportJson clicks importFileInput element', () => {

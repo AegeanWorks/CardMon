@@ -7,6 +7,7 @@ const vm = require('node:vm');
 const ROOT_DIR = path.join(__dirname, '..');
 const SCRIPT_FILES = [
   path.join(ROOT_DIR, 'i18n.js'),
+  path.join(ROOT_DIR, 'js', 'en-overlay.js'),
   path.join(ROOT_DIR, 'js', 'constants.js'),
   path.join(ROOT_DIR, 'js', 'utils.js'),
   path.join(ROOT_DIR, 'js', 'file-system.js'),
@@ -16,6 +17,7 @@ const SCRIPT_FILES = [
   path.join(ROOT_DIR, 'js', 'views.js'),
   path.join(ROOT_DIR, 'js', 'modals.js'),
   path.join(ROOT_DIR, 'js', 'reports.js'),
+  path.join(ROOT_DIR, 'js', 'sync-client.js'),
   path.join(ROOT_DIR, 'js', 'main.js')
 ];
 

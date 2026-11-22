@@ -57,6 +57,7 @@ function escapeHtml(str) {
 }
 
 function showToast(msg) {
+  if (typeof enTranslateText === 'function') msg = enTranslateText(msg);
   let toastContainer = document.getElementById('toastContainer');
   if (!toastContainer) {
     toastContainer = document.createElement('div');

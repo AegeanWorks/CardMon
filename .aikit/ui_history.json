@@ -2642,5 +2642,70 @@
     "final_snapshot_entries": 0,
     "surface_digest": "26ba4fddee860b99288614440ec3d763b8902eb842e0e84b836714e0be39f502",
     "baseline_digest": "a6c69336d5cad0aff340ec7bfd3dde5d0db939f063d06c2a6555e61297c4a80d"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [
+      ".aikit/ui.json"
+    ],
+    "no_visual_reason": "",
+    "baseline_commit": "a86ddd58905ce15c593f43729185bf833075b680",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795308098.254261,
+    "finished_at": 1795308321.290921,
+    "strikes": 1,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "1bc052bc4621eccdf3c6a4947d8df8eaf104ce048867770ac3fa88b602e38eb5",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795308321.2909243,
+      "scoped_paths": [
+        ".aikit/ui.json"
+      ],
+      "scoped_digest": "9c61e3042122bd8e8a07c73403e7cbf8748992a29db9daa573677dafeaa04614"
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "1bc052bc4621eccdf3c6a4947d8df8eaf104ce048867770ac3fa88b602e38eb5",
+    "baseline_digest": "c325ccfd5a9e39655fc5a006eaceb67f996bdb740010c78e20547a90b9db46e8"
+  },
+  {
+    "schema": 1,
+    "surface": "app",
+    "mode": "visual",
+    "visual_change": true,
+    "changed_paths": [],
+    "no_visual_reason": "",
+    "no_change_reason": "Reviewed the committed aikit:allow-secret pragma on the localStorage key name in js/sync-client.js",
+    "baseline_commit": "424c6354ca0246dc963a1eb00972d9ad931d1df4",
+    "contract_hash": "892775d7abec3bee13ef6c7ba0f0a1463c9879facfed71c49acedcb9b9515718",
+    "started_at": 1795309533.613666,
+    "finished_at": 1795309692.156224,
+    "strikes": 0,
+    "reviewer": "opencode:hy4-flash-free",
+    "review": {
+      "reviewer": "opencode:hy4-flash-free",
+      "surface": "app",
+      "surface_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca",
+      "snapshot_digest": "",
+      "snapshot_entries": 0,
+      "visual": true,
+      "reviewed_at": 1795309692.156229
+    },
+    "allowed_removals": [],
+    "allowed_tests": [],
+    "final_snapshot_digest": "",
+    "final_snapshot_entries": 0,
+    "surface_digest": "a1034bb8376b2ecb5b48cc4b20f3babcf6dc6d0d272b7dceafd43460917eb8ca",
+    "baseline_digest": "1bc052bc4621eccdf3c6a4947d8df8eaf104ce048867770ac3fa88b602e38eb5"
   }
 ]

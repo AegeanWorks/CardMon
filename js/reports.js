@@ -125,7 +125,7 @@ function exportPdfReport() {
     const fullDateStr = now.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 
     const p = state.profile || {};
-    const userName = `${p.firstName || 'Yunus'} ${p.lastName || 'Emre'}`.trim();
+    const userName = `${p.firstName || 'CardMon'} ${p.lastName || 'User'}`.trim();
     const userTitle = p.title || 'Finansal Portföy Sahibi';
     const monthlyIncome = Number(p.monthlyIncome) || 0;
     const salaryDay = Number(p.salaryDay) || 15;

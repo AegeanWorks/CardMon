@@ -18,6 +18,9 @@ function saveToStorage() {
     if (typeof markFileSystemDirty === 'function') {
       markFileSystemDirty();
     }
+    if (typeof onLocalDataChanged === 'function') {
+      onLocalDataChanged();
+    }
   } catch (e) {
     console.error('Storage save error:', e);
   }

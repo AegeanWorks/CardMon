@@ -33,6 +33,7 @@ function initEventListeners() {
     langSelect.addEventListener('change', (e) => {
       setLanguage(e.target.value);
       renderAll();
+      if (typeof refreshEnglishOverlay === 'function') refreshEnglishOverlay();
     });
   }
 

@@ -1,13 +1,13 @@
 {
   "version": 1,
   "active_task": {
-    "task_id": "cardmon-findings-complete",
+    "task_id": "cardmon-secret-scan-fix",
     "last_phase": "phase 4",
     "active_phase": 5,
     "status": "completed",
-    "updated_at": 1795214384.9194355,
+    "updated_at": 1795309746.549467,
     "owner": "opencode:hy4-flash-free",
-    "lease_until": 1795221584.9194355,
+    "lease_until": 1795316946.549467,
     "started_by": "opencode:hy4-flash-free",
     "continuations": [],
     "workspaces": [
@@ -16,133 +16,11 @@
         "path": "projects/CardMon"
       }
     ],
-    "completed_at": 1795214424.888722,
-    "completed_head": "62d836a2c28210b305e1034a19e4e5dfe52c0044",
-    "completed_tree": "e2d62416d228d1d0f76d12d72eddbf5367941e42"
+    "completed_at": 1795309780.2026684,
+    "completed_head": "9486f06da3acfdb96caa7d280069cb7cc034dd7c",
+    "completed_tree": "a9b46950465c66aae451302877c52b20a4645f6b"
   },
   "checkpoints": [
-    {
-      "task_id": "cardmon-dynamic-month-labels",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-dynamic-month-labels' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795211652.8637588,
-      "timestamp_str": "2026-11-21 00:54:12",
-      "agent": "opencode",
-      "head": "ff743c80372d5916044a4b85fda42b1ee336c76f",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-findings-batch2",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/3] Plan and failing-first tests for CSV escaping, ranking consistency, network XSS, v3 envelope validation, stale file handle",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795212309.7211163,
-      "timestamp_str": "2026-11-21 01:05:09",
-      "agent": "opencode:hy4-flash-free",
-      "impact_assessment": {
-        "why": "Full re-read surfaced still-live correctness and injection defects that the original 0-finding review missed.",
-        "benefits": "RFC-correct CSV, no raw HTML injection, consistent recommendation, validated imports, correct save-fallback state.",
-        "risks": "contract: validatePortfolioData keeps accepting minimal v3 envelopes; dependency: none; concurrency: none; state: file handle and imported state",
-        "mitigation": "Reject only present-but-wrong field types, escape all interpolated card fields, add 6 failing-first tests, verify with vision proof"
-      },
-      "plan_digest": "508f75130255f545b4eda61ea67946565b3073943dc0293a622c1ca7649af6ff",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch2",
-      "phase": "phase 3",
-      "phase_num": 3,
-      "description": "[2/3] Fixed 6 defects: csvCell RFC escaping, topRankIndex consistency, escapeHtml for network fields, v3 field-type validation, stale activeHandle clear",
-      "files_affected": [
-        "js/reports.js",
-        "js/backup-vault.js",
-        "js/file-system.js",
-        "tests/full_read_fixes2.test.js"
-      ],
-      "status": "in_progress",
-      "timestamp": 1795212329.2499363,
-      "timestamp_str": "2026-11-21 01:05:29",
-      "agent": "opencode:hy4-flash-free",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch2",
-      "phase": "phase 4",
-      "phase_num": 4,
-      "description": "[3/3] Phase 4: npm test 129/129, UI verified with vision-reviewed behavior proof",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795212332.0334303,
-      "timestamp_str": "2026-11-21 01:05:32",
-      "agent": "opencode:hy4-flash-free",
-      "checklists": "passed",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
-    {
-      "task_id": "cardmon-findings-batch2",
-      "phase": "completed",
-      "phase_num": 5,
-      "description": "Task 'cardmon-findings-batch2' completed successfully.",
-      "status": "completed",
-      "timestamp": 1795212421.4190454,
-      "timestamp_str": "2026-11-21 01:07:01",
-      "agent": "opencode",
-      "head": "18ef9c3cf9b8abe7b835f6d7541c26f4a916c828",
-      "delivery": {
-        "roots": [
-          "."
-        ],
-        "forced": false
-      }
-    },
-    {
-      "task_id": "cardmon-findings-batch3",
-      "phase": "phase 2",
-      "phase_num": 2,
-      "description": "[1/3] Plan and failing-first tests for installment data loss, uncapped loan progress, outflow fallback, missing cash subscriptions, unsaved-change discard",
-      "files_affected": [],
-      "status": "in_progress",
-      "timestamp": 1795212866.8512812,
-      "timestamp_str": "2026-11-21 01:14:26",
-      "agent": "opencode:hy4-flash-free",
-      "impact_assessment": {
-        "why": "Additional still-live defects from the full re-read cause data loss and incorrect financial projections.",
-        "benefits": "Next-cycle plans preserved, correct cash-flow forecast, complete recurring-charge insights, safe file switching.",
-        "risks": "contract: option values and public functions unchanged; dependency: none; concurrency: none; state: installment and loan progress, imported files",
-        "mitigation": "Guard only defective branches, add 6 failing-first tests, i18n key added in both locales, full gates"
-      },
-      "plan_digest": "3cbea2b1a64d6a86471d624fbbcb0acac989f434f89623c11b5c04ab56bcbb1f",
-      "workspaces": [
-        {
-          "name": "CardMon",
-          "path": "projects/CardMon"
-        }
-      ]
-    },
     {
       "task_id": "cardmon-findings-batch3",
       "phase": "phase 3",
@@ -411,6 +289,124 @@
       "timestamp_str": "2026-11-21 01:40:25",
       "agent": "opencode",
       "head": "62d836a2c28210b305e1034a19e4e5dfe52c0044",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
+    },
+    {
+      "task_id": "cardmon-local-sync-apk",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Plan: local sync server, Android APK build, phone APK page, English/public-safety and UI consolidation",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795308494.7922938,
+      "timestamp_str": "2026-11-22 03:48:14",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "CardMon needed LAN sync with Android, an APK build reachable from the phone browser, and a clean public-release surface.",
+        "benefits": "One-click server, auto-discovery, on-demand APK build, English-first UI, no personal data, one home per action.",
+        "risks": "contract: additive APIs and new modules; dependency: none beyond Node stdlib and the local Android SDK; concurrency: one build job at a time; state: revisioned portfolio file.",
+        "mitigation": "Failing-first tests for server/client/build/UI, explicit staging, 4/4 gates, and a UI surface task with reviewed verification."
+      },
+      "plan_digest": "548fbfb123e8df397b0999a8c0b0a0d43c2f46bedcc40238226e7127e86b0036",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-local-sync-apk",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 206/206 tests, 4/4 gates, UI task verified and finished",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795308650.6163003,
+      "timestamp_str": "2026-11-22 03:50:50",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-local-sync-apk",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-local-sync-apk' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795309030.2709265,
+      "timestamp_str": "2026-11-22 03:57:10",
+      "agent": "opencode:hy4-flash-free",
+      "head": "982c84cb642deb6d6df4372a967a802b37f1ad10",
+      "delivery": {
+        "roots": [
+          "."
+        ],
+        "forced": false
+      }
+    },
+    {
+      "task_id": "cardmon-secret-scan-fix",
+      "phase": "phase 2",
+      "phase_num": 2,
+      "description": "[1/2] Plan: mark localStorage key name as a secret-scan false positive",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795309716.0953844,
+      "timestamp_str": "2026-11-22 04:08:36",
+      "agent": "opencode:hy4-flash-free",
+      "impact_assessment": {
+        "why": "The push-time commit secret scan flagged a constant localStorage key name as high entropy.",
+        "benefits": "Push can proceed without weakening credential detection.",
+        "risks": "contract: none; dependency: none; concurrency: none; state: none",
+        "mitigation": "Add an aikit:allow-secret pragma with a reason and document it in the commit message."
+      },
+      "plan_digest": "8f82f21398033f340e90f81d2541db4379d40dbefc0da8179553b265030a9b31",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-secret-scan-fix",
+      "phase": "phase 4",
+      "phase_num": 4,
+      "description": "[2/2] Phase 4: 206/206 tests, 4/4 gates, UI task closed",
+      "files_affected": [],
+      "status": "in_progress",
+      "timestamp": 1795309746.549467,
+      "timestamp_str": "2026-11-22 04:09:06",
+      "agent": "opencode:hy4-flash-free",
+      "checklists": "passed",
+      "workspaces": [
+        {
+          "name": "CardMon",
+          "path": "projects/CardMon"
+        }
+      ]
+    },
+    {
+      "task_id": "cardmon-secret-scan-fix",
+      "phase": "completed",
+      "phase_num": 5,
+      "description": "Task 'cardmon-secret-scan-fix' completed successfully.",
+      "status": "completed",
+      "timestamp": 1795309780.42229,
+      "timestamp_str": "2026-11-22 04:09:40",
+      "agent": "opencode:hy4-flash-free",
+      "head": "9486f06da3acfdb96caa7d280069cb7cc034dd7c",
       "delivery": {
         "roots": [
           "."

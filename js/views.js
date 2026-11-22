@@ -12,13 +12,14 @@ function renderAll() {
   renderLoansView();
   renderSubscriptionsView();
   renderTimelineView();
+  if (typeof refreshEnglishOverlay === 'function') refreshEnglishOverlay();
 }
 
 function renderUserProfileHeader() {
-  const p = state.profile || { firstName: 'Yunus', lastName: 'Emre', title: 'Finansal Yönetici', avatarColor: '#3b82f6' };
+  const p = state.profile || { firstName: 'CardMon', lastName: 'User', title: 'Portfolio Manager', avatarColor: '#3b82f6' };
   const first = (p.firstName || '').trim();
   const last = (p.lastName || '').trim();
-  const fullName = `${first} ${last}`.trim() || 'Yunus Emre';
+  const fullName = `${first} ${last}`.trim() || 'CardMon User';
   const initials = (((first[0] || 'Y') + (last[0] || (first[1] || 'E')))).toUpperCase();
 
   const avatarEl = document.getElementById('headerUserAvatar');

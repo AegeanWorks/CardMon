@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CardMonTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:colorAccent">#10B981</item>
+        <item name="android:colorPrimary">#111827</item>
+        <item name="android:colorPrimaryDark">#0A0E1A</item>
+        <item name="android:windowBackground">#0A0E1A</item>
+        <item name="android:textColorPrimary">#E2E8F0</item>
+        <item name="android:textColorSecondary">#94A3B8</item>
+    </style>
+</resources>
